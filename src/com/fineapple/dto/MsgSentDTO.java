@@ -1,6 +1,6 @@
 package com.fineapple.dto;
 
-public class tblMsgSentDTO {
+public class MsgSentDTO {
 	private int seq;
 	private int sentEmployeeNum;
 	private String title;

@@ -1,6 +1,6 @@
 package com.fineapple.dto;
 
-public class tblMsgBlockDTO {
+public class MsgBlockDTO {
 	private int seq;
 	private String blcokEmployee;
 	private String blockuser;

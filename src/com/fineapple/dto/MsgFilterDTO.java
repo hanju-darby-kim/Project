@@ -1,6 +1,6 @@
 package com.fineapple.dto;
 
-public class tblMsgFilterDTO {
+public class MsgFilterDTO {
 	private int seq;
 	private int filterEmployee;
 	private String filterword;
