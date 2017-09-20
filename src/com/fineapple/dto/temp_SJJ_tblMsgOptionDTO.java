@@ -1,6 +1,6 @@
 package com.fineapple.dto;
 
-public class temp_SJJ_tblMsgOption {
+public class temp_SJJ_tblMsgOptionDTO {
 	private int seq;
 	private int MsgOpEmployee;
 	private int MsgOppagenum;
