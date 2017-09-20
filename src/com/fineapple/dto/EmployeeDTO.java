@@ -1,3 +1,4 @@
+package com.fineapple.dto;
 
 public class EmployeeDTO {
 	private String seq;

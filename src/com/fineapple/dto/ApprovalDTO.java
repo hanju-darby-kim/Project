@@ -1,3 +1,4 @@
+package com.fineapple.dto;
 /**
  * 결재(기안서 작성) 테이블(ApprovalConfirmDTO)의 데이터를 담는 DTO 클래스
  * @author 전슬기
