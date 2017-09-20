@@ -1,4 +1,4 @@
-package com.fineapple.dto;
+package com.fineapple.DTO;
 
 /**
  * @author hanjukim
