@@ -12,7 +12,7 @@
 
     <title>제목 입력</title>
 
-	<%@ include file="../inc/asset_css.jsp" %>
+	<%@ include file="/company/inc/asset_css.jsp" %>
 
 </head>
 
@@ -571,7 +571,7 @@
     </div>
     <!-- /#wrapper -->
 
-	<%@ include file="../inc/asset_js.jsp" %>
+	<%@ include file="/company/inc/asset_js.jsp" %>
 
 </body>
 
