@@ -32,7 +32,7 @@ public class DBUtil {
 	}
 	
 	//테스트용, false뜨면 접속완료
-
+/*
 	public static void main(String[] args) {
 		
 		DBUtil db = new DBUtil();
@@ -44,7 +44,7 @@ public class DBUtil {
 		}
 		
 	}
-
+*/
 }//class
 
 
