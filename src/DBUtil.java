@@ -2,6 +2,7 @@
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DBUtil {
 	//심재준PC DB접속용(SISTMVC) 클래스임
@@ -31,7 +32,7 @@ public class DBUtil {
 	}
 	
 	//테스트용, false뜨면 접속완료
-	/*
+
 	public static void main(String[] args) {
 		
 		DBUtil db = new DBUtil();
@@ -43,7 +44,7 @@ public class DBUtil {
 		}
 		
 	}
-	*/
+
 }//class
 
 
