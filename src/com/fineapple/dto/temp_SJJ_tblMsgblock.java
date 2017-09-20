@@ -1,3 +1,4 @@
+package com.fineapple.dto;
 
 public class temp_SJJ_tblMsgblock {
 	private int seq;
