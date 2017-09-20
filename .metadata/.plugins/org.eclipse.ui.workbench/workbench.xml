@@ -164,6 +164,12 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1de487b" ratio="0.5" ratioLeft="929" ratioRight="929" relationship="2" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1a90fa8" ratio="0.29984543" ratioLeft="194" ratioRight="453" relationship="4" relative="leftFolder">
 <folder appearance="2" expanded="2">
 <page content="org.eclipse.gef.ui.palette_view" label="LabelNotFound"/>
@@ -183,9 +189,8 @@
 <editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" uri="file:/D:/Class/Server&apos;s%20workSpace/Project/프로젝트%20문서/2.%20ERD/company(50).exerd"/>
 <editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" uri="file:/D:/Class/Server&apos;s%20workSpace/Project/프로젝트%20문서/2.%20ERD/company(50).exerd"/>
 <editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" uri="file:/D:/Class/Server&apos;s%20workSpace/Project/프로젝트%20문서/2.%20ERD/company_김한주.exerd"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" uri="file:/D:/Class/Server&apos;s%20workSpace/Project/프로젝트%20문서/2.%20ERD/company.exerd"/>
 </editors>
-<item historyLabel="company (2).exerd" index="2"/>
-<item historyLabel="company_김한주.exerd" index="1"/>
 <item historyLabel="company.exerd" index="0"/>
 <item historyLabel="company_김한주.exerd" index="1"/>
 <item historyLabel="company (2).exerd" index="2"/>
@@ -233,6 +238,8 @@
 <item historyLabel="company_김한주.exerd" index="5"/>
 <item historyLabel="company(50).exerd" index="4"/>
 <item historyLabel="company_김한주.exerd" index="5"/>
+<item historyLabel="company(50).exerd" index="4"/>
+<item historyLabel="company.exerd" index="6"/>
 <item active="true" historyLabel="company(50).exerd" index="4"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
