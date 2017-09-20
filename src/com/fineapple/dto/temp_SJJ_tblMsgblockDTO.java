@@ -1,6 +1,6 @@
 package com.fineapple.dto;
 
-public class temp_SJJ_tblMsgblock {
+public class temp_SJJ_tblMsgblockDTO {
 	private int seq;
 	private String blcokEmployee;
 	private String blockuser;
