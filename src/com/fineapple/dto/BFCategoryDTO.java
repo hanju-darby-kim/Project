@@ -1,6 +1,6 @@
 package com.fineapple.dto;
 
-public class BFCategory {
+public class BFCategoryDTO {
 	private String seq;
 	private String name;
 	public String getSeq() {

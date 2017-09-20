@@ -1,6 +1,6 @@
 package com.fineapple.dto;
 
-public class temp_SJJ_tblSentMsgDTO {
+public class tblMsgSentDTO {
 	private int seq;
 	private int sentEmployeeNum;
 	private String title;
