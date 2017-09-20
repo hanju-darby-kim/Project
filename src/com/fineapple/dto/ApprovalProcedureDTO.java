@@ -1,3 +1,4 @@
+package com.fineapple.dto;
 /**
  * 결재순서 테이블(approvalProcedure)의 데이터를 담는 DTO 클래스
  * @author user
