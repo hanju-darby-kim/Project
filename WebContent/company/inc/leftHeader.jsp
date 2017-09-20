@@ -24,16 +24,16 @@
                             <a href="javascript:void(0)"><i class="fa fa-smile-o fa-fw"></i> 4. 부서별 게시판<span class="fa arrow"></a>
                             <ul class="nav nav-second-level">
                             	<li>
-                            		<a href="javascript:void(0)">개발부게시판</a>
+                            		<a href="javascript:void(0)">개발부</a>
                             	</li>
                             	<li>
-                            		<a href="javascript:void(0)">인사부게시판</a>
+                            		<a href="javascript:void(0)">인사부</a>
                             	</li>
                             	<li>
-                            		<a href="javascript:void(0)">총무부게시판</a>
+                            		<a href="javascript:void(0)">총무부</a>
                             	</li>
                             	<li>
-                            		<a href="javascript:void(0)">영업부게시판</a>
+                            		<a href="javascript:void(0)">영업부</a>
                             	</li>
                             </ul>
                         </li>
