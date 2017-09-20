@@ -33,8 +33,6 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-            
-			<%@ include file="../inc/dashboard_header.jsp" %>
 			
 			<div class="row">
                 <div class="col-lg-8">
@@ -482,7 +480,7 @@
     </div>
     <!-- /#wrapper -->
 
-	<%@ include file="../inc/asset_js.jsp" %>
+	<%@ include file="/company/inc/asset_js.jsp" %>
 
 </body>
 
