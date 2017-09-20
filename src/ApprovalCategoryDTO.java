@@ -13,7 +13,7 @@ public class ApprovalCategoryDTO {
 	}
 	public void setSeq(String seq) {
 		this.seq = seq;
-	}
+	}	
 	public String getApprovalCategoryName() {
 		return approvalCategoryName;
 	}
