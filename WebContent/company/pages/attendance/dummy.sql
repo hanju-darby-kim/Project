@@ -120,12 +120,31 @@ CREATE TABLE atdWrCategory
 
 drop table atdWrCategory;
 
-insert into atdWrCategory (seq, categorys) values (1, '정상근무');
-insert into atdWrCategory (seq, categorys) values (2, '특근');
-insert into atdWrCategory (seq, categorys) values (3, '야근');
-INSERT INTO atdwrcategory (seq, categorys) VALUES (4, '외근');
-insert into atdVrCategory (seq, ) values (3, '지각');
-insert into atdVrCategory (seq, ) values (3, '조퇴');
+INSERT INTO atdwrcategory (seq, case) VALUES (1, '정상근무');
+INSERT INTO atdwrcategory (seq, case) VALUES (2, '특근');
+INSERT INTO atdwrcategory (seq, case) VALUES (3, '야근');
+INSERT INTO atdwrcategory (seq, case) VALUES (4, '외근');
+INSERT INTO atdwrcategory (seq, case) VALUES (5, '지각');
+INSERT INTO atdwrcategory (seq, case) VALUES (6, '조퇴');
+
+
+INSERT INTO atdwrcategory (seq, case) VALUES (7, '정상근무,특근');
+INSERT INTO atdwrcategory (seq, case) VALUES (8, '정산근무,야근');
+INSERT INTO atdwrcategory (seq, case) VALUES (9, '정산근무,외근');
+INSERT INTO atdwrcategory (seq, case) VALUES (10, '정산근무,지각');
+INSERT INTO atdwrcategory (seq, case) VALUES (11, '정산근무,야근');
+INSERT INTO atdwrcategory (seq, case) VALUES (12, '정산근무,야근');
+INSERT INTO atdwrcategory (seq, case) VALUES (13, '정산근무,야근');
+INSERT INTO atdwrcategory (seq, case) VALUES (14, '정산근무,야근');
+INSERT INTO atdwrcategory (seq, case) VALUES (8, '정산근무,야근');
+INSERT INTO atdwrcategory (seq, case) VALUES (9, '외근');
+INSERT INTO atdwrcategory (seq, case) VALUES (10, '외근');
+INSERT INTO atdwrcategory (seq, case) VALUES (4, '외근');
+INSERT INTO atdwrcategory (seq, case) VALUES (4, '외근');
+
+
+
+
 
 
 

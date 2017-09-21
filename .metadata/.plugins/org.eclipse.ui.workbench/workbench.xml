@@ -64,7 +64,15 @@
 <view id="com.tomato.exerd.ui.views.domain" partName="도메인">
 <viewState/>
 </view>
-<view id="org.eclipse.ui.views.ContentOutline" partName="아웃라인"/>
+<view id="org.eclipse.ui.views.ContentOutline" partName="아웃라인">
+<viewState/>
+</view>
+<view id="org.eclipse.search.ui.views.SearchView" partName="검색">
+<viewState isPinned="false">
+<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
+<view IMemento.internal.id="com.tomato.exerd.core.searchpage" org.eclipse.search.lastActivation="1"/>
+</viewState>
+</view>
 <view id="org.eclipse.gef.ui.palette_view" partName="Palette">
 <viewState/>
 </view>
@@ -98,8 +106,8 @@
 <fastViewBars>
 <fastViewBar fastViewLocation="131072" id="rightFolder" orientation="512" selectedTabId="com.tomato.exerd.modelview3.ModelView3" style="0">
 <fastViews>
-<view id="com.tomato.exerd.modelview3.ModelView3" ratio="0.3"/>
-<view id="org.eclipse.ui.views.ContentOutline" ratio="0.3"/>
+<view id="com.tomato.exerd.modelview3.ModelView3" ratio="0.29978472"/>
+<view id="org.eclipse.ui.views.ContentOutline" ratio="0.29978472"/>
 </fastViews>
 </fastViewBar>
 <fastViewBar fastViewLocation="1024" id="bottomFolder" orientation="256" selectedTabId="com.tomato.exerd.ui.views.domain" style="0">
@@ -117,6 +125,11 @@
 <fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@18bbcdc" orientation="512" selectedTabId="com.tomato.exerd.ui.views.thumbnail" style="0">
 <fastViews>
 <view id="com.tomato.exerd.ui.views.thumbnail" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+<fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@1de487b" orientation="512" selectedTabId="org.eclipse.search.ui.views.SearchView" style="0">
+<fastViews>
+<view id="org.eclipse.search.ui.views.SearchView" ratio="0.3"/>
 </fastViews>
 </fastViewBar>
 <fastViewBar fastViewLocation="16384" id="leftFolder" orientation="512" selectedTabId="org.eclipse.ui.views.ResourceNavigator" style="0">
@@ -165,7 +178,7 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1de487b" ratio="0.5" ratioLeft="929" ratioRight="929" relationship="2" relative="org.eclipse.ui.editorss">
-<folder appearance="2" expanded="2">
+<folder appearance="2" expanded="0">
 <page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
@@ -193,9 +206,8 @@
 <editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" uri="file:/D:/Class/Server&apos;s%20workSpace/Project/프로젝트%20문서/2.%20ERD/company(50)_170920%2016시48분%2050번백업.exerd"/>
 <editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" uri="file:/D:/Class/Server&apos;s%20workSpace/Project/프로젝트%20문서/2.%20ERD/company.exerd"/>
 <editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" uri="file:/D:/Class/Server&apos;s%20workSpace/Project/프로젝트%20문서/2.%20ERD/company(100).exerd"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" uri="file:/D:/Class/Server&apos;s%20workSpace/Project/프로젝트%20문서/2.%20ERD/company(50).exerd"/>
 </editors>
-<item historyLabel="company_김한주.exerd" index="0"/>
-<item historyLabel="company (2).exerd" index="1"/>
 <item historyLabel="company_김한주.exerd" index="0"/>
 <item historyLabel="company (2).exerd" index="1"/>
 <item historyLabel="company_김한주.exerd" index="0"/>
@@ -243,6 +255,8 @@
 <item historyLabel="company(50).exerd" index="3"/>
 <item historyLabel="company(50)_170920 16시48분 50번백업.exerd" index="7"/>
 <item historyLabel="company.exerd" index="8"/>
+<item historyLabel="company(100).exerd" index="9"/>
+<item historyLabel="company(50).exerd" index="10"/>
 <item active="true" historyLabel="company(100).exerd" index="9"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -257,6 +271,7 @@
 <trimArea IMemento.internal.id="131072">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@18bbcdc"/>
 <trimItem IMemento.internal.id="rightFolder"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@1de487b"/>
 </trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
