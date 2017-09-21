@@ -15,9 +15,11 @@
 
 	<%@ include file="/company/inc/asset_css.jsp" %>
 	<%@ include file="/company/inc/asset_js.jsp" %>
+	<link href="/Project/company/dist/css/department.css" rel="stylesheet">	
 
 <script>
 	$(document).ready(function() {
+
 	});
 </script>
 </head>
@@ -46,11 +48,11 @@
 						</div>
 						<!-- /.panel-heading -->
 						<div class="panel-body">
-							<form action="/Project/company/pages/department/project/write_go.do" method="post">
+							<form action="/Project/company/pages/department/project/write_p_go.do" method="post">
 								<table id="dev_write" width="100%" class="table table-striped table-bordered table-hover">
 									<tr>
 										<!-- 자동입력 -->
-										<th>작성자</th>
+										<th>담당자</th>
 										<td><input type="text" name="emp" id="emp" class="form-control" value="" required readonly /></td>
 									</tr>
 									<tr>
@@ -59,24 +61,30 @@
 									</tr>
 									<tr>
 										<th>목표</th>
-										<td><textarea name="goal" id="goal" class="form-control" placeholder="프로젝트 목표를 입력하세요" required></textarea></td>
+										<td><textarea name="goal" id="goal" class="form-control" rows="5" placeholder="프로젝트 목표를 입력하세요" required></textarea></td>
 									</tr>
 									<tr>
 										<th>설명</th>
-										<td><textarea name="content" id="content" class="form-control" placeholder="프로젝트에 대한 설명을 입력하세요" required></textarea></td>
+										<td><textarea name="content" id="content" class="form-control" rows="10" placeholder="프로젝트에 대한 설명을 입력하세요" required></textarea></td>
 									</tr>
 									<tr>
 										<th>시작일</th>
-										<td><input type="text" id="startDate" name="startDate" class="form-control datepicker" placeholder="시작일을 지정하세요" readonly /></td>
+										<td><input type="text" id="startDate" name="startDate" class="form-control" placeholder="시작일을 지정하세요" readonly /></td>
 										<script>
-										$('.datepicker').datepicker(
-											{	format: 'yyyy-mm-dd', setStartDate: '2017-01-01', autoclose: 'true' }
-										);
-										 </script>
+										$('#startDate').datepicker({
+											format: 'yyyy-mm-dd', setStartDate: '2017-01-01', autoclose: true
+										});
+										</script>
 									</tr>
 									<tr>
 										<th>종료일</th>
-										<td></td>
+										<td><input type="text" id="endDate" name="endDate" class="form-control" placeholder="종료일을 지정하세요" readonly /></td>
+										<script>
+										// 시작일보다 늦을 경우 경고발생
+										$('#endDate').datepicker({
+											format: 'yyyy-mm-dd', setStartDate: '2017-01-01', autoclose: true
+										});
+										</script>
 									</tr>
 									<!-- 해당 부분은 if로 부장님일때만 보여주기 -->
 									<tr>

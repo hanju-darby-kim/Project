@@ -7,7 +7,7 @@
      	               		<div id="profile">
         						<img src="/Project/company/images/user.jpg" style="width: 50px; margin: 10px; float:left">       		
  	                   			<div style="float:left; margin-top: 15px;">
- 	                   				<div>이해나</div>
+ 	                   				<div>${name}</div>
  	                   				<div>개발부 사장</div>    <!-- 나중에 el로 처리 -->       				
  	                   			</div>          			
                     		</div>
@@ -39,10 +39,10 @@
                                     <a href="javascript:void(0)">개발부 <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
-                                            <a href="javascript:void(0)">프로젝트</a>
+                                            <a href="/Project/company/pages/department/dev/project/project.jsp">프로젝트</a>
                                         </li>
                                         <li>
-                                            <a href="javascript:void(0)">비용청구</a>
+                                            <a href="/Project/company/pages/department/dev/outcome/outcome.jsp">비용청구</a>
                                         </li>
                                     </ul>
                                 </li>

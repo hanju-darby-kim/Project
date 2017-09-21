@@ -15,6 +15,7 @@
 
 	<%@ include file="/company/inc/asset_css.jsp" %>
 	<%@ include file="/company/inc/asset_js.jsp" %>
+	<link href="/Project/company/dist/css/department.css" rel="stylesheet">
 
 </head>
 
@@ -35,7 +36,7 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="panel panel-info">
+					<div class="panel panel-warning">
 						<div class="panel-heading">
 							<i class="fa fa-bar-chart-o fa-fw"></i> 금월 비용청구 현황
 						</div>
@@ -93,7 +94,7 @@
 							<div id="btns">
 								<button type="button" class="btn btn-outline btn-default">목록갱신</button>
 								<!-- if, 부장일때만 -->
-								<button type="button" class="btn btn-outline btn-primary">비용청구</button>
+								<button type="button" class="btn btn-outline btn-primary" onclick="location.href='dev_write_o.jsp';">비용청구</button>
 							</div>
 						</div>
 						<!-- /.panel-body -->

@@ -15,13 +15,22 @@
 	
 	<!-- Department -->
 	<servlet>
-		<servlet-name>department.dev.main</servlet-name>
-		<servlet-class>com.fineapple.department</servlet-class>
+		<servlet-name>department.temp_start</servlet-name>
+		<servlet-class>com.fineapple.department.TempStart</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>department.dev.main</servlet-name>
-		<url-pattern>/pages/department/dev/main.do</url-pattern>
+		<servlet-name>department.temp_start</servlet-name>
+		<url-pattern>/company/pages/department/tempstart.do</url-pattern>
 	</servlet-mapping>
+		<!-- Department / dev -->
+		<servlet>
+			<servlet-name>department.dev.outcome.write</servlet-name>
+			<servlet-class>com.fineapple.department.DevWriteOutcome</servlet-class>
+		</servlet>
+		<servlet-mapping>
+			<servlet-name>department.dev.outcome.write</servlet-name>
+			<url-pattern>/company/pages/department/dev/outcome/dev_write_o.do</url-pattern>
+		</servlet-mapping>
 	
 	
 	<!-- all -->
