@@ -15,7 +15,8 @@ public class List extends HttpServlet {
 			throws ServletException, IOException {
 		
 		ContactService service = new ContactService();
-		service.getList();
+		
+		ArrayList<> service.getList();
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/all/contact.jsp");
 		dispatcher.forward(req, resp);
