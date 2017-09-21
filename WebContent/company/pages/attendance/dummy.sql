@@ -117,15 +117,16 @@ CREATE TABLE atdWrCategory
 	seq NUMBER PRIMARY KEY,
 	case VARCHAR2(1000) NOT NULL
 );
-
+SELECT * FROM atdWrCategory;
 drop table atdWrCategory;
 
 INSERT INTO atdwrcategory (seq, case) VALUES (1, '정상근무');
 INSERT INTO atdwrcategory (seq, case) VALUES (2, '특근');
 INSERT INTO atdwrcategory (seq, case) VALUES (3, '야근');
-INSERT INTO atdwrcategory (seq, case) VALUES (4, '외근');
 INSERT INTO atdwrcategory (seq, case) VALUES (5, '지각');
 INSERT INTO atdwrcategory (seq, case) VALUES (6, '조퇴');
+
+
 
 
 INSERT INTO atdwrcategory (seq, case) VALUES (7, '정상근무,특근');
