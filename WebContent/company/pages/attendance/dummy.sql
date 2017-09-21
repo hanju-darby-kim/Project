@@ -117,30 +117,33 @@ CREATE TABLE atdWrCategory
 	seq NUMBER PRIMARY KEY,
 	case VARCHAR2(1000) NOT NULL
 );
-
+SELECT * FROM atdWrCategory;
 drop table atdWrCategory;
 
 INSERT INTO atdwrcategory (seq, case) VALUES (1, '정상근무');
 INSERT INTO atdwrcategory (seq, case) VALUES (2, '특근');
 INSERT INTO atdwrcategory (seq, case) VALUES (3, '야근');
-INSERT INTO atdwrcategory (seq, case) VALUES (4, '외근');
 INSERT INTO atdwrcategory (seq, case) VALUES (5, '지각');
 INSERT INTO atdwrcategory (seq, case) VALUES (6, '조퇴');
 
+--------------------------------------------
 
-INSERT INTO atdwrcategory (seq, case) VALUES (7, '정상근무,특근');
-INSERT INTO atdwrcategory (seq, case) VALUES (8, '정산근무,야근');
-INSERT INTO atdwrcategory (seq, case) VALUES (9, '정산근무,외근');
-INSERT INTO atdwrcategory (seq, case) VALUES (10, '정산근무,지각');
-INSERT INTO atdwrcategory (seq, case) VALUES (11, '정산근무,야근');
-INSERT INTO atdwrcategory (seq, case) VALUES (12, '정산근무,야근');
-INSERT INTO atdwrcategory (seq, case) VALUES (13, '정산근무,야근');
-INSERT INTO atdwrcategory (seq, case) VALUES (14, '정산근무,야근');
-INSERT INTO atdwrcategory (seq, case) VALUES (8, '정산근무,야근');
-INSERT INTO atdwrcategory (seq, case) VALUES (9, '외근');
-INSERT INTO atdwrcategory (seq, case) VALUES (10, '외근');
-INSERT INTO atdwrcategory (seq, case) VALUES (4, '외근');
-INSERT INTO atdwrcategory (seq, case) VALUES (4, '외근');
+--근태관리_근태기록(공통업무)
+
+CREATE TABLE atdWorkRecord
+(
+	seq NUMBER PRIMARY KEY,
+	eseq NUMBER NOT NULL REFERENCES employee(seq),
+	cseq NUMBER NOT NULL REFERENCES atdwrcategory(seq),
+	cometime DATE NOT NULL,
+	LEAVETIME DATE NOT NULL
+);
+
+SELECT * FROM atdworkrecord;
+DROP TABLE ATDWORKRECORD;
+
+
+
 
 
 
@@ -164,19 +167,6 @@ DELETE FROM atdwrcategory;
 ALTER TABLE ATDWRCATEGORY DROP COLUMN 
 --------------------------------------------
 
---근태관리_근태기록(공통업무)
-
-CREATE TABLE atdWorkRecord
-(
-	seq NUMBER PRIMARY KEY,
-	eseq NUMBER NOT NULL REFERENCES employee(seq),
-	cseq NUMBER NOT NULL REFERENCES atdwrcategory(seq),
-	cometime DATE NOT NULL,
-	LEAVETIME DATE NOT NULL
-);
-
-SELECT * FROM atdworkrecord;
-DROP TABLE ATDWORKRECORD;
 
 --------------------------------------------
 
