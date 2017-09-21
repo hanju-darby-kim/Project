@@ -18,16 +18,9 @@
                                     <i class="fa fa-search"></i>
                                 </button>
                             </span>
-<<<<<<< HEAD
-                            </div>
-                            <!-- /input-group -->
-                        </li>
-                        
-=======
                             </div> -->
                             <!-- /input-group 
                         </li>-->
->>>>>>> dda118bfcaf802143bb5490f462c536e42b40ad5
                         <li>
                             <a href="javascript:void(0)"><i class="fa fa-smile-o fa-fw"></i> 2. 근태 관리</a>
                         </li>
