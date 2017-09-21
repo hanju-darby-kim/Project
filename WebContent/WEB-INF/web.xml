@@ -83,40 +83,15 @@
 	</servlet-mapping>		
 	
 	<servlet>	<!-- 자유게시판 종합-->
-		<servlet-name>attendance.communityA</servlet-name>
-		<servlet-class>com.fineapple.attendance.CommunityA</servlet-class>
+		<servlet-name>attendance.community</servlet-name>
+		<servlet-class>com.fineapple.attendance.Community</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>attendance.communityA</servlet-name>
-		<url-pattern>/attendance/communityA.do</url-pattern>
+		<servlet-name>attendance.community</servlet-name>
+		<url-pattern>/attendance/community.do</url-pattern>
 	</servlet-mapping>		
 	
-	<servlet>	<!-- 자유게시판 일반-->
-		<servlet-name>attendance.communityC</servlet-name>
-		<servlet-class>com.fineapple.attendance.CommunityC</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>attendance.communityC</servlet-name>
-		<url-pattern>/attendance/communityC.do</url-pattern>
-	</servlet-mapping>		
-	
-	<servlet>	<!-- 자유게시판 질문-->
-		<servlet-name>attendance.communityQ</servlet-name>
-		<servlet-class>com.fineapple.attendance.CommunityQ</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>attendance.communityQ</servlet-name>
-		<url-pattern>/attendance/communityQ.do</url-pattern>
-	</servlet-mapping>		
-	
-	<servlet>	<!-- 자유게시판 건의-->
-		<servlet-name>attendance.communityS</servlet-name>
-		<servlet-class>com.fineapple.attendance.CommunityS</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>attendance.communityS</servlet-name>
-		<url-pattern>/attendance/communityS.do</url-pattern>
-	</servlet-mapping>		
+
 	
 	
 	
