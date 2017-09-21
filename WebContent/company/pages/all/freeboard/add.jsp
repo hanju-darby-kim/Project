@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +32,10 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+	<style>
+		#addTable #FBCategory { height: 30px; width: 100px; }
+		#addTable { width: 800px; margin: 0px auto; border-top: 0px; }
+	</style>
 </head>
 
 <body>
@@ -54,17 +58,31 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Blank</h1>
+                        <h1 class="page-header">글쓰기</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
-            <form method="POST" action="/Project/all/freeboard/addok.do"></form>
-            <table class="table">
-            
+            <form method="POST" action="/Project/pages/all/freeboard/addok.do">
+            <table class="table" id="addTable">
+            	<tr>
+            		<td>
+            			<select name="FBCategory" id="FBCategory">
+            				<c:forEach items="${categoryList}" var="category">
+							<option>${category.name}</option> 
+							</c:forEach>           		
+            			</select>
+            		</td>
+            	</tr>
+            	<tr>
+	            	<th>
+	    				<input type="text" name="title" id="title" required>
+	           		</th>
+            	</tr>
             </table>
+            </form>
         </div>
         <!-- /#page-wrapper -->
 		

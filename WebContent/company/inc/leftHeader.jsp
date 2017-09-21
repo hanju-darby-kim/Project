@@ -147,31 +147,31 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.jsp"><i class="fa fa-table fa-fw"></i> Tables</a>
+                            <a href="/Project/company/pages/tables.jsp"><i class="fa fa-table fa-fw"></i> Tables</a>
                         </li>
                         <li>
-                            <a href="forms.jsp"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                            <a href="/Project/company/pages/forms.jsp"><i class="fa fa-edit fa-fw"></i> Forms</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="panels-wells.jsp">Panels and Wells</a>
+                                    <a href="/Project/company/pages/panels-wells.jsp">Panels and Wells</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.jsp">Buttons</a>
+                                    <a href="/Project/company/pages/buttons.jsp">Buttons</a>
                                 </li>
                                 <li>
-                                    <a href="notifications.jsp">Notifications</a>
+                                    <a href="/Project/company/pages/notifications.jsp">Notifications</a>
                                 </li>
                                 <li>
-                                    <a href="typography.jsp">Typography</a>
+                                    <a href="/Project/company/pages/typography.jsp">Typography</a>
                                 </li>
                                 <li>
-                                    <a href="icons.jsp"> Icons</a>
+                                    <a href="/Project/company/pages/icons.jsp"> Icons</a>
                                 </li>
                                 <li>
-                                    <a href="grid.jsp">Grid</a>
+                                    <a href="/Project/company/pages/grid.jsp">Grid</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
