@@ -98,13 +98,12 @@
 			<li><a href="javascript:void(0)"><i
 					class="fa fa-smile-o fa-fw"></i> 5. 전체게시판</a></li>
 
+	<!----------------- 태현 모임 ---------------------------->
 			<li><a href="javascript:void(0)"><i
 					class="fa fa-smile-o fa-fw"></i> 6. 모임 게시판<span class="fa arrow"></span></a>
 				<ul class="nav nav-second-level">
 					<li><a href="javascript:void(0)">단기모임모집 </a>
-				
-					<li><a href="javascript:void(0)">정기모임목록 </a>
-					
+					<li><a href="/Project/company/pages/club/clubList.jsp">정기모임목록 </a>
 					<li><a href="javascript:void(0)">나의 소속 모임 <span
 							class="fa arrow"></span></a>
 						<ul class="nav nav-third-level">
@@ -113,8 +112,9 @@
 							<li><a href="javascript:void(0)">볼링을 사랑하는 사람들</a></li>
 							<li><a href="javascript:void(0)">테니스왕자들</a></li>
 						</ul></li>
-					
+
 				</ul></li>
+   <!-------------------- 태현 모임ㅁ끝 -------------------->
 
 			<li><a href="javascript:void(0)"><font color="OrangeRed"><i
 						class="fa fa-gear fa-fw"></i> -아래 메뉴는 템플릿 메뉴얼임-</font></a></li>

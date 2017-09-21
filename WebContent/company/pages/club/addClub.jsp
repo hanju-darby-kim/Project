@@ -70,7 +70,7 @@
 				<!-- 글쓰기 폼 -->
 				<form method="post" action="/Project/company/club/addClub.do"
 					enctype="multipart/form-data">
-					<table id="tbl" class="table table-striped">
+					<table id="club-form" class="table table-striped">
 						<tr>
 							<th>클럽 이름</th>
 							<td><input type="text" name="name" id="name"
