@@ -21,7 +21,3 @@ CKEDITOR.editorConfig = function( config )
         config.menu_subMenuDelay = 0;                           // 메뉴 클릭시 딜레이값
         config.toolbar = 'Full';
 };
-
-
-
-출처: http://androphil.tistory.com/289 [소림사의 홍반장!]
