@@ -9,7 +9,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/Project/company/pages/index.jsp">Fine Apple</a>
+                <!-- <a class="navbar-brand" href="/Project/company/pages/index.jsp">Fine Apple</a> -->
+                <div class="logo-btn" onclick="location.href='/Project/company/pages/index.jsp;'"></div>
             </div>
             <!-- /.navbar-header -->
 

@@ -30,6 +30,7 @@ body {
 
 .navbar-top-links {
 	margin-right: 0;
+	margin-top:10px;
 }
 
 .navbar-top-links li {
@@ -131,7 +132,7 @@ body {
 		z-index: 1;
 		position: absolute;
 		width: 250px;
-		margin-top: 51px;
+		margin-top: 75px;
 	}
 	.navbar-top-links .dropdown-messages, .navbar-top-links .dropdown-tasks,
 		.navbar-top-links .dropdown-alerts {
