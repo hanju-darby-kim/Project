@@ -9,7 +9,8 @@ public class ApprovalDTO {
 	private String seq;
 	private String employeeNum;
 	private String approvalCategoryNum;
-	private String approvalContext;
+	//private String approvalContext;
+	private String approvalContent;
 	private String approvalDraftDate;
 	public String getSeq() {
 		return seq;
@@ -29,17 +30,17 @@ public class ApprovalDTO {
 	public void setApprovalCategoryNum(String approvalCategoryNum) {
 		this.approvalCategoryNum = approvalCategoryNum;
 	}
-	public String getApprovalContext() {
-		return approvalContext;
-	}
-	public void setApprovalContext(String approvalContext) {
-		this.approvalContext = approvalContext;
-	}
 	public String getApprovalDraftDate() {
 		return approvalDraftDate;
 	}
 	public void setApprovalDraftDate(String approvalDraftDate) {
 		this.approvalDraftDate = approvalDraftDate;
+	}
+	public String getApprovalContent() {
+		return approvalContent;
+	}
+	public void setApprovalContent(String approvalContent) {
+		this.approvalContent = approvalContent;
 	}
 	
 	

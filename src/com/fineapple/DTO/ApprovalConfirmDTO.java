@@ -11,7 +11,8 @@ public class ApprovalConfirmDTO {
 	private String employeeNum;
 	private String approvalProcedureNum;
 	private String approvalCheck;
-	private String considerationContext;
+	//private String considerationContext;
+	private String considerationContent;
 	private String approvalDate;
 	
 	public String getSeq() {
@@ -19,7 +20,7 @@ public class ApprovalConfirmDTO {
 	}
 	public void setSeq(String seq) {
 		this.seq = seq;
-	}
+	}	
 	public String getApprovalNum() {
 		return approvalNum;
 	}
@@ -44,17 +45,18 @@ public class ApprovalConfirmDTO {
 	public void setApprovalCheck(String approvalCheck) {
 		this.approvalCheck = approvalCheck;
 	}
-	public String getConsiderationContext() {
-		return considerationContext;
-	}
-	public void setConsiderationContext(String considerationContext) {
-		this.considerationContext = considerationContext;
-	}
+
 	public String getApprovalDate() {
 		return approvalDate;
 	}
 	public void setApprovalDate(String approvalDate) {
 		this.approvalDate = approvalDate;
+	}
+	public String getConsiderationContent() {
+		return considerationContent;
+	}
+	public void setConsiderationContent(String considerationContent) {
+		this.considerationContent = considerationContent;
 	}
 	
 	
