@@ -97,7 +97,7 @@
             	</tr>
             	<tr>
             		<td>
-			            <textarea name="content" id="content" rows="10" cols="100" style="resize: none;">에디터에 기본으로 삽입할 글(수정 모드)이 없다면 이 value 값을 지정하지 않으시면 됩니다.</textarea>		
+			            <textarea name="content" id="content" rows="10" cols="100" style="width: 800px;"></textarea>		
 					</td>
 				</tr>
 				</table>
@@ -105,7 +105,6 @@
 
 		<%@include file="/company/inc/texteditor.jsp" %>
 			 
-
             
         </div>
         <!-- /#page-wrapper -->
