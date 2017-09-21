@@ -2,19 +2,17 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
-<title>SB Admin 2 - Bootstrap Admin Theme</title>
-<style>
 
-</style>
-<script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-</script>
+    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+
     <!-- Bootstrap Core CSS -->
     <link href="/Project/company/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -47,7 +45,6 @@
             <%@ include file="/company/inc/upperHeader.jsp" %>
 			<!-- leftHeader -->
         	<%@ include file="/company/inc/leftHeader.jsp" %>
-
             
         </nav>
 
@@ -56,41 +53,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">결재 자유 게시판</h1>
+                        <h1 class="page-header">Blank</h1>
                     </div>
                     <!-- /.col-lg-12 -->
-                    테이블 내용
-                    
-                    
-                    <table id="board">
-                    	<tr>
-                            <th>Grid behavior</th>
-                            <td>Horizontal at all times</td>
-                            <td colspan="3">Collapsed to start, horizontal above breakpoints</td>
-                            </tr>
-                    	<tr>
-                            <th>Grid behavior</th>
-                            <td>Horizontal at all times</td>
-                            <td colspan="3">Collapsed to start, horizontal above breakpoints</td>
-                            </tr>
-                    	<tr>
-                            <th>Grid behavior</th>
-                            <td>Horizontal at all times</td>
-                            <td colspan="3">Collapsed to start, horizontal above breakpoints</td>
-                            </tr>
-                    	<tr>
-                            <th>Grid behavior</th>
-                            <td>Horizontal at all times</td>
-                            <td colspan="3">Collapsed to start, horizontal above breakpoints</td>
-                            </tr>
-                    	<tr>
-                            <th>Grid behavior</th>
-                            <td>Horizontal at all times</td>
-                            <td colspan="3">Collapsed to start, horizontal above breakpoints</td>
-                            </tr>
-                    </table>
-                    
-                    
                 </div>
                 <!-- /.row -->
             </div>
