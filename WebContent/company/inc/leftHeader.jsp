@@ -36,7 +36,7 @@
 				<ul class="nav nav-second-level">	
 					<li><a href="javascript:void(0)"><i class="fa fa-pencil fa-fw"></i>　기안서 작성 </a></li>
 					<li><a href="javascript:void(0)"><i class="fa fa-check fa-fw"></i>　결재 조회</a></li>
-					<li><a href="javascript:void(0)"><i class="fa fa-quote-left fa-fw"></i>　결재 관련 자유게시판 </a>
+					<li><a href="/Project/company/pages/approval/addBoard.jsp"><i class="fa fa-quote-left fa-fw"></i>　결재 관련 자유게시판 </a>
 				</ul></li>		
 			<!-- 결재 게시판 끝 -->		
 			
@@ -45,8 +45,7 @@
 					<li><a href="javascript:void(0)">개발부 <span
 							class="fa arrow"></span></a>
 						<ul class="nav nav-third-level">
-							<li><a
-								href="/Project/company/pages/department/dev/project/project.jsp">프로젝트</a>
+							<li><a href="/Project/company/pages/department/dev/project/project.jsp">프로젝트</a>
 							</li>
 							<li><a
 								href="/Project/company/pages/department/dev/outcome/outcome.jsp">비용청구</a>
