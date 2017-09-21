@@ -28,9 +28,17 @@
 			<!-- /input-group 
                         </li>-->
 
-			<li><a href="javascript:void(0)"><i
-					class="fa fa-smile-o fa-fw"></i> 2. 근태 관리</a></li>
-					
+
+			<!-- 김한주 : 근태 -->
+			<li><a href="javascript:void(0)"><span class="glyphicon glyphicon-check"></span>　근태 관리<span class="fa arrow"></span></a>
+				<ul class="nav nav-second-level">	
+					<li><a href="/Project/attendance/task.do"><i class="fa fa-file-text-o"></i>　근태 작성 </a>
+					<li><a href="/Project/attendance/statistics.do"><i class="fa fa-bar-chart-o"></i>　근태 관련 통계 </a></li>
+					<li><a href="/Project/attendance/community.do"><i class="fa fa-quote-left fa-fw"></i>　근태 관련 자유게시판</a></li>
+				</ul></li>	
+			<!-- ./김한주 : 근태 -->
+			
+
 			<!-- 결재 게시판 메뉴 -->		
 			<li><a href="javascript:void(0)"><i class="fa fa-list-alt fa-fw"></i>　결재 관리<span class="fa arrow"></span></a>
 				<ul class="nav nav-second-level">	
