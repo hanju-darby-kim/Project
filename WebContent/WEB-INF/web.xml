@@ -52,6 +52,15 @@
 		<url-pattern>/all/freeboard/addok.do</url-pattern>
 	</servlet-mapping>
 	
+	<!-- 주소록  -->
+	<servlet>
+		<servlet-name>all.contact.list</servlet-name>
+		<servlet-class>com.fineapple.all.contact.List</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all.contact.list</servlet-name>
+		<url-pattern>/all/contact/list.do</url-pattern>
+	</servlet-mapping>		
 	
 	
 	<!-- attendance -->
@@ -90,6 +99,7 @@
 		<servlet-name>attendance.community</servlet-name>
 		<url-pattern>/attendance/community.do</url-pattern>
 	</servlet-mapping>		
+	
 	
 
 	
