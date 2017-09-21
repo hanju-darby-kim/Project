@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.jsp">SB Admin v2.0</a>
+                <a class="navbar-brand" href="/Project/company/pages/index.jsp">Fine Apple</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -59,7 +59,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a class="active text-center" href="jaejun/test.jsp">
+                            <a class="active text-center" href="/Project/company/pages/jaejun/message.jsp">
                                 <strong>Read All Messages</strong>
                                 <i class="fa fa-angle-right"></i>
                             </a>

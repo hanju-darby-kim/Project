@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>제목 입력</title>
+	<title>Fine Apple</title>
 	<jsp:include page="/company/inc/asset_css.jsp"></jsp:include>
 </head>
 
