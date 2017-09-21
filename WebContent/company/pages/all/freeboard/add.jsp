@@ -109,7 +109,7 @@
             <script>
             $(function(){
                 $.ajax({
-                    url : "/Project/daumeditor/editor_frame.html",
+                    url : "/Project/daumeditor/editor_frame.jsp",
                     success : function(data){
                         $("#editor_frame").html(data);
                         // 에디터UI load

@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <!-- 에디터 컨테이너 시작 -->
 <div id="tx_trex_container" class="tx-editor-container">
 	<!-- 사이드바 -->
@@ -344,7 +347,7 @@
 	<!-- 편집영역 시작 -->
 		<!-- 에디터 Start -->
 <div id="tx_canvas" class="tx-canvas">
-	<div id="tx_loading" class="tx-loading"><div><img src="/daumeditor/images/icon/editor/loading2.png" width="113" height="21" align="absmiddle"/></div></div>
+	<div id="tx_loading" class="tx-loading"><div><img src="/Project/daumeditor/images/icon/editor/loading2.png" width="113" height="21" align="absmiddle"/></div></div>
 	<div id="tx_canvas_wysiwyg_holder" class="tx-holder" style="display:block;">
 		<iframe id="tx_canvas_wysiwyg" name="tx_canvas_wysiwyg" allowtransparency="true" frameborder="0"></iframe>
 	</div>
@@ -360,7 +363,7 @@
 <!-- 높이조절 Start -->
 <div id="tx_resizer" class="tx-resize-bar">
 	<div class="tx-resize-bar-bg"></div>
-	<img id="tx_resize_holder" src="/daumeditor/images/icon/editor/skin/01/btn_drag01.gif" width="58" height="12" unselectable="on" alt="" />
+	<img id="tx_resize_holder" src="/Project/daumeditor/images/icon/editor/skin/01/btn_drag01.gif" width="58" height="12" unselectable="on" alt="" />
 </div>
 <!-- 편집영역 끝 -->
 </div>
