@@ -34,7 +34,13 @@
 				<ul class="nav nav-second-level">	
 					<li><a href="/Project/attendance/task.do"><i class="fa fa-file-text-o"></i>　근태 작성 </a>
 					<li><a href="/Project/attendance/statistics.do"><i class="fa fa-bar-chart-o"></i>　근태 관련 통계 </a></li>
-					<li><a href="/Project/attendance/community.do"><i class="fa fa-quote-left fa-fw"></i>　근태 관련 자유게시판</a></li>
+					<li><a href="/Project/attendance/community.do"><i class="fa fa-quote-left fa-fw"></i>　근태 관련 자유게시판<span class="fa arrow"></span></a>
+					<ul class="nav nav-third-level">
+							<li><a href="/Project/attendance/communityA.do">　종합 게시판</a></li>
+							<li><a href="/Project/attendance/communityC.do">　일반 게시판</a></li>
+							<li><a href="/Project/attendance/communityQ.do">　질문 게시판</a></li>
+							<li><a href="/Project/attendance/communityS.do">　건의 게시판</a></li>
+						</ul></li>
 				</ul></li>	
 			<!-- ./김한주 : 근태 -->
 			
@@ -44,8 +50,7 @@
 				<ul class="nav nav-second-level">	
 					<li><a href="javascript:void(0)"><i class="fa fa-pencil fa-fw"></i>　기안서 작성 </a></li>
 					<li><a href="javascript:void(0)"><i class="fa fa-check fa-fw"></i>　결재 조회</a></li>
-					<li><a href="javascript:void(0)"><i class="fa fa-bar-chart-o"></i>　결재 건수 통계 </a></li>
-					<li><a href="/Project/company/pages/approval/list.jsp"><i class="fa fa-quote-left fa-fw"></i>　결재 관련 자유게시판 </a>
+					<li><a href="/Project/company/pages/approval/addBoard.jsp"><i class="fa fa-quote-left fa-fw"></i>　결재 관련 자유게시판 </a>
 				</ul></li>		
 			<!-- 결재 게시판 끝 -->		
 			
@@ -91,20 +96,14 @@
 					<li><a href="javascript:void(0)">대리게시판</a></li>
 				</ul></li>
 			<li><a href="javascript:void(0)"><i
-					class="fa fa-child fa-fw"></i>　전체 관리<span class="fa arrow"></span></a>
-					<ul class="nav nav-second-level">
-					<li><a href="javascript:void(0)"><i class="fa  fa-table fa-fw"></i>　주소록</a></li>
-					<li><a href="javascript:void(0)"><i class="fa fa-check fa-fw"></i>　설문조사</a></li>
-					<li><a href="javascript:void(0)"><i class="fa fa-bar-chart-o fa-fw"></i>　전체통계</a></li>
-					<li><a href="javascript:void(0)"><i class="fa fa-calendar-o fa-fw"></i>　전체게시판</a></li>
-				</ul></li>
+					class="fa fa-smile-o fa-fw"></i> 5. 전체게시판</a></li>
+
+	<!----------------- 태현 모임 ---------------------------->
 			<li><a href="javascript:void(0)"><i
 					class="fa fa-smile-o fa-fw"></i> 6. 모임 게시판<span class="fa arrow"></span></a>
 				<ul class="nav nav-second-level">
 					<li><a href="javascript:void(0)">단기모임모집 </a>
-				
-					<li><a href="javascript:void(0)">정기모임목록 </a>
-					
+					<li><a href="/Project/company/pages/club/clubList.jsp">정기모임목록 </a>
 					<li><a href="javascript:void(0)">나의 소속 모임 <span
 							class="fa arrow"></span></a>
 						<ul class="nav nav-third-level">
@@ -113,8 +112,9 @@
 							<li><a href="javascript:void(0)">볼링을 사랑하는 사람들</a></li>
 							<li><a href="javascript:void(0)">테니스왕자들</a></li>
 						</ul></li>
-					
+
 				</ul></li>
+   <!-------------------- 태현 모임ㅁ끝 -------------------->
 
 			<li><a href="javascript:void(0)"><font color="OrangeRed"><i
 						class="fa fa-gear fa-fw"></i> -아래 메뉴는 템플릿 메뉴얼임-</font></a></li>
@@ -166,10 +166,10 @@
 					class="fa fa-smile-o fa-fw"></i> 단일 레벨 메뉴 템플릿</a></li>
 			<!-- 하위메뉴 있는 제목 생성시 복붙하세요! -->
 			<li><a href="javascript:void(0)"><i
-					class="fa fa-smile-o fa-fw"></i> 멀티 레벨 메뉴 템플릿<span class="fa arrow"></a>
+					class="fa fa-smile-o fa-fw"></i> 멀티 레벨 메뉴 템플릿<span class="fa arrow"></span></a>
 				<ul class="nav nav-second-level">
 					<li><a href="javascript:void(0)">2단계-1 <span
-							class="fa arrow"></a>
+							class="fa arrow"></span></a>
 						<ul class="nav nav-third-level">
 							<li><a href="javascript:void(0)">3단계-1</a></li>
 						</ul></li>
