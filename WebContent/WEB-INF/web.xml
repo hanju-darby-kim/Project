@@ -64,6 +64,15 @@
 		<url-pattern>/attendance/template.do</url-pattern>
 	</servlet-mapping>	
 	
+	<servlet>
+		<servlet-name>attendance.index</servlet-name>
+		<servlet-class>com.fineapple.attendance.Index</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>attendance.index</servlet-name>
+		<url-pattern>/attendance/index.do</url-pattern>
+	</servlet-mapping>	
+	
 	
 	
 	
