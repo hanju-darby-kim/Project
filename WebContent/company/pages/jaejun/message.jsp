@@ -3,78 +3,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>SB Admin 2 - Bootstrap Admin Theme</title>
+<style>
 
-	<title>Message | Fine Apple</title>
-	<%@ include file="/company/inc/asset_css.jsp" %>
+</style>
+<script>
+
+</script>
+    <!-- Bootstrap Core CSS -->
+    <link href="/Project/company/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="/Project/company/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/Project/company/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/Project/company/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 
 <body>
 
-	<div id="wrapper">
-		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-		<!-- uppderHeader -->
-			<%@ include file="/company/inc/upperHeader.jsp" %>
+    <div id="wrapper">
 
-			<%@ include file="/company/inc/leftHeader.jsp" %>
-		</nav>
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            
+            <!-- upperHeader -->    
+            <%@ include file="/company/inc/upperHeader.jsp" %>
+			<!-- leftHeader -->
+        	<%@ include file="/company/inc/leftHeader.jsp" %>
 
+            
+        </nav>
 
-<!-- 
-		<div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">쪽지</h1>
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">결재 자유 게시판</h1>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                    테이블 내용
+                    
+                    
+                    <table id="board">
+                    	<tr>
+                            <th>Grid behavior</th>
+                            <td>Horizontal at all times</td>
+                            <td colspan="3">Collapsed to start, horizontal above breakpoints</td>
+                            </tr>
+                    	<tr>
+                            <th>Grid behavior</th>
+                            <td>Horizontal at all times</td>
+                            <td colspan="3">Collapsed to start, horizontal above breakpoints</td>
+                            </tr>
+                    	<tr>
+                            <th>Grid behavior</th>
+                            <td>Horizontal at all times</td>
+                            <td colspan="3">Collapsed to start, horizontal above breakpoints</td>
+                            </tr>
+                    	<tr>
+                            <th>Grid behavior</th>
+                            <td>Horizontal at all times</td>
+                            <td colspan="3">Collapsed to start, horizontal above breakpoints</td>
+                            </tr>
+                    	<tr>
+                            <th>Grid behavior</th>
+                            <td>Horizontal at all times</td>
+                            <td colspan="3">Collapsed to start, horizontal above breakpoints</td>
+                            </tr>
+                    </table>
+                    
+                    
                 </div>
-                /.col-lg-12
+                <!-- /.row -->
             </div>
-            /.row
-            
-	        Nav tabs
-	        <ul class="nav nav-tabs">
-	            <li class="active"><a href="#home" data-toggle="tab">Home</a>
-	            </li>
-	            <li><a href="#profile" data-toggle="tab">Profile</a>
-	            </li>
-	            <li><a href="#messages" data-toggle="tab">Messages</a>
-	            </li>
-	            <li><a href="#settings" data-toggle="tab">Settings</a>
-	            </li>
-	        </ul>
-	
-	        Tab panes
-	        <div class="tab-content">
-	            <div class="tab-pane fade in active" id="받은쪽지함">
-	                <h4>받은쪽지함</h4>
-	                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	            </div>
-	            <div class="tab-pane fade" id="profile">
-	                <h4>보낸쪽지함</h4>
-	                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	            </div>
-	            <div class="tab-pane fade" id="messages">
-	                <h4>보관쪽지함</h4>
-	                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	            </div>
-	            <div class="tab-pane fade" id="settings">
-	                <h4>개인설정</h4>
-	                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	            </div>
-	        </div>
-	    </div>
-	    /.panel-body
-            
+            <!-- /.container-fluid -->
         </div>
-        /#page-wrapper
- -->
+        <!-- /#page-wrapper -->
+
     </div>
     <!-- /#wrapper -->
 
-	<%@ include file="/company/inc/asset_js.jsp" %>
+    <!-- jQuery -->
+    <script src="/Project/company/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/Project/company/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/Project/company/vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/Project/company/dist/js/sb-admin-2.js"></script>
 
 </body>
 
