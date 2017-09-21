@@ -33,8 +33,11 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 	<style>
-		#addTable #FBCategory { height: 30px; width: 100px; }
-		#addTable { width: 800px; margin: 0px auto; border-top: 0px; }
+		#addTable #FBCategory { height: 30px; width: 100px; padding: 5px; }
+		#addTable { width: 900px; }
+		#addTable td:first-child { border-top: 0px; }
+		#addTable input { width: 95%; }
+		#addTable #content { width: 95%; height: 500px; }
 	</style>
 </head>
 
@@ -69,7 +72,7 @@
             <table class="table" id="addTable">
             	<tr>
             		<td>
-            			<select name="FBCategory" id="FBCategory">
+            			<select name="FBCategory" id="FBCategory" class="form-control">
             				<c:forEach items="${categoryList}" var="category">
 							<option>${category.name}</option> 
 							</c:forEach>           		
@@ -77,9 +80,14 @@
             		</td>
             	</tr>
             	<tr>
-	            	<th>
-	    				<input type="text" name="title" id="title" required>
-	           		</th>
+	            	<td>
+	    				<input type="text" name="title" id="title" class="form-control" placeholder="제목을 입력하세요" required>
+	           		</td>
+            	</tr>
+            	<tr>
+            		<td>
+            			<textarea name="content" id="content" class="form-control"></textarea>
+            		</td>
             	</tr>
             </table>
             </form>
@@ -104,3 +112,4 @@
 </body>
 
 </html>
+
