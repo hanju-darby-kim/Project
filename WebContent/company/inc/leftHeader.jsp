@@ -24,17 +24,58 @@
                             <a href="javascript:void(0)"><i class="fa fa-smile-o fa-fw"></i> 4. 부서별 게시판<span class="fa arrow"></a>
                             <ul class="nav nav-second-level">
                             	<li>
-                            		<a href="javascript:void(0)">개발부</a>
-                            	</li>
+                                    <a href="javascript:void(0)">개발부 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="javascript:void(0)">프로젝트</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">비용청구</a>
+                                        </li>
+                                    </ul>
+                                </li>
                             	<li>
-                            		<a href="javascript:void(0)">인사부</a>
-                            	</li>
+                                    <a href="javascript:void(0)">인사부 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="javascript:void(0)">프로젝트</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">비용청구</a>
+                                        </li>
+                                    </ul>
+                                </li>
                             	<li>
-                            		<a href="javascript:void(0)">총무부</a>
-                            	</li>
+                                    <a href="javascript:void(0)">총무부 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="javascript:void(0)">프로젝트</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">비용청구</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">수입처리</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">지출처리</a>
+                                        </li>
+                                    </ul>
+                                </li>
                             	<li>
-                            		<a href="javascript:void(0)">영업부</a>
-                            	</li>
+                                    <a href="javascript:void(0)">영업부 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="javascript:void(0)">프로젝트</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">비용청구</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">판매수입</a>
+                                        </li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
                         <li>
