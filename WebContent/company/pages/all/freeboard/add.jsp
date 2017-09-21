@@ -61,9 +61,13 @@
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
+            <form method="POST" action="/Project/all/freeboard/addok.do"></form>
+            <table class="table">
+            
+            </table>
         </div>
         <!-- /#page-wrapper -->
-
+		
     </div>
     <!-- /#wrapper -->
 
