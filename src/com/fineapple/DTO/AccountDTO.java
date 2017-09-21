@@ -1,5 +1,6 @@
 package com.fineapple.DTO;
 
+
 public class AccountDTO {
 
 	private String seq;

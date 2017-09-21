@@ -117,14 +117,15 @@ CREATE TABLE atdWrCategory
 	seq NUMBER PRIMARY KEY,
 	case VARCHAR2(1000) NOT NULL
 );
-SELECT * FROM atdWrCategory;
-drop table atdWrCategory;
 
 INSERT INTO atdwrcategory (seq, case) VALUES (1, '정상근무');
 INSERT INTO atdwrcategory (seq, case) VALUES (2, '특근');
 INSERT INTO atdwrcategory (seq, case) VALUES (3, '야근');
 INSERT INTO atdwrcategory (seq, case) VALUES (5, '지각');
 INSERT INTO atdwrcategory (seq, case) VALUES (6, '조퇴');
+
+SELECT * FROM atdWrCategory;
+drop table atdWrCategory;
 
 --------------------------------------------
 
@@ -134,78 +135,119 @@ CREATE TABLE atdWorkRecord
 (
 	seq NUMBER PRIMARY KEY,
 	eseq NUMBER NOT NULL REFERENCES employee(seq),
-	cseq NUMBER NOT NULL REFERENCES atdwrcategory(seq),
 	cometime DATE NOT NULL,
-	LEAVETIME DATE NOT NULL
+	LEAVETIME DATE NOT NULL,
+	memo VARCHAR2(2000) NULL
 );
 
-SELECT * FROM atdworkrecord;
-DROP TABLE ATDWORKRECORD;
+SELECT * FROM atdWorkRecord;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-INSERT INTO atdwrcategory (seq, categorys) VALUES (5, '정상근무,야근');
-insert into atdWrCategory (seq, categorys) values (6, '정상근무,외근');
-INSERT INTO atdwrcategory (seq, categorys) VALUES (7, '특근,야근');
-INSERT INTO atdwrcategory (seq, categorys) VALUES (8, '특근,외근');
-
-drop table atdWRCATEGORY;
-SELECT * FROM ATDWRCATEGORY;
-DELETE FROM atdwrcategory;
-
-ALTER TABLE ATDWRCATEGORY DROP COLUMN 
 --------------------------------------------
 
+--근태관리_근태기록_유형관리
+
+CREATE TABLE atdWrCtgManage
+(
+    seq number PRIMARY KEY ,
+    wrseq NUMBER NOT NULL REFERENCES atdWorkRecord(seq),
+    cseq NUMBER NOT NULL REFERENCES atdWrCategory(seq)
+);
+
+SELECT * FROM atdWrCtgManage;
+
+--------------------------------------------
+
+--근태관리_기타 근태기록_근태유형
+
+CREATE TABLE atdEtcCategory
+(
+    seq NUMBER PRIMARY KEY,
+    case VARCHAR2(1000) NOT NULL
+);
+
+INSERT INTO atdEtcCategory (seq, case) VALUES (1, '외출');
+INSERT INTO atdEtcCategory (seq, case) VALUES (2, '외근');
+
+SELECT * FROM atdEtcCategory;
+
+--------------------------------------------
+
+--근태관리_기타 근태기록(공통업무)
+
+CREATE TABLE atdEtcRecord
+(
+    SEQ NUMBER PRIMARY KEY,
+    WRSEQ NUMBER NOT NULL REFERENCES atdWorkRecord(SEQ),
+    LEAVEtime DATE NOT NULL,
+    COMETIME DATE NOT NULL,
+    MEMO VARCHAR2(2000) NULL
+);
+
+DROP table atdEtcRecord;
+SELECT * FROM atdEtcRecord;
+
+--------------------------------------------
+
+--근태관리_기타 근태기록_유형관리
+
+CREATE TABLE atdEtcCtgManage
+(
+    SEQ NUMBER PRIMARY KEY ,
+    ERSEQ NUMBER NOT NULL REFERENCES atdEtcRecord(SEQ),
+    CSEQ NUMBER NOT NULL REFERENCES atdEtcCategory(SEQ)
+);
+
+SELECT * FROM atdEtcCtgManage;
 
 --------------------------------------------
 
 --근태관리_휴가기록_휴가유형
 
-CREATE TABLE atdvrcategory
+CREATE TABLE atdVrcategory
 (
-	seq NUMBER PRIMARY KEY,
-	name varchar2(500) not null
+    seq NUMBER PRIMARY KEY,
+    CASE varchar2(500) not null
 );
 
-insert into atdVrCategory (seq, name) values (1, '연차');
-insert into atdVrCategory (seq, name) values (2, '반차');
+insert into atdVrCategory (seq, CASE) values (1, '연차');
+insert into atdVrCategory (seq, CASE) values (2, '반차');
+insert into atdVrCategory (seq, CASE) values (4, '경조휴가');
+insert into atdVrCategory (seq, CASE) values (5, '하계휴가');
+insert into atdVrCategory (seq, CASE) values (6, '동계휴가');
 
-insert into atdVrCategory (seq, name) values (4, '경조휴가');
-insert into atdVrCategory (seq, name) values (5, '하계휴가');
-insert into atdVrCategory (seq, name) values (6, '동계휴가');
-INSERT INTO atdvrcategory (seq, NAME) VALUES (7, '결근');
-DELETE FROM atdvrcategory;
-SELECT * FROM atdvrcategory;
-DROP TABLE ATDVRCATEGORY;
+SELECT * FROM atdVrcategory;
 
 --------------------------------------------
+
+--근태관리_휴가기록
+
+CREATE TABLE atdVacRecord
+(
+    SEQ NUMBER PRIMARY KEY ,
+    ESEQ NUMBER NOT NULL REFERENCES EMPLOYEE(SEQ),
+    CSEQ NUMBER NOT NULL REFERENCES atdVrcategory(SEQ),
+    LEAVETIME DATE NOT NULL ,
+    COMETIME DATE NOT NULL ,
+    MEMO VARCHAR2(2000) NULL
+);
+
+COMMIT;
+
+
+
+
+
+
+
+
+
+
+
+
 
 --근태관리_근태기록_근태유형
 
 
-CREATE TABLE atdVACRecord
-(
-	seq NUMBER PRIMARY KEY,
-	eseq NUMBER NOT NULL REFERENCES employee(seq),
-	cseq NUMBER NOT NULL REFERENCES atdwrcategory(seq),
-	LEAVETIME DATE NOT NULL,
-	COMETIME DATE NOT NULL
-);
-
-DROP TABLE atdvacrecord;
-SELECT * FROM ATDVACRECORD;
---------------------------------------------
 
 
 --------------------------------------------
