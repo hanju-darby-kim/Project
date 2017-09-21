@@ -6,7 +6,7 @@
                     	<li class="login-info">
      	               		<div id="profilePic">
         						<img src="/Project/company/images/user.jpg" style="width: 50px; margin: 10px;">       		
- 	                   			로그인 해주세요
+ 	                   			<span>이해나</span>
                     		</div>
                   				
                     	</li>
