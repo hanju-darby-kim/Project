@@ -134,10 +134,33 @@ CREATE TABLE atdWorkRecord
 (
 	seq NUMBER PRIMARY KEY,
 	eseq NUMBER NOT NULL REFERENCES employee(seq),
-	cseq NUMBER NOT NULL REFERENCES atdwrcategory(seq),
 	cometime DATE NOT NULL,
-	LEAVETIME DATE NOT NULL
+	LEAVETIME DATE NOT NULL,
+	memo VARCHAR2(2000) NULL
 );
+
+--------------------------------------------
+
+--근태관리_근태기록_유형관리
+
+CREATE TABLE atdWrCtgManage
+(
+    seq number PRIMARY KEY ,
+    wrseq NUMBER NOT NULL REFERENCES atdWorkRecord(seq),
+    cseq NUMBER NOT NULL REFERENCES atdWrCategory(seq)
+);
+
+--------------------------------------------
+
+--근태관리_기타 근태기록_근태유형
+CREATE TABLE atdEtcCategory
+(
+	seq NUMBER PRIMARY KEY,
+	case VARCHAR2(1000) NOT NULL
+);
+
+INSERT INTO atdEtcCategory (seq, case) VALUES (1, '')
+
 
 SELECT * FROM atdworkrecord;
 DROP TABLE ATDWORKRECORD;
@@ -145,7 +168,7 @@ DROP TABLE ATDWORKRECORD;
 
 
 
-
+COMMIT;
 
 
 
