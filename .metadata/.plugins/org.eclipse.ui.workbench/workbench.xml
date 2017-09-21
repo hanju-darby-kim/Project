@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="14" version="2.0">
 <workbenchAdvisor/>
-<window height="1040" width="960" x="960" y="0">
+<window height="1040" maximized="true" width="960" x="960" y="0">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -42,6 +42,9 @@
 <editor id="com.tomato.exerd.editor.DiagramEditor" name="company(50).exerd" partName="company(50).exerd" title="company(50).exerd" tooltip="D:\Class\Server&apos;s workSpace\Project\프로젝트 문서\2. ERD\company(50).exerd" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/D:/Class/Server&apos;s%20workSpace/Project/프로젝트%20문서/2.%20ERD/company(50).exerd"/>
 </editor>
+<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="company(100).exerd" partName="company(100).exerd" title="company(100).exerd" tooltip="D:\Class\Server&apos;s workSpace\Project\프로젝트 문서\2. ERD\company(100).exerd" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/D:/Class/Server&apos;s%20workSpace/Project/프로젝트%20문서/2.%20ERD/company(100).exerd"/>
+</editor>
 </editors>
 <views>
 <view id="com.tomato.exerd.ui.views.thumbnail" partName="썸네일">
@@ -61,7 +64,15 @@
 <view id="com.tomato.exerd.ui.views.domain" partName="도메인">
 <viewState/>
 </view>
-<view id="org.eclipse.ui.views.ContentOutline" partName="아웃라인"/>
+<view id="org.eclipse.ui.views.ContentOutline" partName="아웃라인">
+<viewState/>
+</view>
+<view id="org.eclipse.search.ui.views.SearchView" partName="검색">
+<viewState isPinned="false">
+<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
+<view IMemento.internal.id="com.tomato.exerd.core.searchpage" org.eclipse.search.lastActivation="1"/>
+</viewState>
+</view>
 <view id="org.eclipse.gef.ui.palette_view" partName="Palette">
 <viewState/>
 </view>
@@ -95,8 +106,8 @@
 <fastViewBars>
 <fastViewBar fastViewLocation="131072" id="rightFolder" orientation="512" selectedTabId="com.tomato.exerd.modelview3.ModelView3" style="0">
 <fastViews>
-<view id="com.tomato.exerd.modelview3.ModelView3" ratio="0.3"/>
-<view id="org.eclipse.ui.views.ContentOutline" ratio="0.3"/>
+<view id="com.tomato.exerd.modelview3.ModelView3" ratio="0.29978472"/>
+<view id="org.eclipse.ui.views.ContentOutline" ratio="0.29978472"/>
 </fastViews>
 </fastViewBar>
 <fastViewBar fastViewLocation="1024" id="bottomFolder" orientation="256" selectedTabId="com.tomato.exerd.ui.views.domain" style="0">
@@ -114,6 +125,11 @@
 <fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@18bbcdc" orientation="512" selectedTabId="com.tomato.exerd.ui.views.thumbnail" style="0">
 <fastViews>
 <view id="com.tomato.exerd.ui.views.thumbnail" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+<fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@1de487b" orientation="512" selectedTabId="org.eclipse.search.ui.views.SearchView" style="0">
+<fastViews>
+<view id="org.eclipse.search.ui.views.SearchView" ratio="0.3"/>
 </fastViews>
 </fastViewBar>
 <fastViewBar fastViewLocation="16384" id="leftFolder" orientation="512" selectedTabId="org.eclipse.ui.views.ResourceNavigator" style="0">
@@ -188,11 +204,10 @@
 <editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" uri="file:/D:/Class/Server&apos;s%20workSpace/Project/프로젝트%20문서/2.%20ERD/company.exerd"/>
 <editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" uri="file:/D:/Class/Server&apos;s%20workSpace/Project/프로젝트%20문서/2.%20ERD/company%20(2).exerd"/>
 <editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" uri="file:/D:/Class/Server&apos;s%20workSpace/Project/프로젝트%20문서/2.%20ERD/company(50)_170920%2016시48분%2050번백업.exerd"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" uri="file:/D:/Class/Server&apos;s%20workSpace/Project/프로젝트%20문서/2.%20ERD/company.exerd"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" uri="file:/D:/Class/Server&apos;s%20workSpace/Project/프로젝트%20문서/2.%20ERD/company(100).exerd"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" uri="file:/D:/Class/Server&apos;s%20workSpace/Project/프로젝트%20문서/2.%20ERD/company(50).exerd"/>
 </editors>
-<item historyLabel="company_김한주.exerd" index="0"/>
-<item historyLabel="company (2).exerd" index="1"/>
-<item historyLabel="company_김한주.exerd" index="0"/>
-<item historyLabel="company (2).exerd" index="1"/>
 <item historyLabel="company_김한주.exerd" index="0"/>
 <item historyLabel="company (2).exerd" index="1"/>
 <item historyLabel="company_김한주.exerd" index="0"/>
@@ -238,7 +253,11 @@
 <item historyLabel="company(50).exerd" index="3"/>
 <item historyLabel="company (2).exerd" index="6"/>
 <item historyLabel="company(50).exerd" index="3"/>
-<item active="true" historyLabel="company(50)_170920 16시48분 50번백업.exerd" index="7"/>
+<item historyLabel="company(50)_170920 16시48분 50번백업.exerd" index="7"/>
+<item historyLabel="company.exerd" index="8"/>
+<item historyLabel="company(100).exerd" index="9"/>
+<item historyLabel="company(50).exerd" index="10"/>
+<item active="true" historyLabel="company(100).exerd" index="9"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -252,6 +271,7 @@
 <trimArea IMemento.internal.id="131072">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@18bbcdc"/>
 <trimItem IMemento.internal.id="rightFolder"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@1de487b"/>
 </trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
@@ -265,6 +285,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="company(100).exerd" tooltip="D:\Class\Server&apos;s workSpace\Project\프로젝트 문서\2. ERD\company(100).exerd">
+<persistable uri="file:/D:/Class/Server&apos;s%20workSpace/Project/프로젝트%20문서/2.%20ERD/company(100).exerd"/>
+</file>
 <file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="company(50)_170920 16시48분 50번백업.exerd" tooltip="D:\Class\Server&apos;s workSpace\Project\프로젝트 문서\2. ERD\company(50)_170920 16시48분 50번백업.exerd">
 <persistable uri="file:/D:/Class/Server&apos;s%20workSpace/Project/프로젝트%20문서/2.%20ERD/company(50)_170920%2016시48분%2050번백업.exerd"/>
 </file>
