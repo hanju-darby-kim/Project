@@ -231,48 +231,14 @@ CREATE TABLE atdVacRecord
     MEMO VARCHAR2(2000) NULL
 );
 
-COMMIT;
-
-
-
-
-
-
-
-
-
-
-
-
-
---근태관리_근태기록_근태유형
-
-
-
+SELECT * FROM ATDVACRECORD;
 
 --------------------------------------------
 
---근태관리_근태기록(공통업무)
+COMMIT ;
 
-insert into atdWorkRecord (seq, eseq, cseq, comeTime, leaveTime) values ('고유번호', '직원번호', '카테고리번호', '출근시각', '퇴근시각');
-
-insert into atdWorkRecord (seq, eseq, cseq, comeTime, leaveTime) values (1, 10, 1, to_char('2017-08-01 09:00', 'yyyy-mm-dd hh:mi'), to_char('2017-08-01 18:00', 'yyyy-mm-dd hh:mi'));
-
-SELECT * FROM ATDWORKRECORD;
-
-SELECT * FROM atdwrcategory;
-
-
-
-DROP TABLE atdworkrecord;
-DROP TABLE atdWrCategory;
-DROP TABLE atdVacRecord;
-DROP TABLE atdworkrecord;
-DROP TABLE atdworkrecord;
-DROP TABLE atdworkrecord;
-
-
-
+--DUMMY
+--/Project/src/com/fineapple/dummy/AtdWorkRecord_dummy.java
 
 
 
