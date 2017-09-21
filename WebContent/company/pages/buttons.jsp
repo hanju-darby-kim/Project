@@ -48,7 +48,6 @@
             <%@ include file="/company/inc/upperHeader.jsp" %>
 			<!-- leftHeader -->
         	<%@ include file="/company/inc/leftHeader.jsp" %>
-        	
         </nav>
 
         <!-- Page Content -->
