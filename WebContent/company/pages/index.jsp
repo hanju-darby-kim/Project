@@ -15,7 +15,7 @@
 
 <body>
 
-	<div id="wrapper">
+	<div id="wrapper" style="max-width:1200px; margin:20px auto;">
 		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
 		<!-- uppderHeader -->
 			<%@ include file="/company/inc/upperHeader.jsp" %>
