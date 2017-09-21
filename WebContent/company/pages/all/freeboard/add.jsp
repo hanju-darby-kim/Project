@@ -102,6 +102,7 @@
 					</td>
 				</tr>
 			</table>
+			<input type="submit" class="btn btn-primary">
             </form>
 			
 		<%@include file="/company/inc/texteditor.jsp" %>
