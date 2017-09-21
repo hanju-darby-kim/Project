@@ -52,7 +52,8 @@
 </view>
 <view id="org.eclipse.ui.views.ResourceNavigator" partName="네비게이터">
 <viewState LINK_NAVIGATOR_TO_EDITOR="0" sorter="1">
-<filters>&#x0A;<filter element=".*" isEnabled="false"/>
+<filters>
+<filter element=".*" isEnabled="false"/>
 </filters>
 </viewState>
 </view>
@@ -66,12 +67,6 @@
 </view>
 <view id="org.eclipse.ui.views.ContentOutline" partName="아웃라인">
 <viewState/>
-</view>
-<view id="org.eclipse.search.ui.views.SearchView" partName="검색">
-<viewState isPinned="false">
-<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
-<view IMemento.internal.id="com.tomato.exerd.core.searchpage" org.eclipse.search.lastActivation="1"/>
-</viewState>
 </view>
 <view id="org.eclipse.gef.ui.palette_view" partName="Palette">
 <viewState/>
@@ -104,7 +99,7 @@
 <new_wizard_action id="com.tomato.exerd.term.ui.wizard.NewTermDictionaryWizard"/>
 <new_wizard_action id="com.tomato.exerd.xscript.ui.wizard.NewXScriptWizard"/>
 <fastViewBars>
-<fastViewBar fastViewLocation="131072" id="rightFolder" orientation="512" selectedTabId="com.tomato.exerd.modelview3.ModelView3" style="0">
+<fastViewBar fastViewLocation="131072" id="rightFolder" orientation="512" selectedTabId="org.eclipse.ui.views.ContentOutline" style="0">
 <fastViews>
 <view id="com.tomato.exerd.modelview3.ModelView3" ratio="0.29978472"/>
 <view id="org.eclipse.ui.views.ContentOutline" ratio="0.29978472"/>
@@ -127,14 +122,9 @@
 <view id="com.tomato.exerd.ui.views.thumbnail" ratio="0.3"/>
 </fastViews>
 </fastViewBar>
-<fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@1de487b" orientation="512" selectedTabId="org.eclipse.search.ui.views.SearchView" style="0">
-<fastViews>
-<view id="org.eclipse.search.ui.views.SearchView" ratio="0.3"/>
-</fastViews>
-</fastViewBar>
 <fastViewBar fastViewLocation="16384" id="leftFolder" orientation="512" selectedTabId="org.eclipse.ui.views.ResourceNavigator" style="0">
 <fastViews>
-<view id="org.eclipse.ui.views.ResourceNavigator" ratio="0.3"/>
+<view id="org.eclipse.ui.views.ResourceNavigator" ratio="0.29978472"/>
 </fastViews>
 </fastViewBar>
 </fastViewBars>
