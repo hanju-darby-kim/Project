@@ -27,7 +27,7 @@
 	<!-- all -->
 	<servlet>
 		<servlet-name>all.FreeBoard.add</servlet-name>
-		<servlet-class>com.fineapple.all.FBAdd</servlet-class>
+		<servlet-class>com.fineapple.all.FreeBoardAdd</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>all.FreeBoard.add</servlet-name>
