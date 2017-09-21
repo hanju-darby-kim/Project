@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 public class CommunityS extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/attendance/communityAll.jsp");
+	RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/attendance/communityS.jsp");
 	dispatcher.forward(req, resp);
 
 	

@@ -43,6 +43,7 @@
                     <div class="col-lg-12">
                         <!-- <h1 class="page-header">근태 관련 자유게시판</h1> -->
                     </div>
+                    
 					
 					
                     
@@ -50,8 +51,12 @@
                 </div>
                 
                 
+                
+                
                 <!-- /.row -->
             </div>
+            
+            
             
             
             <!-- /.container-fluid -->
