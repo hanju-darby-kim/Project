@@ -14,7 +14,7 @@ public class FreeBoardAdd extends HttpServlet {
 		protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 				throws ServletException, IOException {
 			
-			RequestDispatcher dispatcher = req.getRequestDispatcher("/pages/all/freeboardadd.jsp");
+			RequestDispatcher dispatcher = req.getRequestDispatcher("/pages/all/freeboard/freeboardadd.jsp");
 			dispatcher.forward(req, resp);
 			
 		}
