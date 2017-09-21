@@ -8,9 +8,6 @@ commit;
 
 CREATE VIEW vEmployee
 AS
-SELECT
-
-
   SELECT
     e.seq as empSeq,
     e.NAME as name,
@@ -18,7 +15,7 @@ SELECT
     e.CELLPHONE as cellphone,
     e.EMAIL as email,
     e.FIRSTDATE as firstDate,
-    e.ENDDATE as ENDDATE,
+    e.ENDDATE as endDate,
     e.PAYMENT as payment,
     e.DEPARTMENTSEQ as departmentSeq,
     d.DEPARTMENT as department,
@@ -26,7 +23,8 @@ SELECT
     e.PHONE as phone,
     e.PROFILEPIC as profilePic,
     e.task as task,
-    e.POSITIONSEQ as positionSeq
+    e.POSITIONSEQ as positionSeq,
+    p.POSITION as position
   FROM EMPLOYEE e
     INNER JOIN DEPARTMENT d
       ON e.DEPARTMENTSEQ = d.SEQ
@@ -35,7 +33,7 @@ SELECT
 
 select * from EMPLOYEE;
 select * from DEPARTMENT;
-select * from position;
+select * from vEmployee;
 
 
 COMMIT;
