@@ -51,6 +51,7 @@ insert into atdBCategory (seq, name) values (2, '일반');
 INSERT INTO atdbcategory (seq, NAME) VALUES (3, '질문');
 insert into atdBCategory (seq, name) values (4, '건의');
 
+SELECT * FROM atdbcategory;
 --------------------------------------------
 
 --근태관리_게시판_게시글
@@ -59,7 +60,7 @@ create table atdBoard
 (
 	seq NUMBER PRIMARY KEY,
 	eseq NUMBER NOT NULL REFERENCES employee(seq),
-	cseq NUMBER NOT NULL REFERENCES atdwrcategory(seq),
+	cseq NUMBER NOT NULL REFERENCES atdbcategory(seq),
 	subject VARCHAR2(1000) NOT NULL,
 	regdate DATE DEFAULT sysdate,
 	CONTENT VARCHAR2(2000) NOT NULL,
@@ -114,15 +115,34 @@ CREATE TABLE atdbfile
 CREATE TABLE atdWrCategory
 (
 	seq NUMBER PRIMARY KEY,
-	categorys VARCHAR2(500) NOT NULL
+	case VARCHAR2(1000) NOT NULL
 );
 
+drop table atdWrCategory;
+
 insert into atdWrCategory (seq, categorys) values (1, '정상근무');
-insert into atdWrCategory (seq, categorys) values (2, '연차');
+insert into atdWrCategory (seq, categorys) values (2, '특근');
+insert into atdWrCategory (seq, categorys) values (3, '야근');
+INSERT INTO atdwrcategory (seq, categorys) VALUES (4, '외근');
+insert into atdVrCategory (seq, ) values (3, '지각');
+insert into atdVrCategory (seq, ) values (3, '조퇴');
 
+
+
+
+
+
+
+INSERT INTO atdwrcategory (seq, categorys) VALUES (5, '정상근무,야근');
+insert into atdWrCategory (seq, categorys) values (6, '정상근무,외근');
+INSERT INTO atdwrcategory (seq, categorys) VALUES (7, '특근,야근');
+INSERT INTO atdwrcategory (seq, categorys) VALUES (8, '특근,외근');
+
+drop table atdWRCATEGORY;
 SELECT * FROM ATDWRCATEGORY;
-DELETE FROM ATDWRCATEGORY;
+DELETE FROM atdwrcategory;
 
+ALTER TABLE ATDWRCATEGORY DROP COLUMN 
 --------------------------------------------
 
 --근태관리_근태기록(공통업무)
@@ -136,19 +156,10 @@ CREATE TABLE atdWorkRecord
 	LEAVETIME DATE NOT NULL
 );
 
+SELECT * FROM atdworkrecord;
+DROP TABLE ATDWORKRECORD;
+
 --------------------------------------------
-
---근태관리_근태기록_외근
-
-CREATE TABLE atdwroutwork
-(
-	seq NUMBER PRIMARY KEY,
-	bseq NUMBER NOT NULL REFERENCES atdworkrecord(seq),
-	leavetime DATE NOT NULL,
-	COMETIME DATE NOT NULL
-);
-
-
 
 --근태관리_휴가기록_휴가유형
 
@@ -160,31 +171,31 @@ CREATE TABLE atdvrcategory
 
 insert into atdVrCategory (seq, name) values (1, '연차');
 insert into atdVrCategory (seq, name) values (2, '반차');
-insert into atdVrCategory (seq, name) values (3, '지각/조퇴/외출');
+
 insert into atdVrCategory (seq, name) values (4, '경조휴가');
 insert into atdVrCategory (seq, name) values (5, '하계휴가');
 insert into atdVrCategory (seq, name) values (6, '동계휴가');
-insert into atdVrCategory (seq, name) values (7, '결근');
+INSERT INTO atdvrcategory (seq, NAME) VALUES (7, '결근');
+DELETE FROM atdvrcategory;
+SELECT * FROM atdvrcategory;
+DROP TABLE ATDVRCATEGORY;
 
 --------------------------------------------
 
 --근태관리_근태기록_근태유형
 
-CREATE TABLE atdWrCategory
+
+CREATE TABLE atdVACRecord
 (
 	seq NUMBER PRIMARY KEY,
-	categorys VARCHAR2(500) NOT NULL
+	eseq NUMBER NOT NULL REFERENCES employee(seq),
+	cseq NUMBER NOT NULL REFERENCES atdwrcategory(seq),
+	LEAVETIME DATE NOT NULL,
+	COMETIME DATE NOT NULL
 );
 
-insert into atdWrCategory (seq, categorys) values (1, '정상근무');
-insert into atdWrCategory (seq, categorys) values (2, '특근');
-insert into atdWrCategory (seq, categorys) values (3, '야근');
-insert into atdWrCategory (seq, categorys) values (4, '외근');
-INSERT INTO atdwrcategory (seq, categorys) VALUES (5, '정상근무,야근');
-insert into atdWrCategory (seq, categorys) values (6, '정상근무,외근');
-INSERT INTO atdwrcategory (seq, categorys) VALUES (7, '특근,야근');
-insert into atdWrCategory (seq, categorys) values (8, '특근,외근');
-
+DROP TABLE atdvacrecord;
+SELECT * FROM ATDVACRECORD;
 --------------------------------------------
 
 
@@ -197,6 +208,19 @@ insert into atdWorkRecord (seq, eseq, cseq, comeTime, leaveTime) values ('고유
 insert into atdWorkRecord (seq, eseq, cseq, comeTime, leaveTime) values (1, 10, 1, to_char('2017-08-01 09:00', 'yyyy-mm-dd hh:mi'), to_char('2017-08-01 18:00', 'yyyy-mm-dd hh:mi'));
 
 SELECT * FROM ATDWORKRECORD;
+
+SELECT * FROM atdwrcategory;
+
+
+
+DROP TABLE atdworkrecord;
+DROP TABLE atdWrCategory;
+DROP TABLE atdVacRecord;
+DROP TABLE atdworkrecord;
+DROP TABLE atdworkrecord;
+DROP TABLE atdworkrecord;
+
+
 
 
 
