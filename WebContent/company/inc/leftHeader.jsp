@@ -3,7 +3,14 @@
 <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
+                    	<li class="login-info">
+     	               		<div id="profilePic">
+        						<img src="/Project/company/images/user.jpg" style="width: 50px; margin: 10px;">       		
+ 	                   			로그인 해주세요
+                    		</div>
+                  				
+                    	</li>
+                       <!--  <li class="sidebar-search">
                             <div class="input-group custom-search-form">
                                 <input type="text" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
@@ -11,10 +18,16 @@
                                     <i class="fa fa-search"></i>
                                 </button>
                             </span>
+<<<<<<< HEAD
                             </div>
                             <!-- /input-group -->
                         </li>
                         
+=======
+                            </div> -->
+                            <!-- /input-group 
+                        </li>-->
+>>>>>>> dda118bfcaf802143bb5490f462c536e42b40ad5
                         <li>
                             <a href="javascript:void(0)"><i class="fa fa-smile-o fa-fw"></i> 2. 근태 관리</a>
                         </li>
@@ -22,7 +35,7 @@
                             <a href="javascript:void(0)"><i class="fa fa-smile-o fa-fw"></i> 3. 결재 관리</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)"><i class="fa fa-smile-o fa-fw"></i> 4. 부서별 게시판<span class="fa arrow"></a>
+                            <a href="javascript:void(0)"><i class="fa fa-smile-o fa-fw"></i> 4. 부서별 게시판<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                             	<li>
                                     <a href="javascript:void(0)">개발부 <span class="fa arrow"></span></a>
@@ -80,7 +93,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="javascript:void(0)"><i class="fa fa-smile-o fa-fw"></i> 5. 직급별 게시판<span class="fa arrow"></a>
+                            <a href="javascript:void(0)"><i class="fa fa-smile-o fa-fw"></i> 5. 직급별 게시판<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                             	<li>
                             		<a href="javascript:void(0)">사장게시판</a>
@@ -100,7 +113,7 @@
                             <a href="javascript:void(0)"><i class="fa fa-smile-o fa-fw"></i> 5. 전체게시판</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)"><i class="fa fa-smile-o fa-fw"></i> 6. 모임게시판<span class="fa arrow"></a>
+                            <a href="javascript:void(0)"><i class="fa fa-smile-o fa-fw"></i> 6. 모임게시판<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                             	<li>
                             		<a href="javascript:void(0)">등산모임</a>
