@@ -50,7 +50,7 @@
 				<ul class="nav nav-second-level">	
 					<li><a href="javascript:void(0)"><i class="fa fa-pencil fa-fw"></i>　기안서 작성 </a></li>
 					<li><a href="javascript:void(0)"><i class="fa fa-check fa-fw"></i>　결재 조회</a></li>
-					<li><a href="/Project/company/pages/approval/addBoard.jsp"><i class="fa fa-quote-left fa-fw"></i>　결재 관련 자유게시판 </a>
+					<li><a href="/Project/company/pages/approval/list.jsp"><i class="fa fa-quote-left fa-fw"></i>　결재 관련 자유게시판 </a>
 				</ul></li>		
 			<!-- 결재 게시판 끝 -->		
 			
@@ -96,8 +96,12 @@
 					<li><a href="javascript:void(0)">대리게시판</a></li>
 				</ul></li>
 			<li><a href="javascript:void(0)"><i
-					class="fa fa-smile-o fa-fw"></i> 5. 전체게시판</a></li>
-
+					class="fa fa-child fa-fw"></i> 전체 관리<span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+					<li><a href="javascript:void(0)"><i class="fa fa-pencil fa-fw"></i>주소록</a></li>
+					<li><a href="javascript:void(0)"><i class="fa fa-pencil fa-fw"></i>설문조사</a></li>
+					<li><a href="javascript:void(0)"><i class="fa fa-pencil fa-fw"></i>전체게시판</a></li>
+				</ul></li>
 			<li><a href="javascript:void(0)"><i
 					class="fa fa-smile-o fa-fw"></i> 6. 모임 게시판<span class="fa arrow"></span></a>
 				<ul class="nav nav-second-level">
