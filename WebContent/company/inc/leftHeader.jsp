@@ -129,29 +129,6 @@
                         </li>
                         
                         <li>
-                            <a href="javascript:void(0)"><font color="OrangeRed"><i class="fa fa-gear fa-fw"></i> -제목 생성 템플릿-</font></a>
-                        </li>
-                        <!-- 하위메뉴 없는 제목 생성시 복붙하세요! -->
-                        <li>
-                            <a href="javascript:void(0)"><i class="fa fa-smile-o fa-fw"></i> 단일 레벨 메뉴 템플릿</a>
-                        </li>
-                        <!-- 하위메뉴 있는 제목 생성시 복붙하세요! -->                        
-                        <li>
-                            <a href="javascript:void(0)"><i class="fa fa-smile-o fa-fw"></i> 멀티 레벨 메뉴 템플릿<span class="fa arrow"></a>
-                            <ul class="nav nav-second-level">
-                            	<li>
-                            		<a href="javascript:void(0)">2단계-1 <span class="fa arrow"></a>
-	                            	<ul class="nav nav-third-level">
-	                            		<li><a href="javascript:void(0)">3단계-1</a></li>
-	                            	</ul>
-                            	</li>
-                            	<li>
-                            		<a href="javascript:void(0)">2단계-2 </a>
-                            	</li>
-                            </ul>
-                        </li>
-                        
-                        <li>
                             <a href="javascript:void(0)"><font color="OrangeRed"><i class="fa fa-gear fa-fw"></i> -아래 메뉴는 템플릿 메뉴얼임-</font></a>
                         </li>
                         <li>
@@ -199,6 +176,7 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                        
                         <li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -229,6 +207,31 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                        
+                        
+                        <li>
+                            <a href="javascript:void(0)"><font color="OrangeRed"><i class="fa fa-gear fa-fw"></i> -제목 생성 템플릿-</font></a>
+                        </li>
+                        <!-- 하위메뉴 없는 제목 생성시 복붙하세요! -->
+                        <li>
+                            <a href="javascript:void(0)"><i class="fa fa-smile-o fa-fw"></i> 단일 레벨 메뉴 템플릿</a>
+                        </li>
+                        <!-- 하위메뉴 있는 제목 생성시 복붙하세요! -->                        
+                        <li>
+                            <a href="javascript:void(0)"><i class="fa fa-smile-o fa-fw"></i> 멀티 레벨 메뉴 템플릿<span class="fa arrow"></a>
+                            <ul class="nav nav-second-level">
+                            	<li>
+                            		<a href="javascript:void(0)">2단계-1 <span class="fa arrow"></a>
+	                            	<ul class="nav nav-third-level">
+	                            		<li><a href="javascript:void(0)">3단계-1</a></li>
+	                            	</ul>
+                            	</li>
+                            	<li>
+                            		<a href="javascript:void(0)">2단계-2 </a>
+                            	</li>
+                            </ul>
+                        </li>
+                        
                         <li>
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">

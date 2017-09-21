@@ -1,3 +1,4 @@
+-- 테이블 생성
 -- 직원 테이블
 create table employee
 (
@@ -24,9 +25,8 @@ create table employee
 				references tblPosition(seq)      -- 직급 시퀀스
 );
 
--- 부서 테이블
-SELECT * FROM DEPARTMENT;
-SELECT * FROM tblPosition;
-SELECT * FROM COMPANY;
+-- 직원 테이블의 시퀀스 생성
+create sequence employeeSeq;
 
-DROP TABLE employee;
+-- 확인용
+select * from employee;
