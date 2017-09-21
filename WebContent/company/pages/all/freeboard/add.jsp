@@ -34,8 +34,10 @@
     <![endif]-->
 	<style>
 		#addTable #FBCategory { height: 30px; width: 100px; padding: 5px; }
-		#addTable { width: 1000px; border-top: 0px; }
-		#addTable input, #addTable textarea { width: 100%; }
+		#addTable { width: 900px; }
+		#addTable td:first-child { border-top: 0px; }
+		#addTable input { width: 95%; }
+		#addTable #content { width: 95%; height: 500px; }
 	</style>
 </head>
 
@@ -78,9 +80,14 @@
             		</td>
             	</tr>
             	<tr>
-	            	<th>
+	            	<td>
 	    				<input type="text" name="title" id="title" class="form-control" placeholder="제목을 입력하세요" required>
-	           		</th>
+	           		</td>
+            	</tr>
+            	<tr>
+            		<td>
+            			<textarea name="content" id="content" class="form-control"></textarea>
+            		</td>
             	</tr>
             </table>
             </form>
@@ -105,3 +112,4 @@
 </body>
 
 </html>
+
