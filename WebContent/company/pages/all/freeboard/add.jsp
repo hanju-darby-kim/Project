@@ -33,8 +33,9 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 	<style>
-		#addTable #FBCategory { height: 30px; width: 100px; }
-		#addTable { width: 800px; margin: 0px auto; border-top: 0px; }
+		#addTable #FBCategory { height: 30px; width: 100px; padding: 5px; }
+		#addTable { width: 1000px; border-top: 0px; }
+		#addTable input, #addTable textarea { width: 100%; }
 	</style>
 </head>
 
@@ -69,7 +70,7 @@
             <table class="table" id="addTable">
             	<tr>
             		<td>
-            			<select name="FBCategory" id="FBCategory">
+            			<select name="FBCategory" id="FBCategory" class="form-control">
             				<c:forEach items="${categoryList}" var="category">
 							<option>${category.name}</option> 
 							</c:forEach>           		
@@ -78,7 +79,7 @@
             	</tr>
             	<tr>
 	            	<th>
-	    				<input type="text" name="title" id="title" required>
+	    				<input type="text" name="title" id="title" class="form-control" placeholder="제목을 입력하세요" required>
 	           		</th>
             	</tr>
             </table>

@@ -132,7 +132,7 @@
                             <a href="javascript:void(0)"><font color="OrangeRed"><i class="fa fa-gear fa-fw"></i> -아래 메뉴는 템플릿 메뉴얼임-</font></a>
                         </li>
                         <li>
-                            <a href="index.jsp"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="/Project/company/pages/index.jsp"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
