@@ -8,12 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Template extends HttpServlet {
-    
+public class Task extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
-	RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/attendance/template.jsp");
+	RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/attendances/task");
 	dispatcher.forward(req, resp);
 
     }

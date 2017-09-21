@@ -7,6 +7,16 @@ body {
 	background-color: #f8f8f8;
 }
 
+.logo-btn{
+	background : url("/Project/company/images/logo2color.png");
+	margin-left:20px;
+	width:125px;
+	height:75px;
+	background-repeat : no-repeat;
+	background-size:contain;
+	cursor: pointer;	
+}
+
 #wrapper {
 	width: 100%;
 	max-width:1200px; 
@@ -30,6 +40,7 @@ body {
 
 .navbar-top-links {
 	margin-right: 0;
+	margin-top:10px;
 }
 
 .navbar-top-links li {
@@ -131,7 +142,7 @@ body {
 		z-index: 1;
 		position: absolute;
 		width: 250px;
-		margin-top: 51px;
+		margin-top: 75px;
 	}
 	.navbar-top-links .dropdown-messages, .navbar-top-links .dropdown-tasks,
 		.navbar-top-links .dropdown-alerts {

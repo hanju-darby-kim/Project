@@ -22,7 +22,7 @@
 
 			<%@ include file="/company/inc/leftHeader.jsp" %>
 		</nav>
-
+		<div style="clear:both;"></div>
 		<div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">

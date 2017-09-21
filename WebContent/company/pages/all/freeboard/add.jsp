@@ -13,6 +13,9 @@
     <meta name="author" content="">
 
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    
+   
+    
 
     <!-- Bootstrap Core CSS -->
     <link href="/Project/company/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,10 +29,11 @@
     <!-- Custom Fonts -->
     <link href="/Project/company/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     
-    <!-- 다음에디터 -->
-    <link rel="stylesheet" href="/Project/daumeditor/css/editor.css" type="text/css" charset="utf-8"/> 
-    <script src="/Project/daumeditor/js/editor_loader.js" type="text/javascript" charset="utf-8"></script> 
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
+    
+    
+     
+    
+    
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -74,7 +78,8 @@
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
-            <form method="POST" action="/Project/pages/all/freeboard/addok.do">
+            
+            <form name="frm" id="frm" action="/Project/pages/all/freeboard/addok.do" method="post" accept-charset="utf-8">
             <table class="table" id="addTable">
             	<tr>
             		<td>
@@ -90,26 +95,25 @@
 	    				<input type="text" name="title" id="title" class="form-control" placeholder="제목을 입력하세요" required>
 	           		</td>
             	</tr>
-            	
-            
-            </table>
+            	<tr>
+            		<td>
+			            <div>			    
+					        <!-- 에디터프레임호출 영역 -->
+					        <div id="editor_frame"></div>
+					        <!-- 실제 값이 담겨져서 넘어갈 textarea 태그 -->
+					        <textarea name="daumeditor" id="daumeditor" rows="10" cols="100" style="width:766px; height:412px;display: none;"></textarea>
+					        <input type="button" id="save_button" value="내용전송"/>					    
+						</div>
+			
+					</td>
+				</tr>
+				</table>
             </form>
-            
-            <div>
-			    <form name="frm" id="frm" action="/send.jsp" method="post" accept-charset="utf-8">
-			        <!-- 에디터프레임호출 영역 -->
-			        <div id="editor_frame"></div>
-			        <!-- 실제 값이 담겨져서 넘어갈 textarea 태그 -->
-			        <textarea name="daumeditor" id="daumeditor" rows="10" cols="100" style="width:766px; height:412px;display: none;"></textarea>
-			        <input type="button" id="save_button" value="내용전송"/>
-			    </form>
-			</div>
-
 
             <script>
             $(function(){
                 $.ajax({
-                    url : "/Project/daumeditor/editor_frame.jsp",
+                    url : "/Project/daumeditor/editor.html",
                     success : function(data){
                         $("#editor_frame").html(data);
                         // 에디터UI load
@@ -160,7 +164,7 @@
                             },
                             size: {
                                 /* 지정된 본문영역의 넓이가 있을 경우에 설정 */
-                                contentWidth: 700
+                                contentWidth: 900
                             }
                         };
                          
@@ -206,6 +210,9 @@
 		
     </div>
     <!-- /#wrapper -->
+    
+    <script src="/Project/daumeditor/js/editor_loader.js" type="text/javascript" charset="utf-8"></script> 
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
 
     <!-- jQuery -->
     <script src="/Project/company/vendor/jquery/jquery.min.js"></script>
@@ -218,6 +225,8 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="/Project/company/dist/js/sb-admin-2.js"></script>
+    
+    
 
 </body>
 

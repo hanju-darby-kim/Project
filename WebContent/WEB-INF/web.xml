@@ -55,26 +55,41 @@
 	
 	
 	<!-- attendance -->
-	<servlet>
-		<servlet-name>attendance.template</servlet-name>
-		<servlet-class>com.fineapple.attendance.Template</servlet-class>
+	<servlet>	<!-- 로그인페이지 -->
+		<servlet-name>attendance.login</servlet-name>
+		<servlet-class>com.fineapple.attendance.Login</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>attendance.template</servlet-name>
-		<url-pattern>/attendance/template.do</url-pattern>
-	</servlet-mapping>	
+		<servlet-name>attendance.login</servlet-name>
+		<url-pattern>/attendance/login.do</url-pattern>
+	</servlet-mapping>		
 	
-	<servlet>
-		<servlet-name>attendance.index</servlet-name>
-		<servlet-class>com.fineapple.attendance.Index</servlet-class>
+	<servlet>	<!-- 합계 -->
+		<servlet-name>attendance.statistics</servlet-name>
+		<servlet-class>com.fineapple.attendance.Statistics</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>attendance.index</servlet-name>
-		<url-pattern>/attendance/index.do</url-pattern>
-	</servlet-mapping>	
+		<servlet-name>attendance.statistics</servlet-name>
+		<url-pattern>/attendance/statistics.do</url-pattern>
+	</servlet-mapping>		
 	
+	<servlet>	<!-- 커뮤니티 -->
+		<servlet-name>attendance.community</servlet-name>
+		<servlet-class>com.fineapple.attendance.Community</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>attendance.community</servlet-name>
+		<url-pattern>/attendance/community.do</url-pattern>
+	</servlet-mapping>		
 	
-	
+	<servlet>	<!-- 근태관리 -->
+		<servlet-name>attendance.task</servlet-name>
+		<servlet-class>com.fineapple.attendance.Task</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>attendance.task</servlet-name>
+		<url-pattern>/attendance/task.do</url-pattern>
+	</servlet-mapping>		
 	
 	
 	
