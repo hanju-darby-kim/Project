@@ -55,15 +55,6 @@
 	
 	
 	<!-- attendance -->
-	<servlet>	<!-- 메인페이지 -->
-		<servlet-name>attendance.home</servlet-name>
-		<servlet-class>com.fineapple.attendance.Home</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>attendance.home</servlet-name>
-		<url-pattern>/attendance/home.do</url-pattern>
-	</servlet-mapping>	
-	
 	<servlet>	<!-- 로그인페이지 -->
 		<servlet-name>attendance.login</servlet-name>
 		<servlet-class>com.fineapple.attendance.Login</servlet-class>
