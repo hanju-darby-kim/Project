@@ -42,12 +42,12 @@
 						</div>
 						<!-- /.panel-heading -->
 						<div class="panel-body">
-							<form action="/Project/company/pages/department/project/write_go.do" method="post">
+							<form action="/Project/company/pages/department/project/write_o_go.do" method="post">
 								<table id="dev_write" width="100%" class="table table-striped table-bordered table-hover">
 									<tr>
 										<!-- 자동입력 -->
 										<th>작성자</th>
-										<td><input type="text" name="emp" id="emp" class="form-control" required readonly /></td>
+										<td><input type="text" name="emp" id="emp" class="form-control" value="${name}" required readonly /></td>
 									</tr>
 									<tr>
 										<th>분류</th>
@@ -61,7 +61,7 @@
 									</tr>
 									<tr>
 										<th>설명</th>
-										<td><textarea name="content" id="content" class="form-control" required></textarea></td>
+										<td><textarea name="content" id="content" rows="10" class="form-control" required></textarea></td>
 									</tr>
 									<tr>
 										<th>금액</th>

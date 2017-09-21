@@ -15,6 +15,7 @@
 
 	<%@ include file="/company/inc/asset_css.jsp" %>
 	<%@ include file="/company/inc/asset_js.jsp" %>
+	<link href="/Project/company/dist/css/department.css" rel="stylesheet">	
 
 </head>
 
@@ -38,28 +39,30 @@
 				<div class="col-lg-12">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
-							<i class="fa fa-bar-chart-o fa-fw"></i> 새로운 프로젝트 작성
+							<i class="fa fa-bar-chart-o fa-fw"></i> 상세 업무 추가
 						</div>
 						<!-- /.panel-heading -->
 						<div class="panel-body">
-							<form action="/Project/company/pages/department/project/write_go.do" method="post">
+							<form action="/Project/company/pages/department/project/write_detail_go.do" method="post">
 								<table id="dev_write" width="100%" class="table table-striped table-bordered table-hover">
 									<tr>
 										<!-- 자동입력 -->
-										<th>작성자</th>
-										<td><input type="text" name="emp" id="emp" class="form-control" 	required readonly /></td>
+										<th>담당자</th>
+										<td><input type="text" name="emp" id="emp" class="form-control" required readonly /></td>
 									</tr>
 									<tr>
-										<th>주제</th>
-										<td><input type="text" name="subject" id="subject" class="form-control" required /></td>
-									</tr>
-									<tr>
-										<th>목표</th>
-										<td><textarea name="goal" id="goal" class="form-control" required></textarea></td>
+										<th>단위업무 설정</th>
+										<td>
+										<!-- foreach 사용, 진행중 프로젝트의 단위업무만 -->
+											<select name="unit" id="unit" class="form-control">
+												<option value=""></option>
+												<option value=""></option>
+											</select>
+										</td>
 									</tr>
 									<tr>
 										<th>설명</th>
-										<td><textarea name="content" id="content" class="form-control" required></textarea></td>
+										<td><textarea name="content" id="content" class="form-control" rows="10" required></textarea></td>
 									</tr>
 									<tr>
 										<th>시작일</th>
@@ -81,8 +84,8 @@
 									</tr>
 								</table>
 								<div id="btns">
-									<input type="button" value="돌아가기" class="btn btn-default" 	onclick="history.back();"/>
-									<input type="submit" value="글쓰기" class="btn btn-primary" />
+									<input type="button" value="돌아가기" class="btn btn-default" onclick="history.back();"/>
+									<input type="submit" value="작성하기" class="btn btn-primary" />
 								</div>
 							</form>
 						</div>

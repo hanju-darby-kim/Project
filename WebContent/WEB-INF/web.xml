@@ -15,13 +15,22 @@
 	
 	<!-- Department -->
 	<servlet>
-		<servlet-name>department.dev.main</servlet-name>
-		<servlet-class>com.fineapple.department</servlet-class>
+		<servlet-name>department.temp_start</servlet-name>
+		<servlet-class>com.fineapple.department.TempStart</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>department.dev.main</servlet-name>
-		<url-pattern>/pages/department/dev/main.do</url-pattern>
+		<servlet-name>department.temp_start</servlet-name>
+		<url-pattern>/company/pages/department/tempstart.do</url-pattern>
 	</servlet-mapping>
+		<!-- Department / dev -->
+		<servlet>
+			<servlet-name>department.dev.outcome.write</servlet-name>
+			<servlet-class>com.fineapple.department.DevWriteOutcome</servlet-class>
+		</servlet>
+		<servlet-mapping>
+			<servlet-name>department.dev.outcome.write</servlet-name>
+			<url-pattern>/company/pages/department/dev/outcome/dev_write_o.do</url-pattern>
+		</servlet-mapping>
 	
 	
 	<!-- all -->
@@ -42,6 +51,29 @@
 		<servlet-name>all.FreeBoard.addok</servlet-name>
 		<url-pattern>/all/freeboard/addok.do</url-pattern>
 	</servlet-mapping>
+	
+	
+	
+	<!-- attendance -->
+	<servlet>
+		<servlet-name>attendance.template</servlet-name>
+		<servlet-class>com.fineapple.attendance.Template</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>attendance.template</servlet-name>
+		<url-pattern>/attendance/template.do</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>attendance.index</servlet-name>
+		<servlet-class>com.fineapple.attendance.Index</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>attendance.index</servlet-name>
+		<url-pattern>/attendance/index.do</url-pattern>
+	</servlet-mapping>	
+	
+	
 	
 	
 	
