@@ -208,9 +208,9 @@
 					</div>
 					<div class="tx-menu-footer">
 						<img class="tx-menu-confirm"
-							 src="/daumeditor/images/icon/editor/btn_confirm.gif?rv=1.0.1" alt=""/>
+							 src="/Project/daumeditor/images/icon/editor/btn_confirm.gif?rv=1.0.1" alt=""/>
 						<img class="tx-menu-cancel" hspace="3"
-							 src="/daumeditor/images/icon/editor/btn_cancel.gif?rv=1.0.1" alt=""/>
+							 src="/Project/daumeditor/images/icon/editor/btn_cancel.gif?rv=1.0.1" alt=""/>
 					</div>
 				</div>
 			</li>
@@ -347,7 +347,6 @@
 	<!-- 편집영역 시작 -->
 		<!-- 에디터 Start -->
 <div id="tx_canvas" class="tx-canvas">
-	<div id="tx_loading" class="tx-loading"><div><img src="/Project/daumeditor/images/icon/editor/loading2.png" width="113" height="21" align="absmiddle"/></div></div>
 	<div id="tx_canvas_wysiwyg_holder" class="tx-holder" style="display:block;">
 		<iframe id="tx_canvas_wysiwyg" name="tx_canvas_wysiwyg" allowtransparency="true" frameborder="0"></iframe>
 	</div>
