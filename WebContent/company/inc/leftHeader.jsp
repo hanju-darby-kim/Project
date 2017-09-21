@@ -4,12 +4,16 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                     	<li class="login-info">
-     	               		<div id="profilePic">
-        						<img src="/Project/company/images/user.jpg" style="width: 50px; margin: 10px;">       		
- 	                   			<span>이해나</span>
+     	               		<div id="profile">
+        						<img src="/Project/company/images/user.jpg" style="width: 50px; margin: 10px; float:left">       		
+ 	                   			<div style="float:left; margin-top: 15px;">
+ 	                   				<div>이해나</div>
+ 	                   				<div>개발부 사장</div>    <!-- 나중에 el로 처리 -->       				
+ 	                   			</div>          			
                     		</div>
                   				
                     	</li>
+                    	<li style="clear: both;"></li>
                        <!--  <li class="sidebar-search">
                             <div class="input-group custom-search-form">
                                 <input type="text" class="form-control" placeholder="Search...">
