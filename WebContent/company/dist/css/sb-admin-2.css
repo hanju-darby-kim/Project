@@ -7,6 +7,16 @@ body {
 	background-color: #f8f8f8;
 }
 
+.logo-btn{
+	background : url("/Project/company/images/logo2color.png");
+	margin-left:20px;
+	width:125px;
+	height:75px;
+	background-repeat : no-repeat;
+	background-size:contain;
+	cursor: pointer;	
+}
+
 #wrapper {
 	width: 100%;
 	max-width:1200px; 
