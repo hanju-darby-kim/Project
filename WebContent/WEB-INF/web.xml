@@ -22,4 +22,26 @@
 		<servlet-name>department.dev.main</servlet-name>
 		<url-pattern>/pages/department/dev/main.do</url-pattern>
 	</servlet-mapping>
+	
+	
+	<!-- all -->
+	<servlet>
+		<servlet-name>all.FreeBoard.add</servlet-name>
+		<servlet-class>com.fineapple.all.FreeBoardAdd</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all.FreeBoard.add</servlet-name>
+		<url-pattern>/pages/all/FBAdd.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </web-app>
