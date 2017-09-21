@@ -15,6 +15,7 @@
 
 	<%@ include file="/company/inc/asset_css.jsp" %>
 	<%@ include file="/company/inc/asset_js.jsp" %>
+	<link href="/Project/company/dist/css/department.css" rel="stylesheet">
 
 </head>
 

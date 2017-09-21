@@ -1,4 +1,4 @@
-package com.fineapple.dummy;
+package com.fineapple.attendance;
 
 public class AtdWorkRecord_dummy {
 
@@ -8,17 +8,7 @@ public class AtdWorkRecord_dummy {
 	//직원번호는 10~62번.
 	//getWrSql(10);
 	getWcmSql(10);
-	
-	
-	
-	
-	
-	
-		
-		
-		
-	
-    }
+}
     
     //직원의 고유번호를 받아서, 8월 동안의 WorkRecord insert 문을 출력한다. 
     //9시 출근, 18시 퇴근
