@@ -3,6 +3,9 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="/Project/company/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- DatePicker CSS -->
+    <link href="/Project/company/dist/css/datepicker.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
     <link href="/Project/company/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">

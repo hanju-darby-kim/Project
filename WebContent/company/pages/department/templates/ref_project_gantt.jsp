@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<script src="../../code/highcharts.js"></script>
-<script src="../../code/highcharts-more.js"></script>
-<script src="../../code/modules/exporting.js"></script>
+<script src="/Project/company/dist/js/highcharts.js"></script>
+<script src="/Project/company/dist/js/highcharts-more.js"></script>
 
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
