@@ -104,7 +104,7 @@
 					<!-- 월간인기글 테이블 -->
 					<div class="col-lg-6 head-board" id="head-board-right">
 						<div class="panel panel-default">
-							<div class="panel-heading text-center">최근에 <p class="text-primary">답변</p>을 받은 </div>
+							<div class="panel-heading text-center">최근에 <p class="text-primary">답변을 받은</p> 질문</div>
 							<!-- /.panel-heading -->
 							<div class="panel-body">
 								<div class="table-responsive">
