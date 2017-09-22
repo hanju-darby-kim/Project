@@ -39,6 +39,17 @@ SELECT * FROM freeboard;
 COMMIT;
 
 select * from FBFILE;
+DROP TABLE FBfILE;
+DROP SEQUENCE FBFileSeq;
+
+CREATE TABLE FBFILE
+(
+  seq NUMBER PRIMARY KEY,
+  fbSeq number NOT NULL REFERENCES FREEBOARD(seq),
+  orgFileName VARCHAR2(100) not null,
+  fileName VARCHAR2(100) not null
+);
+CREATE SEQUENCE fbFileSeq;
 INSERT INTO freeboard (seq, empSeq, FBCategory, title, content, readCount, regDate, thread, depth) VALUES (freeBoardSeq.nextVal, 10, 1, '열심히합시다', '야근합시다', DEFAULT, DEFAULT, DEFAULT, DEFAULT);
 
 INSERT INTO (seq, FBSeq, orgFileName, fileName) VALUES (FBFileSeq.nextVal, 4, 'test', 'test');

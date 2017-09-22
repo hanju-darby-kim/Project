@@ -47,7 +47,7 @@ public class FreeBoardDAO {
 		
 	}
 
-	public int addFile(FreeBoardDTO fbdto) {
+	public int addFreeBord(FreeBoardDTO fbdto) {
 		try {
 			
 			String sql = "INSERT INTO freeboard (seq, empSeq, FBCategory, title, content, readCount, regDate, thread, depth) "
@@ -67,7 +67,7 @@ public class FreeBoardDAO {
 		}
 	}
 
-	public int addFreeBoard(FreeBoardDTO fbdto) {
+	public int addFile(FreeBoardDTO fbdto) {
 		try {
 			
 			int result = 0; 

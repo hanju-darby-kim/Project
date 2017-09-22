@@ -79,7 +79,7 @@
                     <!-- 글쓰기 폼 -->
                     글을 쓰면 이페이지로 넘어갑니다..
                     <input type="hidden" name="name" value="${dto.name}">
-                   
+                                       
                   
 				
                     

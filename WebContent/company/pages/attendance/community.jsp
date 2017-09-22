@@ -35,7 +35,7 @@
 	#dataTables-example_wrapper > div:nth-child(1) > div:nth-child(3) {float:right; display:inline;}
 	
 	/* 페이지길이 내 옵션을 우측정렬 */
-	#dataTables-example_length > label > select {text-align: right;}
+	#dataTables-example_length > label > select > option {}
 	
 	/* 게시물 쇼잉 현황을 보여주는 폼 */
 	#dataTables-example_wrapper > div:nth-child(3) > div:nth-child(1) {padding-left: 20px;}
@@ -215,17 +215,13 @@
 				</div>
 				<!-- /.rows -->
 
-<!--         
-        <div class="panel-body">
-            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
- -->
 
 
 
 				<div class="row">
 					<div class="col-lg-12" id="center-board">
 						<div class="panel panel-default">
-							<div class="panel-heading text-center">자유게시판</div>
+							<div class="panel-heading text-center"><span style="color:#F0AD4E">자유</span><span style="color:#5CB85C">게시판</span></div>
 							<!-- /.panel-heading -->
 							<div class="panel-body" id="center-panel-heading">
 								<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -1471,7 +1467,6 @@
 		$('#dataTables-example_length > label > select > option:nth-child(1)').text('10 개');	
 		$('#dataTables-example_length > label > select > option:nth-child(2)').text('25 개');	
 		$('#dataTables-example_length > label > select > option:nth-child(3)').text('50 개');	
-		$('#dataTables-example_length > label > select > option:nth-child(4)').text('100 개');	
 		
 	    		
 		
