@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<!-- 스크립트로 alert만 띄우고 바로 index로 보내줌 -->
 </body>
 </html>

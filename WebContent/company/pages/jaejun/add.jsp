@@ -9,12 +9,9 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title>Message | Fine Apple</title>
-<style>
 
-</style>
-<script>
-
-</script>
+	<script type="text/javascript" src="/Project/smarteditor/workspace/js/service/HuskyEZCreator.js" charset="utf-8"></script>
+	
     <!-- Bootstrap Core CSS -->
     <link href="/Project/company/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -33,6 +30,28 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+<style>
+	#headerInbox{
+		vertical-align: middle;
+		display: inline-block;
+		width: 820px;
+	}
+	#headerInbox + input {
+		margin-top: 5px;
+	}
+	
+	#page-wrapper .class:NTH-CHILD(2) {
+		display: none;
+	}
+	
+	#btns{
+		text-align: right;
+	}
+</style>
+<script>
+
+</script>
 
 </head>
 
@@ -53,19 +72,51 @@
         <!-- Page Content -->
         <div id="page-wrapper">
 	        <div class="row">
-	            <div class="col-lg-12">
+	            <div id="headerInbox" class="col-lg-12">
 	                <h1 class="page-header">쪽지쓰기</h1>
 	            </div>
 	            <!-- /.col-lg-12 -->
 	        </div>
 	        <!-- /.row -->
-                
+            
+            <form method="post" action="">
+	            <div class="row col-lg-12">
+	            	<table class="table table-responsive table-bordered">
+						<tr>
+							<td width="100">
+								받는사람
+							</td>
+							<td>
+								홍길동
+							</td>
+						</tr>
+						<tr>
+							<td>제목</td>
+							<td>
+								<input type="text" name="subject" style="width: 100%;"/>
+							</td>
+						</tr>
+						<tr>
+							<td>내용</td>
+							<td>
+							    <textarea id="content" name="content" style="width:100%; min-height: 500px;">
+							    	
+					            </textarea>
+								<jsp:include page="/company/inc/texteditor.jsp"></jsp:include>
+							</td>
+						</tr>
+	            	</table>
+	            </div>
+	            <div id="btns">
+					<input type="submit" value="보내기" class="btn btn-primary" />
+					<input type="button" value="돌아가기" class="btn btn-default" />
+				</div>            
+            </form>
         </div>
         <!-- /#page-wrapper -->
 
     </div>
     <!-- /#wrapper -->
-
     <!-- jQuery -->
     <script src="/Project/company/vendor/jquery/jquery.min.js"></script>
 

@@ -67,6 +67,7 @@
 										<th>작성자</th>
 										<th>작성일</th>
 										<th>현황</th>
+										<th>내용확인</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -78,6 +79,7 @@
 										<td>${dto.name}</td>
 										<td>${dto.regDate}</td>
 										<td>${dto.status}</td>
+										<td><button type="button" class="btn btn-outline btn-info" onclick="location.href='read_o.do?seq=${dto.seq}';">내용확인</button></td>
 									</tr>
 									</c:forEach>
 								</tbody>
@@ -92,8 +94,7 @@
 								</div>
 							</form>
 							<div id="btns">
-								<button type="button" class="btn btn-outline btn-default">목록갱신</button>
-								<!-- if, 부장일때만 -->
+								<button type="button" class="btn btn-outline btn-default" onclick="location.href='outcome_c.do';">목록갱신</button>
 								<button type="button" class="btn btn-outline btn-primary" onclick="location.href='write_o.do';">비용청구</button>
 							</div>
 						</div>
