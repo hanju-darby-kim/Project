@@ -36,22 +36,25 @@ public class OutcomeCheck extends HttpServlet {
 		ArrayList<OutcomeViewDTO> list = service.getOutcome();
 		req.setAttribute("list", list);
 		
-		if (departmentSeq.equals("1")) {	//개발
-			RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/department/dev/outcome/outcome.jsp");
-			dispatcher.forward(req, resp);
-		} else if (departmentSeq.equals("2")) {	//인사
-			RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/department/res/outcome/outcome.jsp");
-			dispatcher.forward(req, resp);
-		} else if (departmentSeq.equals("3")) {	//총무
-			RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/department/acc/outcome/outcome.jsp");
-			dispatcher.forward(req, resp);
-		} else if (departmentSeq.equals("4")) {	//영업
-			RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/department/mar/outcome/outcome.jsp");
-			dispatcher.forward(req, resp);
-		} else {
-			req.setAttribute("msg", "계정 확인에 실패했습니다");
-			RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/department/error.jsp");
-			dispatcher.forward(req, resp);	
-		}
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/department/outcome/outcome.jsp");
+		dispatcher.forward(req, resp);
+		
+//		if (departmentSeq.equals("1")) {	//개발
+//			RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/department/dev/outcome/outcome.jsp");
+//			dispatcher.forward(req, resp);
+//		} else if (departmentSeq.equals("2")) {	//인사
+//			RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/department/res/outcome/outcome.jsp");
+//			dispatcher.forward(req, resp);
+//		} else if (departmentSeq.equals("3")) {	//총무
+//			RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/department/acc/outcome/outcome.jsp");
+//			dispatcher.forward(req, resp);
+//		} else if (departmentSeq.equals("4")) {	//영업
+//			RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/department/mar/outcome/outcome.jsp");
+//			dispatcher.forward(req, resp);
+//		} else {
+//			req.setAttribute("msg", "계정 확인에 실패했습니다");
+//			RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/department/error.jsp");
+//			dispatcher.forward(req, resp);	
+//		}
 	}
 }
