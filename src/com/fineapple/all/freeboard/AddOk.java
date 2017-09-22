@@ -56,10 +56,12 @@ public class AddOk extends HttpServlet {
 			while (e.hasMoreElements()) {
 				FBFileDTO temp = new FBFileDTO();
 				String file = (String)e.nextElement();
-				temp.setFileName(multi.getFilesystemName(file)); //사용자 이름
-				temp.setOrgFileName(multi.getOriginalFileName(file)); //저장 이름
+				temp.setFileName(multi.getFilesystemName(file));  //저장 이름
+				temp.setOrgFileName(multi.getOriginalFileName(file));//사용자 이름
+				System.out.println(multi.getOriginalFileName(file));
 				fileList.add(temp);
 			}
+			
 			
 			//첨부파일 FreeBoardDTO에 넣기
 			fbdto.setFileList(fileList);

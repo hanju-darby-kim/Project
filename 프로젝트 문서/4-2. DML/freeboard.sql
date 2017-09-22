@@ -37,3 +37,10 @@ select * from vEmployee;
 
 SELECT * FROM freeboard;
 COMMIT;
+
+select * from FBFILE;
+INSERT INTO freeboard (seq, empSeq, FBCategory, title, content, readCount, regDate, thread, depth) VALUES (freeBoardSeq.nextVal, 10, 1, '열심히합시다', '야근합시다', DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+
+INSERT INTO (seq, FBSeq, orgFileName, fileName) VALUES (FBFileSeq.nextVal, 4, 'test', 'test');
+
+
