@@ -28,12 +28,15 @@
 <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
 
 <style>
+
+/*클럽이미지*/
 .club-list-img {
 	width: 100%;
 	height: 150px;
 	margin: 10px auto;
 }
 
+/*클럽이미지가 없을경우*/
 .club-list-noimg {
 	width: 100%;
 	height: 150px;
@@ -41,11 +44,13 @@
 	margin: 10px auto;
 }
 
+/*클럽 이름*/
 .club-list-detail h2 {
 	font-size: 13px;
 	text-align: center;
 }
 
+/*클럽 만든사람, 소속 부서*/
 .club-list-detail h3 {
 	font-size: 12px;
 	text-align: center;
@@ -83,14 +88,15 @@
 				</div>
 				<!-- /.row -->
 				<div class="row">
+				
 					<c:forEach items="${clubList}" var="dto">
 						<div class="col-md-4">
 
-
+							<!-- 클럽 이미지부분 -->
 							<div class="club-list-img"
 								style="background:url('${dto.clubimg}') no-repeat; background-size:cover;"></div>
 
-
+							<!-- 클럽 이름과, 클럽장, 부서 -->
 							<div class="club-list-detail">
 								<h2>${dto.name}</h2>
 								<h3>${dto.empName} / ${dto.department }</h3>

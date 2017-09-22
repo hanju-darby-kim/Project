@@ -1,5 +1,7 @@
 package com.fineapple.DTO;
 
+import java.util.ArrayList;
+
 public class FreeBoardDTO {
 	private String seq;
 	private String empSeq;
@@ -10,6 +12,15 @@ public class FreeBoardDTO {
 	private int readCount;
 	private int thread;
 	private int depth;
+	
+	ArrayList<FBFileDTO> fileList;
+	
+	public ArrayList<FBFileDTO> getFileList() {
+		return fileList;
+	}
+	public void setFileList(ArrayList<FBFileDTO> fileList) {
+		this.fileList = fileList;
+	}
 	public String getSeq() {
 		return seq;
 	}
