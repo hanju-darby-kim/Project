@@ -39,16 +39,18 @@
          <!-- ./김한주 : 근태 -->
          
 
-         <!-- 결재 게시판 메뉴 -->      
+        <!-- 결재 게시판 메뉴 -->      
          <li><a href="javascript:void(0)"><i class="fa fa-list-alt fa-fw"></i>　결재 관리<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">   
                <li><a href="javascript:void(0)"><i class="fa fa-pencil fa-fw"></i>　기안서 작성 </a></li>
                <li><a href="javascript:void(0)"><i class="fa fa-check fa-fw"></i>　결재 조회</a></li>
                <li><a href="javascript:void(0)"><i class="fa fa-bar-chart-o"></i>　결재 건수 통계 </a></li>
-               <li><a href="/Project/company/pages/approval/list.jsp"><i class="fa fa-quote-left fa-fw"></i>　결재 관련 자유게시판 </a>
+               <li><a href="/Project/approval/board/add.do"><i class="fa fa-quote-left fa-fw"></i>　결재 관련 자유게시판 </a>
             </ul></li>      
          <!-- 결재 게시판 끝 -->      
-         
+
+
+
          <li><a href="javascript:void(0)"><i class="fa fa-smile-o fa-fw"></i> 4. 부서별 게시판<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                <li><a href="javascript:void(0)">개발부 <span
@@ -182,3 +184,4 @@
    <!-- /.sidebar-collapse -->
 </div>
 <!-- /.navbar-static-side -->
+
