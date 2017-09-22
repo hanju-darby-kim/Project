@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 public class Task extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/attendances/task");
+	RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/attendance/task.jsp");
 	dispatcher.forward(req, resp);
 
     }

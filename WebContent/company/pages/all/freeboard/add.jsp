@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
 
@@ -44,10 +44,11 @@
     <![endif]-->
 	<style>
 		#addTable #FBCategory { height: 30px; width: 100px; padding: 5px; }
-		#addTable { width: 900px; }
+		#addTable { width: 800px; border: 0px solid red; margin-left: 11px; }
+	
 		#addTable td:first-child { border-top: 0px; }
-		#addTable input { width: 95%; }
-		#addTable #content { width: 95%; height: 500px; }
+		#addTable #title { width: 760px; }
+		
 	</style>
 </head>
 
@@ -97,15 +98,15 @@
             	</tr>
             	<tr>
             		<td>
-			            <textarea name="content" id="content" rows="10" cols="100" style="resize: none;">에디터에 기본으로 삽입할 글(수정 모드)이 없다면 이 value 값을 지정하지 않으시면 됩니다.</textarea>		
+						<textarea name="content" id="content" rows="15" cols="105"></textarea>          
 					</td>
 				</tr>
-				</table>
+			</table>
+			<input type="submit" class="btn btn-primary">
             </form>
-
+			
 		<%@include file="/company/inc/texteditor.jsp" %>
 			 
-
             
         </div>
         <!-- /#page-wrapper -->

@@ -13,9 +13,6 @@
     <!-- Custom CSS -->
     <link href="/Project/company/dist/css/sb-admin-2.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="/Project/company/dist/css/main	.css" rel="stylesheet">
-    
     <!-- Morris Charts CSS -->
     <link href="/Project/company/vendor/morrisjs/morris.css" rel="stylesheet">
 
