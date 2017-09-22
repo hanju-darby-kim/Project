@@ -24,7 +24,7 @@ public class AddOk extends HttpServlet {
 		
 		
 		String path = req.getRealPath("/company/pages/all/freeboard/FBFiles");
-		System.out.println(path);
+	
 		int size = 50 * 1024 * 1024;
 		
 		try {	//첨부파일 위한 try catch
@@ -48,7 +48,6 @@ public class AddOk extends HttpServlet {
 			fbdto.setFBCategory(multi.getParameter("FBCategory"));
 			fbdto.setTitle(multi.getParameter("title"));
 			fbdto.setContent(multi.getParameter("content"));
-			System.out.println(fbdto.getContent());
 			
 			//첨부파일 list에 넣기
 			Enumeration e = multi.getFileNames();
@@ -64,8 +63,6 @@ public class AddOk extends HttpServlet {
 					
 					temp.setFileName(multi.getFilesystemName(file));  //저장 이름
 					temp.setOrgFileName(multi.getOriginalFileName(file));//사용자 이름
-					
-					System.out.println(multi.getOriginalFileName(file)); //!!원래 저장이름 직어보기 지우기!!!
 					fileList.add(temp);
 
 				}
@@ -80,8 +77,8 @@ public class AddOk extends HttpServlet {
 			FreeBoardService service = new FreeBoardService();
 			int result = service.add(fbdto);
 			
-			
-			
+			//결과 잘 들어갔는지 저장
+			req.setAttribute("result", result);
 			
 			RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/all/freeboard/addok.jsp");
 			dispatcher.forward(req, resp);
