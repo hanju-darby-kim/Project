@@ -39,10 +39,10 @@
                                     <a href="javascript:void(0)">개발부 <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
-                                            <a href="/Project/company/pages/department/dev/project/project.jsp">프로젝트</a>
+                                            <a href="/Project/company/pages/department/project_.do">프로젝트</a>
                                         </li>
                                         <li>
-                                            <a href="/Project/company/pages/department/dev/outcome/outcome.jsp">비용청구</a>
+                                            <a href="/Project/company/pages/department/outcome_c.do">비용청구</a>
                                         </li>
                                     </ul>
                                 </li>
