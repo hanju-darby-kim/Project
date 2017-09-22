@@ -42,14 +42,30 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-	<style>
-		#addTable #FBCategory { height: 30px; width: 100px; padding: 5px; }
-		#addTable { width: 800px; border: 0px solid red; margin-left: 11px; }
-	
-		#addTable td:first-child { border-top: 0px; }
-		#addTable #title { width: 760px; }
-		
-	</style>
+   <style>
+      #addTable { width: 800px; border: 0px solid red; margin-left: 11px; }
+      #addTable #FBCategory { height: 30px; width: 100px; padding: 5px; }
+      #addTable td:first-child { border-top: 0px; }
+      #addTable #title { width: 760px; }
+      
+      #btns { width: 800px; text-align: right; padding-right: 20px; }
+      .file { float: left; }
+      .fileWrapper { float: left; border: 1px solid #ccc; padding: 3px; border-radius: 3px; }
+      .addFileTag { display: inline-block; margin: 5px 8px; margin-right: 0px; padding: 3px; cursor: pointer; }
+      .deleteFileTag { display: inline-block; margin: 5px 8px; margin-right: 0px; padding: 3px; cursor: pointer; }
+      .fileTd:gt(0) { border: 1px solid red; }
+   </style>
+   <script>
+   	  window.onload = function() {
+		  $(".fileTd:gt(0)").hide();
+   	  };
+   	  
+      function addFile(num) {
+    	  num++;
+    	  $("#fileTd" + num).show();
+      }
+   </script>
+   
 </head>
 
 <body>
@@ -61,8 +77,8 @@
             
             <!-- upperHeader -->    
             <%@ include file="/company/inc/upperHeader.jsp" %>
-			<!-- leftHeader -->
-        	<%@ include file="/company/inc/leftHeader.jsp" %>
+         <!-- leftHeader -->
+           <%@ include file="/company/inc/leftHeader.jsp" %>
 
             
         </nav>
@@ -82,35 +98,66 @@
             
             <form name="frm" id="frm" action="/Project/pages/all/freeboard/addok.do" method="post" accept-charset="utf-8">
             <table class="table" id="addTable">
-            	<tr>
-            		<td>
-            			<select name="FBCategory" id="FBCategory" class="form-control">
-            				<c:forEach items="${categoryList}" var="category">
-							<option>${category.name}</option> 
-							</c:forEach>           		
-            			</select>
-            		</td>
-            	</tr>
-            	<tr>
-	            	<td>
-	    				<input type="text" name="title" id="title" class="form-control" placeholder="제목을 입력하세요" required>
-	           		</td>
-            	</tr>
-            	<tr>
-            		<td>
-						<textarea name="content" id="content" rows="15" cols="105"></textarea>          
-					</td>
-				</tr>
-			</table>
-			<input type="submit" class="btn btn-primary">
+               <tr>
+                  <td>
+                     <select name="FBCategory" id="FBCategory" class="form-control">
+                        <c:forEach items="${categoryList}" var="category">
+                     <option>${category.name}</option> 
+                     </c:forEach>                 
+                     </select>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                   <input type="text" name="title" id="title" class="form-control" placeholder="제목을 입력하세요" required>
+                    </td>
+               </tr>
+               <tr>
+                  <td>
+                  <textarea name="content" id="content" rows="15" cols="105"></textarea>          
+               </td>
+            </tr>
+            <tr>
+               <td class="fileTd" id="fileTd1">
+                  <div class="fileWrapper">
+                     <input type="file" id="file1" class="file">
+                  </div>
+                  <span class="fa fa-minus deleteFileTag" style="color: gray;"></span>
+                  <span class="fa fa-plus addFileTag" id="addFileTag1" onclick='addFile(1);' style="color: gray;"></span>
+                  <div style="clear:both;"></div>
+               </td>
+            </tr>
+            <tr>
+               <td class="fileTd" id="fileTd2">
+                  <div class="fileWrapper">
+                     <input type="file" id="file2" class="file">
+                  </div>
+                  <span class="fa fa-minus deleteFileTag" style="color: gray;"></span>
+                  <span class="fa fa-plus addFileTag" id="addFileTag2" onclick='addFile(2);' style="color: gray;"></span>
+                  <div style="clear:both;"></div>
+               </td>
+            </tr>
+            <tr>
+               <td class="fileTd" id="fileTd3">
+                  <div class="fileWrapper">
+                     <input type="file" id="file3" class="file">
+                  </div>
+                  <span class="fa fa-minus deleteFileTag" style="color: gray;"></span>
+                  <div style="clear:both;"></div>
+               </td>
+            </tr>
+         </table>
+         <div id="btns">
+            <input type="submit" class="btn btn-outline btn-info" id="submit" value="등록하기">
+         </div>
             </form>
-			
-		<%@include file="/company/inc/texteditor.jsp" %>
-			 
+         
+      <%@include file="/company/inc/texteditor.jsp" %>
+          
             
         </div>
         <!-- /#page-wrapper -->
-		
+      
     </div>
     <!-- /#wrapper -->
     
@@ -132,4 +179,3 @@
 </body>
 
 </html>
-
