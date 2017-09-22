@@ -19,7 +19,8 @@ public class ClubList extends HttpServlet {
 		ClubService service = new ClubService();
 		ArrayList<ClubDTO> clubList= service.list();
 		
-		req.setAttribute("list", clubList);
+		 
+		req.setAttribute("clubList", clubList);
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/club/clubList.jsp");
 		dispatcher.forward(req, resp);

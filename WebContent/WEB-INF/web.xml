@@ -151,6 +151,17 @@
 		<url-pattern>/message/addok.do</url-pattern>
 	</servlet-mapping>
 	
+	
+	<!-- 김태현의 모임관리 서블릿 -->
+	<servlet> <!-- club.clublist -->
+		<servlet-name>club.clublist</servlet-name>
+		<servlet-class>com.fineapple.club.ClubList</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>club.clublist</servlet-name>
+		<url-pattern>/club/clublist.do</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
 
 

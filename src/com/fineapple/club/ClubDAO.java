@@ -55,7 +55,9 @@ public class ClubDAO {
 				dto.setSeq(rs.getString("seq"));
 				dto.setCategoryName(rs.getString("categoryName"));
 				if(rs.getString("clubImg")!=null) {
-					dto.setClubimg("clubImg");
+					dto.setClubimg(rs.getString("clubImg"));
+				}else {
+					dto.setClubimg("/Project/company/images/logo1black.png");
 				}
 				dto.setDepartment(rs.getString("department"));
 				dto.setDetail(rs.getString("detail"));

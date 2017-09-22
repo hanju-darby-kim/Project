@@ -67,6 +67,11 @@ public class ClubDTO {
 		this.memberList = memberList;
 	}
 	
+	@Override
+	public String toString() {
+		
+		return seq+"/"+name+"/"+empName+"/"+detail+"/"+categoryName+"/"+department+"/"+openDate+"/"+clubimg+"\n";
+	}
 	
 	
 }

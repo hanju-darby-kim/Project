@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,22 +28,31 @@
 <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
 
 <style>
-	.club-list-img{
-		width:100%;
-		height:150px;
-		margin : 10px auto;
-		background-color:aqua;
-	}
-	.club-list-detail h2{
-		font-size:13px;
-		text-align:center;
-	}
-	.club-list-detail h3{
-		font-size:12px;
-		text-align:center;
-		font-weight:normal;
-		margin:0 auto;
-	}
+.club-list-img {
+	width: 100%;
+	height: 150px;
+	margin: 10px auto;
+}
+
+.club-list-noimg {
+	width: 100%;
+	height: 150px;
+	background-color: #333;
+	margin: 10px auto;
+}
+
+.club-list-detail h2 {
+	font-size: 13px;
+	text-align: center;
+}
+
+.club-list-detail h3 {
+	font-size: 12px;
+	text-align: center;
+	font-weight: normal;
+	margin: 0 auto;
+	margin-bottom:20px;
+}
 </style>
 </head>
 
@@ -75,16 +84,23 @@
 				<!-- /.row -->
 				<div class="row">
 					<c:forEach items="${clubList}" var="dto">
-					<div class="col-md-4">
-						<div class="club-list-img"></div>
-						<div class="club-list-detail">
-							<h2>${dto.name}</h2>
-							<h3>${dto.empName}</h3>
+						<div class="col-md-4">
+
+
+							<div class="club-list-img"
+								style="background:url('${dto.clubimg}') no-repeat; background-size:cover;"></div>
+
+
+							<div class="club-list-detail">
+								<h2>${dto.name}</h2>
+								<h3>${dto.empName} / ${dto.department }</h3>
+							</div>
+
+
+
 						</div>
-						
-					</div>
 					</c:forEach>
-					
+
 				</div>
 				<!-- /.row -->
 			</div>
