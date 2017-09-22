@@ -28,18 +28,25 @@
 	#center-board {padding-left:0px; padding-right:0px;}
 	#center-panel-heading {padding-top:15px;}
 	
+	/* 페이지 길이, 검색폼, 글쓰기를 한 줄에 넣기 */
+	#dataTables-example_length {width:150px; display:inline;}
+	#dataTables-example_wrapper > div:nth-child(1) > div:nth-child(1) {width:80px;}
+	#dataTables-example_wrapper > div:nth-child(1) > div:nth-child(2) {float:left; display:inline; margin-left:3%;}
+	#dataTables-example_wrapper > div:nth-child(1) > div:nth-child(3) {float:right; display:inline;}
 	
-	/* 몇개씩보여줄 지 결정하는 컨트롤을 삭제 */
-	#dataTables-example_wrapper > div:nth-child(1) > div:nth-child(1) {display: none;}
+	/* 페이지길이 내 옵션을 우측정렬 */
+	#dataTables-example_length > label > select {text-align: right;}
+	
 	/* 게시물 쇼잉 현황을 보여주는 폼 */
-	#dataTables-example_wrapper > div:nth-child(3) > div:nth-child(1) {padding-left: 30px;}
+	#dataTables-example_wrapper > div:nth-child(3) > div:nth-child(1) {padding-left: 20px;}
 	/* 검색필터를 왼쪽으로 */
 	div.dataTables_filter {text-align:left;}
 	/* 페이징폼을 오른쪽으로 */
 	#dataTables-example_wrapper > div:nth-child(3) > div:nth-child(2) {float:right;}
 	
 	/* 검색 폼 좌여백 */
-	#dataTables-example_wrapper > div:nth-child(1) > div:nth-child(2) {padding-left:25px;}
+	/* 검색 폼을 감싸는 div 넓이, 좌로 붙임. */
+	#dataTables-example_wrapper > div:nth-child(1) > div:nth-child(2) {padding-left:10px; width:250px;}
 	/* 검색분류 폼 높이 조절 */
 	/* 패딩순서 -> 상 우 하 좌 */
 	#dataTables-example_filter > label > div > select {margin-left:5px; padding: 0px 4px; height:30px;}
@@ -54,8 +61,11 @@
 	/* 티헤드에 정렬스위치를 텍스트 옆으로 */
 	table.dataTable thead .sorting:after {float: none; margin-left:5px;}
 	
-	/* 글쓰기 버튼을 우측정렬 */
-	#add {width:70px; float:right; margin-right:25px;}
+	/* 글쓰기 버튼 */
+	#add {width:70px; margin-right:15px;}
+	
+	/* 페이징의 이전, 다음 버튼 내 텍스를 검은색으로 */
+	#dataTables-example_previous > a, #dataTables-example_next> a {color:#777;}
 	
 	
 		
@@ -130,6 +140,16 @@
 												<td>노곤해지는 점심, 짧은 유머 하나올려봐요</td>
 												<td>14:03</td>
 											</tr>
+											<tr>
+												<td>일반</td>
+												<td>노곤해지는 점심, 짧은 유머 하나올려봐요</td>
+												<td>14:03</td>
+											</tr>
+											<tr>
+												<td>일반</td>
+												<td>노곤해지는 점심, 짧은 유머 하나올려봐요</td>
+												<td>14:03</td>
+											</tr>
 										</tbody>
 									</table>
 								</div>
@@ -166,6 +186,16 @@
 												<td>건의</td>
 												<td>특근 식비에 대한 개선안</td>
 												<td>09-19</td>
+											</tr>
+											<tr>
+												<td>질문</td>
+												<td>하루 지각하면 월급 얼마나 깎여요?</td>
+												<td>09-15</td>
+											</tr>
+											<tr>
+												<td>질문</td>
+												<td>하루 지각하면 월급 얼마나 깎여요?</td>
+												<td>09-15</td>
 											</tr>
 											<tr>
 												<td>질문</td>
@@ -217,6 +247,1189 @@
 											<td>2017-12-31 11:32</td>
 											<td>21</td>
 										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
+										</tr>
 										
 									</tbody>
 								</table>
@@ -249,11 +1462,17 @@
 	$(document).ready(function() {
 
 	    
-	    
+	    //글쓰기 버튼 추가
 	    $('#dataTables-example_wrapper > div:nth-child(1) > div:nth-child(2)').after('<div id="add"><button type="button" class="btn btn-success">글쓰기</button></div>');
-	    $('#dataTables-example_wrapper > div:nth-child(3)').css('background-color', 'none');
-	    $('#dataTables-example_wrapper > div:nth-child(3) > div:nth-child(2)').css('background-color', 'none',);
-	
+		//25페이씩 보여주도록.
+		//$('#dataTables-example_length > label > select').val('25');
+		
+		
+		$('#dataTables-example_length > label > select > option:nth-child(1)').text('10 개');	
+		$('#dataTables-example_length > label > select > option:nth-child(2)').text('25 개');	
+		$('#dataTables-example_length > label > select > option:nth-child(3)').text('50 개');	
+		$('#dataTables-example_length > label > select > option:nth-child(4)').text('100 개');	
+		
 	    		
 		
 		
