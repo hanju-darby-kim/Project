@@ -29,12 +29,15 @@
 	#center-panel-heading {padding-bottom:15px; padding-top:15px;}
 	
 	
+	
 	}
 
 
 </style>
 
 <script>
+
+	${"#dataTables-example_filter > label"}.val{"hi"};
 
 
 </script>
@@ -63,7 +66,7 @@
 					<!-- 주간인기글 테이블 -->
 					<div class="col-lg-6 head-board" id="head-board-left">
 						<div class="panel panel-default">
-							<div class="panel-heading text-center">주간 인기글</div>
+							<div class="panel-heading text-center">최근에 <span class="text-primary">댓글이 달린</span> 글</div>
 							<!-- /.panel-heading -->
 							<div class="panel-body">
 								<div class="table-responsive">
@@ -104,7 +107,7 @@
 					<!-- 월간인기글 테이블 -->
 					<div class="col-lg-6 head-board" id="head-board-right">
 						<div class="panel panel-default">
-							<div class="panel-heading text-center">최근에 <p class="text-primary">답변을 받은</p> 질문</div>
+							<div class="panel-heading text-center">최근에 <span class="text-primary">답변을 받은</span> <span class="text-danger">질문, 건의</span> 글</div>
 							<!-- /.panel-heading -->
 							<div class="panel-body">
 								<div class="table-responsive">
@@ -156,11 +159,11 @@
 									id="dataTables-example">
 									<thead>
 										<tr>
-											<th>Rendering engine</th>
-											<th>Browser</th>
-											<th>Platform(s)</th>
-											<th>Engine version</th>
-											<th>CSS grade</th>
+											<th>분류</th>
+											<th>제목</th>
+											<th>작성자</th>
+											<th>갱신</th>
+											<th>조회</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -567,20 +570,6 @@
 									</tbody>
 								</table>
 								<!-- /.table-responsive -->
-								<div class="well">
-									<h4>DataTables Usage Information</h4>
-									<p>
-										DataTables is a very flexible, advanced tables plugin for
-										jQuery. In SB Admin, we are using a specialized version of
-										DataTables built for Bootstrap 3. We have also customized the
-										table headings to use Font Awesome icons in place of images.
-										For complete documentation on DataTables, visit their website
-										at <a target="_blank" href="https://datatables.net/">https://datatables.net/</a>.
-									</p>
-									<a class="btn btn-default btn-lg btn-block" target="_blank"
-										href="https://datatables.net/">View DataTables
-										Documentation</a>
-								</div>
 							</div>
 							<!-- /.panel-body -->
 						</div>
