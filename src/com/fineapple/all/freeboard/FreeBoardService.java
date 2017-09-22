@@ -13,20 +13,31 @@ public class FreeBoardService {
 		dao = new FreeBoardDAO();
 	}
 	
+	//카테고리 얻어오기
 	public ArrayList<FBCategoryDTO> getCategory() {
-	
 		return dao.getCategory();
 	}
 
+	//글 디비에 넣기
 	public int add(FreeBoardDTO fbdto) {
-		
+		int fileResult = 0;
+		String seq = "";
 		//글내용 넣기
 		int addResult = dao.addFreeBoard(fbdto);
 		
-		//첨부파일 넣기
-		int fileResult = dao.addFile(fbdto);
+		if(fbdto.getFileList().size() != 0) {
+			//첨부파일이 있다면 첨부파일 넣기
+			seq = dao.getMaxSeq(seq);
+			fileResult = dao.addFile(fbdto);
+		}
 		
-		return 0;
+		if ((addResult == 1) && (fileResult == 1)) return 1;
+		else return 0;
+		
+	}
+
+	public void getMaxSeq(String seq) {
+		seq = dao.getMaxSeq(seq);
 	}
 
 }
