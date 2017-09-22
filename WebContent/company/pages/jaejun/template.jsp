@@ -2,17 +2,19 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Message | Fine Apple</title>
+<style>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+</style>
+<script>
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
-
+</script>
     <!-- Bootstrap Core CSS -->
     <link href="/Project/company/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -45,6 +47,7 @@
             <%@ include file="/company/inc/upperHeader.jsp" %>
 			<!-- leftHeader -->
         	<%@ include file="/company/inc/leftHeader.jsp" %>
+
             
         </nav>
 
@@ -53,11 +56,13 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Blank</h1>
+                        <h1 class="page-header">Inbox</h1>
                     </div>
                     <!-- /.col-lg-12 -->
+                    
                 </div>
                 <!-- /.row -->
+                
             </div>
             <!-- /.container-fluid -->
         </div>
