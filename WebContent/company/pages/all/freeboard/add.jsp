@@ -5,82 +5,74 @@
 <html>
 
 <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<title>SB Admin 2 - Bootstrap Admin Theme</title>
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
-    
+<!-- Bootstrap Core CSS -->
+<link href="/Project/company/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- MetisMenu CSS -->
+<link href="/Project/company/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="/Project/company/dist/css/sb-admin-2.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="/Project/company/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<!-- 스마트 에디터 -->
+<script type="text/javascript" src="/Project/smarteditor/workspace/js/service/HuskyEZCreator.js" charset="utf-8"></script>
+
+ <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+ <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+ <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+ <![endif]-->
+<style>
+   .table { width: 800px; border: 0px solid red; margin-left: 11px; }
+   #addTable { margin-bottom: 0; }
+   #addTable #FBCategory { height: 30px; width: 100px; padding: 5px; }
+   #addTable td:first-child, #fileTable td:first-child { border-top: 0px; }
+   #addTable #title { width: 760px; }
+   #fileTable { float: left; width: 400px; }
+   #btns { width: 300px; text-align: right; padding-right: 20px; float: left; margin-left: 87px; margin-top: 5px; }
    
-  
-
-    <!-- Bootstrap Core CSS -->
-    <link href="/Project/company/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
-    <link href="/Project/company/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="/Project/company/dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="/Project/company/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    
-    <!-- 스마트 에디터 -->
-    <script type="text/javascript" src="/Project/smarteditor/workspace/js/service/HuskyEZCreator.js" charset="utf-8"></script>
-     
-    
-    
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-   <style>
-      .table { width: 800px; border: 0px solid red; margin-left: 11px; }
-      #addTable { margin-bottom: 0; }
-      #addTable #FBCategory { height: 30px; width: 100px; padding: 5px; }
-      #addTable td:first-child, #fileTable td:first-child { border-top: 0px; }
-      #addTable #title { width: 760px; }
-      #fileTable { float: left; width: 400px; }
-      #btns { width: 300px; text-align: right; padding-right: 20px; float: left; margin-left: 87px; margin-top: 5px; }
-      
-      .files { float: left; }
-      .fileWrapper { float: left; border: 1px solid #ccc; padding: 3px; border-radius: 3px; }
-      .addFileTag { display: inline-block; margin: 5px 8px; margin-right: 0px; padding: 3px; cursor: pointer; }
-      .deleteFileTag { display: inline-block; margin: 5px 8px; margin-right: 0px; padding: 3px; cursor: pointer; }
-      .fileTd:gt(0) { border: 1px solid red; }
-      .fa { color: gray; }
-      
-   </style>
-   <script>
-   	  window.onload = function() {
-		  $(".fileTd:gt(0)").css("display", "none");
-   	  };
-   	  
-      function addFile() {
-    	  
-    	  if($("#fileTd2").css("display") == ("none")) {
-	    	  $("#fileTd2").css("display", "block");
-    	  } else if($("#fileTd3").css("display") == ("none")) {
-    		  $("#fileTd3").css("display", "block");
-    	  } else {
-    		  alert('파일은 최대 3개까지 업로드 가능합니다.');
-    	  }
-    	  
-      }
-      
-      function deleteFile() {
-    	  event.srcElement.parentElement.style.display = "none";
-    	  
-      }
-   </script>
+   .files { float: left; }
+   .fileWrapper { float: left; border: 1px solid #ccc; padding: 3px; border-radius: 3px; }
+   .addFileTag { display: inline-block; margin: 5px 8px; margin-right: 0px; padding: 3px; cursor: pointer; }
+   .deleteFileTag { display: inline-block; margin: 5px 8px; margin-right: 0px; padding: 3px; cursor: pointer; }
+   .fileTd:gt(0) { border: 1px solid red; }
+   .fa { color: gray; }
+   
+</style>
+<script>
+	window.onload = function() {
+		$(".fileTd:gt(0)").css("display", "none");
+	};
+	  
+   function addFile() {
+ 	  
+ 	  if($("#fileTd2").css("display") == ("none")) {
+  	  $("#fileTd2").css("display", "block");
+ 	  } else if($("#fileTd3").css("display") == ("none")) {
+ 		  $("#fileTd3").css("display", "block");
+ 	  } else {
+ 		  alert('파일은 최대 3개까지 업로드 가능합니다.');
+ 	  }
+ 	  
+   }
+   
+   function deleteFile() {
+ 	  event.srcElement.parentElement.style.display = "none";
+ 	  
+   }
+</script>
    
 </head>
 
@@ -94,7 +86,7 @@
             <!-- upperHeader -->    
             <%@ include file="/company/inc/upperHeader.jsp" %>
          <!-- leftHeader -->
-           <%@ include file="/company/inc/leftHeader.jsp" %>
+           	<%@ include file="/company/inc/leftHeader.jsp" %>
 
             
         </nav>

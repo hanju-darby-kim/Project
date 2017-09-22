@@ -3,6 +3,7 @@ package com.fineapple.all.freeboard;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
@@ -47,7 +48,7 @@ public class FreeBoardDAO {
 		
 	}
 
-	public int addFreeBord(FreeBoardDTO fbdto) {
+	public int addFreeBoard(FreeBoardDTO fbdto) {
 		try {
 			
 			String sql = "INSERT INTO freeboard (seq, empSeq, FBCategory, title, content, readCount, regDate, thread, depth) "
@@ -59,7 +60,9 @@ public class FreeBoardDAO {
 			stat.setString(3, fbdto.getTitle());
 			stat.setString(4, fbdto.getContent());
 			
-			return stat.executeUpdate();
+			int result = stat.executeUpdate();
+			
+			return result;
 			
 		} catch (Exception e) {
 			System.out.println(e.toString());
@@ -67,23 +70,41 @@ public class FreeBoardDAO {
 		}
 	}
 
-	public int addFile(FreeBoardDTO fbdto) {
+	
+	public String getMaxSeq(String seq) {
+		
+		int result = 0; 
+		
+		//방금 넣은 freeboard 테이블에서의 시퀀스 구하기
+		String sql = "SELECT MAX(seq) FROM freeBoard";
+		Statement stat;
+		
 		try {
-			
-			int result = 0; 
-			
-			//방금 넣은 freeboard 테이블에서의 시퀀스 구하기
-			String sql = "SELECT MAX(seq) FROM freeBoard";
-			Statement stat = conn.createStatement();
+			stat = conn.createStatement();
 			ResultSet rs = stat.executeQuery(sql);
 			
 			if (rs.next()) {
-				fbdto.setSeq(rs.getString(1));
+				seq = rs.getString(1);
 			}
 			
+			rs.close();
+			stat.close();
 			
+			return seq;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public int addFile(FreeBoardDTO fbdto) {
+		try {
+			
+			int result = 0;
+	
 			//첨부파일들 하나하나 집어넣기
-			sql = "INSERT INTO FBFile (seq, FBSeq, orgFileName, fileName) VALUES (FBFileSeq.nextVal, ?, ?, ?)";
+			String sql = "INSERT INTO FBFile (seq, FBSeq, orgFileName, fileName) VALUES (FBFileSeq.nextVal, ?, ?, ?)";
 			
 			for (FBFileDTO filedto : fbdto.getFileList()) {
 				PreparedStatement pstat = conn.prepareStatement(sql);
@@ -101,8 +122,5 @@ public class FreeBoardDAO {
 			return 0;
 		}
 	}
-
-
-	
 
 }
