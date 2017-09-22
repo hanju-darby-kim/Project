@@ -10,7 +10,14 @@
 <meta name="author" content="">
 <title>Message | Fine Apple</title>
 <style>
-
+	#headerInbox{
+		vertical-align: middle;
+		display: inline-block;
+		width: 820px;
+	}
+	#headerInbox + input {
+		margin-top: 5px;
+	}
 </style>
 <script>
 
@@ -56,10 +63,10 @@
 
         <div id="page-wrapper">
             <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">abbInbox</h1>
-                    <input type="button" class="btn btn-primary" value="쪽지쓰기" style="float: right;" onclick="location.href='/Project/message/add.do';"/>
+                <div id="headerInbox" class="col-lg-12">
+                    <h1 class="page-header">Inbox</h1>
                 </div>
+                <input type="button" class="btn btn-primary" value="쪽지쓰기" onclick="location.href='/Project/message/add.do';"/>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
