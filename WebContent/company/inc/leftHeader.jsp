@@ -86,8 +86,8 @@
             </ul></li>
             
             <!-----------------------현진 ----------------------->
-         <li><a href="javascript:void(0)"><i
-               class="fa fa-smile-o fa-fw"></i> 5. 직급별 게시판<span class="fa arrow"></span></a>
+         <li><a href="javascript:void(0)">
+         	<i class="fa fa-smile-o fa-fw"></i> 5. 직급별 게시판<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                <li><a href="javascript:void(0)">직원 게시판<span class="fa arrow"></a> <ul class="nav nav-third-level">
                <!-- fa arrow를 쓰면 화살표모양 넣을수있음.. -->

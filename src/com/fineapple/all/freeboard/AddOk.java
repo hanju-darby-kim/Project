@@ -64,6 +64,10 @@ public class AddOk extends HttpServlet {
 			//첨부파일 FreeBoardDTO에 넣기
 			fbdto.setFileList(fileList);
 			
+			//2. service 보내기
+			FreeBoardService service = new FreeBoardService();
+			int result = service.add(fbdto);
+			
 			
 			
 			

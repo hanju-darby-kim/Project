@@ -6,6 +6,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import com.fineapple.DTO.FBCategoryDTO;
+import com.fineapple.DTO.FreeBoardDTO;
 import com.fineapple.util.DBUtil;
 
 public class FreeBoardDAO {
@@ -42,6 +43,26 @@ public class FreeBoardDAO {
 			return null; 
 		}
 		
+	}
+
+	public int addFile(FreeBoardDTO fbdto) {
+		try {
+			
+			String sql = "INSERT INTO freeboard (seq, empSeq, FBCategory, title, content, readCount, "
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		return 0;
+	}
+
+	public int addFreeBoard(FreeBoardDTO fbdto) {
+		try {
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		return 0;
 	}
 
 
