@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,49 +74,17 @@
 				</div>
 				<!-- /.row -->
 				<div class="row">
+					<c:forEach items="${clubList}" var="dto">
 					<div class="col-md-4">
 						<div class="club-list-img"></div>
 						<div class="club-list-detail">
-							<h2>축구왕 슛돌이들</h2>
-							<h3>김태현</h3>
+							<h2>${dto.name}</h2>
+							<h3>${dto.empName}</h3>
 						</div>
 						
 					</div>
-					<div class="col-md-4">
-						<div class="club-list-img"></div>
-						<div class="club-list-detail">
-							<h2>축구왕 슛돌이들</h2>
-							<h3>김태현</h3>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="club-list-img"></div>
-						<div class="club-list-detail">
-							<h2>축구왕 슛돌이들</h2>
-							<h3>김태현</h3>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="club-list-img"></div>
-						<div class="club-list-detail">
-							<h2>축구왕 슛돌이들</h2>
-							<h3>김태현</h3>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="club-list-img"></div>
-						<div class="club-list-detail">
-							<h2>축구왕 슛돌이들</h2>
-							<h3>김태현</h3>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="club-list-img"></div>
-						<div class="club-list-detail">
-							<h2>축구왕 슛돌이들</h2>
-							<h3>김태현</h3>
-						</div>
-					</div>
+					</c:forEach>
+					
 				</div>
 				<!-- /.row -->
 			</div>
