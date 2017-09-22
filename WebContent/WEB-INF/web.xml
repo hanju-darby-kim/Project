@@ -12,8 +12,8 @@
 	<!--  -->
 	
 	<!--  -->
-	
-	<!-- Department -->
+
+<!-- Department -->
 	<servlet>
 		<servlet-name>department.temp_start</servlet-name>
 		<servlet-class>com.fineapple.department.TempStart</servlet-class>
@@ -22,15 +22,35 @@
 		<servlet-name>department.temp_start</servlet-name>
 		<url-pattern>/company/pages/department/tempstart.do</url-pattern>
 	</servlet-mapping>
-		<!-- Department / dev -->
-		<servlet>
-			<servlet-name>department.dev.outcome.write</servlet-name>
-			<servlet-class>com.fineapple.department.DevWriteOutcome</servlet-class>
-		</servlet>
-		<servlet-mapping>
-			<servlet-name>department.dev.outcome.write</servlet-name>
-			<url-pattern>/company/pages/department/dev/outcome/dev_write_o.do</url-pattern>
-		</servlet-mapping>
+	<!-- Department / Outcome -->
+	<servlet>
+			<servlet-name>department.outcome.check</servlet-name>
+			<servlet-class>com.fineapple.department.OutcomeCheck</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.outcome.check</servlet-name>
+		<url-pattern>/company/pages/department/outcome_c.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.outcome.write</servlet-name>
+			<servlet-class>com.fineapple.department.WriteOutcome</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.outcome.write</servlet-name>
+		<url-pattern>/company/pages/department/write_o.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.outcome.writego</servlet-name>
+			<servlet-class>com.fineapple.department.WriteOutcomeGo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.outcome.writego</servlet-name>
+		<url-pattern>/company/pages/department/write_o_go.do</url-pattern>
+	</servlet-mapping>
+		<!-- Department / Check -->
+	
+
+		
 	
 	
 	<!-- all -->
@@ -52,61 +72,48 @@
 		<url-pattern>/all/freeboard/addok.do</url-pattern>
 	</servlet-mapping>
 	
-	<!-- 주소록  -->
-	<servlet>
-		<servlet-name>all.contact.list</servlet-name>
-		<servlet-class>com.fineapple.all.contact.List</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>all.contact.list</servlet-name>
-		<url-pattern>/all/contact/list.do</url-pattern>
-	</servlet-mapping>		
 	
 	
 	<!-- attendance -->
-	<servlet>	<!-- 로그인페이지 -->
-		<servlet-name>attendance.login</servlet-name>
-		<servlet-class>com.fineapple.attendance.Login</servlet-class>
+	<servlet>
+		<servlet-name>attendance.template</servlet-name>
+		<servlet-class>com.fineapple.attendance.Template</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>attendance.login</servlet-name>
-		<url-pattern>/attendance/login.do</url-pattern>
-	</servlet-mapping>		
+		<servlet-name>attendance.template</servlet-name>
+		<url-pattern>/attendance/template.do</url-pattern>
+	</servlet-mapping>	
 	
-	<servlet>	<!-- 근태작성 -->
-		<servlet-name>attendance.task</servlet-name>
-		<servlet-class>com.fineapple.attendance.Task</servlet-class>
+	
+	
+	<!-- ;%심재준마커. 쪽지 시작 -->
+	<servlet> <!-- inbox -->
+		<servlet-name>message.inbox</servlet-name>
+		<servlet-class>com.fineapple.message.Inbox</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>attendance.task</servlet-name>
-		<url-pattern>/attendance/task.do</url-pattern>
+		<servlet-name>message.inbox</servlet-name>
+		<url-pattern>/message/inbox.do</url-pattern>
 	</servlet-mapping>		
-
-	<servlet>	<!-- 통계 -->
-		<servlet-name>attendance.statistics</servlet-name>
-		<servlet-class>com.fineapple.attendance.Statistics</servlet-class>
+	
+	<servlet> <!-- add -->
+		<servlet-name>message.add</servlet-name>
+		<servlet-class>com.fineapple.message.Add</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>attendance.statistics</servlet-name>
-		<url-pattern>/attendance/statistics.do</url-pattern>
+		<servlet-name>message.add</servlet-name>
+		<url-pattern>/message/add.do</url-pattern>
 	</servlet-mapping>		
 	
-	<servlet>	<!-- 자유게시판 종합-->
-		<servlet-name>attendance.community</servlet-name>
-		<servlet-class>com.fineapple.attendance.Community</servlet-class>
+	<servlet> <!-- addok -->
+		<servlet-name>message.addok</servlet-name>
+		<servlet-class>com.fineapple.message.AddOk</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>attendance.community</servlet-name>
-		<url-pattern>/attendance/community.do</url-pattern>
-	</servlet-mapping>		
-	
-	
-
-	
-	
-	
-	
-	
-	
+		<servlet-name>message.addok</servlet-name>
+		<url-pattern>/message/addok.do</url-pattern>
+	</servlet-mapping>
 	
 </web-app>
+
+
