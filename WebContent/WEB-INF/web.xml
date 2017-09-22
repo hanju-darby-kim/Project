@@ -104,7 +104,7 @@
 	
 	<!-- 결재 자유 게시판 -->
    <servlet> <!-- 글쓰기 -->
-      <servlet-name>approve.Board.add</servlet-name>
+      <servlet-name>approve.FreeBoard.add</servlet-name>
       <servlet-class>com.fineapple.approve.board.Add</servlet-class>
    </servlet>
    <servlet-mapping>
