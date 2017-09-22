@@ -39,61 +39,6 @@
          <!-- ./김한주 : 근태 -->
          
 
-<<<<<<< HEAD
-			<!-- 결재 게시판 메뉴 -->		
-			<li><a href="javascript:void(0)"><i class="fa fa-list-alt fa-fw"></i>　결재 관리<span class="fa arrow"></span></a>
-				<ul class="nav nav-second-level">	
-					<li><a href="javascript:void(0)"><i class="fa fa-pencil fa-fw"></i>　기안서 작성 </a></li>
-					<li><a href="javascript:void(0)"><i class="fa fa-check fa-fw"></i>　결재 조회</a></li>
-					<li><a href="javascript:void(0)"><i class="fa fa-bar-chart-o"></i>　결재 건수 통계 </a></li>
-					<li><a href="/Project/company/pages/approval/list.jsp"><i class="fa fa-quote-left fa-fw"></i>　결재 관련 자유게시판 </a>
-				</ul></li>		
-			<!-- 결재 게시판 끝 -->		
-			
-			<li><a href="javascript:void(0)"><i class="fa fa-smile-o fa-fw"></i> 4. 부서별 게시판<span class="fa arrow"></span></a>
-				<ul class="nav nav-second-level">
-					<li><a href="javascript:void(0)">개발부 <span
-							class="fa arrow"></span></a>
-						<ul class="nav nav-third-level">
-							<li><a href="/Project/company/pages/department/project_c.do">프로젝트</a>
-							</li>
-							<li><a
-								href="/Project/company/pages/department/outcome_c.do">비용청구</a>
-							</li>
-						</ul></li>
-					<li><a href="javascript:void(0)">인사부 <span
-							class="fa arrow"></span></a>
-						<ul class="nav nav-third-level">
-							<li><a href="javascript:void(0)">프로젝트</a></li>
-							<li><a href="javascript:void(0)">비용청구</a></li>
-						</ul></li>
-					<li><a href="javascript:void(0)">총무부 <span
-							class="fa arrow"></span></a>
-						<ul class="nav nav-third-level">
-							<li><a href="javascript:void(0)">프로젝트</a></li>
-							<li><a href="javascript:void(0)">비용청구</a></li>
-							<li><a href="javascript:void(0)">수입처리</a></li>
-							<li><a href="javascript:void(0)">지출처리</a></li>
-						</ul></li>
-					<li><a href="javascript:void(0)">영업부 <span
-							class="fa arrow"></span></a>
-						<ul class="nav nav-third-level">
-							<li><a href="javascript:void(0)">프로젝트</a></li>
-							<li><a href="javascript:void(0)">비용청구</a></li>
-							<li><a href="javascript:void(0)">판매수입</a></li>
-						</ul></li>
-				</ul></li>
-			<li><a href="javascript:void(0)"><i
-					class="fa fa-smile-o fa-fw"></i> 5. 직급별 게시판<span class="fa arrow"></span></a>
-				<ul class="nav nav-second-level">
-					<li><a href="javascript:void(0)">사장게시판</a></li>
-					<li><a href="javascript:void(0)">과장게시판</a></li>
-					<li><a href="javascript:void(0)">부장게시판</a></li>
-					<li><a href="javascript:void(0)">대리게시판</a></li>
-				</ul></li>
-			<li><a href="javascript:void(0)"><i
-					class="fa fa-smile-o fa-fw"></i> 5. 전체게시판</a></li>
-=======
         <!-- 결재 게시판 메뉴 -->      
          <li><a href="javascript:void(0)"><i class="fa fa-list-alt fa-fw"></i>　결재 관리<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">   
@@ -103,7 +48,6 @@
                <li><a href="/Project/approval/board/add.do"><i class="fa fa-quote-left fa-fw"></i>　결재 관련 자유게시판 </a>
             </ul></li>      
          <!-- 결재 게시판 끝 -->      
->>>>>>> 43963586a9de650d946db29348cf31c59328c53e
 
 
 
@@ -142,8 +86,8 @@
             </ul></li>
             
             <!-----------------------현진 ----------------------->
-         <li><a href="javascript:void(0)"><i
-               class="fa fa-smile-o fa-fw"></i> 5. 직급별 게시판<span class="fa arrow"></span></a>
+         <li><a href="javascript:void(0)">
+         	<i class="fa fa-smile-o fa-fw"></i> 5. 직급별 게시판<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                <li><a href="javascript:void(0)">직원 게시판<span class="fa arrow"></a> <ul class="nav nav-third-level">
                <!-- fa arrow를 쓰면 화살표모양 넣을수있음.. -->
