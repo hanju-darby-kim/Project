@@ -56,9 +56,13 @@ public class AddOk extends HttpServlet {
 			while (e.hasMoreElements()) {
 				FBFileDTO temp = new FBFileDTO();
 				String file = (String)e.nextElement();
+				
+				System.out.println(file); //!!파일 이름찍어보기!!!지우기
+				
 				temp.setFileName(multi.getFilesystemName(file));  //저장 이름
 				temp.setOrgFileName(multi.getOriginalFileName(file));//사용자 이름
-				System.out.println(multi.getOriginalFileName(file));
+				
+				System.out.println(multi.getOriginalFileName(file)); //!!원래 저장이름 직어보기 지우기!!!
 				fileList.add(temp);
 			}
 			
