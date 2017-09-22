@@ -70,16 +70,16 @@
 									</tr>
 								</thead>
 								<tbody>
-									<%--  <c:forEach items="" var="">--%>
+									<c:forEach items="${list}" var="dto">
 									<tr>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
+										<td>${dto.seq}</td>
+										<td>${dto.category}</td>
+										<td>${dto.amount}</td>
+										<td>${dto.name}</td>
+										<td>${dto.regDate}</td>
+										<td>${dto.status}</td>
 									</tr>
-									<%--  </c:forEach>--%>
+									</c:forEach>
 								</tbody>
 							</table>
 							<!-- /.table-responsive -->
@@ -94,7 +94,7 @@
 							<div id="btns">
 								<button type="button" class="btn btn-outline btn-default">목록갱신</button>
 								<!-- if, 부장일때만 -->
-								<button type="button" class="btn btn-outline btn-primary" onclick="location.href='dev_write_o.jsp';">비용청구</button>
+								<button type="button" class="btn btn-outline btn-primary" onclick="location.href='write_o.do';">비용청구</button>
 							</div>
 						</div>
 						<!-- /.panel-body -->
