@@ -193,6 +193,16 @@
 		<url-pattern>/message/addok.do</url-pattern>
 	</servlet-mapping>
 	
+	<servlet> <!-- setting -->
+		<servlet-name>message.setting</servlet-name>
+		<servlet-class>com.fineapple.message.Setting</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.setting</servlet-name>
+		<url-pattern>/message/setting.do</url-pattern>
+	</servlet-mapping>
+	
+	
 	
 	<!-- 김태현의 모임관리 서블릿 -->
 	<servlet> <!-- club.clublist -->

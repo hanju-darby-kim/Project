@@ -10,13 +10,19 @@
 <meta name="author" content="">
 <title>Message | Fine Apple</title>
 <style>
-	#headerInbox{
+	
+	
+	
+	#headerInbox {
+		border: 0px solid red;
 		vertical-align: middle;
-		display: inline-block;
-		width: 820px;
 	}
-	#headerInbox + input {
-		margin-top: 5px;
+	#btns {
+		border: 0px solid red;
+		display: inline;
+		float: right;
+		position: absolute;
+		top: 140px; left: 1350px;
 	}
 </style>
 <script>
@@ -65,11 +71,15 @@
             <div class="row">
                 <div id="headerInbox" class="col-lg-12">
                     <h1 class="page-header">Inbox</h1>
-                </div>
-                <input type="button" class="btn btn-primary" value="쪽지쓰기" onclick="location.href='/Project/message/add.do';"/>
                 <!-- /.col-lg-12 -->
+	            </div>
+	            <div id="btns">
+	            <input type="button" class="btn btn-primary" value="쪽지쓰기" onclick="location.href='/Project/message/add.do';"/>
+	            <input type="button" class="btn btn-default" value="환경설정" onclick="location.href='/Project/message/add.do';"/>
+	            </div>
             </div>
             <!-- /.row -->
+            
             <div class="row">
                 <div class="col-lg-12">
 	                <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -94,6 +104,7 @@
 	                            <td>Trident</td>
 	                            <td>Internet Explorer 5.0</td>
 	                            <td>Win 95+</td>
+	                            
 	                            <td class="center">5</td>
 	                            <td class="center">C</td>
 	                        </tr>

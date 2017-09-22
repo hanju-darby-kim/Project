@@ -34,8 +34,6 @@
 <style>
 	#headerInbox{
 		vertical-align: middle;
-		display: inline-block;
-		width: 820px;
 	}
 	#headerInbox + input {
 		margin-top: 5px;
@@ -56,7 +54,6 @@
 </head>
 
 <body>
-
     <div id="wrapper">
 
         <!-- Navigation -->
