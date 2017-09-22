@@ -100,7 +100,35 @@
 		<url-pattern>/attendance/community.do</url-pattern>
 	</servlet-mapping>		
 	
+		<!-- all -->
+	<servlet>
+		<servlet-name>all.FreeBoard.add</servlet-name>
+		<servlet-class>com.fineapple.all.freeboard.Add</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all.FreeBoard.add</servlet-name>
+		<url-pattern>/all/freeboard/add.do</url-pattern>
+	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>all.FreeBoard.addok</servlet-name>
+		<servlet-class>com.fineapple.all.freeboard.AddOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all.FreeBoard.addok</servlet-name>
+		<url-pattern>/all/freeboard/addok.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- 결재 자유 게시판 -->
+	<servlet> <!-- 글쓰기 add -->
+		<servlet-name>approve.board</servlet-name>
+		<servlet-class>com.fineapple.attendance.Community</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>approve.board</servlet-name>
+		<url-pattern>/attendance/community.do</url-pattern>
+	</servlet-mapping>		
 
 	
 	
