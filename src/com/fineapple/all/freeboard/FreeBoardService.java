@@ -21,18 +21,23 @@ public class FreeBoardService {
 	//글 디비에 넣기
 	public int add(FreeBoardDTO fbdto) {
 		int fileResult = 0;
+		String seq = "";
 		//글내용 넣기
 		int addResult = dao.addFreeBoard(fbdto);
 		
 		if(fbdto.getFileList().size() != 0) {
 			//첨부파일이 있다면 첨부파일 넣기
-			fbdto = dao.getMaxSeq(fbdto);
+			seq = dao.getMaxSeq(seq);
 			fileResult = dao.addFile(fbdto);
 		}
 		
 		if ((addResult == 1) && (fileResult == 1)) return 1;
 		else return 0;
 		
+	}
+
+	public void getMaxSeq(String seq) {
+		seq = dao.getMaxSeq(seq);
 	}
 
 }

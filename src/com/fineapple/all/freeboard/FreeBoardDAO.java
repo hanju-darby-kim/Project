@@ -71,7 +71,7 @@ public class FreeBoardDAO {
 	}
 
 	
-	public FreeBoardDTO getMaxSeq(FreeBoardDTO fbdto) {
+	public String getMaxSeq(String seq) {
 		
 		int result = 0; 
 		
@@ -84,13 +84,13 @@ public class FreeBoardDAO {
 			ResultSet rs = stat.executeQuery(sql);
 			
 			if (rs.next()) {
-				fbdto.setSeq(rs.getString(1));
+				seq = rs.getString(1);
 			}
 			
 			rs.close();
 			stat.close();
 			
-			return fbdto;
+			return seq;
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
