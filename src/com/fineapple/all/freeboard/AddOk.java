@@ -43,11 +43,11 @@ public class AddOk extends HttpServlet {
 			FreeBoardDTO fbdto = new FreeBoardDTO(); //FreeBoardDTO
 			
 			
-			fbdto.setEmpSeq((String)session.getAttribute("empSeq"));
+			fbdto.setEmpSeq((String)session.getAttribute("seq"));
 			fbdto.setFBCategory(multi.getParameter("FBCategory"));
 			fbdto.setTitle(multi.getParameter("title"));
 			fbdto.setContent(multi.getParameter("content"));
-			/*System.out.println(fbdto.getContent());*/
+			System.out.println(fbdto.getContent());
 			
 			//첨부파일 list에 넣기
 			Enumeration e = multi.getFileNames();
@@ -56,22 +56,28 @@ public class AddOk extends HttpServlet {
 			while (e.hasMoreElements()) {
 				FBFileDTO temp = new FBFileDTO();
 				String file = (String)e.nextElement();
-				temp.setFileName(multi.getFilesystemName(file)); //사용자 이름
-				temp.setOrgFileName(multi.getOriginalFileName(file)); //저장 이름
+				
+				System.out.println(file); //!!파일 이름찍어보기!!!지우기
+				
+				temp.setFileName(multi.getFilesystemName(file));  //저장 이름
+				temp.setOrgFileName(multi.getOriginalFileName(file));//사용자 이름
+				
+				System.out.println(multi.getOriginalFileName(file)); //!!원래 저장이름 직어보기 지우기!!!
 				fileList.add(temp);
 			}
+			
 			
 			//첨부파일 FreeBoardDTO에 넣기
 			fbdto.setFileList(fileList);
 			
-			
-			////!!!!!지;우기
-			System.out.println("empSeq" + fbdto.getEmpSeq());
-			System.out.println("getTitle" + fbdto.getTitle());
-			System.out.println("category" + fbdto.getFBCategory());
+			//2. service 보내기
+			FreeBoardService service = new FreeBoardService();
+			int result = service.add(fbdto);
 			
 			
-			RequestDispatcher dispatcher = req.getRequestDispatcher("/company/all/freeboard/addok.jsp");
+			
+			
+			RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/all/freeboard/addok.jsp");
 			dispatcher.forward(req, resp);
 			
 		} catch (Exception e) {

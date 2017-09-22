@@ -13,7 +13,7 @@
 	
 	<!--  -->
 	
-	<!-- Department -->
+<!-- Department -->
 	<servlet>
 		<servlet-name>department.temp_start</servlet-name>
 		<servlet-class>com.fineapple.department.TempStart</servlet-class>
@@ -22,15 +22,47 @@
 		<servlet-name>department.temp_start</servlet-name>
 		<url-pattern>/company/pages/department/tempstart.do</url-pattern>
 	</servlet-mapping>
-		<!-- Department / dev -->
-		<servlet>
-			<servlet-name>department.dev.outcome.write</servlet-name>
-			<servlet-class>com.fineapple.department.DevWriteOutcome</servlet-class>
-		</servlet>
-		<servlet-mapping>
-			<servlet-name>department.dev.outcome.write</servlet-name>
-			<url-pattern>/company/pages/department/dev/outcome/dev_write_o.do</url-pattern>
-		</servlet-mapping>
+	<!-- Department / Outcome -->
+	<servlet>
+			<servlet-name>department.outcome.check</servlet-name>
+			<servlet-class>com.fineapple.department.OutcomeCheck</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.outcome.check</servlet-name>
+		<url-pattern>/company/pages/department/outcome_c.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.outcome.write</servlet-name>
+			<servlet-class>com.fineapple.department.WriteOutcome</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.outcome.write</servlet-name>
+		<url-pattern>/company/pages/department/write_o.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.outcome.writego</servlet-name>
+			<servlet-class>com.fineapple.department.WriteOutcomeGo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.outcome.writego</servlet-name>
+		<url-pattern>/company/pages/department/write_o_go.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.outcome.read</servlet-name>
+			<servlet-class>com.fineapple.department.ReadOutcome</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.outcome.read</servlet-name>
+		<url-pattern>/company/pages/department/read_o.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.outcome.readconfirm</servlet-name>
+			<servlet-class>com.fineapple.department.ReadConfirm</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.outcome.readconfirm</servlet-name>
+		<url-pattern>/company/pages/department/read_c.do</url-pattern>
+	</servlet-mapping>
 	
 	
 	<!-- all -->
@@ -160,6 +192,16 @@
 		<servlet-name>message.addok</servlet-name>
 		<url-pattern>/message/addok.do</url-pattern>
 	</servlet-mapping>
+	
+	<servlet> <!-- setting -->
+		<servlet-name>message.setting</servlet-name>
+		<servlet-class>com.fineapple.message.Setting</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.setting</servlet-name>
+		<url-pattern>/message/setting.do</url-pattern>
+	</servlet-mapping>
+	
 	
 	
 	<!-- 김태현의 모임관리 서블릿 -->

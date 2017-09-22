@@ -16,7 +16,7 @@ public class Login extends HttpServlet {
 			throws ServletException, IOException {
 		//로그인 완성되면 지운다
 		HttpSession session = req.getSession();
-		session.setAttribute("seq", 10);
+		session.setAttribute("seq", "10");
 		session.setAttribute("pw", "1111");
 		session.setAttribute("department", "개발부");
 		session.setAttribute("departmentSeq", 1);

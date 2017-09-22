@@ -10,7 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 
 public class AddOk extends HttpServlet {
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		System.out.println(req.getParameter("content"));
+		System.out.println("안녕하세요");
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/jaejun/addok.jsp");
 		dispatcher.forward(req, resp);

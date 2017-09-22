@@ -25,9 +25,7 @@ public class Add extends HttpServlet {
 			//카테고리 배열 얻어오기
 			categoryList = service.getCategory();
 			req.setAttribute("categoryList", categoryList);
-			//로그인 완성되면 지운다
-			HttpSession session = req.getSession();
-			session.setAttribute("empSeq", 10);
+			
 			
 			RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/all/freeboard/add.jsp");
 			dispatcher.forward(req, resp);

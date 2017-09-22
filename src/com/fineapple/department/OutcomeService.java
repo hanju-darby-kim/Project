@@ -36,10 +36,12 @@ public class OutcomeService {
 	/**
 	 * 비용청구서 작성 시 dao로 전달해주는 서비스 객체
 	 * @param dto 비용청구서 페이지에서 작성된 내용
+	 * @param positionSeq 
+	 * @param departmentSeq 
 	 * @return 성공/실패 여부
 	 */
-	public int setOutcome(OutcomeDTO dto) {
-		return dao.setOutcome(dto);
+	public int setOutcome(OutcomeDTO dto, String positionSeq, String departmentSeq) {
+		return dao.setOutcome(dto, positionSeq, departmentSeq);
 	}
 
 	/**
@@ -50,8 +52,72 @@ public class OutcomeService {
 		
 		String departmentSeq = (String) session.getAttribute("departmentSeq");	//세션에서 값 가져오기
 		ArrayList<OutcomeViewDTO> list = dao.getOutcome(departmentSeq);
+		
+		for (OutcomeViewDTO dto : list) {
+			String regDate = dto.getRegDate().substring(0, 16);	//일자 시분까지 잘라내기
+			dto.setRegDate(regDate);
+			
+			String status = dto.getStatus();	//현황 메시지로 변경
+			if (status == null) {	//부서장 대기
+				dto.setStatus("부서장 대기");
+			} else if (status.equals("1")) {	//부서장 반려
+				dto.setStatus("부서장 반려");
+			} else if (status.equals("2")) {	//부서장 승인
+				dto.setStatus("부서장 승인");
+			} else if (status.equals("3")) {	//최종 승인
+				dto.setStatus("최종 승인");
+			}
+		}
 		return list;
 	}
-	
-	
+
+	/**
+	 * 비용청구서 내용 확인 시 내용물을 가져오는 서비스 객체
+	 * @return 요청된 비용청구서
+	 */
+	public OutcomeDTO readOutcome(String seq) {
+		
+		String departmentSeq = (String) session.getAttribute("departmentSeq");
+		OutcomeDTO dto = dao.readOutcome(seq, departmentSeq);
+		
+		String content = dto.getContent();	//스크립트 문자 및 개행문자 변경
+		content = content.replaceAll("<", "&lt;");
+		content = content.replaceAll("\r\n", "<br />");
+		dto.setContent(content);
+		
+		String regDate = dto.getRegDate().substring(0, 16);	//일자 시분까지 잘라내기
+		dto.setRegDate(regDate);
+		
+		String conDate = dto.getConDate();	//승인일관련 메시지 입력
+		if (conDate == null) {
+			dto.setConDate("미승인");	//승인일이 없는 경우 메시지 출력
+		} else {
+			dto.setConDate(conDate);	//승인일이 있는 경우 승인일 출력
+		}
+		
+		String status = dto.getEtc();	//현황관련 메시지 입력
+		if (status == null) {	//부서장 대기
+			dto.setEtc("부서장 대기");
+		} else if (status.equals("1")) {	//부서장 반려
+			dto.setEtc("부서장 반려");
+		} else if (status.equals("2")) {	//부서장 승인
+			dto.setEtc("부서장 승인");
+		} else if (status.equals("3")) {	//총무부 반려
+			dto.setEtc("최종 승인");
+		}
+		
+		return dto;
+	}
+
+	/**
+	 * 비용청구서 승인/반려 여부를 DAO를 통해 DB에 업데이트하는 서비스 객체
+	 * @param seq 비용청구서 번호
+	 * @param departmentSeq 승인한 사용자의 부서
+	 * @param positionSeq 승인한 사용자의 직급
+	 * @param confirm 승인여부
+	 * @return 처리 성공 여부
+	 */
+	public int setOutcomeConfirm(String seq, String departmentSeq, String positionSeq, String confirm) {
+		return dao.setOutcomeConfirm(seq, departmentSeq, positionSeq, confirm);
+	}
 }

@@ -165,14 +165,11 @@
             </tr>
          </table>
          <div id="btns"> <!-- 전송버튼 -->
-            <input type="submit" class="btn btn-outline btn-info" id="submit" value="등록하기">
+            <input type="submit" class="btn btn-outline btn-info" id="send" onclick="submitContents(this);" value="등록하기">
          </div>
          </form>
          <div style="clear: both"></div>
-         
-      <%@include file="/company/inc/texteditor.jsp" %>
-          
-            
+         <%@include file="/company/inc/texteditor.jsp" %>
         </div>
         <!-- /#page-wrapper -->
       

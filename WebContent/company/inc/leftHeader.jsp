@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="navbar-default sidebar" role="navigation">
    <div class="sidebar-nav navbar-collapse">
       <ul class="nav" id="side-menu">
@@ -86,8 +87,8 @@
             </ul></li>
             
             <!-----------------------현진 ----------------------->
-         <li><a href="javascript:void(0)"><i
-               class="fa fa-smile-o fa-fw"></i> 5. 직급별 게시판<span class="fa arrow"></span></a>
+         <li><a href="javascript:void(0)">
+         	<i class="fa fa-smile-o fa-fw"></i> 5. 직급별 게시판<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                <li><a href="javascript:void(0)">직원 게시판<span class="fa arrow"></a> <ul class="nav nav-third-level">
                <!-- fa arrow를 쓰면 화살표모양 넣을수있음.. -->
@@ -97,10 +98,19 @@
                <li><a href="javascript:void(0)">일정 관리</a></li>
                
             </ul></li>
-         <li><a href="javascript:void(0)"><i
-               class="fa fa-smile-o fa-fw"></i> 5. 전체게시판</a></li>
+            
+          <!----------------------- 해나 ----------------------->      
+            
+		<li><a href="javascript:void(0)"><i class="fa fa-child fa-fw"></i>　전체게시판<span class="fa arrow"></span></a>
+			<ul class="nav nav-second-level">
+				<li><a href="javascript:void(0)"><i class="fa  fa-table fa-fw"></i>　주소록</a></li>
+				<li><a href="javascript:void(0)"><i class="fa fa-check fa-fw"></i>　설문조사</a></li>
+				<li><a href="javascript:void(0)"><i class="fa fa-bar-chart-o fa-fw"></i>　전체통계</a></li>
+				<li><a href="javascript:void(0)"><i class="fa fa-calendar-o fa-fw"></i>　전체게시판</a></li>
+			</ul>
+		</li>   
 
-   <!----------------- 태현 모임 ---------------------------->
+      <!----------------- 태현 모임 ---------------------------->
          <li><a href="javascript:void(0)"><i
                class="fa fa-smile-o fa-fw"></i> 6. 모임 게시판<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
@@ -110,10 +120,12 @@
                <li><a href="javascript:void(0)">나의 소속 모임 <span
                      class="fa arrow"></span></a>
                   <ul class="nav nav-third-level">
-                     <li><a href="javascript:void(0)">축구왕 슛돌이</a></li>
-                     <li><a href="javascript:void(0)">파인애플 수집모임</a></li>
-                     <li><a href="javascript:void(0)">볼링을 사랑하는 사람들</a></li>
-                     <li><a href="javascript:void(0)">테니스왕자들</a></li>
+                  <c:if test="${myclublist ne null }">
+                  	 <c:forEach items="${myclublist}" var="clubname">
+                     <li><a href="javascript:void(0)">${clubname}</a></li>
+                  
+                     </c:forEach>
+                  </c:if>
                   </ul></li>
 
             </ul></li>
