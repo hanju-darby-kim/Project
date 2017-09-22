@@ -7,7 +7,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/**
+ * 결재 관련 자유게시판 ADD 작업
+ * @author 전슬기
+ *
+ */
 public class Add extends HttpServlet {
 	
 	@Override
