@@ -2,13 +2,9 @@
     pageEncoding="UTF-8"%>
     <!-- jQuery -->
     <script src="/Project/company/vendor/jquery/jquery.min.js"></script>
-    <script src="/Project/company/dist/js/jquery-1.12.4.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="/Project/company/vendor/bootstrap/js/bootstrap.min.js"></script>
-    
-    <!-- DatePicker JavaScript -->
-    <script src="/Project/company/dist/js/bootstrap-datepicker.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="/Project/company/vendor/metisMenu/metisMenu.min.js"></script>

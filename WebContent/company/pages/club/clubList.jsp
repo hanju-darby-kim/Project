@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,22 +28,36 @@
 <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
 
 <style>
-	.club-list-img{
-		width:100%;
-		height:150px;
-		margin : 10px auto;
-		background-color:aqua;
-	}
-	.club-list-detail h2{
-		font-size:13px;
-		text-align:center;
-	}
-	.club-list-detail h3{
-		font-size:12px;
-		text-align:center;
-		font-weight:normal;
-		margin:0 auto;
-	}
+
+/*클럽이미지*/
+.club-list-img {
+	width: 100%;
+	height: 150px;
+	margin: 10px auto;
+}
+
+/*클럽이미지가 없을경우*/
+.club-list-noimg {
+	width: 100%;
+	height: 150px;
+	background-color: #333;
+	margin: 10px auto;
+}
+
+/*클럽 이름*/
+.club-list-detail h2 {
+	font-size: 13px;
+	text-align: center;
+}
+
+/*클럽 만든사람, 소속 부서*/
+.club-list-detail h3 {
+	font-size: 12px;
+	text-align: center;
+	font-weight: normal;
+	margin: 0 auto;
+	margin-bottom:20px;
+}
 </style>
 </head>
 
@@ -73,49 +88,25 @@
 				</div>
 				<!-- /.row -->
 				<div class="row">
-					<div class="col-md-4">
-						<div class="club-list-img"></div>
-						<div class="club-list-detail">
-							<h2>축구왕 슛돌이들</h2>
-							<h3>김태현</h3>
+				
+					<c:forEach items="${clubList}" var="dto">
+						<div class="col-md-4">
+
+							<!-- 클럽 이미지부분 -->
+							<div class="club-list-img"
+								style="background:url('${dto.clubimg}') no-repeat; background-size:cover;"></div>
+
+							<!-- 클럽 이름과, 클럽장, 부서 -->
+							<div class="club-list-detail">
+								<h2>${dto.name}</h2>
+								<h3>${dto.empName} / ${dto.department }</h3>
+							</div>
+
+
+
 						</div>
-						
-					</div>
-					<div class="col-md-4">
-						<div class="club-list-img"></div>
-						<div class="club-list-detail">
-							<h2>축구왕 슛돌이들</h2>
-							<h3>김태현</h3>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="club-list-img"></div>
-						<div class="club-list-detail">
-							<h2>축구왕 슛돌이들</h2>
-							<h3>김태현</h3>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="club-list-img"></div>
-						<div class="club-list-detail">
-							<h2>축구왕 슛돌이들</h2>
-							<h3>김태현</h3>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="club-list-img"></div>
-						<div class="club-list-detail">
-							<h2>축구왕 슛돌이들</h2>
-							<h3>김태현</h3>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="club-list-img"></div>
-						<div class="club-list-detail">
-							<h2>축구왕 슛돌이들</h2>
-							<h3>김태현</h3>
-						</div>
-					</div>
+					</c:forEach>
+
 				</div>
 				<!-- /.row -->
 			</div>

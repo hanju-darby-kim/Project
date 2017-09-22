@@ -67,6 +67,16 @@
 	
 	<!-- all -->
 	<servlet>
+		<servlet-name>all.login</servlet-name>
+		<servlet-class>com.fineapple.all.Login</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all.login</servlet-name>
+		<url-pattern>/all/login.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 자개 -->
+	<servlet>
 		<servlet-name>all.FreeBoard.add</servlet-name>
 		<servlet-class>com.fineapple.all.freeboard.Add</servlet-class>
 	</servlet>
@@ -112,7 +122,7 @@
 	<servlet-mapping>
 		<servlet-name>attendance.task</servlet-name>
 		<url-pattern>/attendance/task.do</url-pattern>
-	</servlet-mapping>		
+	</servlet-mapping>	
 
 	<servlet>	<!-- 통계 -->
 		<servlet-name>attendance.statistics</servlet-name>
@@ -136,21 +146,21 @@
 	
 	<!-- 결재 자유 게시판 -->
    <servlet> <!-- 글쓰기 -->
-      <servlet-name>approve.FreeBoard.add</servlet-name>
-      <servlet-class>com.fineapple.approve.board.Add</servlet-class>
+      <servlet-name>approval.Board.add</servlet-name>
+      <servlet-class>com.fineapple.approval.board.Add</servlet-class>
    </servlet>
    <servlet-mapping>
-      <servlet-name>approve.FreeBoard.add</servlet-name>
-      <url-pattern>/approve/board/add.do</url-pattern>
+      <servlet-name>approval.Board.add</servlet-name>
+      <url-pattern>/approval/board/add.do</url-pattern>
    </servlet-mapping>
    
    <servlet> <!-- 글쓰기 완료 -->
-      <servlet-name>approve.Board.addok</servlet-name>
-      <servlet-class>com.fineapple.all.freeboard.AddOk</servlet-class>
+      <servlet-name>approval.Board.addok</servlet-name>
+      <servlet-class>com.fineapple.approval.board.AddOk</servlet-class>
    </servlet>
    <servlet-mapping>
-      <servlet-name>approve.Board.addok</servlet-name>
-      <url-pattern>/approve/board/addok.do</url-pattern>
+      <servlet-name>approval.Board.addok</servlet-name>
+      <url-pattern>/approval/board/addok.do</url-pattern>
    </servlet-mapping>
 	
 	
@@ -181,6 +191,26 @@
 	<servlet-mapping>
 		<servlet-name>message.addok</servlet-name>
 		<url-pattern>/message/addok.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- 김태현의 모임관리 서블릿 -->
+	<servlet> <!-- club.clublist -->
+		<servlet-name>club.clublist</servlet-name>
+		<servlet-class>com.fineapple.club.ClubList</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>club.clublist</servlet-name>
+		<url-pattern>/club/clublist.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet> <!-- club.templogin -->
+		<servlet-name>club.templogin</servlet-name>
+		<servlet-class>com.fineapple.club.TempLogin</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>club.templogin</servlet-name>
+		<url-pattern>/club/templogin.do</url-pattern>
 	</servlet-mapping>
 	
 </web-app>

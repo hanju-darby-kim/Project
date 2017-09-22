@@ -17,3 +17,8 @@ asdas/sss/testtest.java
 .metadata/.log
 /build/
 WebContent/company/pages/blank.jsp
+.classpath
+.classpath
+.classpath
+*.java
+*.jsp
