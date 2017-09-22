@@ -44,15 +44,13 @@
                         <h3 class="panel-title">로그인하세요.</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" method="post" action="loginok.jsp">
+                        <form role="form" method="post" action="/Project/company/login/loginok.jsp">
                             <fieldset>
                                 <div class="form-group">
-                                    <!-- <input class="form-control" placeholder="E-mail" name="seq" type="email" autofocus> -->
-									<input type="text"name="id"required size="10">
+                                    <input class="form-control" placeholder="E-mail" name="seq" type="email" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <!-- <input class="form-control" placeholder="Password" name="pw" type="password" value=""> -->
-                                    <input type="password"name="pw"required size="10">
+                                    <input class="form-control" placeholder="Password" name="pw" type="password" value="">
                                 </div>
                                 <div class="checkbox">
                                     <label>
