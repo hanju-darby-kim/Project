@@ -26,29 +26,64 @@
 	
 	/* 메인 게시판의 양옆 패딩을 제거. */
 	#center-board {padding-left:0px; padding-right:0px;}
-	#center-panel-heading {padding-bottom:15px; padding-top:15px;}
+	#center-panel-heading {padding-top:15px;}
 	
 	
+	/* 몇개씩보여줄 지 결정하는 컨트롤을 삭제 */
+	#dataTables-example_wrapper > div:nth-child(1) > div:nth-child(1) {display: none;}
+	/* 게시물 쇼잉 현황을 보여주는 폼 */
+	#dataTables-example_wrapper > div:nth-child(3) > div:nth-child(1) {padding-left: 30px;}
+	/* 검색필터를 왼쪽으로 */
+	div.dataTables_filter {text-align:left;}
+	/* 페이징폼을 오른쪽으로 */
+	#dataTables-example_wrapper > div:nth-child(3) > div:nth-child(2) {float:right;}
 	
+	/* 검색 폼 좌여백 */
+	#dataTables-example_wrapper > div:nth-child(1) > div:nth-child(2) {padding-left:25px;}
+	/* 검색분류 폼 높이 조절 */
+	/* 패딩순서 -> 상 우 하 좌 */
+	#dataTables-example_filter > label > div > select {margin-left:5px; padding: 0px 4px; height:30px;}
+	/* 페이징 블럭 넓이 지정 */
+	#dataTables-example_wrapper > div:nth-child(3) > div:nth-child(2) {width:390px;}
+
+	/* 테이블텍스트는 티바디 기본 중앙정렬 */
+	#center-board table tbody, #center-board table thead {text-align: center;} 
+	/* 티바디 중 제목은 좌측정렬 */
+	#center-board table tbody td:nth-child(2){text-align: left;} 
+	
+	/* 티헤드에 정렬스위치를 텍스트 옆으로 */
+	table.dataTable thead .sorting:after {float: none; margin-left:5px;}
+	
+	/* 글쓰기 버튼을 우측정렬 */
+	#add {width:70px; float:right; margin-right:25px;}
+	
+	
+		
 	}
 
 
 </style>
 
-<script>
-
-	${"#dataTables-example_filter > label"}.val{"hi"};
 
 
-</script>
+
+
 
 <body>
 
     <div id="wrapper">
 
 
-	    <%@ include file="/company/pages/attendance/inc/navigation.jsp" %>
 
+
+
+
+
+
+		
+
+	    <%@ include file="/company/pages/attendance/inc/navigation.jsp" %>
+		
 
         <!-- Page Content -->
         <div id="page-wrapper">
@@ -63,10 +98,11 @@
                 <!-- /.row -->
 
 				<div class="row" id="head-board">
-					<!-- 주간인기글 테이블 -->
+					
+					<!-- 최근에 댓글이 달린 테이블 -->
 					<div class="col-lg-6 head-board" id="head-board-left">
 						<div class="panel panel-default">
-							<div class="panel-heading text-center">최근에 <span class="text-primary">댓글이 달린</span> 글</div>
+							<div class="panel-heading text-center">최근에 <span style="color:#F0AD4E">댓글이 달린</span> 글</div>
 							<!-- /.panel-heading -->
 							<div class="panel-body">
 								<div class="table-responsive">
@@ -104,10 +140,11 @@
 						<!-- /.panel -->
 					</div>
 					<!-- /.col-lg-6 -->
-					<!-- 월간인기글 테이블 -->
+					
+					<!-- 치근에 답변을 받은 글 테이블 -->
 					<div class="col-lg-6 head-board" id="head-board-right">
 						<div class="panel panel-default">
-							<div class="panel-heading text-center">최근에 <span class="text-primary">답변을 받은</span> <span class="text-danger">질문, 건의</span> 글</div>
+							<div class="panel-heading text-center">최근에 <span style="color:#F0AD4E">답변을 받은</span> <span style="color:#5CB85C">질문, 건의</span> 글</div>
 							<!-- /.panel-heading -->
 							<div class="panel-body">
 								<div class="table-responsive">
@@ -148,425 +185,39 @@
 				</div>
 				<!-- /.rows -->
 
+<!--         
+        <div class="panel-body">
+            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+ -->
+
+
+
 				<div class="row">
 					<div class="col-lg-12" id="center-board">
 						<div class="panel panel-default">
 							<div class="panel-heading text-center">자유게시판</div>
 							<!-- /.panel-heading -->
 							<div class="panel-body" id="center-panel-heading">
-								<table width="100%"
-									class="table table-striped table-bordered table-hover"
-									id="dataTables-example">
+								<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 									<thead>
 										<tr>
-											<th>분류</th>
-											<th>제목</th>
-											<th>작성자</th>
-											<th>갱신</th>
-											<th>조회</th>
+											<th class="text-center" style="padding:8px; width:9%;">분류</th>
+											<th class="text-center"  style="padding:8px; width:56%;">제목</th>
+											<th class="text-center" style="padding:8px; width:10%;">작성자</th>
+											<th class="text-center" style="padding:8px; width:18%;">갱신</th>
+											<th class="text-center" style="padding:8px; width:7%;">조회</th>
 										</tr>
 									</thead>
+									
 									<tbody>
 										<tr class="odd gradeX">
-											<td>Trident</td>
-											<td>Internet Explorer 4.0</td>
-											<td>Win 95+</td>
-											<td class="center">4</td>
-											<td class="center">X</td>
+											<td>일반</td>
+											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
+											<td>김한주</td>
+											<td>2017-12-31 11:32</td>
+											<td>21</td>
 										</tr>
-										<tr class="even gradeC">
-											<td>Trident</td>
-											<td>Internet Explorer 5.0</td>
-											<td>Win 95+</td>
-											<td class="center">5</td>
-											<td class="center">C</td>
-										</tr>
-										<tr class="odd gradeA">
-											<td>Trident</td>
-											<td>Internet Explorer 5.5</td>
-											<td>Win 95+</td>
-											<td class="center">5.5</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="even gradeA">
-											<td>Trident</td>
-											<td>Internet Explorer 6</td>
-											<td>Win 98+</td>
-											<td class="center">6</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="odd gradeA">
-											<td>Trident</td>
-											<td>Internet Explorer 7</td>
-											<td>Win XP SP2+</td>
-											<td class="center">7</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="even gradeA">
-											<td>Trident</td>
-											<td>AOL browser (AOL desktop)</td>
-											<td>Win XP</td>
-											<td class="center">6</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Gecko</td>
-											<td>Firefox 1.0</td>
-											<td>Win 98+ / OSX.2+</td>
-											<td class="center">1.7</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Gecko</td>
-											<td>Firefox 1.5</td>
-											<td>Win 98+ / OSX.2+</td>
-											<td class="center">1.8</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Gecko</td>
-											<td>Firefox 2.0</td>
-											<td>Win 98+ / OSX.2+</td>
-											<td class="center">1.8</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Gecko</td>
-											<td>Firefox 3.0</td>
-											<td>Win 2k+ / OSX.3+</td>
-											<td class="center">1.9</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Gecko</td>
-											<td>Camino 1.0</td>
-											<td>OSX.2+</td>
-											<td class="center">1.8</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Gecko</td>
-											<td>Camino 1.5</td>
-											<td>OSX.3+</td>
-											<td class="center">1.8</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Gecko</td>
-											<td>Netscape 7.2</td>
-											<td>Win 95+ / Mac OS 8.6-9.2</td>
-											<td class="center">1.7</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Gecko</td>
-											<td>Netscape Browser 8</td>
-											<td>Win 98SE+</td>
-											<td class="center">1.7</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Gecko</td>
-											<td>Netscape Navigator 9</td>
-											<td>Win 98+ / OSX.2+</td>
-											<td class="center">1.8</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Gecko</td>
-											<td>Mozilla 1.0</td>
-											<td>Win 95+ / OSX.1+</td>
-											<td class="center">1</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Gecko</td>
-											<td>Mozilla 1.1</td>
-											<td>Win 95+ / OSX.1+</td>
-											<td class="center">1.1</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Gecko</td>
-											<td>Mozilla 1.2</td>
-											<td>Win 95+ / OSX.1+</td>
-											<td class="center">1.2</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Gecko</td>
-											<td>Mozilla 1.3</td>
-											<td>Win 95+ / OSX.1+</td>
-											<td class="center">1.3</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Gecko</td>
-											<td>Mozilla 1.4</td>
-											<td>Win 95+ / OSX.1+</td>
-											<td class="center">1.4</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Gecko</td>
-											<td>Mozilla 1.5</td>
-											<td>Win 95+ / OSX.1+</td>
-											<td class="center">1.5</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Gecko</td>
-											<td>Mozilla 1.6</td>
-											<td>Win 95+ / OSX.1+</td>
-											<td class="center">1.6</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Gecko</td>
-											<td>Mozilla 1.7</td>
-											<td>Win 98+ / OSX.1+</td>
-											<td class="center">1.7</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Gecko</td>
-											<td>Mozilla 1.8</td>
-											<td>Win 98+ / OSX.1+</td>
-											<td class="center">1.8</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Gecko</td>
-											<td>Seamonkey 1.1</td>
-											<td>Win 98+ / OSX.2+</td>
-											<td class="center">1.8</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Gecko</td>
-											<td>Epiphany 2.20</td>
-											<td>Gnome</td>
-											<td class="center">1.8</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Webkit</td>
-											<td>Safari 1.2</td>
-											<td>OSX.3</td>
-											<td class="center">125.5</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Webkit</td>
-											<td>Safari 1.3</td>
-											<td>OSX.3</td>
-											<td class="center">312.8</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Webkit</td>
-											<td>Safari 2.0</td>
-											<td>OSX.4+</td>
-											<td class="center">419.3</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Webkit</td>
-											<td>Safari 3.0</td>
-											<td>OSX.4+</td>
-											<td class="center">522.1</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Webkit</td>
-											<td>OmniWeb 5.5</td>
-											<td>OSX.4+</td>
-											<td class="center">420</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Webkit</td>
-											<td>iPod Touch / iPhone</td>
-											<td>iPod</td>
-											<td class="center">420.1</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Webkit</td>
-											<td>S60</td>
-											<td>S60</td>
-											<td class="center">413</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Presto</td>
-											<td>Opera 7.0</td>
-											<td>Win 95+ / OSX.1+</td>
-											<td class="center">-</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Presto</td>
-											<td>Opera 7.5</td>
-											<td>Win 95+ / OSX.2+</td>
-											<td class="center">-</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Presto</td>
-											<td>Opera 8.0</td>
-											<td>Win 95+ / OSX.2+</td>
-											<td class="center">-</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Presto</td>
-											<td>Opera 8.5</td>
-											<td>Win 95+ / OSX.2+</td>
-											<td class="center">-</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Presto</td>
-											<td>Opera 9.0</td>
-											<td>Win 95+ / OSX.3+</td>
-											<td class="center">-</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Presto</td>
-											<td>Opera 9.2</td>
-											<td>Win 88+ / OSX.3+</td>
-											<td class="center">-</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Presto</td>
-											<td>Opera 9.5</td>
-											<td>Win 88+ / OSX.3+</td>
-											<td class="center">-</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Presto</td>
-											<td>Opera for Wii</td>
-											<td>Wii</td>
-											<td class="center">-</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Presto</td>
-											<td>Nokia N800</td>
-											<td>N800</td>
-											<td class="center">-</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Presto</td>
-											<td>Nintendo DS browser</td>
-											<td>Nintendo DS</td>
-											<td class="center">8.5</td>
-											<td class="center">C/A<sup>1</sup>
-											</td>
-										</tr>
-										<tr class="gradeC">
-											<td>KHTML</td>
-											<td>Konqureror 3.1</td>
-											<td>KDE 3.1</td>
-											<td class="center">3.1</td>
-											<td class="center">C</td>
-										</tr>
-										<tr class="gradeA">
-											<td>KHTML</td>
-											<td>Konqureror 3.3</td>
-											<td>KDE 3.3</td>
-											<td class="center">3.3</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeA">
-											<td>KHTML</td>
-											<td>Konqureror 3.5</td>
-											<td>KDE 3.5</td>
-											<td class="center">3.5</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeX">
-											<td>Tasman</td>
-											<td>Internet Explorer 4.5</td>
-											<td>Mac OS 8-9</td>
-											<td class="center">-</td>
-											<td class="center">X</td>
-										</tr>
-										<tr class="gradeC">
-											<td>Tasman</td>
-											<td>Internet Explorer 5.1</td>
-											<td>Mac OS 7.6-9</td>
-											<td class="center">1</td>
-											<td class="center">C</td>
-										</tr>
-										<tr class="gradeC">
-											<td>Tasman</td>
-											<td>Internet Explorer 5.2</td>
-											<td>Mac OS 8-X</td>
-											<td class="center">1</td>
-											<td class="center">C</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Misc</td>
-											<td>NetFront 3.1</td>
-											<td>Embedded devices</td>
-											<td class="center">-</td>
-											<td class="center">C</td>
-										</tr>
-										<tr class="gradeA">
-											<td>Misc</td>
-											<td>NetFront 3.4</td>
-											<td>Embedded devices</td>
-											<td class="center">-</td>
-											<td class="center">A</td>
-										</tr>
-										<tr class="gradeX">
-											<td>Misc</td>
-											<td>Dillo 0.8</td>
-											<td>Embedded devices</td>
-											<td class="center">-</td>
-											<td class="center">X</td>
-										</tr>
-										<tr class="gradeX">
-											<td>Misc</td>
-											<td>Links</td>
-											<td>Text only</td>
-											<td class="center">-</td>
-											<td class="center">X</td>
-										</tr>
-										<tr class="gradeX">
-											<td>Misc</td>
-											<td>Lynx</td>
-											<td>Text only</td>
-											<td class="center">-</td>
-											<td class="center">X</td>
-										</tr>
-										<tr class="gradeC">
-											<td>Misc</td>
-											<td>IE Mobile</td>
-											<td>Windows Mobile 6</td>
-											<td class="center">-</td>
-											<td class="center">C</td>
-										</tr>
-										<tr class="gradeC">
-											<td>Misc</td>
-											<td>PSP browser</td>
-											<td>PSP</td>
-											<td class="center">-</td>
-											<td class="center">C</td>
-										</tr>
-										<tr class="gradeU">
-											<td>Other browsers</td>
-											<td>All others</td>
-											<td>-</td>
-											<td class="center">-</td>
-											<td class="center">U</td>
-										</tr>
+										
 									</tbody>
 								</table>
 								<!-- /.table-responsive -->
@@ -590,6 +241,51 @@
 
     <%@ include file="/company/pages/attendance/inc/closing.jsp" %>
 
+
+
+<script>
+
+
+	$(document).ready(function() {
+
+	    
+	    
+	    $('#dataTables-example_wrapper > div:nth-child(1) > div:nth-child(2)').after('<div id="add"><button type="button" class="btn btn-success">글쓰기</button></div>');
+	    $('#dataTables-example_wrapper > div:nth-child(3)').css('background-color', 'none');
+	    $('#dataTables-example_wrapper > div:nth-child(3) > div:nth-child(2)').css('background-color', 'none',);
+	
+	    		
+		
+		
+	
+	});
+
+
+
+</script>
+
+
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
