@@ -61,7 +61,10 @@
 		<servlet-name>all.contact.list</servlet-name>
 		<url-pattern>/all/contact/list.do</url-pattern>
 	</servlet-mapping>		
+<<<<<<< HEAD
 	
+=======
+>>>>>>> ac78bca7a6ff8fde1e8a56cc96fd99aa95c651dd
 	
 	<!-- attendance -->
 	<servlet>	<!-- 로그인페이지 -->
@@ -73,6 +76,7 @@
 		<url-pattern>/attendance/login.do</url-pattern>
 	</servlet-mapping>		
 	
+<<<<<<< HEAD
 	<servlet>	<!-- 근태작성 -->
 		<servlet-name>attendance.task</servlet-name>
 		<servlet-class>com.fineapple.attendance.Task</servlet-class>
@@ -121,6 +125,47 @@
 		<servlet-name>approve.Board.addok</servlet-name>
 		<url-pattern>/approve/board/addok.do</url-pattern>
 	</servlet-mapping>
+=======
+	<!-- attendance -->
+	<servlet>	<!-- 로그인페이지 -->
+		<servlet-name>attendance.login</servlet-name>
+		<servlet-class>com.fineapple.attendance.Login</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>attendance.login</servlet-name>
+		<url-pattern>/attendance/login.do</url-pattern>
+	</servlet-mapping>		
+	
+	<servlet>	<!-- 근태작성 -->
+		<servlet-name>attendance.task</servlet-name>
+		<servlet-class>com.fineapple.attendance.Task</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>attendance.task</servlet-name>
+		<url-pattern>/attendance/task.do</url-pattern>
+	</servlet-mapping>		
+
+	<servlet>	<!-- 통계 -->
+		<servlet-name>attendance.statistics</servlet-name>
+		<servlet-class>com.fineapple.attendance.Statistics</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>attendance.statistics</servlet-name>
+		<url-pattern>/attendance/statistics.do</url-pattern>
+	</servlet-mapping>		
+	
+	<servlet>	<!-- 자유게시판 종합-->
+		<servlet-name>attendance.community</servlet-name>
+		<servlet-class>com.fineapple.attendance.Community</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>attendance.community</servlet-name>
+		<url-pattern>/attendance/community.do</url-pattern>
+	</servlet-mapping>		
+	
+	
+
+>>>>>>> ac78bca7a6ff8fde1e8a56cc96fd99aa95c651dd
 	
 	
 	

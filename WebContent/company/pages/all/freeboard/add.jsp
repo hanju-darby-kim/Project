@@ -43,26 +43,13 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 	<style>
-		#addTable { width: 800px; border: 0px solid red; margin-left: 11px; }
 		#addTable #FBCategory { height: 30px; width: 100px; padding: 5px; }
+		#addTable { width: 800px; border: 0px solid red; margin-left: 11px; }
+	
 		#addTable td:first-child { border-top: 0px; }
 		#addTable #title { width: 760px; }
 		
-		#btns { width: 800px; text-align: right; padding-right: 20px; }
-		.file { float: left; }
-		.fileWrapper { float: left; border: 1px solid #ccc; padding: 3px; border-radius: 3px; }
-		.addFileTag { display: inline-block; margin: 5px 10px; padding: 3px; cursor: pointer; }
 	</style>
-	<script>
-		window.onload = function() {
-			
-		};
-		
-		function addFile(event) {
-			$(event.element).after("<td><div class='fileWrapper'><input type='file' id='file' + n ' class='file'></div><span class='fa fa-plus addFileTag' onclick='addFile(this);'></span><div style='clear:both;'></div></td>")
-		}
-	</script>
-	
 </head>
 
 <body>
@@ -114,16 +101,8 @@
 						<textarea name="content" id="content" rows="15" cols="105"></textarea>          
 					</td>
 				</tr>
-				<tr>
-					<td>
-						<div class="fileWrapper"><input type="file" id="file1" class="file" onclick='addFile(this);'></div><span class="fa fa-plus addFileTag" style="color: gray;"></span>
-						<div style="clear:both;"></div>
-					</td>
-				</tr>
 			</table>
-			<div id="btns">
-				<input type="submit" class="btn btn-outline btn-info" id="submit" value="등록하기">
-			</div>
+			<input type="submit" class="btn btn-primary">
             </form>
 			
 		<%@include file="/company/inc/texteditor.jsp" %>
