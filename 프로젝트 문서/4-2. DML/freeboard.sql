@@ -35,5 +35,5 @@ select * from EMPLOYEE;
 select * from DEPARTMENT;
 select * from vEmployee;
 
-
+SELECT * FROM freeboard;
 COMMIT;

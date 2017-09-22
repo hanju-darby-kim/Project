@@ -1,11 +1,13 @@
 package com.fineapple.all.freeboard;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
 import com.fineapple.DTO.FBCategoryDTO;
+import com.fineapple.DTO.FreeBoardDTO;
 import com.fineapple.util.DBUtil;
 
 public class FreeBoardDAO {
@@ -34,7 +36,7 @@ public class FreeBoardDAO {
 				categoryList.add(dto);
 			}
 			
-			System.out.println(categoryList);
+			
 			return categoryList;
 			
 		} catch (Exception e) {
@@ -42,6 +44,35 @@ public class FreeBoardDAO {
 			return null; 
 		}
 		
+	}
+
+	public int addFile(FreeBoardDTO fbdto) {
+		try {
+			
+			String sql = "INSERT INTO freeboard (seq, empSeq, FBCategory, title, content, readCount, regDate, thread, depth) "
+									+ "VALUES (freeBoardSeq.nextVal, ?, ?, ?, ?, DEFAULT, DEFAULT, DEFAULT, DEFAULT";
+			
+			PreparedStatement stat = conn.prepareStatement(sql);
+			stat.setString(1, fbdto.getEmpSeq());
+			stat.setString(2, fbdto.getFBCategory());
+			stat.setString(3, fbdto.getTitle());
+			stat.setString(4, fbdto.getContent());
+			
+			return stat.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+			return 0;
+		}
+	}
+
+	public int addFreeBoard(FreeBoardDTO fbdto) {
+		try {
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		return 0;
 	}
 
 

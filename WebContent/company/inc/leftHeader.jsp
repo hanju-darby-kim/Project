@@ -84,13 +84,18 @@
                      <li><a href="javascript:void(0)">판매수입</a></li>
                   </ul></li>
             </ul></li>
-         <li><a href="javascript:void(0)"><i
-               class="fa fa-smile-o fa-fw"></i> 5. 직급별 게시판<span class="fa arrow"></span></a>
+            
+            <!-----------------------현진 ----------------------->
+         <li><a href="javascript:void(0)">
+         	<i class="fa fa-smile-o fa-fw"></i> 5. 직급별 게시판<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
-               <li><a href="javascript:void(0)">사장게시판</a></li>
-               <li><a href="javascript:void(0)">과장게시판</a></li>
-               <li><a href="javascript:void(0)">부장게시판</a></li>
-               <li><a href="javascript:void(0)">대리게시판</a></li>
+               <li><a href="javascript:void(0)">직원 게시판<span class="fa arrow"></a> <ul class="nav nav-third-level">
+               <!-- fa arrow를 쓰면 화살표모양 넣을수있음.. -->
+                     <li><a href="javascript:void(0)">임원 게시판</a></li>
+                     <li><a href="javascript:void(0)">사원 게시판</a></li>
+                  </ul></li>
+               <li><a href="javascript:void(0)">일정 관리</a></li>
+               
             </ul></li>
          <li><a href="javascript:void(0)"><i
                class="fa fa-smile-o fa-fw"></i> 5. 전체게시판</a></li>
@@ -99,8 +104,9 @@
          <li><a href="javascript:void(0)"><i
                class="fa fa-smile-o fa-fw"></i> 6. 모임 게시판<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
-               <li><a href="javascript:void(0)">단기모임모집 </a>
-               <li><a href="/Project/company/pages/club/clubList.jsp">정기모임목록 </a>
+            	<li><a href="/Project/club/templogin.do">임시 김태현 로그인버튼</a></li>
+               <li><a href="javascript:void(0)">단기모임모집 </a></li>
+               <li><a href="/Project/club/clublist.do">정기모임 </a></li>
                <li><a href="javascript:void(0)">나의 소속 모임 <span
                      class="fa arrow"></span></a>
                   <ul class="nav nav-third-level">

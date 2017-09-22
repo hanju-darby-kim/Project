@@ -45,50 +45,48 @@
 						<div class="panel-body">
 							<table id="dev_write" width="100%" class="table table-striped table-bordered table-hover">
 								<tr>
-									<!-- 자동입력 -->
+									<th>번호</th>
+									<td>${dto.seq}</td>
+								</tr>
+								<tr>
 									<th>작성자</th>
-									<td></td>
+									<td>${dto.empSeq}</td>
 								</tr>
 								<tr>
 									<th>분류</th>
-									<td></td>
+									<td>${dto.cSeq}</td>
 								</tr>
 								<tr>
 									<th>작성일</th>
-									<td></td>
+									<td>${dto.regDate}</td>
 								</tr>
 								<tr>
 									<th>설명</th>
-									<td></td>
+									<td>${dto.content}</td>
 								</tr>
 								<tr>
 									<th>금액</th>
-									<td></td>
-								</tr>
-								<tr>
-									<th>비고</th>
-									<td></td>
+									<td>${dto.amount}</td>
 								</tr>
 								<tr>
 									<th>청구현황</th>
-									<td></td>
+									<td>${dto.etc}</td>
 								</tr>
 								<tr>
 									<th>최종승인일</th>
-									<td></td>
-								</tr>
-								<tr>
-									<th>승인자</th>
-									<td></td>
+									<td>${dto.conDate}</td>
 								</tr>
 							</table>
 							<div id="btns">
+								<c:if test="${dto.etc == '부서장 대기' && positionSeq == 2}">
 								<!-- 부장일때만 나타남 -->
-								<form action="" method="post" class="confirm">
-									<input type="button" value="승인하기" class="btn btn-danger btn-confirm" onclick="" />
-								</form>
+									<form action="/Project/company/pages/department/read_c.do" method="post">
+										<button type="submit" id="confirm" name="confirm" value="no" class="btn btn-danger btn-confirm">반려하기</button>
+										<button type="submit" id="confirm" name="confirm" value="yes" class="btn btn-primary btn-confirm">승인하기</button>
+										<input type="hidden" id="seq" name="seq" value="${dto.seq}" />
+									</form>
+								</c:if>
 								<input type="button" value="돌아가기" class="btn btn-default" onclick="history.back();"/>
-								<input type="button" value="목록보기" class="btn btn-default" />
 							</div>
 						</div>
 						<!-- /.panel-body -->
