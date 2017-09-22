@@ -43,26 +43,42 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
    <style>
-      #addTable { width: 800px; border: 0px solid red; margin-left: 11px; }
+      .table { width: 800px; border: 0px solid red; margin-left: 11px; }
+      #addTable { margin-bottom: 0; }
       #addTable #FBCategory { height: 30px; width: 100px; padding: 5px; }
-      #addTable td:first-child { border-top: 0px; }
+      #addTable td:first-child, #fileTable td:first-child { border-top: 0px; }
       #addTable #title { width: 760px; }
+      #fileTable { float: left; width: 400px; }
+      #btns { width: 300px; text-align: right; padding-right: 20px; float: left; margin-left: 87px; margin-top: 5px; }
       
-      #btns { width: 800px; text-align: right; padding-right: 20px; }
-      .file { float: left; }
+      .files { float: left; }
       .fileWrapper { float: left; border: 1px solid #ccc; padding: 3px; border-radius: 3px; }
       .addFileTag { display: inline-block; margin: 5px 8px; margin-right: 0px; padding: 3px; cursor: pointer; }
       .deleteFileTag { display: inline-block; margin: 5px 8px; margin-right: 0px; padding: 3px; cursor: pointer; }
       .fileTd:gt(0) { border: 1px solid red; }
+      .fa { color: gray; }
+      
    </style>
    <script>
    	  window.onload = function() {
-		  $(".fileTd:gt(0)").hide();
+		  $(".fileTd:gt(0)").css("display", "none");
    	  };
    	  
-      function addFile(num) {
-    	  num++;
-    	  $("#fileTd" + num).show();
+      function addFile() {
+    	  
+    	  if($("#fileTd2").css("display") == ("none")) {
+	    	  $("#fileTd2").css("display", "block");
+    	  } else if($("#fileTd3").css("display") == ("none")) {
+    		  $("#fileTd3").css("display", "block");
+    	  } else {
+    		  alert('파일은 최대 3개까지 업로드 가능합니다.');
+    	  }
+    	  
+      }
+      
+      function deleteFile() {
+    	  event.srcElement.parentElement.style.display = "none";
+    	  
       }
    </script>
    
@@ -117,32 +133,33 @@
                   <textarea name="content" id="content" rows="15" cols="105"></textarea>          
                </td>
             </tr>
-            <tr>
+            
+         </table>
+         <table class="table" id="fileTable">
+         	<tr>
                <td class="fileTd" id="fileTd1">
                   <div class="fileWrapper">
-                     <input type="file" id="file1" class="file">
+                     <input type="file" name="files" class="files">
                   </div>
-                  <span class="fa fa-minus deleteFileTag" style="color: gray;"></span>
-                  <span class="fa fa-plus addFileTag" id="addFileTag1" onclick='addFile(1);' style="color: gray;"></span>
+                  <span class="fa fa-plus addFileTag" id="addFileTag1" onclick='addFile();'></span>
                   <div style="clear:both;"></div>
                </td>
             </tr>
             <tr>
                <td class="fileTd" id="fileTd2">
                   <div class="fileWrapper">
-                     <input type="file" id="file2" class="file">
+                     <input type="file" name="files" class="files">
                   </div>
-                  <span class="fa fa-minus deleteFileTag" style="color: gray;"></span>
-                  <span class="fa fa-plus addFileTag" id="addFileTag2" onclick='addFile(2);' style="color: gray;"></span>
+                  <span class="fa fa-minus deleteFileTag" onclick='deleteFile();'></span>
                   <div style="clear:both;"></div>
                </td>
             </tr>
             <tr>
                <td class="fileTd" id="fileTd3">
                   <div class="fileWrapper">
-                     <input type="file" id="file3" class="file">
+                     <input type="file" id="file3" name="files" class="files">
                   </div>
-                  <span class="fa fa-minus deleteFileTag" style="color: gray;"></span>
+                  <span class="fa fa-minus deleteFileTag" onclick='deleteFile();'></span>
                   <div style="clear:both;"></div>
                </td>
             </tr>
@@ -150,7 +167,8 @@
          <div id="btns">
             <input type="submit" class="btn btn-outline btn-info" id="submit" value="등록하기">
          </div>
-            </form>
+         </form>
+         <div style="clear: both"></div>
          
       <%@include file="/company/inc/texteditor.jsp" %>
           
