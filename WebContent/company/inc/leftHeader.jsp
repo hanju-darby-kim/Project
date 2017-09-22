@@ -45,7 +45,7 @@
 					<li><a href="javascript:void(0)"><i class="fa fa-pencil fa-fw"></i>　기안서 작성 </a></li>
 					<li><a href="javascript:void(0)"><i class="fa fa-check fa-fw"></i>　결재 조회</a></li>
 					<li><a href="javascript:void(0)"><i class="fa fa-bar-chart-o"></i>　결재 건수 통계 </a></li>
-					<li><a href="/Project/company/pages/approval/list.jsp"><i class="fa fa-quote-left fa-fw"></i>　결재 관련 자유게시판 </a>
+					<li><a href="/approval/board/add.do"><i class="fa fa-quote-left fa-fw"></i>　결재 관련 자유게시판 </a>
 				</ul></li>		
 			<!-- 결재 게시판 끝 -->		
 			

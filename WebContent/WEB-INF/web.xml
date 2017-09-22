@@ -80,7 +80,7 @@
 	<servlet-mapping>
 		<servlet-name>attendance.task</servlet-name>
 		<url-pattern>/attendance/task.do</url-pattern>
-	</servlet-mapping>		
+	</servlet-mapping>	
 
 	<servlet>	<!-- 통계 -->
 		<servlet-name>attendance.statistics</servlet-name>
@@ -104,21 +104,21 @@
 	
 	<!-- 결재 자유 게시판 -->
    <servlet> <!-- 글쓰기 -->
-      <servlet-name>approve.FreeBoard.add</servlet-name>
-      <servlet-class>com.fineapple.approve.board.Add</servlet-class>
+      <servlet-name>approval.Board.add</servlet-name>
+      <servlet-class>com.fineapple.approval.board.Add</servlet-class>
    </servlet>
    <servlet-mapping>
-      <servlet-name>approve.FreeBoard.add</servlet-name>
-      <url-pattern>/approve/board/add.do</url-pattern>
+      <servlet-name>approval.Board.add</servlet-name>
+      <url-pattern>/approval/board/add.do</url-pattern>
    </servlet-mapping>
    
    <servlet> <!-- 글쓰기 완료 -->
-      <servlet-name>approve.Board.addok</servlet-name>
-      <servlet-class>com.fineapple.all.freeboard.AddOk</servlet-class>
+      <servlet-name>approval.Board.addok</servlet-name>
+      <servlet-class>com.fineapple.approval.board.AddOk</servlet-class>
    </servlet>
    <servlet-mapping>
-      <servlet-name>approve.Board.addok</servlet-name>
-      <url-pattern>/approve/board/addok.do</url-pattern>
+      <servlet-name>approval.Board.addok</servlet-name>
+      <url-pattern>/approval/board/addok.do</url-pattern>
    </servlet-mapping>
 	
 	
