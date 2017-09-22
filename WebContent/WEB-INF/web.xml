@@ -35,6 +35,16 @@
 	
 	<!-- all -->
 	<servlet>
+		<servlet-name>all.login</servlet-name>
+		<servlet-class>com.fineapple.all.Login</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all.login</servlet-name>
+		<url-pattern>/all/login.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 자개 -->
+	<servlet>
 		<servlet-name>all.FreeBoard.add</servlet-name>
 		<servlet-class>com.fineapple.all.freeboard.Add</servlet-class>
 	</servlet>
