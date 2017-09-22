@@ -34,7 +34,7 @@ public class FreeBoardDAO {
 				categoryList.add(dto);
 			}
 			
-			System.out.println(categoryList);
+			
 			return categoryList;
 			
 		} catch (Exception e) {

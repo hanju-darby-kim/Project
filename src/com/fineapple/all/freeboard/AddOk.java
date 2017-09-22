@@ -43,11 +43,11 @@ public class AddOk extends HttpServlet {
 			FreeBoardDTO fbdto = new FreeBoardDTO(); //FreeBoardDTO
 			
 			
-			fbdto.setEmpSeq((String)session.getAttribute("empSeq"));
+			fbdto.setEmpSeq((String)session.getAttribute("seq"));
 			fbdto.setFBCategory(multi.getParameter("FBCategory"));
 			fbdto.setTitle(multi.getParameter("title"));
 			fbdto.setContent(multi.getParameter("content"));
-			/*System.out.println(fbdto.getContent());*/
+			System.out.println(fbdto.getContent());
 			
 			//첨부파일 list에 넣기
 			Enumeration e = multi.getFileNames();
@@ -65,13 +65,9 @@ public class AddOk extends HttpServlet {
 			fbdto.setFileList(fileList);
 			
 			
-			////!!!!!지;우기
-			System.out.println("empSeq" + fbdto.getEmpSeq());
-			System.out.println("getTitle" + fbdto.getTitle());
-			System.out.println("category" + fbdto.getFBCategory());
 			
 			
-			RequestDispatcher dispatcher = req.getRequestDispatcher("/company/all/freeboard/addok.jsp");
+			RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/all/freeboard/addok.jsp");
 			dispatcher.forward(req, resp);
 			
 		} catch (Exception e) {
