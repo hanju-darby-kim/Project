@@ -26,6 +26,12 @@
                     <!-- /.col-lg-12 -->
                 </div>
                 <!-- /.row -->
+                
+                
+                <div class="form-group" style="width:100px;"><select class="form-control"><option>전체</option><option>일반</option><option>질문</option><option>건의</option></select></div>
+                
+                
+                
             </div>
             <!-- /.container-fluid -->
         </div>

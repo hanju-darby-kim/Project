@@ -24,10 +24,12 @@ public class WriteOutcomeGo extends HttpServlet {
 		
 		HttpSession session = req.getSession();
 		
-		OutcomeService service = new OutcomeService(req.getSession());
+		OutcomeService service = new OutcomeService(session);
 		OutcomeDTO dto = new OutcomeDTO();
 		
 		String empSeq = (String) session.getAttribute("seq");
+		String positionSeq = (String) session.getAttribute("positionSeq");
+		String departmentSeq = (String) session.getAttribute("departmentSeq");
 		String cSeq = req.getParameter("category"); 
 		String content = req.getParameter("content");
 		int amount = Integer.parseInt(req.getParameter("amount"));
@@ -37,7 +39,7 @@ public class WriteOutcomeGo extends HttpServlet {
 		dto.setContent(content);
 		dto.setAmount(amount);
 		
-		int result = service.setOutcome(dto);
+		int result = service.setOutcome(dto, positionSeq, departmentSeq);
 		
 		if (result == 0) {	//오류 시 오류메시지와 함께 오류페이지로 이동
 			req.setAttribute("msg", "비용청구 작성에 오류가 발생했습니다");

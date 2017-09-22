@@ -5,7 +5,7 @@
 <!-- Metis Menu Plugin JavaScript -->
 <script src="/Project/company/vendor/metisMenu/metisMenu.min.js"></script>
 <!-- DataTables JavaScript -->
-<script src="/Project/company/vendor/datatables/js/jquery.dataTables.min.js"></script>
+<script src="/Project/company/pages/attendance/inc/jquery.dataTables.min.js"></script>
 <script src="/Project/company/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
 <script src="/Project/company/vendor/datatables-responsive/dataTables.responsive.js"></script>
 <!-- Custom Theme JavaScript -->
