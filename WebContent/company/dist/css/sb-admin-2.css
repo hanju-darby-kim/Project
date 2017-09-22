@@ -3,17 +3,31 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
+
+
 body {
 	background-color: #f8f8f8;
 }
 
+.logo-btn{
+	background : url("/Project/company/images/logo2color.png");
+	margin-left:20px;
+	width:125px;
+	height:75px;
+	background-repeat : no-repeat;
+	background-size:contain;
+	cursor: pointer;	
+}
+
 #wrapper {
 	width: 100%;
+	max-width:1200px; 
+	margin:20px auto;
 }
 
 #page-wrapper {
 	padding: 0 15px;
-	min-height: 568px;
+	min-height: 750px;
 	background-color: white;
 }
 
@@ -28,6 +42,7 @@ body {
 
 .navbar-top-links {
 	margin-right: 0;
+	margin-top:10px;
 }
 
 .navbar-top-links li {
@@ -129,7 +144,7 @@ body {
 		z-index: 1;
 		position: absolute;
 		width: 250px;
-		margin-top: 51px;
+		margin-top: 75px;
 	}
 	.navbar-top-links .dropdown-messages, .navbar-top-links .dropdown-tasks,
 		.navbar-top-links .dropdown-alerts {
@@ -510,3 +525,4 @@ table.dataTable thead .sorting:after {
 		border-left-width: 0;
 	}
 }
+

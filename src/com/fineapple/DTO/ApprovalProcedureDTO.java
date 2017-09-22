@@ -10,6 +10,7 @@ public class ApprovalProcedureDTO {
 	private String approvalCategoryNum;
 	private String positionNum;
 	private String approvalProcedureNum;
+	
 	public String getSeq() {
 		return seq;
 	}

@@ -15,14 +15,14 @@
 
 <body>
 
-	<div id="wrapper" style="max-width:1200px; margin:20px auto;">
+	<div id="wrapper">
 		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
 		<!-- uppderHeader -->
 			<%@ include file="/company/inc/upperHeader.jsp" %>
 
 			<%@ include file="/company/inc/leftHeader.jsp" %>
 		</nav>
-
+		<div style="clear:both;"></div>
 		<div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
