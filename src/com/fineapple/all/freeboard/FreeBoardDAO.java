@@ -68,7 +68,7 @@ public class FreeBoardDAO {
 
 	public int addFreeBoard(FreeBoardDTO fbdto) {
 		try {
-			
+			String sql = 
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}

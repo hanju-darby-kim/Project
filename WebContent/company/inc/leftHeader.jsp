@@ -97,8 +97,17 @@
                <li><a href="javascript:void(0)">일정 관리</a></li>
                
             </ul></li>
-         <li><a href="javascript:void(0)"><i
-               class="fa fa-smile-o fa-fw"></i> 5. 전체게시판</a></li>
+            
+          <!----------------------- 해나 ----------------------->      
+            
+		<li><a href="javascript:void(0)"><i class="fa fa-child fa-fw"></i>　전체게시판<span class="fa arrow"></span></a>
+			<ul class="nav nav-second-level">
+				<li><a href="javascript:void(0)"><i class="fa  fa-table fa-fw"></i>　주소록</a></li>
+				<li><a href="javascript:void(0)"><i class="fa fa-check fa-fw"></i>　설문조사</a></li>
+				<li><a href="javascript:void(0)"><i class="fa fa-bar-chart-o fa-fw"></i>　전체통계</a></li>
+				<li><a href="javascript:void(0)"><i class="fa fa-calendar-o fa-fw"></i>　전체게시판</a></li>
+			</ul>
+		</li>   
 
    <!----------------- 태현 모임 ---------------------------->
          <li><a href="javascript:void(0)"><i
