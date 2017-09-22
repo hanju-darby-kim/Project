@@ -15,10 +15,6 @@
 				
 				});
 		
-				
-				
-				
-				
 				// ‘저장’ 버튼을 누르는 등 저장을 위한 액션을 했을 때 submitContents가 호출된다고 가정한다.
 				function submitContents(elClickedObj) {
 				    // 에디터의 내용이 textarea에 적용된다.

@@ -139,7 +139,7 @@
          	<tr>
                <td class="fileTd" id="fileTd1">
                   <div class="fileWrapper">
-                     <input type="file" name="files" class="files">
+                     <input type="file" name="files1" class="files">
                   </div>
                   <span class="fa fa-plus addFileTag" id="addFileTag1" onclick='addFile();'></span>
                   <div style="clear:both;"></div>
@@ -148,7 +148,7 @@
             <tr>
                <td class="fileTd" id="fileTd2">
                   <div class="fileWrapper">
-                     <input type="file" name="files" class="files">
+                     <input type="file" name="files2" class="files">
                   </div>
                   <span class="fa fa-minus deleteFileTag" onclick='deleteFile();'></span>
                   <div style="clear:both;"></div>
@@ -157,7 +157,7 @@
             <tr>
                <td class="fileTd" id="fileTd3">
                   <div class="fileWrapper">
-                     <input type="file" id="file3" name="files" class="files">
+                     <input type="file" id="file3" name="files3" class="files">
                   </div>
                   <span class="fa fa-minus deleteFileTag" onclick='deleteFile();'></span>
                   <div style="clear:both;"></div>
@@ -165,7 +165,7 @@
             </tr>
          </table>
          <div id="btns"> <!-- 전송버튼 -->
-            <input type="submit" class="btn btn-outline btn-info" id="send" onclick="submitContents(this);" value="등록하기">
+            <input type="submit" class="btn btn-outline btn-info" id="send" onclick="submitContents();" value="등록하기">
          </div>
          </form>
          <div style="clear: both"></div>
