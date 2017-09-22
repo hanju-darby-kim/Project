@@ -5,7 +5,7 @@
 
 <head>
     <%@ include file="/company/pages/attendance/inc/asset.jsp" %>
-	<title>SB Admin 2 - Bootstrap Admin Theme</title>
+	<title>Fine Apple</title>
 </head>
 
 <body>
