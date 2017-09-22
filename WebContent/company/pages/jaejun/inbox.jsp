@@ -57,7 +57,8 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Inbox</h1>
+                    <h1 class="page-header">abbInbox</h1>
+                    <input type="button" class="btn btn-primary" value="쪽지쓰기" style="float: right;" onclick="location.href='/Project/message/add.do';"/>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
