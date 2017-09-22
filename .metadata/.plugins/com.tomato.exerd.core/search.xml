@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
 <es:ExerdSearchRequest xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:es="http://exerd.com/search">
   <commonRequest>
-    <logicalNameRule use="true" expression="temp"/>
-    <physicalNameRule use="true" expression="temp"/>
+    <logicalNameRule use="true" expression=""/>
+    <physicalNameRule use="true" expression=""/>
     <commentRule expression=""/>
   </commonRequest>
   <tableRequest/>

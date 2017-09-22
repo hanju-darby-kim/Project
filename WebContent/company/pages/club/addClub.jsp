@@ -70,7 +70,7 @@
 				<!-- 글쓰기 폼 -->
 				<form method="post" action="/Project/company/club/addClub.do"
 					enctype="multipart/form-data">
-					<table id="tbl" class="table table-striped">
+					<table id="club-form" class="table table-striped">
 						<tr>
 							<th>클럽 이름</th>
 							<td><input type="text" name="name" id="name"
@@ -92,27 +92,23 @@
 									class="form-control long" required></textarea></td>
 						</tr>
 						<tr>
-							<th>태그</th>
+							<th>카테고리</th>
 							<td><select name="tag" id="tag" class="form-control short">
-									<option value="y">적용함</option>
-									<option value="n">적용안함</option>
+									<option value="1">스포츠</option>
+									<option value="2">장윤하</option>
 							</select></td>
 						</tr>
 						<tr>
-							<th>파일</th>
+							<th>클럽 로고</th>
 							<td><input type="file" name="attach" id="attach"
 								class="form-control"></td>
 						</tr>
-						<tr>
-							<th>암호</th>
-							<td><input type="password" name="pw" id="pw"
-								class="form-control short" required></td>
-						</tr>
+						
 					</table>
 					<div id="btns">
 						<input type="button" value="돌아가기" class="btn btn-default"
-							onclick="history.back();"> <input type="submit"
-							value="글쓰기" class="btn btn-primary">
+							onclick="history.back();"> 
+						<input type="submit" value="만들기" class="btn btn-primary">
 					</div>
 
 					<!-- 지금 작성중인 글이 새글? 답변글? -->
