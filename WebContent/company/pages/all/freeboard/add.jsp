@@ -112,29 +112,29 @@
             </div>
             <!-- /.container-fluid -->
             
-            <form name="frm" id="frm" action="/Project/pages/all/freeboard/addok.do" method="post" accept-charset="utf-8">
+            <form name="frm" id="frm" action="/Project/all/freeboard/addok.do" method="post" accept-charset="utf-8" enctype="multipart/form-data">
             <table class="table" id="addTable">
                <tr>
-                  <td>
-                     <select name="FBCategory" id="FBCategory" class="form-control">
+                  <td> <!-- 카테고리 -->
+                     <select name="FBCategory" id="FBCategory" name="FBCategory" class="form-control">
                         <c:forEach items="${categoryList}" var="category">
-                     <option>${category.name}</option> 
+                     <option value="${category.seq}">${category.name}</option> 
                      </c:forEach>                 
                      </select>
                   </td>
                </tr>
                <tr>
-                  <td>
+                  <td> <!-- 제목 -->
                    <input type="text" name="title" id="title" class="form-control" placeholder="제목을 입력하세요" required>
                     </td>
                </tr>
                <tr>
-                  <td>
+                  <td> <!-- content -->
                   <textarea name="content" id="content" rows="15" cols="105"></textarea>          
                </td>
             </tr>
             
-         </table>
+         </table> <!-- 첨부파일들 -->
          <table class="table" id="fileTable">
          	<tr>
                <td class="fileTd" id="fileTd1">
@@ -164,7 +164,7 @@
                </td>
             </tr>
          </table>
-         <div id="btns">
+         <div id="btns"> <!-- 전송버튼 -->
             <input type="submit" class="btn btn-outline btn-info" id="submit" value="등록하기">
          </div>
          </form>
