@@ -10,14 +10,8 @@
 <meta name="author" content="">
 <title>SB Admin 2 - Bootstrap Admin Theme</title>
 <style>
-#tbl th:nth-child(1) { width: 50px; }
-	#tbl th:nth-child(2) { width: 400px; }
-	#tbl th:nth-child(3) { width: 80px; }
-	#tbl th:nth-child(4) { width: 120px; }
-	#tbl th:nth-child(5) { width: 50px; }
-	
-	#tbl th, #tbl td { text-align: center; }
-	#tbl td:nth-child(2) { text-align: left; }
+#tbl th, #tbl td { text-align: center; }
+#tbl td:nth-child(2) { text-align: left; }
 </style>
 <script>
 
@@ -70,44 +64,104 @@
                     
                     
                
-               <table id="tbl" class="table table-striped">
-				<tr>
-					<th>번호</th>
-					<th>제목</th>
-					<th>이름</th>
-					<th>날짜</th>
-					<th>읽음</th>
-				</tr>
-				<c:forEach items="${list}" var="dto">
-				<tr>
-					<td>${dto.seq}</td>
-					<td>
-						<!-- 글 제목 -->
-						
-						<span title="${dto.fullSubject}" 
-							style="margin-left: ${dto.depth * 25}px;"> <!-- 전체 제목 -->
-<%-- 						<c:if test="${dto.depth > 0}">
-						<img src="/MVCTest/board/images/re.png">
-						</c:if> --%>
-						<!-- view.do?seq=5&column=content&word=게시판&isSearch=y -->
-							<a href="/MVCTest/board/view.do?seq=${dto.seq}&column=${map.column}&word=${map.word}&isSearch=${map.isSearch}">${dto.subject}</a>
-						</span>
-						${dto.fileImg}
-						<span class="badge">${dto.commentCount}</span>
-						${dto.hot} <!-- 인기글 -->
-						${dto.gapImg} <!-- 새글 -->
-					</td>
-					<td>${dto.name}</td>
-					<td>${dto.regDate}</td>
-					<td>${dto.readCount}</td>
-				</tr>
-				</c:forEach>
-				<c:if test="${list.size() == 0}">
-<!-- 				<tr>
-					<td colspan="5">현재 게시물이 존재하지 않습니다.</td>
-				</tr> -->
-				</c:if>
-			</table>
+<table width="100%" class="table table-striped table-bordered table-hover" id="tbl">
+                                <thead>
+                                    <tr>
+                                        <th>번호</th>
+                                        <th>제목</th>
+                                        <th>이름</th>
+                                        <th>날짜</th>
+                                        <th>읽음</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd gradeX">
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 4.0</td>
+                                        <td>Win 95+</td>
+                                        <td class="center">4</td>
+                                        <td class="center">X</td>
+                                    </tr>
+                                    <tr class="even gradeC">
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 5.0</td>
+                                        <td>Win 95+</td>
+                                        <td class="center">5</td>
+                                        <td class="center">C</td>
+                                    </tr>
+                                    <tr class="odd gradeA">
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 5.5</td>
+                                        <td>Win 95+</td>
+                                        <td class="center">5.5</td>
+                                        <td class="center">A</td>
+                                    </tr>
+                                    <tr class="even gradeA">
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 6</td>
+                                        <td>Win 98+</td>
+                                        <td class="center">6</td>
+                                        <td class="center">A</td>
+                                    </tr>
+                                    <tr class="odd gradeA">
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 7</td>
+                                        <td>Win XP SP2+</td>
+                                        <td class="center">7</td>
+                                        <td class="center">A</td>
+                                    </tr>
+                                    <tr class="even gradeA">
+                                        <td>Trident</td>
+                                        <td>AOL browser (AOL desktop)</td>
+                                        <td>Win XP</td>
+                                        <td class="center">6</td>
+                                        <td class="center">A</td>
+                                    </tr>
+                                    <tr class="gradeA">
+                                        <td>Gecko</td>
+                                        <td>Firefox 1.0</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td class="center">1.7</td>
+                                        <td class="center">A</td>
+                                    </tr>
+                                    <tr class="gradeA">
+                                        <td>Gecko</td>
+                                        <td>Firefox 1.5</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td class="center">1.8</td>
+                                        <td class="center">A</td>
+                                    </tr>
+                                    <tr class="gradeA">
+                                        <td>Gecko</td>
+                                        <td>Firefox 2.0</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td class="center">1.8</td>
+                                        <td class="center">A</td>
+                                    </tr>
+                                    <tr class="gradeA">
+                                        <td>Gecko</td>
+                                        <td>Firefox 3.0</td>
+                                        <td>Win 2k+ / OSX.3+</td>
+                                        <td class="center">1.9</td>
+                                        <td class="center">A</td>
+                                    </tr>
+                                    <tr class="gradeA">
+                                        <td>Gecko</td>
+                                        <td>Camino 1.0</td>
+                                        <td>OSX.2+</td>
+                                        <td class="center">1.8</td>
+                                        <td class="center">A</td>
+                                    </tr>
+                                    <tr class="gradeA">
+                                        <td>Gecko</td>
+                                        <td>Camino 1.5</td>
+                                        <td>OSX.3+</td>
+                                        <td class="center">1.8</td>
+                                        <td class="center">A</td>
+                                    </tr>
+                                
+                                    </tbody>
+                            </table>
                     
                     
                 </div>
