@@ -90,7 +90,7 @@
 						<tr>
 							<td>제목</td>
 							<td>
-								<input type="text" name="subject" style="width: 100%;"/>
+								<input type="text" name="title" style="width: 100%;"/>
 							</td>
 						</tr>
 						<tr>

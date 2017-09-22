@@ -111,7 +111,7 @@
 		</li>   
 
       <!----------------- 태현 모임 ---------------------------->
-         <li><a href="javascript:void(0)"><i
+                 <li><a href="javascript:void(0)"><i
                class="fa fa-smile-o fa-fw"></i> 6. 모임 게시판<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
             	<li><a href="/Project/club/templogin.do">임시 김태현 로그인버튼</a></li>
@@ -122,8 +122,8 @@
                   <ul class="nav nav-third-level">
                   <c:if test="${myclublist ne null }">
                   	 <c:forEach items="${myclublist}" var="clubname">
-                     <li><a href="javascript:void(0)">${clubname}</a></li>
-                  
+                     <li><a href="/Project/club/myclubboard.do">${clubname}</a></li>
+                  	
                      </c:forEach>
                   </c:if>
                   </ul></li>

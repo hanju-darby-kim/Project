@@ -1,4 +1,4 @@
-package com.fineapple.DTO;
+package com.fineapple.dto;
 
 public class MsgReadDTO {
 	private int seq;

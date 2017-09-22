@@ -30,17 +30,23 @@ INSERT INTO CLUBMEMBER VALUES (clubmemberseq.nextval, 10, 41, sysdate);
 INSERT INTO CLUB(seq,name,DETAIL,CATEGORYSEQ,EMPSEQ,CLUBIMAGE) VALUES (ClubSEQ.nextval, '시네마천국','영화를 같이 즐겨요', 5, 42,null);
 INSERT INTO CLUBMEMBER VALUES (clubmemberseq.nextval, 11, 42, sysdate);
 
+insert INTO CLUBMEMBER VALUES  (CLUBMEMBERSEQ.nextval, 8, 39, sysdate);
 SELECT * FROM club;
 SELECT * from CLUBCATEGORY;
 SELECT * FROM EMPLOYEE;
 
-SELECT * FROM CLUBMEMBER;
-
+SELECT * FROM CLUBMEMBER WHERE EMPSEQ=39;
+update club set CLUBIMAGE = '/Project/company/images/baseball.jpg' where seq=3;
+update club set CLUBIMAGE = '/Project/company/images/fishing.jpg' where seq=5;
+update club set CLUBIMAGE = '/Project/company/images/coding.jpg' where seq=6;
+update club set CLUBIMAGE = '/Project/company/images/lol.jpg' where seq=7;
+update club set CLUBIMAGE = '/Project/company/images/camera.jpg' where seq=9;
 UPDATE club SET CLUBIMAGE = '/Project/company/images/logo2black.png' WHERE seq = 7;
 UPDATE club SET CLUBIMAGE = '/Project/company/images/logo1black.png' WHERE seq = 9;
 UPDATE club SET CLUBIMAGE = '/Project/company/images/arena.jpg' WHERE seq = 8;
 commit;
 
+--------------------------------전체 정기모임 리스트 뷰---------------------------------------------
 CREATE OR REPLACE VIEW clublistView
   AS
 SELECT c.SEQ as seq, c.NAME as name, c.DETAIL as detail, c.openDate as openDate, cc.NAME as categoryName, e.NAME as empName, d.department as department, c.CLUBIMAGE as clubImg FROM DEPARTMENT d
@@ -53,4 +59,7 @@ SELECT * FROM clublistView;
 select * FROM EMPLOYEE;
 SELECT * FROM DEPARTMENT;
 
-SELECT c.NAME as clubname from club c INNER JOIN CLUBMEMBER m ON c.SEQ = m.CLUBSEQ INNER JOIN EMPLOYEE e on c.EMPSEQ = e.SEQ WHERE e.SEQ=39;
+--------사원번호로 모임이름 따오기----------
+SELECT c.NAME as clubname from club c INNER JOIN CLUBMEMBER m ON c.SEQ = m.CLUBSEQ INNER JOIN EMPLOYEE e on c.EMPSEQ = e.SEQ WHERE m.EMPSEQ=39;
+
+SELECT c.NAME as clubname from club c INNER JOIN CLUBMEMBER m ON c.SEQ = m.CLUBSEQ INNER JOIN EMPLOYEE e on c.EMPSEQ = e.SEQ WHERE m.EMPSEQ=39;

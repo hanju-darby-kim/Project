@@ -15,6 +15,22 @@
 
 <body>
 
+<script>
+	<% if (session.getAttribute("seq") != null) { %>
+	<% System.out.println(session.getAttribute("seq")); %>
+	<% System.out.println(session.getAttribute("name")); %>
+	<% System.out.println(session.getAttribute("positionSeq")); %>
+	<% System.out.println(session.getAttribute("departmentSeq")); %>
+	<% } else { %>
+	<% System.out.println("로그인 안 넘어옴"); %>
+	<% } %>
+</script>
+
+
+
+
+
+
 	<div id="wrapper">
 		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
 		<!-- uppderHeader -->
