@@ -86,14 +86,34 @@
 	
 	
 	
+	<!-- ;%심재준마커. 쪽지 시작 -->
+	<servlet> <!-- inbox -->
+		<servlet-name>message.inbox</servlet-name>
+		<servlet-class>com.fineapple.message.Inbox</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.inbox</servlet-name>
+		<url-pattern>/message/inbox.do</url-pattern>
+	</servlet-mapping>		
 	
+	<servlet> <!-- add -->
+		<servlet-name>message.add</servlet-name>
+		<servlet-class>com.fineapple.message.Add</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.add</servlet-name>
+		<url-pattern>/message/add.do</url-pattern>
+	</servlet-mapping>		
 	
-	
-	
-	
-	
-	
-	
-	
+	<servlet> <!-- addok -->
+		<servlet-name>message.addok</servlet-name>
+		<servlet-class>com.fineapple.message.AddOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.addok</servlet-name>
+		<url-pattern>/message/addok.do</url-pattern>
+	</servlet-mapping>
 	
 </web-app>
+
+
