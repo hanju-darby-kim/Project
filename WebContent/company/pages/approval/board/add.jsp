@@ -12,6 +12,8 @@
 <style>
 #tbl th, #tbl td { text-align: center; }
 #tbl td:nth-child(2) { text-align: left; }
+#tbl .short { width: 20%; }
+#tbl #content { height: 300px; }
 </style>
 <script>
 
@@ -57,13 +59,38 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">결재 <small>자유 게시판</small></h1>
+                        <h1 class="page-header">결재 <small>글쓰기</small></h1>
                     </div>
                     <!-- /.col-lg-12 -->
                     <!-- 테이블 내용 -->
-                    글쓰기 테스트용입니다.
-                		    안녕????
-               
+                    
+                    <!-- 글쓰기 폼 -->
+                    <form method="post" action="/Project/approval/board/addok.do">
+               			<table id="tbl" class="table table-striped">
+				<tr>
+					<th>이름</th>
+					<td><input type="text" name="name" id="name" class="form-control short" required></td>
+				</tr>
+				<tr>
+					<th>제목</th>
+					<td><input type="text" name="subject" id="subject" class="form-control long" required></td>
+				</tr>
+				<tr>
+					<th>내용</th>
+					<td><textarea name="content" id="content" class="form-control long" required></textarea></td>
+				</tr>
+				<tr>
+					<th>암호</th>
+					<td><input type="password" name="pw" id="pw" class="form-control short" required></td>
+				</tr>
+			</table>
+			<div id="btns">
+				
+				<input type="button" value="돌아가기" class="btn btn-default" onclick="history.back();">
+				<input type="submit" value="글쓰기" class="btn btn-primary">
+			</div>
+
+             </form>
 				
                     
                     

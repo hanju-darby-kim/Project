@@ -14,6 +14,9 @@ public class ApprovalBoardDTO {
 	private int thread;
 	private int depth;
 	private String empNum;
+	private String name;
+	private String pw;
+	
 	public String getSeq() {
 		return seq;
 	}
@@ -67,6 +70,18 @@ public class ApprovalBoardDTO {
 	}
 	public void setEmpNum(String empNum) {
 		this.empNum = empNum;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPw() {
+		return pw;
+	}
+	public void setPw(String pw) {
+		this.pw = pw;
 	}
 	
 	
