@@ -75,7 +75,7 @@
 	            </div>
 	            <div id="btns">
 	            <input type="button" class="btn btn-primary" value="쪽지쓰기" onclick="location.href='/Project/message/add.do';"/>
-	            <input type="button" class="btn btn-default" value="환경설정" onclick="location.href='/Project/message/add.do';"/>
+	            <input type="button" class="btn btn-default" value="환경설정" onclick="location.href='/Project/message/setting.do';"/>
 	            </div>
             </div>
             <!-- /.row -->
