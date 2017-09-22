@@ -10,7 +10,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- <a class="navbar-brand" href="/Project/company/pages/index.jsp">Fine Apple</a> -->
-                <div class="logo-btn" onclick="location.href='/Project/company/pages/index.jsp;'"></div>
+                <div class="logo-btn" onclick="location.href='/Project/company/pages/index.jsp';"></div>
             </div>
             <!-- /.navbar-header -->
 
@@ -60,7 +60,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a class="active text-center" href="/Project/company/pages/jaejun/message.jsp">
+                            <a class="active text-center" href="/Project/message.jsp">
                                 <strong>Read All Messages</strong>
                                 <i class="fa fa-angle-right"></i>
                             </a>
