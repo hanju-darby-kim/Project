@@ -1,4 +1,4 @@
-package com.fineapple.dto;
+package com.fineapple.DTO;
 
 public class MsgSentDTO {
 	private int seq;

@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.fineapple.dto.MsgSentDTO;
+import com.fineapple.DTO.MsgSentDTO;
 
 public class AddOk extends HttpServlet {
 	@Override
