@@ -102,6 +102,27 @@
 	
 	
 	
+	<!-- 결재 자유 게시판 -->
+   <servlet> <!-- 글쓰기 -->
+      <servlet-name>approve.Board.add</servlet-name>
+      <servlet-class>com.fineapple.approve.board.Add</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>approve.FreeBoard.add</servlet-name>
+      <url-pattern>/approve/board/add.do</url-pattern>
+   </servlet-mapping>
+   
+   <servlet> <!-- 글쓰기 완료 -->
+      <servlet-name>approve.Board.addok</servlet-name>
+      <servlet-class>com.fineapple.all.freeboard.AddOk</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>approve.Board.addok</servlet-name>
+      <url-pattern>/approve/board/addok.do</url-pattern>
+   </servlet-mapping>
+	
+	
+	
 	<!-- ;%심재준마커. 쪽지 시작 -->
 	<servlet> <!-- inbox -->
 		<servlet-name>message.inbox</servlet-name>
