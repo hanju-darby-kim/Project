@@ -65,6 +65,7 @@
                     <!-- 테이블 내용 -->
                     
                     <!-- 글쓰기 폼 -->
+                    <!-- 파일 안쓸거면 enc.... 지우기 -->
                     <form method="post" action="/Project/approval/board/addok.do">
                			<table id="tbl" class="table table-striped">
 				<tr>
