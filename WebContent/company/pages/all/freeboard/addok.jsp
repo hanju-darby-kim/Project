@@ -15,16 +15,16 @@
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Project/company/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="/Project/company/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/Project/company/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/Project/company/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -60,16 +60,29 @@
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
+            <c:if test="${result == 1}">
+	            <div id="confirmBox">
+	            	<div id="end">
+	            		등록이 완료되었습니다!
+	            	</div>
+	            	<div id="btns">
+	            		<input type="button" value="목록으로" class="btn btn-primary">
+	            		<input type="button" value="글보기" class="btn btn-info">
+	            	</div>
+	            </div>
+            </c:if>
             
-            <div id="confirmBox">
-            	<div id="end">
-            		등록이 완료되었습니다!
-            	</div>
-            	<div id="btns">
-            		<input type="button" value="목록으로" class="btn btn-">
-            		<input type="button" value="글보기">
-            	</div>
-            </div>
+            <c:if test="${result == 0}">
+	            <div id="confirmBox">
+	            	<div id="end">
+	            		글이 등록되지 않았습니다. 전산부로 문의 바랍니다. 02) 2550-1039
+	            	</div>
+	            	<div id="btns">
+	            		<input type="button" value="목록으로" class="btn btn-primary">
+	            		<input type="button" value="글보기" class="btn btn-info">
+	            	</div>
+	            </div>
+            </c:if>
             
         </div>
         <!-- /#page-wrapper -->
