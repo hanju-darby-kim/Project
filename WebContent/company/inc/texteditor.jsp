@@ -15,9 +15,6 @@
 			    fCreator: "createSEditor2"
 			
 			});
-			var sDefaultFont = '맑은 고딕';
-			var nFontSize = 12;
-			oEditors.setDefaultFont(sDefaultFont, nFontSize);
 
 			
 </script>
