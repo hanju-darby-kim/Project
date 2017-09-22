@@ -60,7 +60,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a class="active text-center" href="/Project/message/inbox.jsp">
+                            <a class="active text-center" href="/Project/message/inbox.do">
                                 <strong>Read All Messages</strong>
                                 <i class="fa fa-angle-right"></i>
                             </a>
