@@ -142,6 +142,17 @@
 		<url-pattern>/attendance/community.do</url-pattern>
 	</servlet-mapping>		
 	
+	<servlet>	<!-- 자유게시판 글쓰기-->
+		<servlet-name>attendance.communityAdd</servlet-name>
+		<servlet-class>com.fineapple.attendance.CommunityAdd</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>attendance.communityAdd</servlet-name>
+		<url-pattern>/attendance/communityAdd.do</url-pattern>
+	</servlet-mapping>		
+	
+	
+	
 	
 	
 	<!-- 결재 자유 게시판 -->

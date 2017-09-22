@@ -24,6 +24,7 @@ public class AddOk extends HttpServlet {
 		
 		
 		String path = req.getRealPath("/company/pages/all/freeboard/FBFiles");
+	
 		int size = 50 * 1024 * 1024;
 		
 		try {	//첨부파일 위한 try catch
@@ -47,24 +48,26 @@ public class AddOk extends HttpServlet {
 			fbdto.setFBCategory(multi.getParameter("FBCategory"));
 			fbdto.setTitle(multi.getParameter("title"));
 			fbdto.setContent(multi.getParameter("content"));
-			System.out.println(fbdto.getContent());
 			
 			//첨부파일 list에 넣기
 			Enumeration e = multi.getFileNames();
 			ArrayList<FBFileDTO> fileList = new ArrayList<FBFileDTO>();
 			
 			while (e.hasMoreElements()) {
-				FBFileDTO temp = new FBFileDTO();
+				
 				String file = (String)e.nextElement();
 				
-				System.out.println(file); //!!파일 이름찍어보기!!!지우기
+				FBFileDTO temp = new FBFileDTO();
 				
-				temp.setFileName(multi.getFilesystemName(file));  //저장 이름
-				temp.setOrgFileName(multi.getOriginalFileName(file));//사용자 이름
-				
-				System.out.println(multi.getOriginalFileName(file)); //!!원래 저장이름 직어보기 지우기!!!
-				fileList.add(temp);
+				if (multi.getFilesystemName(file) != null) {	//파일이 있는 놈이라면
+					
+					temp.setFileName(multi.getFilesystemName(file));  //저장 이름
+					temp.setOrgFileName(multi.getOriginalFileName(file));//사용자 이름
+					fileList.add(temp);
+
+				}
 			}
+			
 			
 			
 			//첨부파일 FreeBoardDTO에 넣기
@@ -74,8 +77,8 @@ public class AddOk extends HttpServlet {
 			FreeBoardService service = new FreeBoardService();
 			int result = service.add(fbdto);
 			
-			
-			
+			//결과 잘 들어갔는지 저장
+			req.setAttribute("result", result);
 			
 			RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/all/freeboard/addok.jsp");
 			dispatcher.forward(req, resp);
