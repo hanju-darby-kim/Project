@@ -33,6 +33,14 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+	<style>
+		.confirmBox { /* border: 1px solid #ccc; */ border-radius: 5px; margin: 0px auto; text-align: center; margin: 100px 40px; }		
+		.end { font-size: 16px; margin: 20px; }		
+		.end div { margin-bottom: 4px; }		
+		.btns { text-align: center; }		
+		.btn { margin: 5px; }
+		.fa { font-size: 18px; }
+	</style>
 </head>
 <body>
 
@@ -61,25 +69,29 @@
             </div>
             <!-- /.container-fluid -->
             <c:if test="${result == 1}">
-	            <div id="confirmBox">
-	            	<div id="end">
-	            		등록이 완료되었습니다!
+	            <div class="confirmBox">
+	            	<div class="end">
+	            		<div style="margin-bottom: 3px;"><i class="fa fa-smile-o"></i></div>
+	            		<div style="font-weight: bold;">등록이 완료되었습니다!</div> 
 	            	</div>
-	            	<div id="btns">
-	            		<input type="button" value="목록으로" class="btn btn-primary">
-	            		<input type="button" value="글보기" class="btn btn-info">
+	            	<div class="btns">
+	            		<input type="button" value="목록으로" class="btn btn-primary" onclick="location.href='/Project/all/freeboard/list.do'">
+	            		<input type="button" value="글보기" class="btn btn-info" >
 	            	</div>
 	            </div>
             </c:if>
             
             <c:if test="${result == 0}">
-	            <div id="confirmBox">
-	            	<div id="end">
-	            		글이 등록되지 않았습니다. 전산부로 문의 바랍니다. 02) 2550-1039
+	            <div class="confirmBox">
+	            	<div class="end">
+	            		<div><i class="fa fa-frown-o"></i></div>
+	            		<div style="font-weight: bold;">글이 등록되지 않았습니다.</div>
+	            		<div>전산부로 문의 바랍니다.</div>
+	            		<div>02) 2550-1039</div>
 	            	</div>
-	            	<div id="btns">
-	            		<input type="button" value="목록으로" class="btn btn-primary">
-	            		<input type="button" value="글보기" class="btn btn-info">
+	            	<div class="btns">
+	            		<input type="button" value="목록으로" class="btn btn-primary" onclick="location.href='/Project/all/freeboard/list.do'">
+	            		<input type="button" value="돌아가기" class="btn btn-info" onclick="history.back();">
 	            	</div>
 	            </div>
             </c:if>
