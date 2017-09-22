@@ -13,7 +13,7 @@ public class ClubService {
 		for(ClubDTO dto : list) {
 			dto.setOpenDate(dto.getOpenDate().substring(0,10));
 			
-			
+			System.out.println(dto.toString());
 		}
 		return list;
 	}

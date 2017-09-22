@@ -99,8 +99,9 @@
          <li><a href="javascript:void(0)"><i
                class="fa fa-smile-o fa-fw"></i> 6. 모임 게시판<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
-               <li><a href="javascript:void(0)">단기모임모집 </a>
-               <li><a href="/Project/company/pages/club/clubList.jsp">정기모임목록 </a>
+            	<li><a href="/Project/club/templogin.do">임시 김태현 로그인버튼</a></li>
+               <li><a href="javascript:void(0)">단기모임모집 </a></li>
+               <li><a href="/Project/club/clublist.do">정기모임 </a></li>
                <li><a href="javascript:void(0)">나의 소속 모임 <span
                      class="fa arrow"></span></a>
                   <ul class="nav nav-third-level">
