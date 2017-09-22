@@ -215,6 +215,7 @@
 	
 	
 	
+
 	<!-- 김태현의 모임관리 서블릿 -->
 	<servlet> <!-- club.clublist -->
 		<servlet-name>club.clublist</servlet-name>
@@ -233,6 +234,19 @@
 		<servlet-name>club.templogin</servlet-name>
 		<url-pattern>/club/templogin.do</url-pattern>
 	</servlet-mapping>
+		
+	<servlet> <!-- club.myclubboard -->
+		<servlet-name>club.myclubboard</servlet-name>
+		<servlet-class>com.fineapple.club.MyClubBoard</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>club.myclubboard</servlet-name>
+		<url-pattern>/club/myclubboard.do</url-pattern>
+		
+	</servlet-mapping>
+	
+
+
 	
 </web-app>
 

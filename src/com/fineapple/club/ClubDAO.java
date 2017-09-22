@@ -85,7 +85,7 @@ public class ClubDAO {
 			
 			String sql ="";
 			
-			sql="SELECT c.NAME as clubname from club c INNER JOIN CLUBMEMBER m ON c.SEQ = m.CLUBSEQ INNER JOIN EMPLOYEE e on c.EMPSEQ = e.SEQ WHERE e.SEQ=?";
+			sql="SELECT c.NAME as clubname from club c INNER JOIN CLUBMEMBER m ON c.SEQ = m.CLUBSEQ INNER JOIN EMPLOYEE e on c.EMPSEQ = e.SEQ WHERE m.EMPSEQ=?";
 			PreparedStatement stat = conn.prepareStatement(sql);
 			stat.setString(1, seq);
 			
