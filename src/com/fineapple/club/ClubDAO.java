@@ -78,4 +78,30 @@ public class ClubDAO {
 		
 	}
 
+	public ArrayList<String> getClubName(String seq) {
+		
+		
+		try {
+			
+			String sql ="";
+			
+			sql="SELECT c.NAME as clubname from club c INNER JOIN CLUBMEMBER m ON c.SEQ = m.CLUBSEQ INNER JOIN EMPLOYEE e on c.EMPSEQ = e.SEQ WHERE e.SEQ=?";
+			PreparedStatement stat = conn.prepareStatement(sql);
+			stat.setString(1, seq);
+			
+			ResultSet rs = stat.executeQuery();
+			
+			ArrayList<String> myClubList = new ArrayList<String>(); 
+			while(rs.next()) {
+				myClubList.add(rs.getString("clubname"));
+			}
+			
+			return myClubList;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 }

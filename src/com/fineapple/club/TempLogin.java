@@ -1,6 +1,7 @@
 package com.fineapple.club;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,8 +17,12 @@ public class TempLogin extends HttpServlet {
 		
 		HttpSession session = req.getSession();
 		
-		session.setAttribute("seq", "39");
+		session.setAttribute("taehyunSeq", "39");
 		ClubService service = new ClubService(session);
+		
+		ArrayList<String> myClubList = service.getClubName();
+		
+		session.setAttribute("myclublist", myClubList);
 		
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/index.jsp");
