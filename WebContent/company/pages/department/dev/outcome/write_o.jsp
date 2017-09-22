@@ -42,7 +42,7 @@
 						</div>
 						<!-- /.panel-heading -->
 						<div class="panel-body">
-							<form action="/Project/company/pages/department/write_o_go.do" method="post">
+							<form action="/Project/company/pages/department/project/write_o_go.do" method="post">
 								<table id="dev_write" width="100%" class="table table-striped table-bordered table-hover">
 									<tr>
 										<!-- 자동입력 -->
@@ -53,9 +53,9 @@
 										<th>분류</th>
 										<td>
 											<select name="category" id="category" class="form-control">
-											<c:forEach items="${list}" var="dto">
-												<option value="${dto.seq}">${dto.name}</option>
-											</c:forEach>
+												<!-- foreach 사용 -->
+												<option value=""></option>
+												<option value=""></option>
 											</select>
 										</td>
 									</tr>
@@ -68,14 +68,14 @@
 										<td>
 											<div class="form-group input-group">
 												<span class="input-group-addon">금</span>
-												<input type="number" name="amount" id="amount" class="form-control" step="10000">
+												<input type="number" class="form-control">
 												<span class="input-group-addon">원 정</span>
 											</div>
 										</td>
 									</tr>
 								</table>
 								<div id="btns">
-									<input type="button" value="돌아가기" class="btn btn-default" onclick="history.back();"/>
+									<input type="button" value="돌아가기" class="btn btn-default" 	onclick="history.back();"/>
 									<input type="submit" value="청구하기" class="btn btn-warning" />
 								</div>
 							</form>
