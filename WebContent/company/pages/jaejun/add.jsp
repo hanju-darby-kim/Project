@@ -76,7 +76,7 @@
 	        </div>
 	        <!-- /.row -->
             
-            <form method="post" action="">
+            <form method="post" action="/Project/message/addok.do">
 	            <div class="row col-lg-12">
 	            	<table class="table table-responsive table-bordered">
 						<tr>
@@ -97,7 +97,6 @@
 							<td>내용</td>
 							<td>
 							    <textarea id="content" name="content" style="width:100%; min-height: 500px;">
-							    	
 					            </textarea>
 								<jsp:include page="/company/inc/texteditor.jsp"></jsp:include>
 							</td>

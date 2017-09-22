@@ -70,7 +70,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div id="headerInbox" class="col-lg-12">
-                    <h1 class="page-header">Inbox</h1>
+                    <h1 class="page-header">쪽지함</h1>
                 <!-- /.col-lg-12 -->
 	            </div>
 	            <div id="btns">
