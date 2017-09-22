@@ -24,7 +24,7 @@ public class ClubService {
 	}
 	
 	public ArrayList<ClubDTO> list() {
-		ClubDAO dao = new ClubDAO();
+		
 		ArrayList<ClubDTO> list = dao.list(); 
 		
 		
@@ -33,7 +33,19 @@ public class ClubService {
 			
 			System.out.println(dto.toString());
 		}
+		dao.close();
+		
 		return list;
+	}
+
+	public ArrayList<String> getClubName() {
+		ArrayList<String> myClubList = new ArrayList<String>();
+		if(session.getAttribute("taehyunSeq") != null ) {
+			myClubList = dao.getClubName(session.getAttribute("taehyunSeq").toString());
+		}
+		dao.close();
+		
+		return myClubList;
 	}
 
 }
