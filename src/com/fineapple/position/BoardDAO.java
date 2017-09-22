@@ -7,6 +7,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.fineapple.DTO.tblPBCommentDTO;
+import com.fineapple.DTO.tblPositionBoardDTO;
 import com.fineapple.util.DBUtil;
 
 public class BoardDAO {
@@ -33,7 +35,7 @@ public class BoardDAO {
 
 	
 	// 컨트롤러 요청 -> Service 객체가 글써달라고 요청 -> dao호출
-	public int add(BoardDTO dto) {
+	public int add(tblPositionBoardDTO dto) {
 	
 		try {
 			String sql = "insert into tblBoard (seq, name, email, subject, content, tag,pw, readCount, regDate, userip, filename, orgfilename, thread, depth) values (boardSeq.nextVal, ?, ?, ?, ?, ?, ?, default, default, ?, ?, ?, ?, ?)";
@@ -62,7 +64,7 @@ public class BoardDAO {
 	}
 
 	//서비스객체가 글 목을 가져와 달라고 요청
-	public ArrayList<BoardDTO> list(HashMap<String, String> map) {
+	public ArrayList<tblPositionBoardDTO> list(HashMap<String, String> map) {
 		
 		try {
 			// rs -> list 복사
@@ -89,7 +91,7 @@ public class BoardDAO {
 			ResultSet rs = stat.executeQuery();
 			
 			//큰 상자 (테이블)
-			ArrayList<BoardDTO> list = new ArrayList<BoardDTO>();
+			ArrayList<tblPositionBoardDTO> list = new ArrayList<tblPositionBoardDTO>();
 			
 			//여기서 발생하는 여러가지 에러 확인!! 
 			
@@ -98,7 +100,7 @@ public class BoardDAO {
 			while (rs.next()) {
 				//레코트 1개 -> DTO 1개
 				//작은 상자(레코드)
-				BoardDTO dto = new BoardDTO();
+				tblPositionBoardDTO dto = new tblPositionBoardDTO();
 				
 				dto.setSeq(rs.getString("seq"));
 				dto.setName(rs.getString("name"));
@@ -128,7 +130,7 @@ public class BoardDAO {
 	
 	//Service 객체가 글 번호를 주면서 레코드 1개를 달라고 요청
 	
-	public BoardDTO get(String seq) {
+	public tblPositionBoardDTO get(String seq) {
 		try {
 			
 			String sql = "select * from tblBoard where seq = ?";
@@ -137,7 +139,7 @@ public class BoardDAO {
 			stat.setString(1, seq);
 			
 			ResultSet rs = stat.executeQuery();		//원본
-			BoardDTO dto = new BoardDTO();		// 복사본 
+			tblPositionBoardDTO dto = new tblPositionBoardDTO();		// 복사본 
 			
 			if (rs.next()) {
 				//레코드 1개 -> DTO 1개 복사 
@@ -189,7 +191,7 @@ public class BoardDAO {
 
 	
 	//Service 객체가 DTO 건내줄테니 글 수정해 달라고 요청 
-	public int edit(BoardDTO dto) {
+	public int edit(tblPositionBoardDTO dto) {
 		
 		try {
 			String sql = "update tblBoard set name=?, email=?, subject=?, content=?, tag=? where seq=?";
@@ -212,7 +214,7 @@ public class BoardDAO {
 	}
 
 	//Service 객체가 글번호 + 암호 줄테니깐 맞는지 검사해달라고 요청 
-	public boolean check(BoardDTO dto) {
+	public boolean check(tblPositionBoardDTO dto) {
 		
 		try {
 			
@@ -238,7 +240,7 @@ public class BoardDAO {
 
 	
 	// Service 객체가 글 삭제해달라고 요청 
-	public int del(BoardDTO dto) {
+	public int del(tblPositionBoardDTO dto) {
 		
 		//edit() -> del() 복사
 		
@@ -259,7 +261,7 @@ public class BoardDAO {
 
 	//Service 객체가 댓글 줄테니 insert 요청 
 	
-	public int addComment(CommentDTO cdto) {
+	public int addComment(tblPBCommentDTO cdto) {
 
 		try {
 			
@@ -281,7 +283,7 @@ public class BoardDAO {
 	}
 
 	//Service가 글과 함께 댓글 목록도 달라고 요청
-	public ArrayList<CommentDTO> listComment(String seq) {
+	public ArrayList<tblPBCommentDTO> listComment(String seq) {
 
 		try {
 			
@@ -292,11 +294,11 @@ public class BoardDAO {
 			
 			ResultSet rs = stat.executeQuery();
 			
-			ArrayList<CommentDTO> clist = new ArrayList<>();
+			ArrayList<tblPBCommentDTO> clist = new ArrayList<>();
 			
 			while (rs.next()) {
 				//레코드 1개 -> DTO 1개
-				CommentDTO dto = new CommentDTO();
+				tblPBCommentDTO dto = new tblPBCommentDTO();
 				dto.setSeq(rs.getString("seq"));
 				dto.setName(rs.getString("name"));
 				dto.setComments(rs.getString("comments"));
