@@ -143,12 +143,13 @@ public class FreeBoardDAO {
 				dto.setSeq(rs.getString("seq"));
 				dto.setEmpSeq(rs.getString("empSeq"));
 				dto.setName(rs.getString("name"));
-				dto.setFbCategory("fbCategory");
+				dto.setFbCategory(rs.getString("fbCategory"));
 				dto.setTitle(rs.getString("title"));
-				dto.setContent("content");
+				dto.setRegDate(rs.getString("regDate"));
+				dto.setContent(rs.getString("content"));
 				dto.setReadCount(rs.getString("readCount"));
-				dto.setThread("thread");
-				dto.setDepth("depth");
+				dto.setThread(rs.getString("thread"));
+				dto.setDepth(rs.getString("depth"));
 			}
 			
 			return dto;
