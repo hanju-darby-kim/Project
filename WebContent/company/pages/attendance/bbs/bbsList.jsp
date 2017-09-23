@@ -270,24 +270,17 @@
 
 <script>
 
-
 	$(document).ready(function() {
-
 	    
 	    //글쓰기 버튼 추가
 	    onclick="location.href='/MVCTest/board/add.do?reply=n';"
-	    $('#dataTables-example_wrapper > div:nth-child(1) > div:nth-child(2)').after('<div id="add"><button type="button" class="btn btn-success" onclick="location.href=\'/Project/attendance/communityAdd.do\';">글쓰기</button></div>');
-		//25페이씩 보여주도록.
-		//$('#dataTables-example_length > label > select').val('25');
-		
-		
+	    $('#dataTables-example_wrapper > div:nth-child(1) > div:nth-child(2)').after(
+	            '<div id="add"><button type="button" class="btn btn-success" onclick="location.href=\'/Project/attendance/bbsAdd.do\';">글쓰기</button></div>');
+
+	    //25페이씩 보여주도록.
 		$('#dataTables-example_length > label > select > option:nth-child(1)').text('10 개');	
 		$('#dataTables-example_length > label > select > option:nth-child(2)').text('25 개');	
 		$('#dataTables-example_length > label > select > option:nth-child(3)').text('50 개');	
-		
-	    		
-		
-		
 	
 	});
 

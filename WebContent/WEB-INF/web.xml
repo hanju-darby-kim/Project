@@ -107,40 +107,40 @@
 	
 	<!-- 김한주 : attendance -->
 	<servlet>	<!-- 근태업무 리스트-->
-		<servlet-name>attendance.task</servlet-name>
+		<servlet-name>attendance.taskList</servlet-name>
 		<servlet-class>com.fineapple.attendance.task.TaskList</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>attendance.task</servlet-name>
+		<servlet-name>attendance.taskList</servlet-name>
 		<url-pattern>/attendance/task.do</url-pattern>
 	</servlet-mapping>	
 
 	<servlet>	<!-- 통계 리스트 -->
-		<servlet-name>attendance.statistics</servlet-name>
+		<servlet-name>attendance.statisticsList</servlet-name>
 		<servlet-class>com.fineapple.attendance.statistics.StatisticsList</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>attendance.statistics</servlet-name>
+		<servlet-name>attendance.statisticsList</servlet-name>
 		<url-pattern>/attendance/statistics.do</url-pattern>
 	</servlet-mapping>		
 	
 	<servlet>	<!-- 자유게시판 리스트-->
-		<servlet-name>attendance.Bbs</servlet-name>
+		<servlet-name>attendance.bbsList</servlet-name>
 		<servlet-class>com.fineapple.attendance.bbs.BbsList</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>attendance.Bbs</servlet-name>
+		<servlet-name>attendance.bbsList</servlet-name>
 		<url-pattern>/attendance/bbs.do</url-pattern>
 	</servlet-mapping>		
 	
 	<servlet>	<!-- 자유게시판 글쓰기-->
-		<servlet-name>attendance.BbsAdd</servlet-name>
+		<servlet-name>attendance.bbsAdd</servlet-name>
 		<servlet-class>com.fineapple.attendance.bbs.BbsAdd</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>attendance.BbsAdd</servlet-name>
+		<servlet-name>attendance.bbsAdd</servlet-name>
 		<url-pattern>/attendance/bbsAdd.do</url-pattern>
-	</servlet-mapping>		
+	</servlet-mapping>	
 	
 	
 	
