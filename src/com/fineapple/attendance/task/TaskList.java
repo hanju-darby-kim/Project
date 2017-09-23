@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Task extends HttpServlet {
+public class TaskList extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/attendance/task.jsp");
+	RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/attendance/task/taskList.jsp");
 	dispatcher.forward(req, resp);
 
     }

@@ -35,7 +35,7 @@
             <ul class="nav nav-second-level">   
                <li><a href="/Project/attendance/task.do"><i class="fa fa-file-text-o"></i>　근태 작성 </a>
                <li><a href="/Project/attendance/statistics.do"><i class="fa fa-bar-chart-o"></i>　근태 관련 통계 </a></li>
-               <li><a href="/Project/attendance/community.do"><i class="fa fa-quote-left fa-fw"></i>　근태 관련 자유게시판</a></li>
+               <li><a href="/Project/attendance/bbs.do"><i class="fa fa-quote-left fa-fw"></i>　근태 관련 자유게시판</a></li>
             </ul></li>   
          <!-- ./김한주 : 근태 -->
          

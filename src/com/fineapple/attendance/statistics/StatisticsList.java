@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Statistics extends HttpServlet {
+public class StatisticsList extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/attendance/statistics.jsp");
+	RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/attendance/statistics/statisticsList.jsp");
 	dispatcher.forward(req, resp);
 
     }
