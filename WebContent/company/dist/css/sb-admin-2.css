@@ -15,6 +15,11 @@ body {
 	font-family: 나눔고딕;
 }
 
+.page-header { 
+	color: #444;
+	font-size: 34px;
+}
+
 .logo-btn{
 	background : url("/Project/company/images/logo2color.png");
 	margin-left:20px;
