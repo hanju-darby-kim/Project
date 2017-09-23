@@ -105,50 +105,41 @@
 	</servlet-mapping>		
 	
 	
-	<!-- attendance -->
-	<servlet>	<!-- 로그인페이지 -->
-		<servlet-name>attendance.login</servlet-name>
-		<servlet-class>com.fineapple.attendance.Login</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>attendance.login</servlet-name>
-		<url-pattern>/attendance/login.do</url-pattern>
-	</servlet-mapping>		
-	
+	<!-- 김한주 : attendance -->
 	<servlet>	<!-- 근태작성 -->
 		<servlet-name>attendance.task</servlet-name>
-		<servlet-class>com.fineapple.attendance.Task</servlet-class>
+		<servlet-class>com.fineapple.attendance.task.Task</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>attendance.task</servlet-name>
-		<url-pattern>/attendance/task.do</url-pattern>
+		<url-pattern>/attendance/task/task.do</url-pattern>
 	</servlet-mapping>	
 
 	<servlet>	<!-- 통계 -->
 		<servlet-name>attendance.statistics</servlet-name>
-		<servlet-class>com.fineapple.attendance.Statistics</servlet-class>
+		<servlet-class>com.fineapple.attendance.statistics.Statistics</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>attendance.statistics</servlet-name>
-		<url-pattern>/attendance/statistics.do</url-pattern>
+		<url-pattern>/attendance/statistics/statistics.do</url-pattern>
 	</servlet-mapping>		
 	
 	<servlet>	<!-- 자유게시판 종합-->
-		<servlet-name>attendance.community</servlet-name>
-		<servlet-class>com.fineapple.attendance.Community</servlet-class>
+		<servlet-name>attendance.Bbs</servlet-name>
+		<servlet-class>com.fineapple.attendance.bbs.Bbs</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>attendance.community</servlet-name>
-		<url-pattern>/attendance/community.do</url-pattern>
+		<servlet-name>attendance.Bbs</servlet-name>
+		<url-pattern>/attendance/bbs/bbs.do</url-pattern>
 	</servlet-mapping>		
 	
 	<servlet>	<!-- 자유게시판 글쓰기-->
-		<servlet-name>attendance.communityAdd</servlet-name>
-		<servlet-class>com.fineapple.attendance.CommunityAdd</servlet-class>
+		<servlet-name>attendance.BbsAdd</servlet-name>
+		<servlet-class>com.fineapple.attendance.bbs.BbsAdd</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>attendance.communityAdd</servlet-name>
-		<url-pattern>/attendance/communityAdd.do</url-pattern>
+		<servlet-name>attendance.BbsAdd</servlet-name>
+		<url-pattern>/attendance/bbs/BbsAdd.do</url-pattern>
 	</servlet-mapping>		
 	
 	

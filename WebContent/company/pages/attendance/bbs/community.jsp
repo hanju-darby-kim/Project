@@ -36,7 +36,7 @@
 	
 	/* 페이지길이 내 옵션을 우측정렬 */
 	#dataTables-example_length > label > select > option {}
-	
+	 
 	/* 게시물 쇼잉 현황을 보여주는 폼 */
 	#dataTables-example_wrapper > div:nth-child(3) > div:nth-child(1) {padding-left: 20px;}
 	/* 검색필터를 왼쪽으로 */
