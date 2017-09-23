@@ -66,4 +66,9 @@ public class FreeBoardService {
 		return fbdto;
 	}
 
+	public ArrayList<VFreeBoardDTO> getList() {
+		
+		return null;
+	}
+
 }
