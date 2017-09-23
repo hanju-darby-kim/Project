@@ -78,13 +78,21 @@ FROM FREEBOARD fb
     INNER JOIN EMPLOYEE e
       ON fb.EMPSEQ = e.SEQ
       INNER JOIN FBCATEGORY fbc
-        ON fb.FBCATEGORY = fbc.SEQ
-          INNER JOIN fbfile fbf
-            ON fb.seq = fbf.fbSeq;
+        ON fb.FBCATEGORY = fbc.SEQ;
 
-
+/*CREATE TRIGGER depthTitle
+	BEFORE INSERT OR UPDATE ON FREEBOARD
+	DECLARE
+		tempTitle VARCHAR2(1000);
+	BEGIN
+		IF DEPTH = 1 THEN
+			tempTitle := TITLE
+		END IF;
+	END;*/
 
 commit;
+
+
 
 
 

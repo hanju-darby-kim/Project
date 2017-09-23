@@ -54,25 +54,30 @@
 <script>
 	window.onload = function() {
 		$(".fileTd:gt(0)").css("display", "none");
+		$('#file2, #file3').attr("disabled", true);
 	};
 	  
 	function addFile() {
  	  
+		//2번째 파일이 숨겨져 있다면
 		if($("#fileTd2").css("display") == ("none")) {
-			$("#fileTd2").css("display", "block");
+			$("#fileTd2").css("display", "block"); //보이게하고
+			$("#file2").attr("disabled", false); //disabled는 false로
+			
+		//세번째 파일이 숨겨져 있다면	
 		} else if($("#fileTd3").css("display") == ("none")) {
 			$("#fileTd3").css("display", "block");
+			$("#file3").attr("disabled", false);
 		} else {
 			alert('파일은 최대 3개까지 업로드 가능합니다.');
 		}
  	  
    }
    
-   function deleteFile() {
- 	  event.srcElement.parentElement.style.display = "none";
- 	  
- 	  
-   }
+	function deleteFile(filename) {
+		event.srcElement.parentElement.style.display = "none";	
+		$("#" + filename).attr("disabled", true);
+	}
 </script>
    
 </head>
@@ -132,7 +137,7 @@
          	<tr>
                <td class="fileTd" id="fileTd1">
                   <div class="fileWrapper">
-                     <input type="file" name="files1" class="files">
+                     <input type="file" name="files1" id="file1" class="files">
                   </div>
                   <span class="fa fa-plus addFileTag" id="addFileTag1" onclick='addFile();'></span>
                   <div style="clear:both;"></div>
@@ -141,9 +146,9 @@
             <tr>
                <td class="fileTd" id="fileTd2">
                   <div class="fileWrapper">
-                     <input type="file" name="files2" class="files">
+                     <input type="file" name="files2" id="file2" class="files">
                   </div>
-                  <span class="fa fa-minus deleteFileTag" onclick='deleteFile();'></span>
+                  <span class="fa fa-minus deleteFileTag" onclick="deleteFile('file2');"></span>
                   <div style="clear:both;"></div>
                </td>
             </tr>
@@ -152,7 +157,7 @@
                   <div class="fileWrapper">
                      <input type="file" id="file3" name="files3" class="files">
                   </div>
-                  <span class="fa fa-minus deleteFileTag" onclick='deleteFile();'></span>
+                  <span class="fa fa-minus deleteFileTag" onclick="deleteFile('file3');"></span>
                   <div style="clear:both;"></div>
                </td>
             </tr>

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.fineapple.DTO.FBCategoryDTO;
 import com.fineapple.DTO.FreeBoardDTO;
+import com.fineapple.DTO.VFreeBoardDTO;
 
 public class FreeBoardService {
 
@@ -38,6 +39,20 @@ public class FreeBoardService {
 
 	public void getMaxSeq(String seq) {
 		seq = dao.getMaxSeq(seq);
+	}
+
+	public VFreeBoardDTO getView(String seq) {
+		
+		//글 얻어오기
+		VFreeBoardDTO fbdto = new VFreeBoardDTO();
+		fbdto = dao.getContent(seq);
+		
+		//첨부파일 얻어오기
+		fbdto.setFileList(dao.getFiles(seq));
+
+		//댓글 얻어오기
+		
+		return fbdto;
 	}
 
 }
