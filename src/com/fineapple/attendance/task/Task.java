@@ -1,4 +1,4 @@
-package com.fineapple.attendance;
+package com.fineapple.attendance.task;
 
 import java.io.IOException;
 
@@ -8,13 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Community extends HttpServlet {
+public class Task extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/attendance/community.jsp");
+	RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/attendance/task.jsp");
 	dispatcher.forward(req, resp);
 
-	
-	
     }
 }

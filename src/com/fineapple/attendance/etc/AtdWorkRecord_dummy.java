@@ -1,4 +1,4 @@
-package com.fineapple.attendance;
+package com.fineapple.attendance.etc;
 
 public class AtdWorkRecord_dummy {
 
