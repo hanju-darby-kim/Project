@@ -49,6 +49,7 @@ public class FreeBoardService {
 		//글 얻어오기
 		VFreeBoardDTO fbdto = new VFreeBoardDTO();
 		fbdto = dao.getContent(seq);
+		fbdto.setRegDate(fbdto.getRegDate().substring(0, 19));	//날짜 .0 자르기
 		
 		//첨부파일 얻어오기
 		fbdto.setFileList(dao.getFiles(seq));
