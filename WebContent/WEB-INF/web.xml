@@ -126,7 +126,7 @@
 	
 	<servlet>	<!-- 자유게시판 종합-->
 		<servlet-name>attendance.Bbs</servlet-name>
-		<servlet-class>com.fineapple.attendance.bbs.Bbs</servlet-class>
+		<servlet-class>com.fineapple.attendance.bbs.BbsList</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>attendance.Bbs</servlet-name>
