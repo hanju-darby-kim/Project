@@ -55,3 +55,40 @@ INSERT INTO freeboard (seq, empSeq, FBCategory, title, content, readCount, regDa
 INSERT INTO (seq, FBSeq, orgFileName, fileName) VALUES (FBFileSeq.nextVal, 4, 'test', 'test');
 
 
+SELECT * FROM FBFILE;
+SELECT * FROM FREEBOARD;
+SELECT * FROM FBCATEGORY;
+select * from EMPLOYEE;
+
+CREATE OR REPLACE VIEW vFreeBoard
+AS
+SELECT
+  fb.seq as seq,
+  fb.empSeq as empSeq,
+  e.NAME as name,
+  fb.FBCATEGORY as fbCategorySeq,
+  fbc.NAME as fbCategory,
+  fb.TITLE as title,
+  fb.CONTENT as content,
+  fb.READCOUNT as readCount,
+  fb.regDate as regDate,
+  fb.thread as THREAD,
+  fb.depth as depth
+FROM FREEBOARD fb
+    INNER JOIN EMPLOYEE e
+      ON fb.EMPSEQ = e.SEQ
+      INNER JOIN FBCATEGORY fbc
+        ON fb.FBCATEGORY = fbc.SEQ
+          INNER JOIN fbfile fbf
+            ON fb.seq = fbf.fbSeq;
+
+
+
+commit;
+
+
+
+
+
+
+
