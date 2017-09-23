@@ -236,13 +236,15 @@
 									</thead>
 									
 									<tbody>
+										<c:forEach items="${list}" var="dto">
 										<tr class="odd gradeX">
-											<td>일반</td>
-											<td>길고도 길면서 엄청나게 긴 제목이 되기를 바라며..</td>
-											<td>김한주</td>
-											<td>2017-12-31 11:32</td>
-											<td>21</td>
+											<td>${dto.category}</td>
+											<td>${dto.subject}</td>
+											<td>${dto.name}</td>
+											<td>${dto.regDate}</td>
+											<td>${dto.readCount}</td>
 										</tr>
+										</c:forEach>
 									</tbody>
 								</table>
 								<!-- /.table-responsive -->
