@@ -67,8 +67,20 @@ public class FreeBoardService {
 	}
 
 	public ArrayList<VFreeBoardDTO> getList() {
+		ArrayList<VFreeBoardDTO> list = new ArrayList<VFreeBoardDTO>();
 		
-		return null;
+		list = dao.getList();
+		
+		//새로운 글
+		for(VFreeBoardDTO dto : list) {
+			if (dto.getGap() <= 1) {
+				dto.setGapImg("<img src='/Project/company/images/new.png'>");
+			}
+		}
+		
+		//첨부파일
+		
+		return list;
 	}
 
 }
