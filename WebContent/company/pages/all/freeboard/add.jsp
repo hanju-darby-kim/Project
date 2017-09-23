@@ -56,20 +56,21 @@
 		$(".fileTd:gt(0)").css("display", "none");
 	};
 	  
-   function addFile() {
+	function addFile() {
  	  
- 	  if($("#fileTd2").css("display") == ("none")) {
-  	  $("#fileTd2").css("display", "block");
- 	  } else if($("#fileTd3").css("display") == ("none")) {
- 		  $("#fileTd3").css("display", "block");
- 	  } else {
- 		  alert('파일은 최대 3개까지 업로드 가능합니다.');
- 	  }
+		if($("#fileTd2").css("display") == ("none")) {
+			$("#fileTd2").css("display", "block");
+		} else if($("#fileTd3").css("display") == ("none")) {
+			$("#fileTd3").css("display", "block");
+		} else {
+			alert('파일은 최대 3개까지 업로드 가능합니다.');
+		}
  	  
    }
    
    function deleteFile() {
  	  event.srcElement.parentElement.style.display = "none";
+ 	  
  	  
    }
 </script>
@@ -122,7 +123,7 @@
                </tr>
                <tr>
                   <td> <!-- content -->
-                  <textarea name="content" id="content" rows="15" cols="105"></textarea>          
+                  <textarea name="content" id="content" rows="15" cols="101"></textarea>          
                </td>
             </tr>
             
