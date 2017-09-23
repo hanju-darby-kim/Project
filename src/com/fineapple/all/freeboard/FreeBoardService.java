@@ -3,6 +3,7 @@ package com.fineapple.all.freeboard;
 import java.util.ArrayList;
 
 import com.fineapple.DTO.FBCategoryDTO;
+import com.fineapple.DTO.FBFileDTO;
 import com.fineapple.DTO.FreeBoardDTO;
 import com.fineapple.DTO.VFreeBoardDTO;
 
@@ -28,7 +29,8 @@ public class FreeBoardService {
 		
 		if(fbdto.getFileList().size() != 0) {
 			//첨부파일이 있다면 첨부파일 넣기
-			seq = dao.getMaxSeq(seq);
+			seq = dao.getMaxSeq();	//방금 입력한 글의 시퀀스 필요
+			fbdto.setSeq(seq);			//넣어주기
 			fileResult = dao.addFile(fbdto);
 		}
 		
@@ -37,8 +39,9 @@ public class FreeBoardService {
 		
 	}
 
-	public void getMaxSeq(String seq) {
-		seq = dao.getMaxSeq(seq);
+	public String getMaxSeq() {
+		
+		return dao.getMaxSeq();
 	}
 
 	public VFreeBoardDTO getView(String seq) {

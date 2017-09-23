@@ -76,7 +76,7 @@
 	            	</div>
 	            	<div class="btns">
 	            		<input type="button" value="목록으로" class="btn btn-primary" onclick="location.href='/Project/all/freeboard/list.do'">
-	            		<input type="button" value="글보기" class="btn btn-info" onclick="location.href='/Project/all/freeboard/view.do?seq=${seq}">
+	            		<input type="button" value="글보기" class="btn btn-info" onclick="location.href='/Project/all/freeboard/view.do?seq=${seq}';">
 	            	</div>
 	            </div>
             </c:if>

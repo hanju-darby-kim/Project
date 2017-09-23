@@ -79,12 +79,12 @@ public class AddOk extends HttpServlet {
 
 			// + 방금 쓴 글 번호 가져오기
 			String seq = "";
-			service.getMaxSeq(seq);
+			seq = service.getMaxSeq();
 			
 			//결과 잘 들어갔는지 저장 + 시퀀스
 			req.setAttribute("result", result);
 			req.setAttribute("seq", seq);
-			
+	
 			RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/all/freeboard/addok.jsp");
 			dispatcher.forward(req, resp);
 			

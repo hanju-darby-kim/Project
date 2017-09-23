@@ -72,14 +72,14 @@ public class FreeBoardDAO {
 	}
 
 	
-	public String getMaxSeq(String seq) {
+	public String getMaxSeq() {
 		
 		int result = 0; 
 		
 		//방금 넣은 freeboard 테이블에서의 시퀀스 구하기
 		String sql = "SELECT MAX(seq) FROM freeBoard";
 		Statement stat;
-		
+		String seq = "";
 		try {
 			stat = conn.createStatement();
 			ResultSet rs = stat.executeQuery(sql);
@@ -116,8 +116,6 @@ public class FreeBoardDAO {
 				pstat.setString(3, filedto.getFileName());
 				result = pstat.executeUpdate();
 			}
-			
-			conn.close();
 			
 			return result;
 			

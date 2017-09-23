@@ -94,7 +94,7 @@ commit;
 
 
 
-
+select * from FREEBOARD;
 
 
 

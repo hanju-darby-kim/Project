@@ -106,7 +106,7 @@
 	
 	<servlet>
 		<servlet-name>all.FreeBoard.view</servlet-name>
-		<servlet-class>com.fineapple.all.freeboard.AddOk</servlet-class>
+		<servlet-class>com.fineapple.all.freeboard.View</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>all.FreeBoard.view</servlet-name>
