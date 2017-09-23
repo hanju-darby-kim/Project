@@ -46,6 +46,7 @@ UPDATE club SET CLUBIMAGE = '/Project/company/images/logo1black.png' WHERE seq =
 UPDATE club SET CLUBIMAGE = '/Project/company/images/arena.jpg' WHERE seq = 8;
 commit;
 
+select * from clubboard;
 --------------------------------전체 정기모임 리스트 뷰---------------------------------------------
 CREATE OR REPLACE VIEW clublistView
   AS
