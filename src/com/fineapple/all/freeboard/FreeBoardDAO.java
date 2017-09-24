@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.fineapple.DTO.FBCategoryDTO;
 import com.fineapple.DTO.FBFileDTO;
@@ -144,6 +145,7 @@ public class FreeBoardDAO {
 				dto.setEmpSeq(rs.getString("empSeq"));
 				dto.setName(rs.getString("name"));
 				dto.setFbCategory(rs.getString("fbCategory"));
+				dto.setFbCategorySeq(rs.getString("fbCategorySeq"));
 				dto.setTitle(rs.getString("title"));
 				dto.setRegDate(rs.getString("regDate"));
 				dto.setContent(rs.getString("content"));
@@ -189,13 +191,15 @@ public class FreeBoardDAO {
 		}
 	}
 
-	public ArrayList<VFreeBoardDTO> getList() {
+	public ArrayList<VFreeBoardDTO> getList(HashMap<String, String> map) {
 		try {
 			
 			String sql 
-				= "select * from (select a.*, rownum as rnum from "
-						+ "(select seq, name, empSeq, fbCategorySeq, fbCategory, title, readCount, regDate, round((sysdate - regDate) * 24) as gap "
-								+ "from VFreeBoard order by seq desc) a)";
+				= String.format(
+						"select * from (select a.*, rownum as rnum from "
+						+ "(select seq, name, empSeq, fbCategorySeq, fbCategory, title, readCount, regDate, round(sysdate - regDate) as gap "
+								+ "from VFreeBoard order by seq desc) a) where rnum >= %s and rnum <= %s"
+									, map.get("start"), map.get("end"));
 			
 			Statement stat = conn.createStatement()	;
 			ResultSet rs = stat.executeQuery(sql);
@@ -222,6 +226,54 @@ public class FreeBoardDAO {
 			System.out.println(e.toString());
 			return null;
 		}
+	}
+	
+	//파일이 있는지
+	public ArrayList<VFreeBoardDTO> isFileAttached(ArrayList<VFreeBoardDTO> list) {
+		try {
+			
+			String sql = "SELECT COUNT(*) FROM fbFile WHERE fbSeq = ?"; 
+			
+			for(VFreeBoardDTO dto : list) {
+				
+				PreparedStatement stat = conn.prepareStatement(sql);
+				stat.setString(1, dto.getSeq());
+				ResultSet rs = stat.executeQuery();
+				
+				if (rs.next()) {
+					if (rs.getInt(1) != (0)) { 
+						dto.setFileImg("<span style='color: #aaa; margin-left: 5px;' class='glyphicon glyphicon-floppy-disk'></span>");
+					}
+				}
+				
+			}
+			
+			return list; 
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		return null;
+	}
+
+	//총 게시물 개수 구하기
+	public int getTotalCount(HashMap<String, String> map) {
+		
+		try {
+			String sql ="SELECT COUNT(*) FROM FreeBoard";
+			Statement stat = conn.createStatement();
+			ResultSet rs = stat.executeQuery(sql);
+			
+			if(rs.next()) {
+				return rs.getInt(1);
+			}
+			
+			return 0; 
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+			return 0;
+		}
+			
 	}
 
 }

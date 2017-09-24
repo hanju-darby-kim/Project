@@ -121,6 +121,24 @@
 		<url-pattern>/all/freeboard/view.do</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>all.FreeBoard.edit</servlet-name>
+		<servlet-class>com.fineapple.all.freeboard.Edit</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all.FreeBoard.edit</servlet-name>
+		<url-pattern>/all/freeboard/edit.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>all.FreeBoard.editok</servlet-name>
+		<servlet-class>com.fineapple.all.freeboard.EditOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all.FreeBoard.editok</servlet-name>
+		<url-pattern>/all/freeboard/editok.do</url-pattern>
+	</servlet-mapping>
+	
 	<!-- 주소록  -->
 	<servlet>
 		<servlet-name>all.contact.list</servlet-name>

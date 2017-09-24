@@ -1,6 +1,6 @@
 package com.fineapple.message;
 
-import com.fineapple.dto.MsgSentDTO;
+import com.fineapple.DTO.MsgSentDTO;
 
 public class MessageDAO {
 
