@@ -35,7 +35,7 @@ public class MessageDAO {
 		try {
 			String sql = "insert into tblMsgSent (seq, sentEmployeeNum, title, content, sentDate, sentDelete, sentSave) VALUES (msgsentseq.nextval, ?, ?, ?, DEFAULT, DEFAULT, DEFAULT);";
 			PreparedStatement stat = conn.prepareStatement(sql);
-			stat.setString(1, );
+			stat.setInt(1, dto.getSentEmployeeNum());
 			stat.setString(2, dto.getTitle());
 			stat.setString(3, dto.getContent());
 			
