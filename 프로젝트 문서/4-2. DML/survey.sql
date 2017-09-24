@@ -72,7 +72,8 @@ CREATE TABLE surveyAnswer
 CREATE SEQUENCE surveyAnswerSeq;
 
 ------------------------------------------------------------
-
+select * from department;
+select * from tblPosition;
 SELECT * FROM survey;
 SELECT * FROM surveyAnswer;
 SELECT * FROM surveyAnswerType;
