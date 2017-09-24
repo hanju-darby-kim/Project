@@ -94,7 +94,7 @@ public class TblPositionBoardDAO {
 
 		try {
 
-			String sql = "SELECT * FROM TBLBOARD WHERE SEQ = ?";
+			String sql = "SELECT * FROM TBLPositionBOARD WHERE SEQ = ?";
 			PreparedStatement stat = conn.prepareStatement(sql);
 			stat.setString(1, seq);
 			
