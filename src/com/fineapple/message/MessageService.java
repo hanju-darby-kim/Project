@@ -2,7 +2,7 @@ package com.fineapple.message;
 
 import javax.servlet.http.HttpSession;
 
-import com.fineapple.dto.MsgSentDTO;
+import com.fineapple.DTO.MsgSentDTO;
 
 public class MessageService {
 
