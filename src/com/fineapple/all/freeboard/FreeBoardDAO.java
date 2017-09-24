@@ -145,6 +145,7 @@ public class FreeBoardDAO {
 				dto.setEmpSeq(rs.getString("empSeq"));
 				dto.setName(rs.getString("name"));
 				dto.setFbCategory(rs.getString("fbCategory"));
+				dto.setFbCategorySeq(rs.getString("fbCategorySeq"));
 				dto.setTitle(rs.getString("title"));
 				dto.setRegDate(rs.getString("regDate"));
 				dto.setContent(rs.getString("content"));

@@ -83,7 +83,7 @@ public class FreeBoardService {
 		//새로운 글 더 예쁜거 찾아보기
 		for(VFreeBoardDTO dto : list) {
 			if (dto.getGap() <= 1) {
-				dto.setGapImg("<span class='label' style='color: #f0ad4e; vertical-align: text-top; padding: 0px;'>new</span>");
+				dto.setGapImg("<span class='label' style='color: #53a8f3; vertical-align: text-top; padding: 0px;'>new</span>");
 			}
 		}
 		
@@ -96,5 +96,16 @@ public class FreeBoardService {
 	public int getTotalCount(HashMap<String, String> map) {
 		return dao.getTotalCount(map);
 	}
+
+	public VFreeBoardDTO getEdit(String seq) {
+		
+		VFreeBoardDTO dto = new VFreeBoardDTO();
+		
+		dto = dao.getContent(seq); 				//우선 글 내용
+		dto.setFileList(dao.getFiles(seq));	//첨부파일
+			
+		return dto;
+	}
+	
 
 }
