@@ -181,6 +181,7 @@ CREATE table clubBoard(
   seq number not null primary key,
   categorySeq NUMBER NOT NULL REFERENCES clubBoardCategory(seq),
   memberSeq NUMBER NOT NULL REFERENCES CLUBMEMBER(seq),
+  clubSeq NUMBER not null REFERENCES CLUB(seq),
   title VARCHAR2(50) NOT NULL ,
   content varchar2(1000) NOT NULL ,
   regDate DATE DEFAULT sysdate NOT NULL ,
