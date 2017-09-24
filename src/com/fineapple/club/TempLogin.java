@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.fineapple.DTO.ClubDTO;
+
 public class TempLogin extends HttpServlet {
 	
 	@Override
@@ -20,11 +22,11 @@ public class TempLogin extends HttpServlet {
 		session.setAttribute("taehyunSeq", "39");
 		ClubService service = new ClubService(session);
 		
-		ArrayList<String> myClubList = service.getClubName();
+		ArrayList<ClubDTO> myClubList = service.getClubName();
 		
 		session.setAttribute("myclublist", myClubList);
 		
-		
+		System.out.println(myClubList.get(0).getName());
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/index.jsp");
 		dispatcher.forward(req, resp);
 		

@@ -121,8 +121,8 @@
                      class="fa arrow"></span></a>
                   <ul class="nav nav-third-level">
                   <c:if test="${myclublist ne null }">
-                  	 <c:forEach items="${myclublist}" var="clubname">
-                     <li><a href="/Project/club/myclubboard.do">${clubname}</a></li>
+                  	 <c:forEach items="${myclublist}" var="dto">
+                     <li><a href="/Project/club/myclubboard.do?clubseq=${dto.seq}">${dto.name}</a></li>
                   	
                      </c:forEach>
                   </c:if>
