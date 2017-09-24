@@ -1,6 +1,9 @@
 package com.fineapple.all.freeboard;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import javax.servlet.http.HttpSession;
 
 import com.fineapple.DTO.FBCategoryDTO;
 import com.fineapple.DTO.FBFileDTO;
@@ -10,9 +13,15 @@ import com.fineapple.DTO.VFreeBoardDTO;
 public class FreeBoardService {
 
 	private FreeBoardDAO dao;
+	private HttpSession session;
 	
 	public FreeBoardService() {
 		dao = new FreeBoardDAO();
+	}
+	
+	public FreeBoardService(HttpSession session) {
+		dao = new FreeBoardDAO();
+		this.session = session;
 	}
 	
 	//카테고리 얻어오기
@@ -66,19 +75,20 @@ public class FreeBoardService {
 		return fbdto;
 	}
 
-	public ArrayList<VFreeBoardDTO> getList() {
+	public ArrayList<VFreeBoardDTO> getList(HashMap<String, String> map) {
 		ArrayList<VFreeBoardDTO> list = new ArrayList<VFreeBoardDTO>();
 		
-		list = dao.getList();
+		list = dao.getList(map);
 		
-		//새로운 글
+		//새로운 글 더 예쁜거 찾아보기
 		for(VFreeBoardDTO dto : list) {
 			if (dto.getGap() <= 1) {
-				dto.setGapImg("<img src='/Project/company/images/new.png'>");
+				/*dto.setGapImg("<img src='/Project/company/images/new.png'>");*/
 			}
 		}
 		
 		//첨부파일
+		list = dao.isFileAttached(list);
 		
 		return list;
 	}

@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.fineapple.DTO.FBCategoryDTO;
 import com.fineapple.DTO.FBFileDTO;
@@ -189,12 +190,12 @@ public class FreeBoardDAO {
 		}
 	}
 
-	public ArrayList<VFreeBoardDTO> getList() {
+	public ArrayList<VFreeBoardDTO> getList(HashMap<String, String> map) {
 		try {
 			
 			String sql 
 				= "select * from (select a.*, rownum as rnum from "
-						+ "(select seq, name, empSeq, fbCategorySeq, fbCategory, title, readCount, regDate, round((sysdate - regDate) * 24) as gap "
+						+ "(select seq, name, empSeq, fbCategorySeq, fbCategory, title, readCount, regDate, round(sysdate - regDate) as gap "
 								+ "from VFreeBoard order by seq desc) a)";
 			
 			Statement stat = conn.createStatement()	;
@@ -222,6 +223,32 @@ public class FreeBoardDAO {
 			System.out.println(e.toString());
 			return null;
 		}
+	}
+
+	public ArrayList<VFreeBoardDTO> isFileAttached(ArrayList<VFreeBoardDTO> list) {
+		try {
+			
+			String sql = "SELECT COUNT(*) FROM fbFile WHERE fbSeq = ?"; 
+			
+			for(VFreeBoardDTO dto : list) {
+				
+				PreparedStatement stat = conn.prepareStatement(sql);
+				stat.setString(1, dto.getSeq());
+				ResultSet rs = stat.executeQuery();
+				
+				if (rs.next()) {
+					if (rs.getInt(1) != (0)) { 
+						dto.setFileImg("<span style='color: #aaa; margin-left: 5px;' class='glyphicon glyphicon-floppy-disk'></span>");
+					}
+				}
+				
+			}
+			
+			return list; 
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		return null;
 	}
 
 }
