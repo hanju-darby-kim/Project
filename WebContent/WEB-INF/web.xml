@@ -139,6 +139,34 @@
 		<url-pattern>/all/freeboard/editok.do</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>all.FreeBoard.delete</servlet-name>
+		<servlet-class>com.fineapple.all.freeboard.Delete</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all.FreeBoard.delete</servlet-name>
+		<url-pattern>/all/freeboard/delete.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 설문조사 -->
+	<servlet>
+		<servlet-name>all.servey.add</servlet-name>
+		<servlet-class>com.fineapple.all.servey.Add</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all.servey.add</servlet-name>
+		<url-pattern>/all/freeboard/add.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>all.servey.addok</servlet-name>
+		<servlet-class>com.fineapple.all.servey.AddOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all.servey.addok</servlet-name>
+		<url-pattern>/all/servey/addok.do</url-pattern>
+	</servlet-mapping>
+
 	<!-- 주소록  -->
 	<servlet>
 		<servlet-name>all.contact.list</servlet-name>

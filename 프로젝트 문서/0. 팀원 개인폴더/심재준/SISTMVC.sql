@@ -4,6 +4,8 @@ select * from employee;
 select * from tblMsgSent;
 
 --보낸쪽지 테이블
+select * from tblmsgsent;
+drop table tblMsgSent;
 create table tblMsgSent
 (
   seq NUMBER PRIMARY KEY,
@@ -15,6 +17,16 @@ create table tblMsgSent
   sentDelete VARCHAR2(1),
   sentSave VARCHAR2(1)
 );
+alter table tblmsgsent MODIFY (sentdate default sysdate);
+alter table tblmsgsent MODIFY (sentDelete default 'Y');
+alter table tblmsgsent MODIFY (sentSave default 'N');
+
+insert into tblMsgSent (seq, sentEmployeeNum, title, content, sentDate, sentDelete, sentSave)
+  VALUES (msgsentseq.nextval, 55, 22, 333, DEFAULT, DEFAULT, DEFAULT);
+commit;
+
+
+
 --받은쪽지 테이블
 CREATE table tblMsgRead
 (

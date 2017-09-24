@@ -31,11 +31,11 @@ public class FreeBoardService {
 
 	//글 디비에 넣기
 	public int add(FreeBoardDTO fbdto) {
-		int fileResult = 0;
+		int fileResult = 1;
 		String seq = "";
 		//글내용 넣기
 		int addResult = dao.addFreeBoard(fbdto);
-		
+		System.out.println(fbdto.getFileList().size());
 		if(fbdto.getFileList().size() != 0) {
 			//첨부파일이 있다면 첨부파일 넣기
 			seq = dao.getMaxSeq();	//방금 입력한 글의 시퀀스 필요
@@ -82,7 +82,7 @@ public class FreeBoardService {
 		
 		//새로운 글 더 예쁜거 찾아보기
 		for(VFreeBoardDTO dto : list) {
-			if (dto.getGap() <= 1) {
+			if (dto.getGap() <= 6) {
 				dto.setGapImg("<span class='label' style='color: #53a8f3; vertical-align: text-top; padding: 0px;'>new</span>");
 			}
 		}
@@ -105,6 +105,23 @@ public class FreeBoardService {
 		dto.setFileList(dao.getFiles(seq));	//첨부파일
 			
 		return dto;
+	}
+
+	public int edit(FreeBoardDTO fbdto) {
+		//글 수정
+		int result = dao.edit(fbdto);
+		return result;
+	}
+
+	public int delete(String seq) {
+		
+		//글삭제
+		dao.fileDelete(seq);
+		
+		//첨부파일삭제
+		int result = dao.fbDelete(seq);
+
+		return result;
 	}
 	
 
