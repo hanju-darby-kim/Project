@@ -148,14 +148,7 @@
 		<url-pattern>/all/freeboard/delete.do</url-pattern>
 	</servlet-mapping>
 	
-	<servlet>
-		<servlet-name>all.FreeBoard.deleteok</servlet-name>
-		<servlet-class>com.fineapple.all.freeboard.DeleteOk</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>all.FreeBoard.deleteok</servlet-name>
-		<url-pattern>/all/freeboard/deleteok.do</url-pattern>
-	</servlet-mapping>
+
 	<!-- 주소록  -->
 	<servlet>
 		<servlet-name>all.contact.list</servlet-name>
