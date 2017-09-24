@@ -96,8 +96,9 @@ commit;
 select * from vFreeBoard;
 select REGDATE, (sysdate - regDate) * 24 from FREEBOARD;
 
-select * from
-	(select a.*, rownum as rnum from (select seq, name, subject, readCount, regDate, round((sysdate - regDate) * 24 * 60) as gap, commentCount, filename from tblBoard %s order by seq desc) a) where rnum >= %s and rnum <= %s", where, map.get("start"), map.get("end"));
+select * from FREEBOARD;
+select * from fbFile;
+SELECT (sysdate - regDate) * 24, regDate FROM freeBoard;
 
-select * from (select a.*, rownum as rnum from (select seq, name, empSeq, fbCategorySeq, fbCategory, title, readCount, regDate, round((sysdate - regDate)) as gap from VFreeBoard order by seq desc) a);
-SELECT * FROM freeBoard;
+ALTER TABLE freeboard ADD CONSTRAINT
+REFERENCES fbfile(fbSeq) ON DELETE CASCADE;

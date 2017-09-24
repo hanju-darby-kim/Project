@@ -40,7 +40,6 @@ public class FreeBoardDAO {
 				categoryList.add(dto);
 			}
 			
-			conn.close();
 			return categoryList;
 			
 		} catch (Exception e) {
@@ -197,7 +196,7 @@ public class FreeBoardDAO {
 			String sql 
 				= String.format(
 						"select * from (select a.*, rownum as rnum from "
-						+ "(select seq, name, empSeq, fbCategorySeq, fbCategory, title, readCount, regDate, round(sysdate - regDate) as gap "
+						+ "(select seq, name, empSeq, fbCategorySeq, fbCategory, title, readCount, regDate, round((sysdate - regDate) * 24) as gap "
 								+ "from VFreeBoard order by seq desc) a) where rnum >= %s and rnum <= %s"
 									, map.get("start"), map.get("end"));
 			
@@ -293,6 +292,44 @@ public class FreeBoardDAO {
 			System.out.println(e.toString());
 		}
 		return 0;
+	}
+	
+	//글 삭제하기
+	public int fbDelete(String seq) {
+		try {
+			String sql = "DELETE FROM freeBoard WHERE seq = ?";
+			PreparedStatement stat = conn.prepareStatement(sql);
+			stat.setString(1, seq);
+			
+			int result = stat.executeUpdate();
+			
+			stat.close();
+
+			return result;
+		
+		} catch (Exception e) {
+			System.out.println(e.toString());
+			return 0;
+		}
+	}
+	
+	//첨부파일 삭제하기
+	public int fileDelete(String seq) {
+		try {
+			String sql = "DELETE FROM fbFile WHERE fbSeq = ?";
+			PreparedStatement stat = conn.prepareStatement(sql);
+			stat.setString(1, seq);
+			
+			int result = stat.executeUpdate();
+			
+			stat.close();
+
+			return result;
+		
+		} catch (Exception e) {
+			System.out.println(e.toString());
+			return 0;
+		}
 	}
 
 }
