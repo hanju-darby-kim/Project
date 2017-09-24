@@ -309,8 +309,15 @@
 		
 	</servlet-mapping>
 	
-
-
+<!-- 김현진꺼 -->
+<servlet> <!-- position.list -->
+		<servlet-name>PBoardList</servlet-name>
+		<servlet-class>com.fineapple.position.List</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PBoardList</servlet-name>
+		<url-pattern>/company/pages/position/board/list.do</url-pattern>
+	</servlet-mapping>
 	
 </web-app>
 
