@@ -53,10 +53,34 @@ public class FreeBoardService {
 		
 		//첨부파일 얻어오기
 		fbdto.setFileList(dao.getFiles(seq));
+		
+		//확장자명 잘라주기
+		for (FBFileDTO dto : fbdto.getFileList()) {
+			String fileName = dto.getFileName();
+			dto.setExtension(fileName.substring(fileName.lastIndexOf("."), fileName.length()));
+			//점을 뒤에서부터 찾아서 인덱스 구한 다음에 마지막까지 자름
+		}
 
 		//댓글 얻어오기
 		
 		return fbdto;
+	}
+
+	public ArrayList<VFreeBoardDTO> getList() {
+		ArrayList<VFreeBoardDTO> list = new ArrayList<VFreeBoardDTO>();
+		
+		list = dao.getList();
+		
+		//새로운 글
+		for(VFreeBoardDTO dto : list) {
+			if (dto.getGap() <= 1) {
+				dto.setGapImg("<img src='/Project/company/images/new.png'>");
+			}
+		}
+		
+		//첨부파일
+		
+		return list;
 	}
 
 }

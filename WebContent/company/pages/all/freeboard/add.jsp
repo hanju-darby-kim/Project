@@ -39,9 +39,9 @@
    #addTable { margin-bottom: 0; }
    #addTable #FBCategory { height: 30px; width: 100px; padding: 5px; }
    #addTable td:first-child, #fileTable td:first-child { border-top: 0px; }
-   #addTable #title { width: 760px; }
+   #addTable #title { width: 720px; }
    #fileTable { float: left; width: 400px; }
-   #btns { width: 300px; text-align: right; padding-right: 20px; float: left; margin-left: 87px; margin-top: 5px; }
+   #btns { width: 300px; text-align: right; padding-right: 20px; float: left; margin-left: 48px; margin-top: 5px; }
    
    .files { float: left; }
    .fileWrapper { float: left; border: 1px solid #ccc; padding: 3px; border-radius: 3px; }
@@ -128,7 +128,7 @@
                </tr>
                <tr>
                   <td> <!-- content -->
-                  <textarea name="content" id="content" rows="15" cols="101"></textarea>          
+                  <textarea name="content" id="content" rows="15" cols="105"></textarea>          
                </td>
             </tr>
             

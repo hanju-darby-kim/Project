@@ -93,9 +93,11 @@ FROM FREEBOARD fb
 commit;
 
 
+select * from vFreeBoard;
+select REGDATE, (sysdate - regDate) * 24 from FREEBOARD;
 
-select * from FREEBOARD;
-
+select * from
+	(select a.*, rownum as rnum from (select seq, name, subject, readCount, regDate, round((sysdate - regDate) * 24 * 60) as gap, commentCount, filename from tblBoard %s order by seq desc) a) where rnum >= %s and rnum <= %s", where, map.get("start"), map.get("end"));
 
 
 

@@ -147,7 +147,7 @@ public class FreeBoardDAO {
 				dto.setTitle(rs.getString("title"));
 				dto.setRegDate(rs.getString("regDate"));
 				dto.setContent(rs.getString("content"));
-				dto.setReadCount(rs.getString("readCount"));
+				dto.setReadCount(rs.getInt("readCount"));
 				dto.setThread(rs.getString("thread"));
 				dto.setDepth(rs.getString("depth"));
 			}
@@ -182,6 +182,41 @@ public class FreeBoardDAO {
 			}
 			
 			return fileList;
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+			return null;
+		}
+	}
+
+	public ArrayList<VFreeBoardDTO> getList() {
+		try {
+			
+			String sql 
+				= "select * from (select a.*, rownum as rnum from "
+						+ "(select seq, name, empSeq, fbCategorySeq, fbCategory, title, readCount, regDate, round((sysdate - regDate) * 24) as gap "
+								+ "from VFreeBoard order by seq desc) a)";
+			
+			Statement stat = conn.createStatement()	;
+			ResultSet rs = stat.executeQuery(sql);
+			
+			ArrayList<VFreeBoardDTO> list = new ArrayList<VFreeBoardDTO>();
+			
+			while(rs.next()) {
+				VFreeBoardDTO dto = new VFreeBoardDTO();
+				dto.setSeq(rs.getString("seq"));
+				dto.setName(rs.getString("name"));
+				dto.setEmpSeq(rs.getString("empSeq"));
+				dto.setFbCategorySeq(rs.getString("fbCategorySeq"));
+				dto.setFbCategory(rs.getString("fbCategory"));
+				dto.setTitle(rs.getString("title"));
+				dto.setReadCount(rs.getInt("readCount"));
+				dto.setRegDate(rs.getString("regDate").substring(0, 10));
+				dto.setGap(rs.getInt("gap"));
+				list.add(dto);
+			}
+			
+			return list;
 			
 		} catch (Exception e) {
 			System.out.println(e.toString());

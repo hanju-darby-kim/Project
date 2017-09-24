@@ -12,8 +12,25 @@ public class FreeBoardDTO {
 	private int readCount;
 	private int thread;
 	private int depth;
-	
+
 	ArrayList<FBFileDTO> fileList;
+	
+	int gap;	
+	String gapImg;
+	
+	public int getGap() {
+		return gap;
+	}
+	public void setGap(int gap) {
+		this.gap = gap;
+	}
+	public String getGapImg() {
+		return gapImg;
+	}
+	public void setGapImg(String gapImg) {
+		this.gapImg = gapImg;
+	}
+	
 	
 	public ArrayList<FBFileDTO> getFileList() {
 		return fileList;

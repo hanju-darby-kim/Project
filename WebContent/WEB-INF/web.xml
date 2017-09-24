@@ -103,6 +103,14 @@
 		<url-pattern>/all/freeboard/download.do</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>all.FreeBoard.list</servlet-name>
+		<servlet-class>com.fineapple.all.freeboard.List</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all.FreeBoard.list</servlet-name>
+		<url-pattern>/all/freeboard/list.do</url-pattern>
+	</servlet-mapping>
 	
 	<servlet>
 		<servlet-name>all.FreeBoard.view</servlet-name>
