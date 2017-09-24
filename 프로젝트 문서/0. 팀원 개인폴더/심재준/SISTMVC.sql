@@ -5,6 +5,7 @@ select * from tblMsgSent;
 
 --보낸쪽지 테이블
 select * from tblmsgsent;
+select * from employee;
 drop table tblMsgSent;
 create table tblMsgSent
 (
@@ -23,6 +24,7 @@ alter table tblmsgsent MODIFY (sentSave default 'N');
 
 insert into tblMsgSent (seq, sentEmployeeNum, title, content, sentDate, sentDelete, sentSave)
   VALUES (msgsentseq.nextval, 55, 22, 333, DEFAULT, DEFAULT, DEFAULT);
+
 commit;
 
 
