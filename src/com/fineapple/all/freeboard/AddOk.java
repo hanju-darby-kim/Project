@@ -76,10 +76,15 @@ public class AddOk extends HttpServlet {
 			//2. service 보내기
 			FreeBoardService service = new FreeBoardService();
 			int result = service.add(fbdto);
+
+			// + 방금 쓴 글 번호 가져오기
+			String seq = "";
+			seq = service.getMaxSeq();
 			
-			//결과 잘 들어갔는지 저장
+			//결과 잘 들어갔는지 저장 + 시퀀스
 			req.setAttribute("result", result);
-			
+			req.setAttribute("seq", seq);
+	
 			RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/all/freeboard/addok.jsp");
 			dispatcher.forward(req, resp);
 			

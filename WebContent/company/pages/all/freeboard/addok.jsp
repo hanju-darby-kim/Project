@@ -15,16 +15,16 @@
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Project/company/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="/Project/company/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/Project/company/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/Project/company/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,6 +33,14 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+	<style>
+		.confirmBox { /* border: 1px solid #ccc; */ border-radius: 5px; margin: 0px auto; text-align: center; margin: 100px 40px; }		
+		.end { font-size: 16px; margin: 20px; }		
+		.end div { margin-bottom: 4px; }		
+		.btns { text-align: center; }		
+		.btn { margin: 5px; }
+		.fa { font-size: 18px; }
+	</style>
 </head>
 <body>
 
@@ -60,16 +68,33 @@
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
+            <c:if test="${result == 1}">
+	            <div class="confirmBox">
+	            	<div class="end">
+	            		<div style="margin-bottom: 3px;"><i class="fa fa-smile-o"></i></div>
+	            		<div style="font-weight: bold;">등록이 완료되었습니다!</div> 
+	            	</div>
+	            	<div class="btns">
+	            		<input type="button" value="목록으로" class="btn btn-primary" onclick="location.href='/Project/all/freeboard/list.do'">
+	            		<input type="button" value="글보기" class="btn btn-info" onclick="location.href='/Project/all/freeboard/view.do?seq=${seq}';">
+	            	</div>
+	            </div>
+            </c:if>
             
-            <div id="confirmBox">
-            	<div id="end">
-            		등록이 완료되었습니다!
-            	</div>
-            	<div id="btns">
-            		<input type="button" value="목록으로" class="btn btn-">
-            		<input type="button" value="글보기">
-            	</div>
-            </div>
+            <c:if test="${result == 0}">
+	            <div class="confirmBox">
+	            	<div class="end">
+	            		<div><i class="fa fa-frown-o"></i></div>
+	            		<div style="font-weight: bold;">글이 등록되지 않았습니다.</div>
+	            		<div>전산부로 문의 바랍니다.</div>
+	            		<div>02) 2550-1039</div>
+	            	</div>
+	            	<div class="btns">
+	            		<input type="button" value="목록으로" class="btn btn-primary" onclick="location.href='/Project/all/freeboard/list.do'">
+	            		<input type="button" value="돌아가기" class="btn btn-info" onclick="history.back();">
+	            	</div>
+	            </div>
+            </c:if>
             
         </div>
         <!-- /#page-wrapper -->

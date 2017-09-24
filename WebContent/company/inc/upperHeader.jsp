@@ -219,7 +219,17 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.jsp"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        
+                        <!-- 로그인을 했다면 (seq 값을 가지고 있다면) -->
+                        <% if (session.getAttribute("seq") != null) { %>
+                        <!-- 로그아웃을 제공하고 -->
+                        <li><a href="/Project/company/pages/login/logout.jsp"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+						<!-- 로그인을 안 했다면 (seq가 null이라면) -->
+						<% } else { %>
+						<!-- 로그인을 제공한다. -->
+                        <li><a href="/Project/company/pages/login/login.jsp"><i class="fa fa-sign-in fa-fw"></i> Login</a>
+						<% } %>
+
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->

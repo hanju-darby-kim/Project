@@ -55,3 +55,50 @@ INSERT INTO freeboard (seq, empSeq, FBCategory, title, content, readCount, regDa
 INSERT INTO (seq, FBSeq, orgFileName, fileName) VALUES (FBFileSeq.nextVal, 4, 'test', 'test');
 
 
+SELECT * FROM FBFILE;
+SELECT * FROM FREEBOARD;
+SELECT * FROM FBCATEGORY;
+select * from EMPLOYEE;
+
+CREATE OR REPLACE VIEW vFreeBoard
+AS
+SELECT
+  fb.seq as seq,
+  fb.empSeq as empSeq,
+  e.NAME as name,
+  fb.FBCATEGORY as fbCategorySeq,
+  fbc.NAME as fbCategory,
+  fb.TITLE as title,
+  fb.CONTENT as content,
+  fb.READCOUNT as readCount,
+  fb.regDate as regDate,
+  fb.thread as THREAD,
+  fb.depth as depth
+FROM FREEBOARD fb
+    INNER JOIN EMPLOYEE e
+      ON fb.EMPSEQ = e.SEQ
+      INNER JOIN FBCATEGORY fbc
+        ON fb.FBCATEGORY = fbc.SEQ;
+
+/*CREATE TRIGGER depthTitle
+	BEFORE INSERT OR UPDATE ON FREEBOARD
+	DECLARE
+		tempTitle VARCHAR2(1000);
+	BEGIN
+		IF DEPTH = 1 THEN
+			tempTitle := TITLE
+		END IF;
+	END;*/
+
+commit;
+
+
+select * from vFreeBoard;
+select REGDATE, (sysdate - regDate) * 24 from FREEBOARD;
+
+select * from
+	(select a.*, rownum as rnum from (select seq, name, subject, readCount, regDate, round((sysdate - regDate) * 24 * 60) as gap, commentCount, filename from tblBoard %s order by seq desc) a) where rnum >= %s and rnum <= %s", where, map.get("start"), map.get("end"));
+
+
+
+

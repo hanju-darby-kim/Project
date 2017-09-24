@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="navbar-default sidebar" role="navigation">
@@ -35,7 +35,7 @@
             <ul class="nav nav-second-level">   
                <li><a href="/Project/attendance/task.do"><i class="fa fa-file-text-o"></i>　근태 작성 </a>
                <li><a href="/Project/attendance/statistics.do"><i class="fa fa-bar-chart-o"></i>　근태 관련 통계 </a></li>
-               <li><a href="/Project/attendance/community.do"><i class="fa fa-quote-left fa-fw"></i>　근태 관련 자유게시판</a></li>
+               <li><a href="/Project/attendance/bbs.do"><i class="fa fa-quote-left fa-fw"></i>　근태 관련 자유게시판</a></li>
             </ul></li>   
          <!-- ./김한주 : 근태 -->
          
@@ -111,7 +111,7 @@
 		</li>   
 
       <!----------------- 태현 모임 ---------------------------->
-         <li><a href="javascript:void(0)"><i
+                 <li><a href="javascript:void(0)"><i
                class="fa fa-smile-o fa-fw"></i> 6. 모임 게시판<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
             	<li><a href="/Project/club/templogin.do">임시 김태현 로그인버튼</a></li>
@@ -121,9 +121,9 @@
                      class="fa arrow"></span></a>
                   <ul class="nav nav-third-level">
                   <c:if test="${myclublist ne null }">
-                  	 <c:forEach items="${myclublist}" var="clubname">
-                     <li><a href="javascript:void(0)">${clubname}</a></li>
-                  
+                  	 <c:forEach items="${myclublist}" var="dto">
+                     <li><a href="/Project/club/myclubboard.do?clubseq=${dto.seq}">${dto.name}</a></li>
+                  	
                      </c:forEach>
                   </c:if>
                   </ul></li>

@@ -38,8 +38,8 @@ public class ClubService {
 		return list;
 	}
 
-	public ArrayList<String> getClubName() {
-		ArrayList<String> myClubList = new ArrayList<String>();
+	public ArrayList<ClubDTO> getClubName() {
+		ArrayList<ClubDTO> myClubList = new ArrayList<ClubDTO>();
 		if(session.getAttribute("taehyunSeq") != null ) {
 			myClubList = dao.getClubName(session.getAttribute("taehyunSeq").toString());
 		}
