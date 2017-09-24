@@ -83,7 +83,7 @@ public class FreeBoardService {
 		//새로운 글 더 예쁜거 찾아보기
 		for(VFreeBoardDTO dto : list) {
 			if (dto.getGap() <= 1) {
-				dto.setGapImg("<span class='label label-danger'>new</span>");
+				dto.setGapImg("<span class='label' style='color: #f0ad4e; vertical-align: text-top; padding: 0px;'>new</span>");
 			}
 		}
 		
