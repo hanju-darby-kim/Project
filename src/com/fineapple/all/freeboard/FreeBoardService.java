@@ -106,6 +106,12 @@ public class FreeBoardService {
 			
 		return dto;
 	}
+
+	public int edit(FreeBoardDTO fbdto) {
+		//글 수정
+		int result = dao.edit(fbdto);
+		return result;
+	}
 	
 
 }

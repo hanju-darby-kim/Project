@@ -276,4 +276,23 @@ public class FreeBoardDAO {
 			
 	}
 
+	public int edit(FreeBoardDTO fbdto) {
+		try {
+			
+			String sql = "UPDATE freeBoard SET fbCategory = ?, title = ?, content = ? WHERE seq = ?";
+			PreparedStatement stat = conn.prepareStatement(sql);
+			stat.setString(1, fbdto.getFBCategory());
+			stat.setString(2, fbdto.getTitle());
+			stat.setString(3, fbdto.getContent());
+			stat.setString(4, fbdto.getSeq());
+			
+			int result = stat.executeUpdate();
+			
+			return result;
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		return 0;
+	}
+
 }
