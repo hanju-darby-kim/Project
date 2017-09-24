@@ -78,3 +78,13 @@ SELECT * FROM surveyAnswer;
 SELECT * FROM surveyAnswerType;
 SELECT * FROM surveyQuestion;
 SELECT * FROM surveyMultiChoice;
+
+INSERT INTO surveyAnswerType (seq, answerType) VALUES (surveyAnswerTypeSeq.nextVal, '주관식 단답형');
+
+INSERT INTO surveyAnswerType (seq, answerType) VALUES (surveyAnswerTypeSeq.nextVal, '주관식 서술형');
+
+INSERT INTO surveyAnswerType (seq, answerType) VALUES (surveyAnswerTypeSeq.nextVal, '단일 선택형');
+
+INSERT INTO surveyAnswerType (seq, answerType) VALUES (surveyAnswerTypeSeq.nextVal, '복수 선택형');
+
+COMMIT;
