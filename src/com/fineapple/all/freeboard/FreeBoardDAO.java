@@ -194,9 +194,11 @@ public class FreeBoardDAO {
 		try {
 			
 			String sql 
-				= "select * from (select a.*, rownum as rnum from "
+				= String.format(
+						"select * from (select a.*, rownum as rnum from "
 						+ "(select seq, name, empSeq, fbCategorySeq, fbCategory, title, readCount, regDate, round(sysdate - regDate) as gap "
-								+ "from VFreeBoard order by seq desc) a)";
+								+ "from VFreeBoard order by seq desc) a) where rnum >= %s and rnum <= %s"
+									, map.get("start"), map.get("end"));
 			
 			Statement stat = conn.createStatement()	;
 			ResultSet rs = stat.executeQuery(sql);
@@ -224,7 +226,8 @@ public class FreeBoardDAO {
 			return null;
 		}
 	}
-
+	
+	//파일이 있는지
 	public ArrayList<VFreeBoardDTO> isFileAttached(ArrayList<VFreeBoardDTO> list) {
 		try {
 			
@@ -249,6 +252,27 @@ public class FreeBoardDAO {
 			System.out.println(e.toString());
 		}
 		return null;
+	}
+
+	//총 게시물 개수 구하기
+	public int getTotalCount(HashMap<String, String> map) {
+		
+		try {
+			String sql ="SELECT COUNT(*) FROM FreeBoard";
+			Statement stat = conn.createStatement();
+			ResultSet rs = stat.executeQuery(sql);
+			
+			if(rs.next()) {
+				return rs.getInt(1);
+			}
+			
+			return 0; 
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+			return 0;
+		}
+			
 	}
 
 }

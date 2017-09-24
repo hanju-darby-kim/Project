@@ -83,7 +83,7 @@ public class FreeBoardService {
 		//새로운 글 더 예쁜거 찾아보기
 		for(VFreeBoardDTO dto : list) {
 			if (dto.getGap() <= 1) {
-				/*dto.setGapImg("<img src='/Project/company/images/new.png'>");*/
+				dto.setGapImg("<span class='label label-danger'>new</span>");
 			}
 		}
 		
@@ -91,6 +91,10 @@ public class FreeBoardService {
 		list = dao.isFileAttached(list);
 		
 		return list;
+	}
+
+	public int getTotalCount(HashMap<String, String> map) {
+		return dao.getTotalCount(map);
 	}
 
 }
