@@ -92,8 +92,8 @@
             <ul class="nav nav-second-level">
                <li><a href="javascript:void(0)">직원 게시판<span class="fa arrow"></a> <ul class="nav nav-third-level">
                <!-- fa arrow를 쓰면 화살표모양 넣을수있음.. -->
-                     <li><a href="/Project/company/pages/position/board/list.jsp">임원 게시판</a></li>
-                     <li><a href="/Project/company/pages/position/board/list.jsp)">사원 게시판</a></li>
+                     <li><a href="/Project/company/pages/position/board/list.do">임원 게시판</a></li>
+                     <li><a href="/Project/company/pages/position/board/list.do">사원 게시판</a></li>
                   </ul></li>
                <li><a href="/Project/company/pages/position/schedule/scheduleMain.jsp">일정 관리</a></li>
                
