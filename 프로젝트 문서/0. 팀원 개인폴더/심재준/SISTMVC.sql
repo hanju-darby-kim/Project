@@ -5,7 +5,7 @@ select * from tblMsgSent;
 
 --보낸쪽지 테이블
 select * from tblmsgsent;
-select * from tblmsgsent where sentemployeenum = 55;
+select * from tblmsgsent where sentemployeenum = 55 order by seq;
 select * from employee;
 drop table tblMsgSent;
 create table tblMsgSent
@@ -30,7 +30,6 @@ commit;
 
 
 --받은쪽지 테이블
-
 CREATE table tblMsgRead
 (
   seq number PRIMARY KEY,

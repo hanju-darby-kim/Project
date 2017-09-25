@@ -36,11 +36,6 @@ public class AddOk extends HttpServlet {
 		int result = service.add(dto);
 		req.setAttribute("result", result); //성공 1, 실패 0
 		
-		System.out.println(title);
-		System.out.println(content);
-		System.out.println(num);
-		System.out.println(result);
-		
 		//3)
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/jaejun/addok.jsp");
 		dispatcher.forward(req, resp);

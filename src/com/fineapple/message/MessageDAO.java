@@ -53,10 +53,10 @@ public class MessageDAO {
 		
 		return 0;
 	}
-
+	
 	public ArrayList<MsgSentDTO> list(int num) {
 		try {
-			String sql = String.format("select * from tblmsgsent where sentemployeenum = %d", num);
+			String sql = String.format("select * from tblmsgsent where sentemployeenum = %d order by seq desc", num);
 			
 			PreparedStatement stat = conn.prepareStatement(sql);
 			ResultSet rs = stat.executeQuery();

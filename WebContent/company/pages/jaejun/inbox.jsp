@@ -19,7 +19,7 @@
 	#table td, #table th {
 		text-align: center;
 	}
-	#table tr td:NTH-CHILD(2), #table tr td:NTH-CHILD(3) {
+	#table tr td:NTH-CHILD(2) {
 		text-align: left;
 	}
 	
@@ -27,17 +27,13 @@
 		border: 0px solid red;
 		vertical-align: middle;
 	}
-	#btns {
+	.btns {
 		border: 0px solid red;
+		margin: 0px 15px;
 		display: inline;
 		float: right;
-		position: absolute;
-		top: 140px; left: 1350px;
 	}
 </style>
-<script>
-
-</script>
     <!-- Bootstrap Core CSS -->
     <link href="/Project/company/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -63,6 +59,21 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+<script>
+
+function MsgboxMove() {
+	if ($(MsgboxSel).val() == 1){
+		location.href="/Project/message/inbox.do";
+	} else if ($(MsgboxSel).val() == 2) {
+		location.href="/Project/message/inboxsent.do";
+	} else if ($(MsgboxSel).val() == 3) {
+		location.href="/Project/message/inboxsave.do";
+	}
+}
+
+</script>
 </head>
 
 <body>
@@ -80,13 +91,21 @@
         <div id="page-wrapper">
             <div class="row">
                 <div id="headerInbox" class="col-lg-12">
-                    <h1 class="page-header">쪽지함</h1>
+                    <h1 class="page-header">받은쪽지함</h1>
                 <!-- /.col-lg-12 -->
 	            </div>
-	            <div id="btns">
-	            <input type="button" class="btn btn-primary" value="쪽지쓰기" onclick="location.href='/Project/message/add.do';"/>
-	            <input type="button" class="btn btn-default" value="환경설정" onclick="location.href='/Project/message/setting.do';"/>
-	            </div>
+            </div>
+            <!-- /.row -->
+            
+            <div class="row" style="position: relative;">
+            	<div style="position: absolute; top: -60px; left: 730px;">
+            		<select name="MsgboxSel" id="MsgboxSel" style="height: 30px;">
+            			<option value="1" selected="selected">받은쪽지함</option>
+            			<option value="2">보낸쪽지함</option>
+						<option value="3">쪽지보관함</option>
+            		</select>
+            		<input type="button" value="이동하기" style="height: 30px;" onclick="MsgboxMove();"/>
+            	</div>
             </div>
             <!-- /.row -->
             
@@ -107,7 +126,7 @@
 	                        <tr class="odd">
 	                            <td><input type="checkbox" /></td>
 	                            <td>${dto.title}</td>
-	                            <td>${dto.content}</td>
+	                            <td>보낸이추가</td>
 	                            <td>${dto.sentDate}</td>
 	                            <td>읽은시간추가</td>
 	                        </tr>
@@ -115,6 +134,17 @@
 	                    </tbody>
 	                </table>
                 </div>
+                
+                <div class="btns" style="float: left;">
+		            	<input type="button" class="btn btn-success" value="보관하기" onclick="location.href=' ';"/>
+			            <input type="button" class="btn btn-danger" value="삭제하기" onclick="location.href=' ';"/>
+		        </div>
+		        
+	            <div class="btns" style="float: right;">		            
+		            <input type="button" class="btn btn-info" value="쪽지쓰기" onclick="location.href='/Project/message/add.do';"/>
+		            <input type="button" class="btn btn-default" value="환경설정" onclick="location.href='/Project/message/setting.do';"/>
+		        </div>
+		           
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
