@@ -34,7 +34,7 @@ public class AddOk extends HttpServlet {
 		
 		MessageService service = new MessageService();
 		int result = service.add(dto);
-		req.setAttribute("result", result);//성공 1, 실패 0
+		req.setAttribute("result", result); //성공 1, 실패 0
 		
 		System.out.println(title);
 		System.out.println(content);

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -102,20 +103,22 @@
 	                        </tr>
 	                    </thead>
 	                    <tbody>
-	                        <tr class="odd gradeX">
+	                    	<c:forEach items="${list}" var="dto">
+	                        <tr class="odd">
 	                            <td><input type="checkbox" /></td>
-	                            <td>제목제목제목제목</td>
-	                            <td>보낸이</td>
-	                            <td></td>
-	                            <td>X</td>
+	                            <td>${dto.title}</td>
+	                            <td>${dto.content}</td>
+	                            <td>${dto.sentDate}</td>
+	                            <td>읽은시간추가</td>
 	                        </tr>
+	                        </c:forEach>
 	                    </tbody>
 	                </table>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-          
+            
             
         </div>
         <!-- /#page-wrapper -->
