@@ -69,7 +69,7 @@
             </div>
             <!-- /.container-fluid -->
             <c:if test="${result == 1}">
-	            <div class="confirmBox">
+	            <div class="confirmBox">asfasdfasfsdfrAfzdazdr
 	            	<div class="end">
 	            		<div style="margin-bottom: 3px;"><i class="fa fa-smile-o"></i></div>
 	            		<div style="font-weight: bold;">등록이 완료되었습니다!</div> 
