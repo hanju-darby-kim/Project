@@ -32,9 +32,8 @@ public class DBUtil {
 		
 	}
 	
-	//테스트용, false뜨면 접속완료
-/*
-	public static void main(String[] args) {
+
+	/*public static void main(String[] args) {
 		
 		DBUtil db = new DBUtil();
 		Connection conn = db.getConnection();
@@ -44,8 +43,8 @@ public class DBUtil {
 			e.printStackTrace();
 		}
 		
-	}
-*/
+	}*/
+
 }//class
 
 
