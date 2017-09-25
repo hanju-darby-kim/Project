@@ -21,9 +21,13 @@
 	<div id="main">
 		<section>
 			<c:if test="${result == 1}">
+				<!-- script의 location.href은 Get방식임, 주소표시줄 변경됨 -->
 				<script>
 					location.href = "/Project/message/inbox.do";
 				</script>
+				
+				<%-- <jsp:forward page=""> 는 Post방식임, 주소표시줄에 변경없음 --%>
+				<%-- <jsp:forward page="/message/inbox.do"></jsp:forward> --%>
 			</c:if>
 			
 			<c:if test="${result == 0}">

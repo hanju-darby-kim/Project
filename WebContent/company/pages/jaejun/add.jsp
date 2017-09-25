@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% session.setAttribute("num", 55); %>
+<% session.setAttribute("name", "홍길동"); %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -86,7 +87,7 @@
 								받는사람
 							</td>
 							<td>
-								홍길동
+								${name}
 							</td>
 						</tr>
 						<tr>

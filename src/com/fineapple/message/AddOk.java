@@ -19,7 +19,7 @@ public class AddOk extends HttpServlet {
 		int num = (int)session.getAttribute("num");
 		
 		//1)
-		req.setCharacterEncoding("UTF-8"); //한글을 POST으로 넘길때
+		req.setCharacterEncoding("UTF-8"); //한글을 POST방식으로 받을때
 //		System.out.println(req.getParameter("title"));
 //		System.out.println(req.getParameter("content"));
 		
