@@ -22,7 +22,7 @@
 		<section>
 			<c:if test="${result == 1}">
 				<script>
-					location.href = "/Project/message/addok.do";
+					location.href = "/Project/message/inbox.do";
 				</script>
 			</c:if>
 			
@@ -31,7 +31,6 @@
 					history.back();
 				</script>
 			</c:if>
-			
 		</section>
 	</div>
 </body>
