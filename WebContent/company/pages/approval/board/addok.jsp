@@ -1,35 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
-<title>SB Admin 2 - Bootstrap Admin Theme</title>
-<style>
-#tbl th, #tbl td { text-align: center; }
-#tbl td:nth-child(2) { text-align: left; }
-#tbl .short { width: 20%; }
-#tbl #content { height: 300px; }
-</style>
-<script>
-/* $(document).ready(function() {
 
-	<c:if test="${result == 1}">
-	alert("글쓰기 성공!!");
-	location.href = "/JSPTest/board/list.do";
-	</c:if>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-	<c:if test="${result == 0}">
-	alert("글쓰기 실패!!");
-	history.back();
-	</c:if>
-	
-}); */
-</script>
+    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+
     <!-- Bootstrap Core CSS -->
     <link href="/Project/company/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -49,8 +33,15 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+	<style>
+		.confirmBox { /* border: 1px solid #ccc; */ border-radius: 5px; margin: 0px auto; text-align: center; margin: 100px 40px; }		
+		.end { font-size: 16px; margin: 20px; }		
+		.end div { margin-bottom: 4px; }		
+		.btns { text-align: center; }		
+		.btn { margin: 5px; }
+		.fa { font-size: 18px; }
+	</style>
 </head>
-
 <body>
 
     <div id="wrapper">
@@ -65,29 +56,46 @@
 
             
         </nav>
-
+		
         <!-- Page Content -->
         <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                       <h1 class="page-header">결재 <small>자유 게시판</small></h1>
                     </div>
                     <!-- /.col-lg-12 -->
-                    <!-- 테이블 내용 -->
-                    
-                    <!-- 글쓰기 폼 -->
-                    글을 쓰면 이페이지로 넘어갑니다..
-                    <input type="hidden" name="name" value="${dto.name}">
-                                       
-                  
-				
-                    
-                    
                 </div>
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
+            <c:if test="${result == 1}">
+	            <div class="confirmBox">
+	            	<div class="end">
+	            		<div style="margin-bottom: 3px;"><i class="fa fa-smile-o"></i></div>
+	            		<div style="font-weight: bold;">등록이 완료되었습니다!</div> 
+	            	</div>
+	            	<div class="btns">
+	            		<input type="button" value="목록으로" class="btn btn-primary" onclick="location.href='/Project/all/freeboard/list.do'">
+	            		<input type="button" value="글보기" class="btn btn-info" onclick="location.href='/Project/all/freeboard/view.do?seq=${seq}';">
+	            	</div>
+	            </div>
+            </c:if>
+            
+            <c:if test="${result == 0}">
+	            <div class="confirmBox">
+	            	<div class="end">
+	            		<div><i class="fa fa-frown-o"></i></div>
+	            		<div style="font-weight: bold;">글이 등록되지 않았습니다.</div>
+	            		<div>전산부로 문의 바랍니다.</div>
+	            		<div>02) 2550-1039</div>
+	            	</div>
+	            	<div class="btns">
+	            		<input type="button" value="목록으로" class="btn btn-primary" onclick="location.href='/Project/all/freeboard/list.do'">
+	            		<input type="button" value="돌아가기" class="btn btn-info" onclick="history.back();">
+	            	</div>
+	            </div>
+            </c:if>
+            
         </div>
         <!-- /#page-wrapper -->
 
