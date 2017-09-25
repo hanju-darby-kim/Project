@@ -83,6 +83,12 @@ public class MessageDAO {
 	
 	
 	public ArrayList<MsgSentDTO> list(int num) {
+		
+		return null;
+	}
+
+	public ArrayList<MsgSentDTO> slist(int num) {
+		
 		try {
 			String sql = String.format("select * from tblmsgsent where sentemployeenum = %d order by seq desc", num);
 			
@@ -111,6 +117,7 @@ public class MessageDAO {
 		}
 		
 		return null;
+		
 	}
 
 }
