@@ -108,7 +108,7 @@
 	            </div>
 	            <div id="btns">
 					<input type="submit" value="보내기" class="btn btn-primary" id="send" onclick="submitContents()"/>
-					<input type="button" value="돌아가기" class="btn btn-default" />
+					<input type="button" value="돌아가기" class="btn btn-default" onclick="history.back();" />
 				</div>
             </form>
         </div>
