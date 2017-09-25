@@ -23,7 +23,7 @@ alter table tblmsgsent MODIFY (sentDelete default 'Y');
 alter table tblmsgsent MODIFY (sentSave default 'N');
 
 insert into tblMsgSent (seq, sentEmployeeNum, title, content, sentDate, sentDelete, sentSave)
-  VALUES (msgsentseq.nextval, 55, 22, 333, DEFAULT, DEFAULT, DEFAULT);
+  VALUES (msgsentseq.nextval, 15, 22, 333, DEFAULT, DEFAULT, DEFAULT);
 
 commit;
 
