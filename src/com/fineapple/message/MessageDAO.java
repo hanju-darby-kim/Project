@@ -3,8 +3,10 @@ package com.fineapple.message;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 
+import com.fineapple.DTO.MsgReadDTO;
 import com.fineapple.DTO.MsgSentDTO;
 import com.fineapple.util.DBUtil;
 
@@ -33,17 +35,14 @@ public class MessageDAO {
 	
 	
 	
-	public int add(MsgSentDTO dto) {
+	public int sAdd(MsgSentDTO sdto) {
 		try {
-			System.out.println(dto.getSentEmployeeNum());
-			System.out.println(dto.getTitle());
-			System.out.println(dto.getContent());
 			
 			String sql = "insert into tblMsgSent (seq, sentEmployeeNum, title, content, sentDate, sentDelete, sentSave) VALUES (msgsentseq.nextval, ?, ?, ?, DEFAULT, DEFAULT, DEFAULT)";
 			PreparedStatement stat = conn.prepareStatement(sql);
-			stat.setInt(1, dto.getSentEmployeeNum());
-			stat.setString(2, dto.getTitle());
-			stat.setString(3, dto.getContent());
+			stat.setInt(1, sdto.getSentEmployeeNum());
+			stat.setString(2, sdto.getTitle());
+			stat.setString(3, sdto.getContent());
 			
 			return stat.executeUpdate();			
 			
@@ -52,7 +51,36 @@ public class MessageDAO {
 		}
 		
 		return 0;
+		
 	}
+	
+	
+	
+	public int rAdd(MsgReadDTO rdto) {
+		try {
+			String sql = "select max(seq) as num from tblmsgsent";
+			Statement stat = conn.createStatement();
+			ResultSet rs = stat.executeQuery(sql);
+			
+			rs.next();
+			int msgNum = rs.getInt("num");
+			
+			sql = "insert into tblMsgRead (seq, msgNumber, readEmployeeNum, readDate, readDelete, readSave) VALUES (msgreadseq.nextval, ?, ?, DEFAULT, DEFAULT, DEFAULT)";
+			PreparedStatement pstat = conn.prepareStatement(sql);
+			pstat.setInt(1, msgNum);
+			pstat.setInt(2, 15);
+			
+			return pstat.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return 0;
+		
+	}
+	
+	
 	
 	public ArrayList<MsgSentDTO> list(int num) {
 		try {
@@ -84,7 +112,7 @@ public class MessageDAO {
 		
 		return null;
 	}
-	
+
 }
 
 

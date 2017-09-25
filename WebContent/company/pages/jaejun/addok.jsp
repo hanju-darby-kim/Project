@@ -20,7 +20,7 @@
 <body>
 	<div id="main">
 		<section>
-			<c:if test="${result == 1}">
+			<c:if test="${sresult == 1}">
 				<!-- script의 location.href은 Get방식임, 주소표시줄 변경됨 -->
 				<script>
 					location.href = "/Project/message/inbox.do";

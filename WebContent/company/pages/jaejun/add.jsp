@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <% session.setAttribute("num", 55); %>
 <% session.setAttribute("name", "홍길동"); %>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -83,11 +86,9 @@
 	            <div class="row col-lg-12">
 	            	<table class="table table-responsive table-bordered">
 						<tr>
-							<td width="100">
-								받는사람
-							</td>
+							<td width="100">받는사람</td>
 							<td>
-								${name}
+								<input type="text" style="width: 100%;" onkeyup=""/>
 							</td>
 						</tr>
 						<tr>

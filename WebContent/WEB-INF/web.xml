@@ -279,6 +279,15 @@
 		<servlet-name>message.add</servlet-name>
 		<url-pattern>/message/add.do</url-pattern>
 	</servlet-mapping>
+	
+	<servlet> <!-- del -->
+		<servlet-name>message.del</servlet-name>
+		<servlet-class>com.fineapple.message.Del</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.del</servlet-name>
+		<url-pattern>/message/del.do</url-pattern>
+	</servlet-mapping>
 
 	<servlet> <!-- addok -->
 		<servlet-name>message.addok</servlet-name>

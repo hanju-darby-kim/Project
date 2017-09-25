@@ -3,9 +3,14 @@ select * from tab;
 select * from employee;
 select * from tblMsgSent;
 
+
+
 --보낸쪽지 테이블
-select * from tblmsgsent;
+select * from tblmsgsent order by seq;
 select * from tblmsgsent where sentemployeenum = 55 order by seq;
+select * from tblmsgsent where seq = (select max(seq) from tblmsgsent);
+select max(seq) as num from tblmsgsent;
+
 select * from employee;
 drop table tblMsgSent;
 create table tblMsgSent
@@ -41,6 +46,16 @@ CREATE table tblMsgRead
   readDelete VARCHAR2(1),
   readSave VARCHAR2(1)
 );
+alter table tblMsgRead MODIFY (readDate default NULL);
+alter table tblMsgRead MODIFY (readDelete default 'N');
+alter table tblMsgRead MODIFY (readSave default 'N');
+insert into tblMsgRead (seq, msgNumber, readEmployeeNum, readDate, readDelete, readSave)
+  VALUES (msgreadseq.nextval, 70, 55, DEFAULT, DEFAULT, DEFAULT);
+select * from tblMsgRead;
+commit;
+
+
+
 --쪽지설정
 drop table tblmsgoption;
 create table tblMsgOption
