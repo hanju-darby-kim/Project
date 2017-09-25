@@ -2,9 +2,11 @@ package com.fineapple.approval.board;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import com.fineapple.DTO.ApprovalBoardDTO;
 import com.fineapple.util.DBUtil;
+import com.test.board.BoardDTO;
 
 
 public class BoardDAO {
@@ -42,6 +44,43 @@ public class BoardDAO {
 		return 0;
 
 	
+	}
+
+	
+	// View 서블릿이 글 번호를 줄테니 글 1개(DTO)를 달라는 작업.
+	public ApprovalBoardDTO get(String seq) {
+		try {
+
+			String sql = "SELECT * FROM approvalBoard WHERE SEQ = ?";
+			PreparedStatement stat = conn.prepareStatement(sql);
+			stat.setString(1, seq);
+			
+			ResultSet rs = stat.executeQuery();
+			
+			if (rs.next()) {
+				
+				ApprovalBoardDTO dto = new ApprovalBoardDTO();
+				dto.setSeq(rs.getString("seq"));
+				dto.setName(rs.getString("name"));
+				dto.setSubject(rs.getString("subject"));
+				dto.setContent(rs.getString("content"));
+				dto.setEmail(rs.getString("email"));
+				dto.setRegdate(rs.getString("regdate"));
+				dto.setUserip(rs.getString("userip"));
+				dto.setReadcount(rs.getInt("readcount"));
+				dto.setTag(rs.getString("tag"));
+				
+				return dto;
+				
+			}
+
+		} catch (Exception e) {
+
+			System.out.println(e.toString());
+
+		}
+		
+		return null;
 	}
 	
 }

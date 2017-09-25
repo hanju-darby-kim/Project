@@ -73,7 +73,7 @@ public class TblPositionBoardDAO {
 					//dto.setName(rs.getString("name"));
 				dto.setSubject(rs.getString("subject"));
 				dto.setRegDate(rs.getString("regdate"));
-					//dto.setReadcount(rs.getInt("readcount"));
+					//dto.setReadcount(rs.getInt("readCount"));
 				list.add(dto);
 			}
 			

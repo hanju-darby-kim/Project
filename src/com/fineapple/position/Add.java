@@ -14,7 +14,7 @@ public class Add extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		// 새글? 답변글? add.do?reply=n&thread=2000&depth=0
-		//req.setAttribute("reply", req.getParameter("reply"));
+		req.setAttribute("reply", req.getParameter("reply"));
 		req.setAttribute("thread", req.getParameter("thread"));
 		req.setAttribute("depth", req.getParameter("depth"));
 		

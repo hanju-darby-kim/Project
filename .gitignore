@@ -22,3 +22,7 @@ WebContent/company/pages/blank.jsp
 .classpath
 *.java
 *.jsp
+add.jsp
+addok.jsp
+addok.jsp
+*.jsp

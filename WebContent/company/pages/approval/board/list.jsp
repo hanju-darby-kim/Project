@@ -12,9 +12,13 @@
 <style>
 #tbl th, #tbl td { text-align: center; }
 #tbl td:nth-child(2) { text-align: left; }
+
+	
 </style>
 <script>
-
+$(document).ready(function() {
+	
+});
 </script>
     <!-- Bootstrap Core CSS -->
     <link href="/Project/company/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -64,104 +68,33 @@
                     
                     
                
-<table width="100%" class="table table-striped table-bordered table-hover" id="tbl">
-                                <thead>
+		<table width="100%" class="table table-striped table-bordered table-hover" id="tbl">
+   			<thead>
                                     <tr>
                                         <th>번호</th>
                                         <th>제목</th>
                                         <th>이름</th>
                                         <th>날짜</th>
-                                        <th>읽음</th>
+                                        <th>조회수</th>
                                     </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="odd gradeX">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 5.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5</td>
-                                        <td class="center">C</td>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 5.5</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5.5</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 6</td>
-                                        <td>Win 98+</td>
-                                        <td class="center">6</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 7</td>
-                                        <td>Win XP SP2+</td>
-                                        <td class="center">7</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td>Trident</td>
-                                        <td>AOL browser (AOL desktop)</td>
-                                        <td>Win XP</td>
-                                        <td class="center">6</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Firefox 1.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Firefox 1.5</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Firefox 2.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Firefox 3.0</td>
-                                        <td>Win 2k+ / OSX.3+</td>
-                                        <td class="center">1.9</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Camino 1.0</td>
-                                        <td>OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Camino 1.5</td>
-                                        <td>OSX.3+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                
-                                    </tbody>
-                            </table>
+          	</thead>
+          	<tbody>
+			<c:forEach items="${list}" var="dto">
+			
+			<tr class="odd gradeX">
+				<td>${dto.seq}</td>
+				<td><a href="/JSPTest/board/view.do?seq=${dto.seq}">${dto.subject}</a> ${dto.newimg}</td>
+				<td class="center">${dto.name}</td>
+				<td>${dto.regdate}</td>
+				<td class="center">${dto.readcount}</td>
+			</tr>
+			</c:forEach>
+			</tbody>
+       </table>
+       <div id="btnList">
+			<input type="button" value="글쓰기" class="btn btn-primary"
+				onclick="location.href='/JSPTest/board/add.do';">
+		</div>
                     
                     
                 </div>
