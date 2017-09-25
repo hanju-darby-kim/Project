@@ -1,9 +1,10 @@
 package com.fineapple.DTO;
 
-public class surveyAnswerTypeDTO {
+public class SurveyAnswerTypeDTO {
 
 	private String seq;
 	private String answerType;
+	
 	public String getSeq() {
 		return seq;
 	}

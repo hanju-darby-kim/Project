@@ -1,6 +1,6 @@
 package com.fineapple.DTO;
 
-public class surveyMultiChoiceDTO {
+public class SurveyMultiChoiceDTO {
 	
 	private String seq;
 	private String answer;

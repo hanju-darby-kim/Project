@@ -1,6 +1,6 @@
 package com.fineapple.DTO;
 
-public class surveyDTO {
+public class SurveyDTO {
 	private String seq;
 	private String subject;
 	private String purpose;
