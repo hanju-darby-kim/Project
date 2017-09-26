@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- Navigation -->
        
             <div class="navbar-header">
@@ -24,6 +25,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
                     	
+                    	<c:forEach items="${upperlist}" var="updto">
                         <li>
                             <a href="#">
                                 <div>
@@ -37,6 +39,7 @@
                             </a>
                         </li>
                         <li class="divider"></li>
+                        </c:forEach>
                         
                         <li>
                             <a class="active text-center" href="/Project/message/inbox.do">

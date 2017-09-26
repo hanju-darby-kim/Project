@@ -24,8 +24,11 @@ select * from (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.se
   r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave
      FROM tblmsgsent S INNER JOIN tblMsgRead R
        ON s.seq = r.msgnumber)
-        where (sentemployeenum = 55 and sentsave = 'Y') or (reademployeenum = 55 and readsave = 'Y')
+        where reademployeenum = 55 and readdate is null
           order by sseq desc;
+
+
+
 
 --보낸쪽지 테이블
 select * from tblmsgsent order by seq;
@@ -57,7 +60,7 @@ commit;
 
 --받은쪽지 테이블
 select * from tblMsgRead order by seq;
-select * from tblMsgRead where reademployeenum = 55 and readsave = 'Y';
+select * from tblMsgRead where reademployeenum = 55;
 
 CREATE table tblMsgRead
 (

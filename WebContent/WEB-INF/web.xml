@@ -306,6 +306,14 @@
 		<servlet-name>message.setting</servlet-name>
 		<url-pattern>/message/setting.do</url-pattern>
 	</servlet-mapping>
+	<servlet> <!-- smsgdel -->
+		<servlet-name>message.smsgdel</servlet-name>
+		<servlet-class>com.fineapple.message.SmsgDel</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.smsgdel</servlet-name>
+		<url-pattern>/message/smsgdel.do</url-pattern>
+	</servlet-mapping>
 
 
 

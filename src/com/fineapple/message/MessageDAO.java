@@ -200,6 +200,55 @@ public class MessageDAO {
 		return null;
 	}
 
+	//업퍼헤더 리스트출력
+	public ArrayList<MsgSRDTO> upperlist(int num) {
+		try {
+			
+			String sql = "select * from (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber) where reademployeenum = ? and readdate is null order by sseq desc";
+			
+			PreparedStatement stat = conn.prepareStatement(sql);
+			stat.setInt(1, num);
+			
+			ResultSet rs = stat.executeQuery();
+			int cnt = 1;
+			
+			ArrayList<MsgSRDTO> list = new ArrayList<MsgSRDTO>();
+			while (rs.next()) {
+				MsgSRDTO dto = new MsgSRDTO();
+
+				dto.setSseq(rs.getInt("sseq"));
+				dto.setSentEmployeeNum(rs.getInt("sentEmployeeNum"));
+				dto.setTitle(rs.getString("title"));
+				dto.setContent(rs.getString("content"));
+				dto.setSentDate(rs.getString("sentDate"));
+				dto.setSentDelete(rs.getString("sentDelete"));
+				dto.setSentSave(rs.getString("sentSave"));
+				
+				dto.setRseq(rs.getInt("rseq"));
+				dto.setMsgNumber(rs.getInt("msgNumber"));
+				dto.setReadEmployeeNum(rs.getInt("readEmployeeNum"));
+				dto.setReadDate(rs.getString("readDate"));
+				dto.setReadDelete(rs.getString("readDelete"));
+				dto.setReadSave(rs.getString("readSave"));
+				
+				list.add(dto);
+				if (cnt == 5) {
+					break;
+				}
+				cnt++;
+				
+			}//while
+			
+			return list;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+		
+	}
+
 }
 
 

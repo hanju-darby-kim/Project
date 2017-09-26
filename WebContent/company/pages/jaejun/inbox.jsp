@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<% session.setAttribute("num", 55); %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -134,6 +137,7 @@ window.onload = function(){
             
             <div class="row">
                 <div class="col-lg-12">
+	            	<div style="color: #2F73C0; margin-bottom: 10px;">* 쪽지는 100일 후 자동 삭제됩니다. 중요한 쪽지는 보관함에 저장하세요.</div> 
 	                <table width="100%" id="table" class="table table-striped table-bordered table-hover" id="dataTables-example">
 	                    <thead>
 	                        <tr>

@@ -31,7 +31,14 @@ public class MessageService {
 		ArrayList<MsgSRDTO> plist = dao.plist(num);
 		return plist;
 	}
-
+	
+	//업퍼헤더 출력
+	public ArrayList<MsgSRDTO> upperlist(int num) {
+		ArrayList<MsgSRDTO> upperlist = dao.upperlist(num);
+		return upperlist;
+	}
+	
+	
 	
 	public int sAdd(MsgSentDTO sdto) {
 		return dao.sAdd(sdto);
@@ -40,6 +47,6 @@ public class MessageService {
 	public int rAdd(MsgReadDTO rdto) {
 		return dao.rAdd(rdto);
 	}
-
+	
 }
 

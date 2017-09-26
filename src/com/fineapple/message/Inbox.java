@@ -24,12 +24,17 @@ public class Inbox extends HttpServlet {
 		//1) 
 		MessageService service = new MessageService();
 		
-		//2) 
+		//2) 받은쪽지함 쪽지목록출력
 		ArrayList<MsgSRDTO> list = service.list(num);
-		//System.out.println(list.size()); //26건
+		System.out.println("Inbox.java_list.size: " + list.size()); //
 		req.setAttribute("list", list);
 		
-		//3) 
+		//3) 업퍼헤더 쪽지 목록 출력, 나중에 로그인 쪽으로 옮길것
+		ArrayList<MsgSRDTO> upperlist = service.upperlist(num);
+		System.out.println("Inbox.java_upperlist.size: " + upperlist.size()); //
+		session.setAttribute("upperlist", upperlist);
+		
+		//4) 
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/jaejun/inbox.jsp");
 		dispatcher.forward(req, resp);
 		
