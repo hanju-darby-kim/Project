@@ -35,10 +35,26 @@ public class MessageService {
 	//업퍼헤더 출력
 	public ArrayList<MsgSRDTO> upperlist(int num) {
 		ArrayList<MsgSRDTO> upperlist = dao.upperlist(num);
+		
+		for(MsgSRDTO dto : upperlist){
+			// 날짜 자르기
+			dto.setSentDate(dto.getSentDate().substring(0, 10));
+			// 제목 길면 짜르기
+			String title = dto.getTitle();
+			if (title.length() > 20) {
+				title = title.substring(0, 20) + "...";
+			}
+			dto.setTitle(title);
+			
+			String content = dto.getContent();
+			if (content.length() > 45) {
+				content = content.substring(0, 45) + "...";
+			}
+			dto.setContent(content);
+		}
+		
 		return upperlist;
 	}
-	
-	
 	
 	public int sAdd(MsgSentDTO sdto) {
 		return dao.sAdd(sdto);

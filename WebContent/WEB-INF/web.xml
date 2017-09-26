@@ -306,6 +306,14 @@
 		<servlet-name>message.setting</servlet-name>
 		<url-pattern>/message/setting.do</url-pattern>
 	</servlet-mapping>
+	<servlet> <!-- settingok -->
+		<servlet-name>message.settingok</servlet-name>
+		<servlet-class>com.fineapple.message.SettingOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.settingok</servlet-name>
+		<url-pattern>/message/settingok.do</url-pattern>
+	</servlet-mapping>
 	<servlet> <!-- smsgdel -->
 		<servlet-name>message.smsgdel</servlet-name>
 		<servlet-class>com.fineapple.message.SmsgDel</servlet-class>
@@ -313,6 +321,22 @@
 	<servlet-mapping>
 		<servlet-name>message.smsgdel</servlet-name>
 		<url-pattern>/message/smsgdel.do</url-pattern>
+	</servlet-mapping>
+	<servlet> <!-- save -->
+		<servlet-name>message.save</servlet-name>
+		<servlet-class>com.fineapple.message.Save</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.save</servlet-name>
+		<url-pattern>/message/save.do</url-pattern>
+	</servlet-mapping>
+	<servlet> <!-- save -->
+		<servlet-name>message.view</servlet-name>
+		<servlet-class>com.fineapple.message.View</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.view</servlet-name>
+		<url-pattern>/message/view.do</url-pattern>
 	</servlet-mapping>
 
 

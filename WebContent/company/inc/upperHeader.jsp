@@ -24,18 +24,17 @@
                         <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
-                    	
                     	<c:forEach items="${upperlist}" var="updto">
                         <li>
                             <a href="#">
                                 <div>
-                                    <strong>보낸이추가</strong>
+                                    <strong>${updto.sentEmployeeNum}</strong>
                                     <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
+                                        <em>${updto.sentDate}</em>
                                     </span>
                                 </div>
-                                <div>제목</div>
-                                <div>내용</div>
+                                <div>${updto.title}</div>
+                                <div>${updto.content}</div>
                             </a>
                         </li>
                         <li class="divider"></li>

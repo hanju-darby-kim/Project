@@ -163,8 +163,8 @@ window.onload = function(){
                 </div>
                 
                 <div class="btns" style="float: left;">
-		            	<input type="button" class="btn btn-success" value="보관하기" onclick="location.href='';"/>
-			            <input type="button" class="btn btn-danger" value="삭제하기" onclick="location.href='/Project/message/del.do';"/>
+	            	<input type="button" class="btn btn-success" value="보관하기" onclick="location.href='/Project/message/save.do';"/>
+		            <input type="button" class="btn btn-danger" value="삭제하기" onclick="location.href='/Project/message/del.do';"/>
 		        </div>
 		        
 	            <div class="btns" style="float: right;">		            
