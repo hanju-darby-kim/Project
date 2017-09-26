@@ -73,6 +73,29 @@ function MsgboxMove() {
 	}
 }
 
+var cbAll, cbs;
+var btnSend;
+
+window.onload = function(){
+	cbAll = document.all.cbAll;
+	cbs = document.all.cbs;
+	btnSend = document.all.btnSend;
+		
+	cbAll.onchange = function(){
+		if(cbAll.checked) {
+			//전부 체크
+			for(var i=0; i<cbs.length; i++) {
+				cbs[i].checked = true;
+			}
+		} else {
+			//전부 해제
+			for(var i=0; i<cbs.length; i++) {
+				cbs[i].checked = false;
+			}
+		}
+	};
+}
+
 </script>
 </head>
 
@@ -114,17 +137,17 @@ function MsgboxMove() {
 	                <table width="100%" id="table" class="table table-striped table-bordered table-hover" id="dataTables-example">
 	                    <thead>
 	                        <tr>
-	                            <th><input type="checkbox" /></th>
+	                            <th><input type="checkbox" name="cbAll" /></th>
 	                            <th>제목</th>
 	                            <th>보낸이</th>
-	                            <th>등록일</th>
+	                            <th>받은시간</th>
 	                            <th>읽은시간</th>
 	                        </tr>
 	                    </thead>
 	                    <tbody>
 	                    	<c:forEach items="${list}" var="dto">
 	                        <tr class="odd">
-	                            <td><input type="checkbox" /></td>
+	                            <td><input type="checkbox" name="cbs" /></td>
 	                            <td>${dto.title}</td>
 	                            <td>보낸이추가</td>
 	                            <td>${dto.sentDate}</td>

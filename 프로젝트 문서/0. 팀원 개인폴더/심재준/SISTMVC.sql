@@ -1,13 +1,36 @@
 select * from tabs;
 select * from tab;
 select * from employee;
+
+
+
 select * from tblMsgSent;
+select * from tblMsgRead;
+
+delete from tblmsgsent;
+delete from tblMsgRead;
+commit;
 
 
+--뷰, (보낸쪽지+받은쪽지)
+
+--조인 구문
+SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave,
+  r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave
+     FROM tblmsgsent S INNER JOIN tblMsgRead R
+       ON s.seq = r.msgnumber;
+
+select * from (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave,
+  r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave
+     FROM tblmsgsent S INNER JOIN tblMsgRead R
+       ON s.seq = r.msgnumber)
+        where (sentemployeenum = 55 and sentsave = 'Y') or (reademployeenum = 55 and readsave = 'Y')
+          order by sseq desc;
 
 --보낸쪽지 테이블
 select * from tblmsgsent order by seq;
-select * from tblmsgsent where sentemployeenum = 55 order by seq;
+select * from tblmsgsent where sentemployeenum = 55 and sentsave = 'Y' order by seq;
+
 select * from tblmsgsent where seq = (select max(seq) from tblmsgsent);
 select max(seq) as num from tblmsgsent;
 
@@ -25,16 +48,17 @@ create table tblMsgSent
   sentSave VARCHAR2(1)
 );
 alter table tblmsgsent MODIFY (sentdate default sysdate);
-alter table tblmsgsent MODIFY (sentDelete default 'Y');
+alter table tblmsgsent MODIFY (sentDelete default 'N');
 alter table tblmsgsent MODIFY (sentSave default 'N');
 
 insert into tblMsgSent (seq, sentEmployeeNum, title, content, sentDate, sentDelete, sentSave)
   VALUES (msgsentseq.nextval, 15, 22, 333, DEFAULT, DEFAULT, DEFAULT);
 commit;
 
-
-
 --받은쪽지 테이블
+select * from tblMsgRead order by seq;
+select * from tblMsgRead where reademployeenum = 55 and readsave = 'Y';
+
 CREATE table tblMsgRead
 (
   seq number PRIMARY KEY,
@@ -50,7 +74,7 @@ alter table tblMsgRead MODIFY (readDate default NULL);
 alter table tblMsgRead MODIFY (readDelete default 'N');
 alter table tblMsgRead MODIFY (readSave default 'N');
 insert into tblMsgRead (seq, msgNumber, readEmployeeNum, readDate, readDelete, readSave)
-  VALUES (msgreadseq.nextval, 70, 55, DEFAULT, DEFAULT, DEFAULT);
+  VALUES (msgreadseq.nextval, 68, 55, DEFAULT, DEFAULT, DEFAULT);
 select * from tblMsgRead;
 commit;
 
