@@ -152,8 +152,8 @@ window.onload = function(){
 	                    	<c:forEach items="${list}" var="dto">
 	                        <tr class="odd">
 	                            <td><input type="checkbox" name="cbs" /></td>
-	                            <td>${dto.title}</td>
-	                            <td>보낸이추가</td>
+	                            <td><a href="javascript:void(window.open('/Project/message/popupview.do?sseq=${dto.sseq}', 'child', 'width=400, height=650, left=0, top=0'));">${dto.title}</a></td>
+	                            <td>${dto.sentEmployeeNum}</td>
 	                            <td>${dto.sentDate}</td>
 	                            <td>읽은시간추가</td>
 	                        </tr>
@@ -171,7 +171,7 @@ window.onload = function(){
 		            <input type="button" class="btn btn-info" value="쪽지쓰기" onclick="location.href='/Project/message/add.do';"/>
 		            <input type="button" class="btn btn-default" value="환경설정" onclick="location.href='/Project/message/setting.do';"/>
 		        </div>
-		           
+		        
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->

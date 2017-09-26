@@ -21,8 +21,8 @@ public class MessageService {
 	}
 
 	//보낸쪽지함
-	public ArrayList<MsgSentDTO> slist(int num) {
-		ArrayList<MsgSentDTO> slist = dao.slist(num);
+	public ArrayList<MsgSRDTO> slist(int num) {
+		ArrayList<MsgSRDTO> slist = dao.slist(num);
 		return slist;
 	}
 
@@ -62,6 +62,16 @@ public class MessageService {
 
 	public int rAdd(MsgReadDTO rdto) {
 		return dao.rAdd(rdto);
+	}
+
+	public ArrayList<MsgSRDTO> view(String sseq) {
+		ArrayList<MsgSRDTO> viewlist = dao.viewlist(sseq);
+		return viewlist;
+	}
+
+	public ArrayList<MsgSRDTO> popupview(String sseq) {
+		ArrayList<MsgSRDTO> pviewlist = dao.pviewlist(sseq);
+		return pviewlist;
 	}
 	
 }

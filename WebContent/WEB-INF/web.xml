@@ -338,6 +338,14 @@
 		<servlet-name>message.view</servlet-name>
 		<url-pattern>/message/view.do</url-pattern>
 	</servlet-mapping>
+	<servlet> <!-- save -->
+		<servlet-name>message.popupview</servlet-name>
+		<servlet-class>com.fineapple.message.PopupView</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.popupview</servlet-name>
+		<url-pattern>/message/popupview.do</url-pattern>
+	</servlet-mapping>
 
 
 

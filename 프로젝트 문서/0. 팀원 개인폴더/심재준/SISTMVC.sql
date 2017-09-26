@@ -24,8 +24,9 @@ select * from (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.se
   r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave
      FROM tblmsgsent S INNER JOIN tblMsgRead R
        ON s.seq = r.msgnumber)
-        where reademployeenum = 55 and readdate is null
+        where sseq = 88
           order by sseq desc;
+
 
 
 
@@ -33,6 +34,7 @@ select * from (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.se
 --보낸쪽지 테이블
 select * from tblmsgsent order by seq;
 select * from tblmsgsent where sentemployeenum = 55 and sentsave = 'Y' order by seq;
+SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber where sentemployeenum = 55 order by sseq desc;
 
 select * from tblmsgsent where seq = (select max(seq) from tblmsgsent);
 select max(seq) as num from tblmsgsent;
