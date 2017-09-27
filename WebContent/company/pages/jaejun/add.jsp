@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>${num} Message | Fine Apple</title>
+<title>Message | Fine Apple</title>
 
 	<script type="text/javascript" src="/Project/smarteditor/workspace/js/service/HuskyEZCreator.js" charset="utf-8"></script>
 	
@@ -83,7 +83,12 @@
 						<tr>
 							<td width="100">받는사람</td>
 							<td>
-								<input type="text" style="width: 100%;" onkeyup=""/>
+								<c:if test="${reademployeenum == null}">
+									<input type="text" name="reademployeenum" style="width: 100%;" />
+								</c:if>
+								<c:if test="${reademployeenum != null}">
+									<input type="text" name="reademployeenum" value="${reademployeenum}" style="width: 100%;" />
+								</c:if>
 							</td>
 						</tr>
 						<tr>

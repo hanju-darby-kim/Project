@@ -21,6 +21,7 @@
 	#table th:NTH-CHILD(5) { width: 135px; }
 	#table td, #table th {
 		text-align: center;
+		vertical-align: middle;
 	}
 	#table tr td:NTH-CHILD(2) {
 		text-align: left;
@@ -36,6 +37,9 @@
 		display: inline;
 		float: right;
 	}
+	
+	
+	
 </style>
     <!-- Bootstrap Core CSS -->
     <link href="/Project/company/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -83,20 +87,48 @@ window.onload = function(){
 	cbAll = document.all.cbAll;
 	cbs = document.all.cbs;
 	btnSend = document.all.btnSend;
-		
+	
 	cbAll.onchange = function(){
 		if(cbAll.checked) {
-			//전부 체크
-			for(var i=0; i<cbs.length; i++) {
+			//하나일때 선택
+			if (cbs.length == undefined) {
+				cbs.checked = true;
+			}
+			//전부 선택
+			for(var i=0; i<=cbs.length; i++) {
 				cbs[i].checked = true;
 			}
 		} else {
+			//하나일때 해제
+			if (cbs.length == undefined) {
+				cbs.checked = false;
+			}
 			//전부 해제
-			for(var i=0; i<cbs.length; i++) {
+			for(var i=0; i<=cbs.length; i++) {
 				cbs[i].checked = false;
 			}
 		}
 	};
+}
+
+function save() {
+	if ($(".cbs:checked").length != 0) {
+		$("#form").attr("action", "/Project/message/save.do");
+		$("#form").submit();
+	} else {
+		alert("체크된 쪽지가 없습니다.")
+	}
+}
+
+function del() {
+	if ($(".cbs:checked").length != 0) {
+		if (confirm("삭제하시면 복구할수 없습니다.\n정말 삭제하시겠습니까?")) {
+			$("#form").attr("action", "/Project/message/del.do");
+			$("#form").submit();
+		}
+	} else {
+		alert("체크된 쪽지가 없습니다.")
+	}
 }
 
 </script>
@@ -117,7 +149,7 @@ window.onload = function(){
         <div id="page-wrapper">
             <div class="row">
                 <div id="headerInbox" class="col-lg-12">
-                    <h1 class="page-header">받은쪽지함</h1>
+                    <h1 class="page-header">받은쪽지함 <span style="font-size: 0.5em">총 쪽지 개수: ${list.size()}개</span></h1>
                 <!-- /.col-lg-12 -->
 	            </div>
             </div>
@@ -136,36 +168,52 @@ window.onload = function(){
             <!-- /.row -->
             
             <div class="row">
-                <div class="col-lg-12">
-	            	<div style="color: #2F73C0; margin-bottom: 10px;">* 쪽지는 100일 후 자동 삭제됩니다. 중요한 쪽지는 보관함에 저장하세요.</div> 
-	                <table width="100%" id="table" class="table table-striped table-bordered table-hover" id="dataTables-example">
-	                    <thead>
-	                        <tr>
-	                            <th><input type="checkbox" name="cbAll" /></th>
-	                            <th>제목</th>
-	                            <th>보낸이</th>
-	                            <th>받은시간</th>
-	                            <th>읽은시간</th>
-	                        </tr>
-	                    </thead>
-	                    <tbody>
-	                    	<c:forEach items="${list}" var="dto">
-	                        <tr class="odd">
-	                            <td><input type="checkbox" name="cbs" /></td>
-	                            <td><a href="javascript:void(window.open('/Project/message/popupview.do?sseq=${dto.sseq}', 'child', 'width=400, height=650, left=0, top=0'));">${dto.title}</a></td>
-	                            <td>${dto.sentEmployeeNum}</td>
-	                            <td>${dto.sentDate}</td>
-	                            <td>읽은시간추가</td>
-	                        </tr>
-	                        </c:forEach>
-	                    </tbody>
-	                </table>
-                </div>
-                
-                <div class="btns" style="float: left;">
-	            	<input type="button" class="btn btn-success" value="보관하기" onclick="location.href='/Project/message/save.do';"/>
-		            <input type="button" class="btn btn-danger" value="삭제하기" onclick="location.href='/Project/message/del.do';"/>
-		        </div>
+            	<form id="form" method="post" action="/">
+	                <div class="col-lg-12">
+		            	<div style="color: #2F73C0; margin-bottom: 10px;">* 쪽지는 100일 후 자동 삭제됩니다. 중요한 쪽지는 보관함에 저장하세요.</div> 
+		                
+		                <table width="100%" id="table" class="table table-striped table-bordered table-hover" id="dataTables-example">
+		                    <thead>
+		                        <tr>
+		                            <th><input type="checkbox" name="cbAll" /></th>
+		                            <th>제목</th>
+		                            <th>보낸사람</th>
+		                            <th>받은시간</th>
+		                            <th>읽은시간</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody>
+		                    	<c:forEach items="${list}" var="dto">
+		                        <tr class="odd">
+		                            <td><input type="checkbox" name="cbs" class="cbs" value="${dto.rseq}" /></td>
+		                            
+		                            <c:if test="${dto.readDate == null}">
+		                            <td><a href="javascript:void(window.open('/Project/message/popupview.do?sseq=${dto.sseq}&rseq=${dto.rseq}', 'child', 'width=400, height=650, left=0, top=0'));" style="font-size: 1.2em;">${dto.title}</a></td>
+		                            </c:if>
+		                            <c:if test="${dto.readDate != null}">
+		                            <td><a href="javascript:void(window.open('/Project/message/popupview.do?sseq=${dto.sseq}&rseq=${dto.rseq}', 'child', 'width=400, height=650, left=0, top=0'));" style="color: #8F8F8F;">${dto.title}</a></td>
+		                            </c:if>
+		                            
+		                            <td>${dto.addedsentEmployeeName}(${dto.sentEmployeeNum})</td>
+		                            <td>${dto.sentDate}</td>
+		                            <c:if test="${dto.readDate != null}">
+		                            <td>${dto.readDate}</td>
+		                            </c:if>
+		                            <c:if test="${dto.readDate == null}">
+		                            <td>읽지않음</td>
+		                            </c:if>
+		                        </tr>
+		                        </c:forEach>
+		                    </tbody>
+		                </table>
+	                </div>
+	                
+	                <div class="btns" style="float: left;">
+		            	<input type="button" class="btn btn-success" value="보관하기" onclick="save();"/>
+			            <input type="button" class="btn btn-danger" value="삭제하기" onclick="del();"/>
+			        </div>
+			        <input type="hidden" name="boardnum" value="1" />
+		        </form>
 		        
 	            <div class="btns" style="float: right;">		            
 		            <input type="button" class="btn btn-info" value="쪽지쓰기" onclick="location.href='/Project/message/add.do';"/>
@@ -175,7 +223,6 @@ window.onload = function(){
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-            
             
         </div>
         <!-- /#page-wrapper -->

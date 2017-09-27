@@ -24,21 +24,26 @@
                         <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
-                    	<c:forEach items="${upperlist}" var="updto">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>${updto.sentEmployeeNum}</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>${updto.sentDate}</em>
-                                    </span>
-                                </div>
-                                <div>${updto.title}</div>
-                                <div>${updto.content}</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        </c:forEach>
+                    	<c:if test="${upperlist.size() != 0}">
+	                    	<c:forEach items="${upperlist}" var="updto">
+		                        <li>
+		                            <a href="javascript:void(window.open('/Project/message/popupview.do?sseq=${updto.sseq}&rseq=${updto.rseq}', 'child', 'width=400, height=650, left=0, top=0'));">
+		                                <div>
+		                                    <strong>${updto.addedsentEmployeeName}(${updto.sentEmployeeNum})</strong>
+		                                    <span class="pull-right text-muted">
+		                                        <em>${updto.sentDate}</em>
+		                                    </span>
+		                                </div>
+		                                <div>${updto.title}</div>
+		                                <div>${updto.content}</div>
+		                            </a>
+		                        </li>
+	                        	<li class="divider"></li>
+	                        </c:forEach>
+                        </c:if>
+                        <c:if test="${upperlist.size() == 0}">
+                        	<li style="text-align: center; margin: 20px auto; color: #333">읽지 않은 쪽지가 없습니다.</li>
+                        </c:if>
                         
                         <li>
                             <a class="active text-center" href="/Project/message/inbox.do">

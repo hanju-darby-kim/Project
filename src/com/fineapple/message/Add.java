@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 public class Add extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		req.setAttribute("reademployeenum", req.getParameter("reademployeenum"));
 		
 		//3)
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/jaejun/add.jsp");

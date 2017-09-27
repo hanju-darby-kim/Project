@@ -24,25 +24,34 @@ public class AddOk extends HttpServlet {
 //		System.out.println(req.getParameter("title"));
 //		System.out.println(req.getParameter("content"));
 		
+		int readEmployeeNum = Integer.parseInt(req.getParameter("reademployeenum"));
 		String title = req.getParameter("title");
 		String content = req.getParameter("content");
 		
 		//2) tblMsgSent에 값 쓰기
 		MsgSentDTO sdto = new MsgSentDTO();
+		
 		sdto.setTitle(title);
 		sdto.setContent(content);
 		sdto.setSentEmployeeNum(num);
 		
 		MessageService service = new MessageService();
-		int sresult = service.sAdd(sdto);
-		req.setAttribute("sresult", sresult); //성공 1, 실패 0
+		int sresult = service.sAdd(sdto); //성공 1, 실패 0인데 얘는 쓸일없음
+		req.setAttribute("sresult", sresult); 
 		
 		//3) tblMsgRead에 값 쓰기
 		MsgReadDTO rdto = new MsgReadDTO();
-		int rresult = service.rAdd(rdto);
-		req.setAttribute("rresult", rresult); //성공 1, 실패 0
+		rdto.setReadEmployeeNum(readEmployeeNum);
 		
-		//4)
+		int rresult = service.rAdd(rdto); //성공 1, 실패 0, 얘로 성공여부 판단함
+		req.setAttribute("rresult", rresult); 
+		
+		//4) readEmployeeNum 이름 가져옴
+		String nameresult = service.addgetname(readEmployeeNum);
+		req.setAttribute("nameresult", nameresult); //jsp페이지에서 알림창에 쓸 이름전송
+		req.setAttribute("readEmployeeNum", readEmployeeNum); //jsp페이지에서 알림창에 쓸 사번전송
+		
+		//5)
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/jaejun/addok.jsp");
 		dispatcher.forward(req, resp);
 		

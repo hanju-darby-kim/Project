@@ -1,16 +1,21 @@
 select * from tabs;
 select * from tab;
 select * from employee;
+select name from employee where seq = 15;
 
-
-
-select * from tblMsgSent;
-select * from tblMsgRead;
+select * from tblboard;
+select * from tblMsgSent order by seq desc;
+select * from tblMsgRead order by seq desc;
 
 delete from tblmsgsent;
 delete from tblMsgRead;
-commit;
+drop SEQUENCE msgsentseq;
+drop SEQUENCE msgreadseq;
+CREATE SEQUENCE msgsentseq;
+CREATE SEQUENCE msgreadseq;
 
+update tblMsgRead set readdate = sysdate where seq = 1;
+commit;
 
 --뷰, (보낸쪽지+받은쪽지)
 
@@ -18,7 +23,53 @@ commit;
 SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave,
   r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave
      FROM tblmsgsent S INNER JOIN tblMsgRead R
-       ON s.seq = r.msgnumber;
+       ON s.seq = r.msgnumber
+        order by sseq desc;
+
+SELECT * FROM employee;
+
+select
+  tbl1.*,
+  (select name from employee where seq = sentemployeenum) as sentemployeename,
+  (select name from employee where seq = reademployeenum) as reademployeename
+from
+  (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave,
+    r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave
+     FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber order by sseq desc) tbl1;
+
+select
+  tbl1.*,
+  (select name from employee where seq = sentemployeenum) as sentemployeename,
+  (select name from employee where seq = reademployeenum) as reademployeename
+from
+  (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber where reademployeenum = ? and readdelete = 'N' order by sseq desc) tbl1;
+
+select
+  tbl1.*,
+  (select name from employee where seq = sentemployeenum) as sentemployeename,
+  (select name from employee where seq = reademployeenum) as reademployeename
+from
+  (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber where reademployeenum = ? and readdate is null and readdelete = 'N' order by sseq desc) tbl1
+
+SELECT
+  tbl1.*,
+  (select name from employee where seq = sentemployeenum) as sentemployeename,
+  (select name from employee where seq = reademployeenum) as reademployeename
+from
+  (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber where sentemployeenum = ? and sentdelete = 'N' order by sseq desc) tbl1
+
+select
+  tbl1.*,
+  (select name from employee where seq = sentemployeenum) as sentemployeename,
+  (select name from employee where seq = reademployeenum) as reademployeename
+from
+(select * from (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber) where (sentemployeenum = ? and sentsave = 'Y') or (reademployeenum = ? and readsave = 'Y') order by sseq desc) tbl1;
+
+
+
+
+
+update tblMsgRead set readdelete = 'Y' where seq = 44;
 
 select * from (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave,
   r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave

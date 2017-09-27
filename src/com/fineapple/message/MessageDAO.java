@@ -59,6 +59,7 @@ public class MessageDAO {
 	//받은쪽지함에 쪽지 저장
 	public int rAdd(MsgReadDTO rdto) {
 		try {
+			//보낸쪽지함에 가장 최근에 추가된 seq값 획득
 			String sql = "select max(seq) as num from tblmsgsent";
 			Statement stat = conn.createStatement();
 			ResultSet rs = stat.executeQuery(sql);
@@ -66,10 +67,11 @@ public class MessageDAO {
 			rs.next();
 			int msgNum = rs.getInt("num");
 			
+			//받은쪽지함에 저장			
 			sql = "insert into tblMsgRead (seq, msgNumber, readEmployeeNum, readDate, readDelete, readSave) VALUES (msgreadseq.nextval, ?, ?, DEFAULT, DEFAULT, DEFAULT)";
 			PreparedStatement pstat = conn.prepareStatement(sql);
 			pstat.setInt(1, msgNum);
-			pstat.setInt(2, 15);
+			pstat.setInt(2, rdto.getReadEmployeeNum());
 			
 			return pstat.executeUpdate();
 			
@@ -86,7 +88,7 @@ public class MessageDAO {
 	//받은쪽지함 출력
 	public ArrayList<MsgSRDTO> list(int num) {
 		try {
-			String sql = "SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber where reademployeenum = ? order by sseq desc";
+			String sql = "select tbl1.*, (select name from employee where seq = sentemployeenum) as sentemployeename, (select name from employee where seq = reademployeenum) as reademployeename from (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber where reademployeenum = ? and readdelete = 'N' order by sseq desc) tbl1";
 			
 			PreparedStatement stat = conn.prepareStatement(sql);
 			stat.setInt(1, num);
@@ -111,10 +113,16 @@ public class MessageDAO {
 				dto.setReadDate(rs.getString("readDate"));
 				dto.setReadDelete(rs.getString("readDelete"));
 				dto.setReadSave(rs.getString("readSave"));
-
+				
+				dto.setAddedsentDate(rs.getString("sentDate"));
+				dto.setAddedreadDate(rs.getString("readDate"));
+				dto.setAddedsentEmployeeName(rs.getString("sentemployeename"));
+				dto.setAddedreadEmployeeName(rs.getString("reademployeename"));
+				
 				list.add(dto);
+				
 			}//while
-			
+
 			return list;
 			
 		} catch (Exception e) {
@@ -128,7 +136,7 @@ public class MessageDAO {
 	public ArrayList<MsgSRDTO> slist(int num) {
 		
 		try {
-			String sql = "SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber where sentemployeenum = ? order by sseq desc";
+			String sql = "SELECT tbl1.*, (select name from employee where seq = sentemployeenum) as sentemployeename, (select name from employee where seq = reademployeenum) as reademployeename from (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber where sentemployeenum = ? and sentdelete = 'N' order by sseq desc) tbl1";
 			
 			PreparedStatement stat = conn.prepareStatement(sql);
 			stat.setInt(1, num);
@@ -153,6 +161,11 @@ public class MessageDAO {
 				dto.setReadDelete(rs.getString("readDelete"));
 				dto.setReadSave(rs.getString("readSave"));
 
+				dto.setAddedsentDate(rs.getString("sentDate"));
+				dto.setAddedreadDate(rs.getString("readDate"));
+				dto.setAddedsentEmployeeName(rs.getString("sentemployeename"));
+				dto.setAddedreadEmployeeName(rs.getString("reademployeename"));
+				
 				list.add(dto);
 			}//while
 			
@@ -169,7 +182,7 @@ public class MessageDAO {
 	//보관쪽지함 출력
 	public ArrayList<MsgSRDTO> plist(int num) {
 		try {
-			String sql = "select * from (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber) where (sentemployeenum = ? and sentsave = 'Y') or (reademployeenum = ? and readsave = 'Y') order by sseq desc";
+			String sql = "select tbl1.*, (select name from employee where seq = sentemployeenum) as sentemployeename, (select name from employee where seq = reademployeenum) as reademployeename from (select * from (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber) where (sentemployeenum = ? and sentsave = 'Y') or (reademployeenum = ? and readsave = 'Y') order by sseq desc) tbl1";
 			
 			PreparedStatement stat = conn.prepareStatement(sql);
 			stat.setInt(1, num);
@@ -196,6 +209,11 @@ public class MessageDAO {
 				dto.setReadDelete(rs.getString("readDelete"));
 				dto.setReadSave(rs.getString("readSave"));
 
+				dto.setAddedsentDate(rs.getString("sentDate"));
+				dto.setAddedreadDate(rs.getString("readDate"));
+				dto.setAddedsentEmployeeName(rs.getString("sentemployeename"));
+				dto.setAddedreadEmployeeName(rs.getString("reademployeename"));
+				
 				list.add(dto);
 			}//while
 			
@@ -212,7 +230,7 @@ public class MessageDAO {
 	public ArrayList<MsgSRDTO> upperlist(int num) {
 		try {
 			
-			String sql = "select * from (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber) where reademployeenum = ? and readdate is null order by sseq desc";
+			String sql = "select tbl1.*, (select name from employee where seq = sentemployeenum) as sentemployeename, (select name from employee where seq = reademployeenum) as reademployeename from (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber where reademployeenum = ? and readdate is null and readdelete = 'N' order by sseq desc) tbl1";
 			
 			PreparedStatement stat = conn.prepareStatement(sql);
 			stat.setInt(1, num);
@@ -238,6 +256,11 @@ public class MessageDAO {
 				dto.setReadDate(rs.getString("readDate"));
 				dto.setReadDelete(rs.getString("readDelete"));
 				dto.setReadSave(rs.getString("readSave"));
+
+				dto.setAddedsentDate(rs.getString("sentDate"));
+				dto.setAddedreadDate(rs.getString("readDate"));
+				dto.setAddedsentEmployeeName(rs.getString("sentemployeename"));
+				dto.setAddedreadEmployeeName(rs.getString("reademployeename"));
 				
 				list.add(dto);
 				if (cnt == 5) {
@@ -257,9 +280,59 @@ public class MessageDAO {
 		
 	}
 
-	public ArrayList<MsgSRDTO> viewlist(String sseq) {
+	public ArrayList<MsgSRDTO> viewlist(String sseq, String rseq) {
 		try {
 
+			String sql = "select * from (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber) where sseq = ? order by sseq desc";
+			PreparedStatement stat = conn.prepareStatement(sql);
+			stat.setString(1, sseq);
+			
+			ResultSet rs = stat.executeQuery();
+			int cnt = 1;
+			
+			ArrayList<MsgSRDTO> list = new ArrayList<MsgSRDTO>();
+			while (rs.next()) {
+				MsgSRDTO dto = new MsgSRDTO();
+
+				dto.setSseq(rs.getInt("sseq"));
+				dto.setSentEmployeeNum(rs.getInt("sentEmployeeNum"));
+				dto.setTitle(rs.getString("title"));
+				dto.setContent(rs.getString("content"));
+				dto.setSentDate(rs.getString("sentDate"));
+				dto.setSentDelete(rs.getString("sentDelete"));
+				dto.setSentSave(rs.getString("sentSave"));
+				
+				dto.setRseq(rs.getInt("rseq"));
+				dto.setMsgNumber(rs.getInt("msgNumber"));
+				dto.setReadEmployeeNum(rs.getInt("readEmployeeNum"));
+				dto.setReadDate(rs.getString("readDate"));
+				dto.setReadDelete(rs.getString("readDelete"));
+				dto.setReadSave(rs.getString("readSave"));
+				
+				list.add(dto);
+				if (cnt == 5) {
+					break;
+				}
+				cnt++;
+
+				sql = "update tblMsgRead set readdate = sysdate where seq = ?";
+				stat = conn.prepareStatement(sql);
+				stat.setString(1, rseq);
+				stat.executeUpdate();
+				
+			}//while
+			
+			return list;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
+	public ArrayList<MsgSRDTO> pviewlist(String sseq, String rseq) {
+		try {
 			String sql = "select * from (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber) where sseq = ? order by sseq desc";
 			PreparedStatement stat = conn.prepareStatement(sql);
 			stat.setString(1, sseq);
@@ -294,6 +367,11 @@ public class MessageDAO {
 				
 			}//while
 			
+			sql = "update tblMsgRead set readdate = sysdate where seq = ?";
+			stat = conn.prepareStatement(sql);
+			stat.setString(1, rseq);
+			stat.executeUpdate();
+			
 			return list;
 			
 		} catch (Exception e) {
@@ -303,44 +381,87 @@ public class MessageDAO {
 		return null;
 	}
 
-	public ArrayList<MsgSRDTO> pviewlist(String sseq) {
+	public int save(String[] str, int boardnum) {
+		System.out.println(str.length);
 		try {
-
-			String sql = "select * from (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber) where sseq = ? order by sseq desc";
-			PreparedStatement stat = conn.prepareStatement(sql);
-			stat.setString(1, sseq);
-			
-			ResultSet rs = stat.executeQuery();
-			int cnt = 1;
-			
-			ArrayList<MsgSRDTO> list = new ArrayList<MsgSRDTO>();
-			while (rs.next()) {
-				MsgSRDTO dto = new MsgSRDTO();
-
-				dto.setSseq(rs.getInt("sseq"));
-				dto.setSentEmployeeNum(rs.getInt("sentEmployeeNum"));
-				dto.setTitle(rs.getString("title"));
-				dto.setContent(rs.getString("content"));
-				dto.setSentDate(rs.getString("sentDate"));
-				dto.setSentDelete(rs.getString("sentDelete"));
-				dto.setSentSave(rs.getString("sentSave"));
-				
-				dto.setRseq(rs.getInt("rseq"));
-				dto.setMsgNumber(rs.getInt("msgNumber"));
-				dto.setReadEmployeeNum(rs.getInt("readEmployeeNum"));
-				dto.setReadDate(rs.getString("readDate"));
-				dto.setReadDelete(rs.getString("readDelete"));
-				dto.setReadSave(rs.getString("readSave"));
-				
-				list.add(dto);
-				if (cnt == 5) {
-					break;
+			if (boardnum == 1) { 
+				String sql = "update tblMsgRead set readsave = 'Y' where seq = ?";
+				for (int i=0; i<str.length; i++){
+					PreparedStatement stat = conn.prepareStatement(sql);
+					stat.setInt(1, Integer.parseInt(str[i]));
+					stat.executeUpdate();
 				}
-				cnt++;
-				
-			}//while
+			} else if (boardnum == 2) { 
+				String sql = "update tblMsgSent set sentsave = 'Y' where seq = ?";
+				for (int i=0; i<str.length; i++){
+					PreparedStatement stat = conn.prepareStatement(sql);
+					stat.setInt(1, Integer.parseInt(str[i]));
+					stat.executeUpdate();
+				}
+			}
 			
-			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+
+	public int del(String[] str, int boardnum, int num) {
+		System.out.println(str.length);
+		try {
+			if (boardnum == 1) {
+				String sql = "update tblMsgRead set readdelete = 'Y' where seq = ?";
+				for (int i=0; i<str.length; i++){
+					PreparedStatement stat = conn.prepareStatement(sql);
+					stat.setInt(1, Integer.parseInt(str[i]));
+					stat.executeUpdate();
+				}
+			} else if (boardnum == 2) {
+				String sql = "update tblMsgSent set sentdelete = 'Y' where seq = ?";
+				for (int i=0; i<str.length; i++){
+					PreparedStatement stat = conn.prepareStatement(sql);
+					stat.setInt(1, Integer.parseInt(str[i]));
+					stat.executeUpdate();
+				}
+			} else if (boardnum == 3) {
+				String sql = "";
+
+				for (int i=0; i<str.length; i++){
+					sql = "update tblMsgSent set sentSave = 'N' where seq = ? and sentEmployeeNum = ?";
+					PreparedStatement stat = conn.prepareStatement(sql);
+					stat.setInt(1, Integer.parseInt(str[i]));
+					stat.setInt(2, num);
+					stat.executeUpdate();
+				}
+				
+				for (int i=0; i<str.length; i++){
+					System.out.println("employnum: " + num);
+					sql = "update tblMsgRead set readSave = 'N' where msgnumber = ? and readEmployeeNum = ?";
+					PreparedStatement stat = conn.prepareStatement(sql);
+					stat.setInt(1, Integer.parseInt(str[i]));
+					stat.setInt(2, num);
+					stat.executeUpdate();
+				}
+				
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+
+	public String addgetname(int readEmployeeNum) {
+		try {
+			String sql = "select name from employee where seq = ?";
+			PreparedStatement stat = conn.prepareStatement(sql);
+			stat.setInt(1, readEmployeeNum);
+			ResultSet rs = stat.executeQuery();
+			rs.next();
+			
+			return rs.getString("name");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
