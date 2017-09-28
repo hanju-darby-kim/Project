@@ -3,6 +3,7 @@ package com.fineapple.message;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
@@ -60,19 +61,44 @@ public class MessageDAO {
 	public int rAdd(MsgReadDTO rdto) {
 		try {
 			//보낸쪽지함에 가장 최근에 추가된 seq값 획득
+			int msgNum;
 			String sql = "select max(seq) as num from tblmsgsent";
 			Statement stat = conn.createStatement();
 			ResultSet rs = stat.executeQuery(sql);
 			
 			rs.next();
-			int msgNum = rs.getInt("num");
-			
+			msgNum = rs.getInt("num");
+
 			//받은쪽지함에 저장			
 			sql = "insert into tblMsgRead (seq, msgNumber, readEmployeeNum, readDate, readDelete, readSave) VALUES (msgreadseq.nextval, ?, ?, DEFAULT, DEFAULT, DEFAULT)";
 			PreparedStatement pstat = conn.prepareStatement(sql);
 			pstat.setInt(1, msgNum);
 			pstat.setInt(2, rdto.getReadEmployeeNum());
 			
+			return pstat.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return 0;
+		
+	}
+	
+	//받은쪽지함 INSERT 실패시 ROLLBACK
+	public int rollbackAdd(MsgReadDTO rdto) {
+		try {
+			//보낸쪽지함에 가장 최근에 추가된 seq값 획득
+			int msgNum;
+			String sql = "select max(seq) as num from tblmsgsent";
+			Statement stat = conn.createStatement();
+			ResultSet rs = stat.executeQuery(sql);
+			
+			rs.next();
+			msgNum = rs.getInt("num");
+
+			sql = "delete from tblmsgsent where seq = ?";
+			PreparedStatement pstat = conn.prepareStatement(sql);
+			pstat.setInt(1, msgNum);
 			return pstat.executeUpdate();
 			
 		} catch (Exception e) {
@@ -82,7 +108,7 @@ public class MessageDAO {
 		return 0;
 		
 	}
-	
+
 	
 	
 	//받은쪽지함 출력
@@ -280,12 +306,15 @@ public class MessageDAO {
 		
 	}
 
-	public ArrayList<MsgSRDTO> viewlist(String sseq, String rseq) {
+	public ArrayList<MsgSRDTO> viewlist(String sseq, String rseq, int num) {
 		try {
 
-			String sql = "select * from (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber) where sseq = ? order by sseq desc";
+			String sql = "select * from (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber) where sseq = ? and rseq = ? and ((reademployeenum = ? and readdelete = 'N') or (sentemployeenum = ? and sentdelete = 'N')) order by sseq desc";
 			PreparedStatement stat = conn.prepareStatement(sql);
 			stat.setString(1, sseq);
+			stat.setString(2, rseq);
+			stat.setInt(3, num);
+			stat.setInt(4, num);
 			
 			ResultSet rs = stat.executeQuery();
 			int cnt = 1;
@@ -310,11 +339,13 @@ public class MessageDAO {
 				dto.setReadSave(rs.getString("readSave"));
 				
 				list.add(dto);
+				
 				if (cnt == 5) {
 					break;
 				}
 				cnt++;
 
+				//읽은시간 업데이트
 				sql = "update tblMsgRead set readdate = sysdate where seq = ?";
 				stat = conn.prepareStatement(sql);
 				stat.setString(1, rseq);
@@ -331,11 +362,14 @@ public class MessageDAO {
 		return null;
 	}
 
-	public ArrayList<MsgSRDTO> pviewlist(String sseq, String rseq) {
+	public ArrayList<MsgSRDTO> pviewlist(String sseq, String rseq, int num) {
 		try {
-			String sql = "select * from (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber) where sseq = ? order by sseq desc";
+			String sql = "select * from (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber) where sseq = ? and rseq = ? and ((reademployeenum = ? and readdelete = 'N') or (sentemployeenum = ? and sentdelete = 'N')) order by sseq desc";
 			PreparedStatement stat = conn.prepareStatement(sql);
 			stat.setString(1, sseq);
+			stat.setString(2, rseq);
+			stat.setInt(3, num);
+			stat.setInt(4, num);
 			
 			ResultSet rs = stat.executeQuery();
 			int cnt = 1;
@@ -360,10 +394,6 @@ public class MessageDAO {
 				dto.setReadSave(rs.getString("readSave"));
 				
 				list.add(dto);
-				if (cnt == 5) {
-					break;
-				}
-				cnt++;
 				
 			}//while
 			
@@ -418,12 +448,21 @@ public class MessageDAO {
 					stat.executeUpdate();
 				}
 			} else if (boardnum == 2) {
+				
 				String sql = "update tblMsgSent set sentdelete = 'Y' where seq = ?";
 				for (int i=0; i<str.length; i++){
 					PreparedStatement stat = conn.prepareStatement(sql);
 					stat.setInt(1, Integer.parseInt(str[i]));
 					stat.executeUpdate();
 				}
+				
+				sql = "update tblMsgRead set readDelete = 'Y', readSave = 'N' where seq = ? and readdate is null";
+				for (int i=0; i<str.length; i++){
+					PreparedStatement stat = conn.prepareStatement(sql);
+					stat.setInt(1, Integer.parseInt(str[i]));
+					stat.executeUpdate();
+				}
+				
 			} else if (boardnum == 3) {
 				String sql = "";
 

@@ -3,19 +3,28 @@ select * from tab;
 select * from employee;
 select name from employee where seq = 15;
 
-select * from tblboard;
+--테이블 조회
 select * from tblMsgSent order by seq desc;
 select * from tblMsgRead order by seq desc;
 
-delete from tblmsgsent;
+--테이블 및 시퀀스 초기화
 delete from tblMsgRead;
-drop SEQUENCE msgsentseq;
+delete from tblmsgsent;
 drop SEQUENCE msgreadseq;
-CREATE SEQUENCE msgsentseq;
+drop SEQUENCE msgsentseq;
 CREATE SEQUENCE msgreadseq;
+CREATE SEQUENCE msgsentseq;
 
 update tblMsgRead set readdate = sysdate where seq = 1;
 commit;
+
+select * from (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber) where sseq = ? and rseq = ? order by sseq desc;
+select * from (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber) where sseq = ? and rseq = ? order by sseq desc;
+
+select * from tblMsgRead where seq = 1;
+update tblMsgRead set readDelete = 'Y', readSave = 'N' where seq = 1 and readdate is null;
+
+select * from (SELECT s.seq as sseq, s.sentemployeenum, s.title, s.content, s.sentdate, s.sentdelete, s.sentsave, r.seq as rseq, r.msgnumber, r.reademployeenum, r.readdate, r.readdelete, r.readsave FROM tblmsgsent S INNER JOIN tblMsgRead R ON s.seq = r.msgnumber) where sseq = ? and rseq = ? and ((reademployeenum = 55 and readdelete = 'N') or (sentemployeenum = 55 and sentdelete = 'N')) order by sseq desc;
 
 --뷰, (보낸쪽지+받은쪽지)
 

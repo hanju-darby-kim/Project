@@ -193,8 +193,14 @@ function del() {
 		                            <c:if test="${dto.readDate != null}">
 		                            <td><a href="javascript:void(window.open('/Project/message/popupview.do?sseq=${dto.sseq}&rseq=${dto.rseq}', 'child', 'width=400, height=650, left=0, top=0'));" style="color: #8F8F8F;">${dto.title}</a></td>
 		                            </c:if>
-		                            
+
+		                            <c:if test="${dto.sentEmployeeNum == num}">
+		                            <td style="font-size: 0.8em; color: #8F8F8F;">내게쓴쪽지</td>
+		                            </c:if>
+		                            <c:if test="${dto.sentEmployeeNum != num}">
 		                            <td>${dto.addedsentEmployeeName}(${dto.sentEmployeeNum})</td>
+		                            </c:if>
+		                            
 		                            <td>${dto.sentDate}</td>
 		                            <c:if test="${dto.readDate != null}">
 		                            <td>${dto.readDate}</td>

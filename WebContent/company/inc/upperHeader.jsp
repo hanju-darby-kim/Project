@@ -28,14 +28,20 @@
 	                    	<c:forEach items="${upperlist}" var="updto">
 		                        <li>
 		                            <a href="javascript:void(window.open('/Project/message/popupview.do?sseq=${updto.sseq}&rseq=${updto.rseq}', 'child', 'width=400, height=650, left=0, top=0'));">
-		                                <div>
+		                                <div style="margin-bottom: 5px;">
+				                            <c:if test="${updto.sentEmployeeNum == num}">
+				                            <span style="font-size: 0.9em; color: #8F8F8F;">내게쓴쪽지</span>
+				                            </c:if>
+				                            <c:if test="${updto.sentEmployeeNum != num}">
 		                                    <strong>${updto.addedsentEmployeeName}(${updto.sentEmployeeNum})</strong>
+				                            </c:if>
+				                            
 		                                    <span class="pull-right text-muted">
 		                                        <em>${updto.sentDate}</em>
 		                                    </span>
 		                                </div>
-		                                <div>${updto.title}</div>
-		                                <div>${updto.content}</div>
+		                                <div style="word-wrap: break-word; font-weight: bold; margin-bottom: 3px;">${updto.title}</div>
+		                                <div style="word-wrap: break-word; font-style: italic;">${updto.content}</div>
 		                            </a>
 		                        </li>
 	                        	<li class="divider"></li>

@@ -37,21 +37,34 @@ public class AddOk extends HttpServlet {
 		
 		MessageService service = new MessageService();
 		int sresult = service.sAdd(sdto); //성공 1, 실패 0인데 얘는 쓸일없음
+		System.out.println("sresult: " + sresult);
 		req.setAttribute("sresult", sresult); 
+		
+		
 		
 		//3) tblMsgRead에 값 쓰기
 		MsgReadDTO rdto = new MsgReadDTO();
 		rdto.setReadEmployeeNum(readEmployeeNum);
 		
 		int rresult = service.rAdd(rdto); //성공 1, 실패 0, 얘로 성공여부 판단함
-		req.setAttribute("rresult", rresult); 
+		System.out.println("rresult: " + rresult);
+		req.setAttribute("rresult", rresult);
 		
-		//4) readEmployeeNum 이름 가져옴
+		//4) tblMsgRead에 값 쓰기 실패시 2)번 롤백
+		if (rresult == 0){
+			int rollback = service.rollbackAdd(rdto);
+			System.out.println("rollback: " + rollback);
+			req.setAttribute("rollback", rollback);
+		}
+		
+		System.out.println("5번시작");
+		
+		//5) readEmployeeNum 이름 가져옴
 		String nameresult = service.addgetname(readEmployeeNum);
 		req.setAttribute("nameresult", nameresult); //jsp페이지에서 알림창에 쓸 이름전송
 		req.setAttribute("readEmployeeNum", readEmployeeNum); //jsp페이지에서 알림창에 쓸 사번전송
 		
-		//5)
+		//6)
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/jaejun/addok.jsp");
 		dispatcher.forward(req, resp);
 		

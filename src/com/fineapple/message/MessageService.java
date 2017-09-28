@@ -17,13 +17,27 @@ public class MessageService {
 	//받은쪽지함, Inbox.java
 	public ArrayList<MsgSRDTO> list(int num) {
 		ArrayList<MsgSRDTO> list = dao.list(num);
-		System.out.println("list.size()" + list.size());
 		for(MsgSRDTO dto : list){
-			// 날짜 자르기
-			dto.setSentDate(dto.getSentDate().substring(0, 19));
+			//날짜 자르기
+			dto.setSentDate(dto.getSentDate().substring(0, 10));
 			if(dto.getReadDate() != null){
-				dto.setReadDate(dto.getReadDate().substring(0, 19));
+				dto.setReadDate(dto.getReadDate().substring(0, 10));
 			}
+			
+			//추가날짜 자르기
+			/*
+			dto.setSentDate(dto.getSentDate().substring(0, 10));
+			if(dto.getReadDate() != null){
+				dto.setReadDate(dto.getReadDate().substring(0, 10));
+			}
+			*/
+			
+			//제목 자르기
+			String title = dto.getTitle();
+			if (title.length() > 25) {
+				title = title.substring(0, 25) + "...";
+			}
+			dto.setTitle(title);
 		}
 		
 		return list;
@@ -35,10 +49,17 @@ public class MessageService {
 
 		for(MsgSRDTO dto : slist){
 			// 날짜 자르기
-			dto.setSentDate(dto.getSentDate().substring(0, 19));
+			dto.setSentDate(dto.getSentDate().substring(0, 10));
 			if(dto.getReadDate() != null){
-				dto.setReadDate(dto.getReadDate().substring(0, 19));
+				dto.setReadDate(dto.getReadDate().substring(0, 10));
 			}
+			
+			//제목 자르기
+			String title = dto.getTitle();
+			if (title.length() > 25) {
+				title = title.substring(0, 25) + "...";
+			}
+			dto.setTitle(title);
 		}
 		
 		return slist;
@@ -50,10 +71,17 @@ public class MessageService {
 		
 		for(MsgSRDTO dto : plist){
 			// 날짜 자르기
-			dto.setSentDate(dto.getSentDate().substring(0, 19));
+			dto.setSentDate(dto.getSentDate().substring(0, 10));
 			if(dto.getReadDate() != null){
-				dto.setReadDate(dto.getReadDate().substring(0, 19));
+				dto.setReadDate(dto.getReadDate().substring(0, 10));
 			}
+
+			//제목 자르기
+			String title = dto.getTitle();
+			if (title.length() > 25) {
+				title = title.substring(0, 25) + "...";
+			}
+			dto.setTitle(title);
 		}
 		
 		return plist;
@@ -68,14 +96,14 @@ public class MessageService {
 			dto.setSentDate(dto.getSentDate().substring(0, 10));
 			// 제목 길면 짜르기
 			String title = dto.getTitle();
-			if (title.length() > 20) {
-				title = title.substring(0, 20) + "...";
+			if (title.length() > 15) {
+				title = title.substring(0, 15) + "...";
 			}
 			dto.setTitle(title);
 			
 			String content = dto.getContent();
-			if (content.length() > 45) {
-				content = content.substring(0, 45) + "...";
+			if (content.length() > 35) {
+				content = content.substring(0, 35) + "...";
 			}
 			dto.setContent(content);
 		}
@@ -91,13 +119,13 @@ public class MessageService {
 		return dao.rAdd(rdto);
 	}
 
-	public ArrayList<MsgSRDTO> view(String sseq, String rseq) {
-		ArrayList<MsgSRDTO> viewlist = dao.viewlist(sseq, rseq);
+	public ArrayList<MsgSRDTO> view(String sseq, String rseq, int num) {
+		ArrayList<MsgSRDTO> viewlist = dao.viewlist(sseq, rseq, num);
 		return viewlist;
 	}
 
-	public ArrayList<MsgSRDTO> popupview(String sseq, String rseq) {
-		ArrayList<MsgSRDTO> pviewlist = dao.pviewlist(sseq, rseq);
+	public ArrayList<MsgSRDTO> popupview(String sseq, String rseq, int num) {
+		ArrayList<MsgSRDTO> pviewlist = dao.pviewlist(sseq, rseq, num);
 		return pviewlist;
 	}
 
@@ -111,6 +139,10 @@ public class MessageService {
 
 	public String addgetname(int readEmployeeNum) {
 		return dao.addgetname(readEmployeeNum);
+	}
+
+	public int rollbackAdd(MsgReadDTO rdto) {
+		return dao.rollbackAdd(rdto);
 	}
 	
 }
