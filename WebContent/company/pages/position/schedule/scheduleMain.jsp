@@ -132,7 +132,7 @@
      var cell = row.insertCell();//objCalendar.insertRow.insertCell
      if (objDayArray[i] > 0) {
       tempDate.setDate(objDayArray[i]);	//날짜를..
-      cell.innerHTML = "<a href=''>" + objDayArray[i] +"</a>";	//cell 안에 objDayArray[i]를 적어넣는다.
+      cell.innerHTML = "<a class='date'>" + objDayArray[i] +"</a>";	//cell 안에 objDayArray[i]를 적어넣는다.
       cell.align = "left margin:10px auto";
       
     
@@ -158,6 +158,9 @@
       cell.className += " today";
      }
     }
+    $("a.date").on("click", function(){
+		
+	})
    }
    
    function getLastDay(objDate) {
@@ -206,7 +209,9 @@
    }
    
    
-
+	$(document).ready(function(){
+		
+	})
 
    
   </script>
@@ -220,24 +225,7 @@
 		</nav>
 	
 		<div id="page-wrapper">
-		게시판 입니다.
-		게시판 입니다.
-		게시판 입니다.
-		게시판 입니다.
-		게시판 입니다.
-		게시판 입니다.
-		게시판 입니다.
-		게시판 입니다.
-		게시판 입니다.
-		게시판 입니다.
-		게시판 입니다.
-		게시판 입니다.
-		게시판 입니다.
-		게시판 입니다.
-		게시판 입니다.
-		게시판 입니다.
-		게시판 입니다.
-		게시판 입니다.
+		일정관리 게시판입니다.
 		
 		
 		<body onload="buildCalendar()">

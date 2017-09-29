@@ -5,6 +5,14 @@ public class FBFileDTO {
 	private String FBSeq;
 	private String orgFileName;
 	private String fileName;
+	private String extension;
+	
+	public String getExtension() {
+		return extension;
+	}
+	public void setExtension(String extension) {
+		this.extension = extension;
+	}
 	public String getSeq() {
 		return seq;
 	}

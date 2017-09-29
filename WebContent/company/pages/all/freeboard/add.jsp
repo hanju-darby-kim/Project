@@ -39,9 +39,9 @@
    #addTable { margin-bottom: 0; }
    #addTable #FBCategory { height: 30px; width: 100px; padding: 5px; }
    #addTable td:first-child, #fileTable td:first-child { border-top: 0px; }
-   #addTable #title { width: 760px; }
+   #addTable #title { width: 720px; }
    #fileTable { float: left; width: 400px; }
-   #btns { width: 300px; text-align: right; padding-right: 20px; float: left; margin-left: 87px; margin-top: 5px; }
+   #btns { width: 300px; text-align: right; padding-right: 20px; float: left; margin-left: 48px; margin-top: 5px; }
    
    .files { float: left; }
    .fileWrapper { float: left; border: 1px solid #ccc; padding: 3px; border-radius: 3px; }
@@ -54,24 +54,30 @@
 <script>
 	window.onload = function() {
 		$(".fileTd:gt(0)").css("display", "none");
+		$('#file2, #file3').attr("disabled", true);
 	};
 	  
-   function addFile() {
+	function addFile() {
  	  
- 	  if($("#fileTd2").css("display") == ("none")) {
-  	  $("#fileTd2").css("display", "block");
- 	  } else if($("#fileTd3").css("display") == ("none")) {
- 		  $("#fileTd3").css("display", "block");
- 	  } else {
- 		  alert('파일은 최대 3개까지 업로드 가능합니다.');
- 	  }
+		//2번째 파일이 숨겨져 있다면
+		if($("#fileTd2").css("display") == ("none")) {
+			$("#fileTd2").css("display", "block"); //보이게하고
+			$("#file2").attr("disabled", false); //disabled는 false로
+			
+		//세번째 파일이 숨겨져 있다면	
+		} else if($("#fileTd3").css("display") == ("none")) {
+			$("#fileTd3").css("display", "block");
+			$("#file3").attr("disabled", false);
+		} else {
+			alert('파일은 최대 3개까지 업로드 가능합니다.');
+		}
  	  
    }
    
-   function deleteFile() {
- 	  event.srcElement.parentElement.style.display = "none";
- 	  
-   }
+	function deleteFile(filename) {
+		event.srcElement.parentElement.style.display = "none";	
+		$("#" + filename).attr("disabled", true);
+	}
 </script>
    
 </head>
@@ -131,7 +137,7 @@
          	<tr>
                <td class="fileTd" id="fileTd1">
                   <div class="fileWrapper">
-                     <input type="file" name="files1" class="files">
+                     <input type="file" name="files1" id="file1" class="files">
                   </div>
                   <span class="fa fa-plus addFileTag" id="addFileTag1" onclick='addFile();'></span>
                   <div style="clear:both;"></div>
@@ -140,9 +146,9 @@
             <tr>
                <td class="fileTd" id="fileTd2">
                   <div class="fileWrapper">
-                     <input type="file" name="files2" class="files">
+                     <input type="file" name="files2" id="file2" class="files">
                   </div>
-                  <span class="fa fa-minus deleteFileTag" onclick='deleteFile();'></span>
+                  <span class="fa fa-minus deleteFileTag" onclick="deleteFile('file2');"></span>
                   <div style="clear:both;"></div>
                </td>
             </tr>
@@ -151,7 +157,7 @@
                   <div class="fileWrapper">
                      <input type="file" id="file3" name="files3" class="files">
                   </div>
-                  <span class="fa fa-minus deleteFileTag" onclick='deleteFile();'></span>
+                  <span class="fa fa-minus deleteFileTag" onclick="deleteFile('file3');"></span>
                   <div style="clear:both;"></div>
                </td>
             </tr>

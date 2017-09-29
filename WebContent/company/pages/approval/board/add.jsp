@@ -14,6 +14,7 @@
 #tbl td:nth-child(2) { text-align: left; }
 #tbl .short { width: 20%; }
 #tbl #content { height: 300px; }
+#btns { text-align: right; }
 </style>
 <script>
 
@@ -85,8 +86,7 @@
 					<td><input type="password" name="pw" id="pw" class="form-control short" required></td>
 				</tr>
 			</table>
-			<div id="btns">
-				
+			<div id="btns">		
 				<input type="button" value="돌아가기" class="btn btn-default" onclick="history.back();">
 				<input type="submit" value="글쓰기" class="btn btn-primary">
 			</div>

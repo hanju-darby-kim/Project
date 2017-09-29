@@ -69,14 +69,14 @@
             </div>
             <!-- /.container-fluid -->
             <c:if test="${result == 1}">
-	            <div class="confirmBox">
+	            <div class="confirmBox">asfasdfasfsdfrAfzdazdr
 	            	<div class="end">
 	            		<div style="margin-bottom: 3px;"><i class="fa fa-smile-o"></i></div>
 	            		<div style="font-weight: bold;">등록이 완료되었습니다!</div> 
 	            	</div>
 	            	<div class="btns">
 	            		<input type="button" value="목록으로" class="btn btn-primary" onclick="location.href='/Project/all/freeboard/list.do'">
-	            		<input type="button" value="글보기" class="btn btn-info" onclick="location.href='/Project/all/freeboard/view.do?seq=${seq}">
+	            		<input type="button" value="글보기" class="btn btn-info" onclick="location.href='/Project/all/freeboard/view.do?seq=${seq}';">
 	            	</div>
 	            </div>
             </c:if>

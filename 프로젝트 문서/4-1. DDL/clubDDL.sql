@@ -180,7 +180,8 @@ create SEQUENCE clubBoardCategorySeq NOCACHE ;
 CREATE table clubBoard(
   seq number not null primary key,
   categorySeq NUMBER NOT NULL REFERENCES clubBoardCategory(seq),
-  empSeq NUMBER NOT NULL REFERENCES EMPLOYEE(seq),
+  memberSeq NUMBER NOT NULL REFERENCES CLUBMEMBER(seq),
+  clubSeq NUMBER not null REFERENCES CLUB(seq),
   title VARCHAR2(50) NOT NULL ,
   content varchar2(1000) NOT NULL ,
   regDate DATE DEFAULT sysdate NOT NULL ,
@@ -188,6 +189,7 @@ CREATE table clubBoard(
   thread NUMBER DEFAULT 0 NOT NULL ,
   depth NUMBER DEFAULT 0 NOT NULL
 );
+drop table clubBoard;
 
 CREATE SEQUENCE clubBoardSeq NOCACHE ;
 -------------------------------------------------------
@@ -197,18 +199,20 @@ CREATE TABLE clubBoardFiles(
   orgFileName VARCHAR2(100) not null,
   fileName VARCHAR2(100) NOT NULL
 );
+DROP TABLE clubBoardFiles;
 
 create SEQUENCE clubBoardFilesSeq NOCACHE ;
 ------------------------------------------------------------
 create Table clubBoardReply(
   seq NUMBER NOT NULL PRIMARY KEY ,
   clubBoardSeq NUMBER NOT NULL REFERENCES clubBoard(seq),
-  empSeq NUMBER NOT NULL REFERENCES EMPLOYEE(seq),
+  memberSeq NUMBER NOT NULL REFERENCES CLUBMEMBER(seq),
   regDate DATE DEFAULT sysdate NOT NULL ,
   content VARCHAR2(500) NOT NULL ,
   thread NUMBER DEFAULT 0 NOT NULL ,
   depth NUMBER DEFAULT 0 NOT NULL
 );
+drop table clubBoardReply;
 
 create SEQUENCE clubBoardReplySeq NOCACHE ;
 drop SEQUENCE clubBoardReplySeq;

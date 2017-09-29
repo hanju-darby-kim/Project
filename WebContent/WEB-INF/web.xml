@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
 	<display-name>Project</display-name>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
@@ -9,11 +12,11 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
-	<!--  -->
-	
-	<!--  -->
-	
-<!-- Department -->
+	<!-- -->
+
+	<!-- -->
+
+	<!-- Department -->
 	<servlet>
 		<servlet-name>department.temp_start</servlet-name>
 		<servlet-class>com.fineapple.department.temp.TempStart</servlet-class>
@@ -156,45 +159,71 @@
 	</servlet-mapping>
 	<!-- Outcome -->
 	<servlet>
+<<<<<<< HEAD
 			<servlet-name>department.outcome.check</servlet-name>
 			<servlet-class>com.fineapple.department.outcome.OutcomeCheck</servlet-class>
+=======
+		<servlet-name>department.outcome.check</servlet-name>
+		<servlet-class>com.fineapple.department.OutcomeCheck</servlet-class>
+>>>>>>> 98c682cd0fe56242382bcf93912cf9a75ee11d19
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>department.outcome.check</servlet-name>
 		<url-pattern>/company/pages/department/outcome_c.do</url-pattern>
 	</servlet-mapping>
 	<servlet>
+<<<<<<< HEAD
 			<servlet-name>department.outcome.write</servlet-name>
 			<servlet-class>com.fineapple.department.outcome.OutcomeWrite</servlet-class>
+=======
+		<servlet-name>department.outcome.write</servlet-name>
+		<servlet-class>com.fineapple.department.WriteOutcome</servlet-class>
+>>>>>>> 98c682cd0fe56242382bcf93912cf9a75ee11d19
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>department.outcome.write</servlet-name>
 		<url-pattern>/company/pages/department/write_o.do</url-pattern>
 	</servlet-mapping>
 	<servlet>
+<<<<<<< HEAD
 			<servlet-name>department.outcome.writego</servlet-name>
 			<servlet-class>com.fineapple.department.outcome.OutcomeWriteGo</servlet-class>
+=======
+		<servlet-name>department.outcome.writego</servlet-name>
+		<servlet-class>com.fineapple.department.WriteOutcomeGo</servlet-class>
+>>>>>>> 98c682cd0fe56242382bcf93912cf9a75ee11d19
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>department.outcome.writego</servlet-name>
 		<url-pattern>/company/pages/department/write_o_go.do</url-pattern>
 	</servlet-mapping>
 	<servlet>
+<<<<<<< HEAD
 			<servlet-name>department.outcome.read</servlet-name>
 			<servlet-class>com.fineapple.department.outcome.OutcomeRead</servlet-class>
+=======
+		<servlet-name>department.outcome.read</servlet-name>
+		<servlet-class>com.fineapple.department.ReadOutcome</servlet-class>
+>>>>>>> 98c682cd0fe56242382bcf93912cf9a75ee11d19
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>department.outcome.read</servlet-name>
 		<url-pattern>/company/pages/department/read_o.do</url-pattern>
 	</servlet-mapping>
 	<servlet>
+<<<<<<< HEAD
 			<servlet-name>department.outcome.readconfirm</servlet-name>
 			<servlet-class>com.fineapple.department.outcome.OutcomeReadConfirm</servlet-class>
+=======
+		<servlet-name>department.outcome.readconfirm</servlet-name>
+		<servlet-class>com.fineapple.department.ReadConfirm</servlet-class>
+>>>>>>> 98c682cd0fe56242382bcf93912cf9a75ee11d19
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>department.outcome.readconfirm</servlet-name>
 		<url-pattern>/company/pages/department/read_c.do</url-pattern>
 	</servlet-mapping>
+<<<<<<< HEAD
 	<servlet>
 			<servlet-name>department.outcome.edit</servlet-name>
 			<servlet-class>com.fineapple.department.outcome.OutcomeEdit</servlet-class>
@@ -221,6 +250,10 @@
 	</servlet-mapping>
 	
 	
+=======
+
+
+>>>>>>> 98c682cd0fe56242382bcf93912cf9a75ee11d19
 	<!-- all -->
 	<servlet>
 		<servlet-name>all.login</servlet-name>
@@ -230,7 +263,7 @@
 		<servlet-name>all.login</servlet-name>
 		<url-pattern>/all/login.do</url-pattern>
 	</servlet-mapping>
-	
+
 	<!-- 자개 -->
 	<servlet>
 		<servlet-name>all.FreeBoard.add</servlet-name>
@@ -240,7 +273,7 @@
 		<servlet-name>all.FreeBoard.add</servlet-name>
 		<url-pattern>/all/freeboard/add.do</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>all.FreeBoard.addok</servlet-name>
 		<servlet-class>com.fineapple.all.freeboard.AddOk</servlet-class>
@@ -249,8 +282,81 @@
 		<servlet-name>all.FreeBoard.addok</servlet-name>
 		<url-pattern>/all/freeboard/addok.do</url-pattern>
 	</servlet-mapping>
-	
-	<!-- 주소록  -->
+
+	<servlet>
+		<servlet-name>all.FreeBoard.download</servlet-name>
+		<servlet-class>com.fineapple.all.freeboard.Download</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all.FreeBoard.download</servlet-name>
+		<url-pattern>/all/freeboard/download.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>all.FreeBoard.list</servlet-name>
+		<servlet-class>com.fineapple.all.freeboard.List</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all.FreeBoard.list</servlet-name>
+		<url-pattern>/all/freeboard/list.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>all.FreeBoard.view</servlet-name>
+		<servlet-class>com.fineapple.all.freeboard.View</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all.FreeBoard.view</servlet-name>
+		<url-pattern>/all/freeboard/view.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>all.FreeBoard.edit</servlet-name>
+		<servlet-class>com.fineapple.all.freeboard.Edit</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all.FreeBoard.edit</servlet-name>
+		<url-pattern>/all/freeboard/edit.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>all.FreeBoard.editok</servlet-name>
+		<servlet-class>com.fineapple.all.freeboard.EditOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all.FreeBoard.editok</servlet-name>
+		<url-pattern>/all/freeboard/editok.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>all.FreeBoard.delete</servlet-name>
+		<servlet-class>com.fineapple.all.freeboard.Delete</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all.FreeBoard.delete</servlet-name>
+		<url-pattern>/all/freeboard/delete.do</url-pattern>
+	</servlet-mapping>
+
+	<!-- 설문조사 -->
+	<servlet>
+		<servlet-name>all.survey.add</servlet-name>
+		<servlet-class>com.fineapple.all.survey.Add</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all.survey.add</servlet-name>
+		<url-pattern>/all/survey/add.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>all.survey.addok</servlet-name>
+		<servlet-class>com.fineapple.all.survey.AddOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>all.survey.addok</servlet-name>
+		<url-pattern>/all/survey/addok.do</url-pattern>
+	</servlet-mapping>
+
+	<!-- 주소록 -->
 	<servlet>
 		<servlet-name>all.contact.list</servlet-name>
 		<servlet-class>com.fineapple.all.contact.List</servlet-class>
@@ -258,81 +364,72 @@
 	<servlet-mapping>
 		<servlet-name>all.contact.list</servlet-name>
 		<url-pattern>/all/contact/list.do</url-pattern>
-	</servlet-mapping>		
-	
-	
-	<!-- attendance -->
-	<servlet>	<!-- 로그인페이지 -->
-		<servlet-name>attendance.login</servlet-name>
-		<servlet-class>com.fineapple.attendance.Login</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>attendance.login</servlet-name>
-		<url-pattern>/attendance/login.do</url-pattern>
-	</servlet-mapping>		
-	
-	<servlet>	<!-- 근태작성 -->
-		<servlet-name>attendance.task</servlet-name>
-		<servlet-class>com.fineapple.attendance.Task</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>attendance.task</servlet-name>
-		<url-pattern>/attendance/task.do</url-pattern>
-	</servlet-mapping>	
+	</servlet-mapping>
 
-	<servlet>	<!-- 통계 -->
-		<servlet-name>attendance.statistics</servlet-name>
-		<servlet-class>com.fineapple.attendance.Statistics</servlet-class>
+
+	<!-- 김한주 : attendance -->
+	<servlet>	<!-- 근태업무 리스트 -->
+		<servlet-name>attendance.taskList</servlet-name>
+		<servlet-class>com.fineapple.attendance.task.TaskList</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>attendance.statistics</servlet-name>
+		<servlet-name>attendance.taskList</servlet-name>
+		<url-pattern>/attendance/task.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>	<!-- 통계 리스트 -->
+		<servlet-name>attendance.statisticsList</servlet-name>
+		<servlet-class>com.fineapple.attendance.statistics.StatisticsList</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>attendance.statisticsList</servlet-name>
 		<url-pattern>/attendance/statistics.do</url-pattern>
-	</servlet-mapping>		
-	
-	<servlet>	<!-- 자유게시판 종합-->
-		<servlet-name>attendance.community</servlet-name>
-		<servlet-class>com.fineapple.attendance.Community</servlet-class>
+	</servlet-mapping>
+
+	<servlet>	<!-- 자유게시판 리스트 -->
+		<servlet-name>attendance.bbsList</servlet-name>
+		<servlet-class>com.fineapple.attendance.bbs.BbsList</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>attendance.community</servlet-name>
-		<url-pattern>/attendance/community.do</url-pattern>
-	</servlet-mapping>		
-	
-	<servlet>	<!-- 자유게시판 글쓰기-->
-		<servlet-name>attendance.communityAdd</servlet-name>
-		<servlet-class>com.fineapple.attendance.CommunityAdd</servlet-class>
+		<servlet-name>attendance.bbsList</servlet-name>
+		<url-pattern>/attendance/bbs.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>	<!-- 자유게시판 글쓰기 -->
+		<servlet-name>attendance.bbsAdd</servlet-name>
+		<servlet-class>com.fineapple.attendance.bbs.BbsAdd</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>attendance.communityAdd</servlet-name>
-		<url-pattern>/attendance/communityAdd.do</url-pattern>
-	</servlet-mapping>		
-	
-	
-	
-	
-	
+		<servlet-name>attendance.bbsAdd</servlet-name>
+		<url-pattern>/attendance/bbsAdd.do</url-pattern>
+	</servlet-mapping>
+
+
+
+
+
 	<!-- 결재 자유 게시판 -->
-   <servlet> <!-- 글쓰기 -->
-      <servlet-name>approval.Board.add</servlet-name>
-      <servlet-class>com.fineapple.approval.board.Add</servlet-class>
-   </servlet>
-   <servlet-mapping>
-      <servlet-name>approval.Board.add</servlet-name>
-      <url-pattern>/approval/board/add.do</url-pattern>
-   </servlet-mapping>
-   
-   <servlet> <!-- 글쓰기 완료 -->
-      <servlet-name>approval.Board.addok</servlet-name>
-      <servlet-class>com.fineapple.approval.board.AddOk</servlet-class>
-   </servlet>
-   <servlet-mapping>
-      <servlet-name>approval.Board.addok</servlet-name>
-      <url-pattern>/approval/board/addok.do</url-pattern>
-   </servlet-mapping>
-	
-	
-	
-	<!-- ;%심재준마커. 쪽지 시작 -->
+	<servlet> <!-- 글쓰기 -->
+		<servlet-name>approval.Board.add</servlet-name>
+		<servlet-class>com.fineapple.approval.board.Add</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>approval.Board.add</servlet-name>
+		<url-pattern>/approval/board/add.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet> <!-- 글쓰기 완료 -->
+		<servlet-name>approval.Board.addok</servlet-name>
+		<servlet-class>com.fineapple.approval.board.AddOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>approval.Board.addok</servlet-name>
+		<url-pattern>/approval/board/addok.do</url-pattern>
+	</servlet-mapping>
+
+
+
+	<!-- ;%%%심재준마커. 쪽지 시작 -->
 	<servlet> <!-- inbox -->
 		<servlet-name>message.inbox</servlet-name>
 		<servlet-class>com.fineapple.message.Inbox</servlet-class>
@@ -340,8 +437,26 @@
 	<servlet-mapping>
 		<servlet-name>message.inbox</servlet-name>
 		<url-pattern>/message/inbox.do</url-pattern>
-	</servlet-mapping>		
+	</servlet-mapping>
 	
+	<servlet> <!-- inboxsent -->
+		<servlet-name>message.inboxsent</servlet-name>
+		<servlet-class>com.fineapple.message.InboxSent</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.inboxsent</servlet-name>
+		<url-pattern>/message/inboxsent.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet> <!-- inboxsave -->
+		<servlet-name>message.inboxsave</servlet-name>
+		<servlet-class>com.fineapple.message.InboxSave</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.inboxsave</servlet-name>
+		<url-pattern>/message/inboxsave.do</url-pattern>
+	</servlet-mapping>
+
 	<servlet> <!-- add -->
 		<servlet-name>message.add</servlet-name>
 		<servlet-class>com.fineapple.message.Add</servlet-class>
@@ -349,8 +464,17 @@
 	<servlet-mapping>
 		<servlet-name>message.add</servlet-name>
 		<url-pattern>/message/add.do</url-pattern>
-	</servlet-mapping>		
+	</servlet-mapping>
 	
+	<servlet> <!-- del -->
+		<servlet-name>message.del</servlet-name>
+		<servlet-class>com.fineapple.message.Del</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.del</servlet-name>
+		<url-pattern>/message/del.do</url-pattern>
+	</servlet-mapping>
+
 	<servlet> <!-- addok -->
 		<servlet-name>message.addok</servlet-name>
 		<servlet-class>com.fineapple.message.AddOk</servlet-class>
@@ -359,7 +483,7 @@
 		<servlet-name>message.addok</servlet-name>
 		<url-pattern>/message/addok.do</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet> <!-- setting -->
 		<servlet-name>message.setting</servlet-name>
 		<servlet-class>com.fineapple.message.Setting</servlet-class>
@@ -368,9 +492,49 @@
 		<servlet-name>message.setting</servlet-name>
 		<url-pattern>/message/setting.do</url-pattern>
 	</servlet-mapping>
-	
-	
-	
+	<servlet> <!-- settingok -->
+		<servlet-name>message.settingok</servlet-name>
+		<servlet-class>com.fineapple.message.SettingOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.settingok</servlet-name>
+		<url-pattern>/message/settingok.do</url-pattern>
+	</servlet-mapping>
+	<servlet> <!-- smsgdel -->
+		<servlet-name>message.smsgdel</servlet-name>
+		<servlet-class>com.fineapple.message.SmsgDel</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.smsgdel</servlet-name>
+		<url-pattern>/message/smsgdel.do</url-pattern>
+	</servlet-mapping>
+	<servlet> <!-- save -->
+		<servlet-name>message.save</servlet-name>
+		<servlet-class>com.fineapple.message.Save</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.save</servlet-name>
+		<url-pattern>/message/save.do</url-pattern>
+	</servlet-mapping>
+	<servlet> <!-- save -->
+		<servlet-name>message.view</servlet-name>
+		<servlet-class>com.fineapple.message.View</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.view</servlet-name>
+		<url-pattern>/message/view.do</url-pattern>
+	</servlet-mapping>
+	<servlet> <!-- save -->
+		<servlet-name>message.popupview</servlet-name>
+		<servlet-class>com.fineapple.message.PopupView</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.popupview</servlet-name>
+		<url-pattern>/message/popupview.do</url-pattern>
+	</servlet-mapping>
+
+
+
 
 	<!-- 김태현의 모임관리 서블릿 -->
 	<servlet> <!-- club.clublist -->
@@ -381,7 +545,7 @@
 		<servlet-name>club.clublist</servlet-name>
 		<url-pattern>/club/clublist.do</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet> <!-- club.templogin -->
 		<servlet-name>club.templogin</servlet-name>
 		<servlet-class>com.fineapple.club.TempLogin</servlet-class>
@@ -390,7 +554,7 @@
 		<servlet-name>club.templogin</servlet-name>
 		<url-pattern>/club/templogin.do</url-pattern>
 	</servlet-mapping>
-		
+
 	<servlet> <!-- club.myclubboard -->
 		<servlet-name>club.myclubboard</servlet-name>
 		<servlet-class>com.fineapple.club.MyClubBoard</servlet-class>
@@ -398,12 +562,19 @@
 	<servlet-mapping>
 		<servlet-name>club.myclubboard</servlet-name>
 		<url-pattern>/club/myclubboard.do</url-pattern>
-		
+
 	</servlet-mapping>
-	
 
+	<!-- 김현진꺼 -->
+	<servlet> <!-- position.list -->
+		<servlet-name>PBoardList</servlet-name>
+		<servlet-class>com.fineapple.position.List</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PBoardList</servlet-name>
+		<url-pattern>/company/pages/position/board/list.do</url-pattern>
+	</servlet-mapping>
 
-	
 </web-app>
 
 

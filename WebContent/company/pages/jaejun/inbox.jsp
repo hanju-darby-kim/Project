@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<% session.setAttribute("num", 55); %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,24 +14,33 @@
 <meta name="author" content="">
 <title>Message | Fine Apple</title>
 <style>
-	
-	
+	#table th:NTH-CHILD(1) { width: 30px; }
+	#table th:NTH-CHILD(2) { width: 520px; }
+	#table th:NTH-CHILD(3) { width: 100px; }
+	#table th:NTH-CHILD(4) { width: 134px; }
+	#table th:NTH-CHILD(5) { width: 135px; }
+	#table td, #table th {
+		text-align: center;
+		vertical-align: middle;
+	}
+	#table tr td:NTH-CHILD(2) {
+		text-align: left;
+	}
 	
 	#headerInbox {
 		border: 0px solid red;
 		vertical-align: middle;
 	}
-	#btns {
+	.btns {
 		border: 0px solid red;
+		margin: 0px 15px;
 		display: inline;
 		float: right;
-		position: absolute;
-		top: 140px; left: 1350px;
 	}
+	
+	
+	
 </style>
-<script>
-
-</script>
     <!-- Bootstrap Core CSS -->
     <link href="/Project/company/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -53,6 +66,72 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+<script>
+
+function MsgboxMove() {
+	if ($(MsgboxSel).val() == 1){
+		location.href="/Project/message/inbox.do";
+	} else if ($(MsgboxSel).val() == 2) {
+		location.href="/Project/message/inboxsent.do";
+	} else if ($(MsgboxSel).val() == 3) {
+		location.href="/Project/message/inboxsave.do";
+	}
+}
+
+var cbAll, cbs;
+var btnSend;
+
+window.onload = function(){
+	cbAll = document.all.cbAll;
+	cbs = document.all.cbs;
+	btnSend = document.all.btnSend;
+	
+	cbAll.onchange = function(){
+		if(cbAll.checked) {
+			//하나일때 선택
+			if (cbs.length == undefined) {
+				cbs.checked = true;
+			}
+			//전부 선택
+			for(var i=0; i<=cbs.length; i++) {
+				cbs[i].checked = true;
+			}
+		} else {
+			//하나일때 해제
+			if (cbs.length == undefined) {
+				cbs.checked = false;
+			}
+			//전부 해제
+			for(var i=0; i<=cbs.length; i++) {
+				cbs[i].checked = false;
+			}
+		}
+	};
+}
+
+function save() {
+	if ($(".cbs:checked").length != 0) {
+		$("#form").attr("action", "/Project/message/save.do");
+		$("#form").submit();
+	} else {
+		alert("체크된 쪽지가 없습니다.")
+	}
+}
+
+function del() {
+	if ($(".cbs:checked").length != 0) {
+		if (confirm("삭제하시면 복구할수 없습니다.\n정말 삭제하시겠습니까?")) {
+			$("#form").attr("action", "/Project/message/del.do");
+			$("#form").submit();
+		}
+	} else {
+		alert("체크된 쪽지가 없습니다.")
+	}
+}
+
+</script>
 </head>
 
 <body>
@@ -70,437 +149,86 @@
         <div id="page-wrapper">
             <div class="row">
                 <div id="headerInbox" class="col-lg-12">
-                    <h1 class="page-header">쪽지함</h1>
+                    <h1 class="page-header">받은쪽지함 <span style="font-size: 0.5em">총 쪽지 개수: ${list.size()}개</span></h1>
                 <!-- /.col-lg-12 -->
-	            </div>
-	            <div id="btns">
-	            <input type="button" class="btn btn-primary" value="쪽지쓰기" onclick="location.href='/Project/message/add.do';"/>
-	            <input type="button" class="btn btn-default" value="환경설정" onclick="location.href='/Project/message/setting.do';"/>
 	            </div>
             </div>
             <!-- /.row -->
             
+            <div class="row" style="position: relative;">
+            	<div style="position: absolute; top: -60px; left: 730px;">
+            		<select name="MsgboxSel" id="MsgboxSel" style="height: 30px;">
+            			<option value="1" selected="selected">받은쪽지함</option>
+            			<option value="2">보낸쪽지함</option>
+						<option value="3">쪽지보관함</option>
+            		</select>
+            		<input type="button" value="이동하기" style="height: 30px;" onclick="MsgboxMove();"/>
+            	</div>
+            </div>
+            <!-- /.row -->
+            
             <div class="row">
-                <div class="col-lg-12">
-	                <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-	                    <thead>
-	                        <tr>
-	                            <th>Rendering engine</th>
-	                            <th>Browser</th>
-	                            <th>Platform(s)</th>
-	                            <th>Engine version</th>
-	                            <th>CSS grade</th>
-	                        </tr>
-	                    </thead>
-	                    <tbody>
-	                        <tr class="odd gradeX">
-	                            <td>Trident</td>
-	                            <td>Internet Explorer 4.0</td>
-	                            <td>Win 95+</td>
-	                            <td class="center">4</td>
-	                            <td class="center">X</td>
-	                        </tr>
-	                        <tr class="even gradeC">
-	                            <td>Trident</td>
-	                            <td>Internet Explorer 5.0</td>
-	                            <td>Win 95+</td>
-	                            
-	                            <td class="center">5</td>
-	                            <td class="center">C</td>
-	                        </tr>
-	                        <tr class="odd gradeA">
-	                            <td>Trident</td>
-	                            <td>Internet Explorer 5.5</td>
-	                            <td>Win 95+</td>
-	                            <td class="center">5.5</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="even gradeA">
-	                            <td>Trident</td>
-	                            <td>Internet Explorer 6</td>
-	                            <td>Win 98+</td>
-	                            <td class="center">6</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="odd gradeA">
-	                            <td>Trident</td>
-	                            <td>Internet Explorer 7</td>
-	                            <td>Win XP SP2+</td>
-	                            <td class="center">7</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="even gradeA">
-	                            <td>Trident</td>
-	                            <td>AOL browser (AOL desktop)</td>
-	                            <td>Win XP</td>
-	                            <td class="center">6</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Gecko</td>
-	                            <td>Firefox 1.0</td>
-	                            <td>Win 98+ / OSX.2+</td>
-	                            <td class="center">1.7</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Gecko</td>
-	                            <td>Firefox 1.5</td>
-	                            <td>Win 98+ / OSX.2+</td>
-	                            <td class="center">1.8</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Gecko</td>
-	                            <td>Firefox 2.0</td>
-	                            <td>Win 98+ / OSX.2+</td>
-	                            <td class="center">1.8</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Gecko</td>
-	                            <td>Firefox 3.0</td>
-	                            <td>Win 2k+ / OSX.3+</td>
-	                            <td class="center">1.9</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Gecko</td>
-	                            <td>Camino 1.0</td>
-	                            <td>OSX.2+</td>
-	                            <td class="center">1.8</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Gecko</td>
-	                            <td>Camino 1.5</td>
-	                            <td>OSX.3+</td>
-	                            <td class="center">1.8</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Gecko</td>
-	                            <td>Netscape 7.2</td>
-	                            <td>Win 95+ / Mac OS 8.6-9.2</td>
-	                            <td class="center">1.7</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Gecko</td>
-	                            <td>Netscape Browser 8</td>
-	                            <td>Win 98SE+</td>
-	                            <td class="center">1.7</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Gecko</td>
-	                            <td>Netscape Navigator 9</td>
-	                            <td>Win 98+ / OSX.2+</td>
-	                            <td class="center">1.8</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Gecko</td>
-	                            <td>Mozilla 1.0</td>
-	                            <td>Win 95+ / OSX.1+</td>
-	                            <td class="center">1</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Gecko</td>
-	                            <td>Mozilla 1.1</td>
-	                            <td>Win 95+ / OSX.1+</td>
-	                            <td class="center">1.1</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Gecko</td>
-	                            <td>Mozilla 1.2</td>
-	                            <td>Win 95+ / OSX.1+</td>
-	                            <td class="center">1.2</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Gecko</td>
-	                            <td>Mozilla 1.3</td>
-	                            <td>Win 95+ / OSX.1+</td>
-	                            <td class="center">1.3</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Gecko</td>
-	                            <td>Mozilla 1.4</td>
-	                            <td>Win 95+ / OSX.1+</td>
-	                            <td class="center">1.4</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Gecko</td>
-	                            <td>Mozilla 1.5</td>
-	                            <td>Win 95+ / OSX.1+</td>
-	                            <td class="center">1.5</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Gecko</td>
-	                            <td>Mozilla 1.6</td>
-	                            <td>Win 95+ / OSX.1+</td>
-	                            <td class="center">1.6</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Gecko</td>
-	                            <td>Mozilla 1.7</td>
-	                            <td>Win 98+ / OSX.1+</td>
-	                            <td class="center">1.7</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Gecko</td>
-	                            <td>Mozilla 1.8</td>
-	                            <td>Win 98+ / OSX.1+</td>
-	                            <td class="center">1.8</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Gecko</td>
-	                            <td>Seamonkey 1.1</td>
-	                            <td>Win 98+ / OSX.2+</td>
-	                            <td class="center">1.8</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Gecko</td>
-	                            <td>Epiphany 2.20</td>
-	                            <td>Gnome</td>
-	                            <td class="center">1.8</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Webkit</td>
-	                            <td>Safari 1.2</td>
-	                            <td>OSX.3</td>
-	                            <td class="center">125.5</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Webkit</td>
-	                            <td>Safari 1.3</td>
-	                            <td>OSX.3</td>
-	                            <td class="center">312.8</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Webkit</td>
-	                            <td>Safari 2.0</td>
-	                            <td>OSX.4+</td>
-	                            <td class="center">419.3</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Webkit</td>
-	                            <td>Safari 3.0</td>
-	                            <td>OSX.4+</td>
-	                            <td class="center">522.1</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Webkit</td>
-	                            <td>OmniWeb 5.5</td>
-	                            <td>OSX.4+</td>
-	                            <td class="center">420</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Webkit</td>
-	                            <td>iPod Touch / iPhone</td>
-	                            <td>iPod</td>
-	                            <td class="center">420.1</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Webkit</td>
-	                            <td>S60</td>
-	                            <td>S60</td>
-	                            <td class="center">413</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Presto</td>
-	                            <td>Opera 7.0</td>
-	                            <td>Win 95+ / OSX.1+</td>
-	                            <td class="center">-</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Presto</td>
-	                            <td>Opera 7.5</td>
-	                            <td>Win 95+ / OSX.2+</td>
-	                            <td class="center">-</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Presto</td>
-	                            <td>Opera 8.0</td>
-	                            <td>Win 95+ / OSX.2+</td>
-	                            <td class="center">-</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Presto</td>
-	                            <td>Opera 8.5</td>
-	                            <td>Win 95+ / OSX.2+</td>
-	                            <td class="center">-</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Presto</td>
-	                            <td>Opera 9.0</td>
-	                            <td>Win 95+ / OSX.3+</td>
-	                            <td class="center">-</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Presto</td>
-	                            <td>Opera 9.2</td>
-	                            <td>Win 88+ / OSX.3+</td>
-	                            <td class="center">-</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Presto</td>
-	                            <td>Opera 9.5</td>
-	                            <td>Win 88+ / OSX.3+</td>
-	                            <td class="center">-</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Presto</td>
-	                            <td>Opera for Wii</td>
-	                            <td>Wii</td>
-	                            <td class="center">-</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Presto</td>
-	                            <td>Nokia N800</td>
-	                            <td>N800</td>
-	                            <td class="center">-</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Presto</td>
-	                            <td>Nintendo DS browser</td>
-	                            <td>Nintendo DS</td>
-	                            <td class="center">8.5</td>
-	                            <td class="center">C/A<sup>1</sup>
-	                            </td>
-	                        </tr>
-	                        <tr class="gradeC">
-	                            <td>KHTML</td>
-	                            <td>Konqureror 3.1</td>
-	                            <td>KDE 3.1</td>
-	                            <td class="center">3.1</td>
-	                            <td class="center">C</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>KHTML</td>
-	                            <td>Konqureror 3.3</td>
-	                            <td>KDE 3.3</td>
-	                            <td class="center">3.3</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>KHTML</td>
-	                            <td>Konqureror 3.5</td>
-	                            <td>KDE 3.5</td>
-	                            <td class="center">3.5</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeX">
-	                            <td>Tasman</td>
-	                            <td>Internet Explorer 4.5</td>
-	                            <td>Mac OS 8-9</td>
-	                            <td class="center">-</td>
-	                            <td class="center">X</td>
-	                        </tr>
-	                        <tr class="gradeC">
-	                            <td>Tasman</td>
-	                            <td>Internet Explorer 5.1</td>
-	                            <td>Mac OS 7.6-9</td>
-	                            <td class="center">1</td>
-	                            <td class="center">C</td>
-	                        </tr>
-	                        <tr class="gradeC">
-	                            <td>Tasman</td>
-	                            <td>Internet Explorer 5.2</td>
-	                            <td>Mac OS 8-X</td>
-	                            <td class="center">1</td>
-	                            <td class="center">C</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Misc</td>
-	                            <td>NetFront 3.1</td>
-	                            <td>Embedded devices</td>
-	                            <td class="center">-</td>
-	                            <td class="center">C</td>
-	                        </tr>
-	                        <tr class="gradeA">
-	                            <td>Misc</td>
-	                            <td>NetFront 3.4</td>
-	                            <td>Embedded devices</td>
-	                            <td class="center">-</td>
-	                            <td class="center">A</td>
-	                        </tr>
-	                        <tr class="gradeX">
-	                            <td>Misc</td>
-	                            <td>Dillo 0.8</td>
-	                            <td>Embedded devices</td>
-	                            <td class="center">-</td>
-	                            <td class="center">X</td>
-	                        </tr>
-	                        <tr class="gradeX">
-	                            <td>Misc</td>
-	                            <td>Links</td>
-	                            <td>Text only</td>
-	                            <td class="center">-</td>
-	                            <td class="center">X</td>
-	                        </tr>
-	                        <tr class="gradeX">
-	                            <td>Misc</td>
-	                            <td>Lynx</td>
-	                            <td>Text only</td>
-	                            <td class="center">-</td>
-	                            <td class="center">X</td>
-	                        </tr>
-	                        <tr class="gradeC">
-	                            <td>Misc</td>
-	                            <td>IE Mobile</td>
-	                            <td>Windows Mobile 6</td>
-	                            <td class="center">-</td>
-	                            <td class="center">C</td>
-	                        </tr>
-	                        <tr class="gradeC">
-	                            <td>Misc</td>
-	                            <td>PSP browser</td>
-	                            <td>PSP</td>
-	                            <td class="center">-</td>
-	                            <td class="center">C</td>
-	                        </tr>
-	                        <tr class="gradeU">
-	                            <td>Other browsers</td>
-	                            <td>All others</td>
-	                            <td>-</td>
-	                            <td class="center">-</td>
-	                            <td class="center">U</td>
-	                        </tr>
-	                    </tbody>
-	                </table>
-                </div>
+            	<form id="form" method="post" action="/">
+	                <div class="col-lg-12">
+		            	<div style="color: #2F73C0; margin-bottom: 10px;">* 쪽지는 100일 후 자동 삭제됩니다. 중요한 쪽지는 보관함에 저장하세요.</div> 
+		                
+		                <table width="100%" id="table" class="table table-striped table-bordered table-hover" id="dataTables-example">
+		                    <thead>
+		                        <tr>
+		                            <th><input type="checkbox" name="cbAll" /></th>
+		                            <th>제목</th>
+		                            <th>보낸사람</th>
+		                            <th>받은시간</th>
+		                            <th>읽은시간</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody>
+		                    	<c:forEach items="${list}" var="dto">
+		                        <tr class="odd">
+		                            <td><input type="checkbox" name="cbs" class="cbs" value="${dto.rseq}" /></td>
+		                            
+		                            <c:if test="${dto.readDate == null}">
+		                            <td><a href="javascript:void(window.open('/Project/message/popupview.do?sseq=${dto.sseq}&rseq=${dto.rseq}', 'child', 'width=400, height=650, left=0, top=0'));" style="font-size: 1.2em;">${dto.title}</a></td>
+		                            </c:if>
+		                            <c:if test="${dto.readDate != null}">
+		                            <td><a href="javascript:void(window.open('/Project/message/popupview.do?sseq=${dto.sseq}&rseq=${dto.rseq}', 'child', 'width=400, height=650, left=0, top=0'));" style="color: #8F8F8F;">${dto.title}</a></td>
+		                            </c:if>
+
+		                            <c:if test="${dto.sentEmployeeNum == num}">
+		                            <td style="font-size: 0.8em; color: #8F8F8F;">내게쓴쪽지</td>
+		                            </c:if>
+		                            <c:if test="${dto.sentEmployeeNum != num}">
+		                            <td>${dto.addedsentEmployeeName}(${dto.sentEmployeeNum})</td>
+		                            </c:if>
+		                            
+		                            <td>${dto.sentDate}</td>
+		                            <c:if test="${dto.readDate != null}">
+		                            <td>${dto.readDate}</td>
+		                            </c:if>
+		                            <c:if test="${dto.readDate == null}">
+		                            <td>읽지않음</td>
+		                            </c:if>
+		                        </tr>
+		                        </c:forEach>
+		                    </tbody>
+		                </table>
+	                </div>
+	                
+	                <div class="btns" style="float: left;">
+		            	<input type="button" class="btn btn-success" value="보관하기" onclick="save();"/>
+			            <input type="button" class="btn btn-danger" value="삭제하기" onclick="del();"/>
+			        </div>
+			        <input type="hidden" name="boardnum" value="1" />
+		        </form>
+		        
+	            <div class="btns" style="float: right;">		            
+		            <input type="button" class="btn btn-info" value="쪽지쓰기" onclick="location.href='/Project/message/add.do';"/>
+		            <input type="button" class="btn btn-default" value="환경설정" onclick="location.href='/Project/message/setting.do';"/>
+		        </div>
+		        
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-          
             
         </div>
         <!-- /#page-wrapper -->

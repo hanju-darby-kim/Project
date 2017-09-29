@@ -31,6 +31,7 @@
 				<section>
 		
 			<!-- 글쓰기 폼 -->
+			<!-- 이름,시간등은 받아와서 쓰겠다. -->
 			<form method="post" action="/MVCTest/board/addok.do" enctype="multipart/form-data">		<!-- 그다음일처리할 서블릿 호출/ 항상 서블릿을 호출 jsp -> jsp x  -->
 			<table id="tbl" class="table table-striped" style="width:100%">
 				
@@ -63,7 +64,7 @@
 			</div>
 			
 			<!-- 지금 작성중인 글이 새글? 답변글? -->
-			<input type="hidden" name = "reply" value="${reply}" />
+			<%-- <input type="hidden" name = "reply" value="${reply}" /> --%>
 			<input type="hidden" name = "thread" value ="${thread }" />
 			<input type="hidden" name ="depth" value="${depth }" />
 			</form>

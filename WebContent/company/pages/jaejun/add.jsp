@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,11 +81,14 @@
 	            <div class="row col-lg-12">
 	            	<table class="table table-responsive table-bordered">
 						<tr>
-							<td width="100">
-								받는사람
-							</td>
+							<td width="100">받는사람</td>
 							<td>
-								홍길동
+								<c:if test="${reademployeenum == null}">
+									<input type="text" name="reademployeenum" style="width: 100%;" />
+								</c:if>
+								<c:if test="${reademployeenum != null}">
+									<input type="text" name="reademployeenum" value="${reademployeenum}" style="width: 100%;" />
+								</c:if>
 							</td>
 						</tr>
 						<tr>
@@ -105,12 +109,12 @@
 	            </div>
 	            <div id="btns">
 					<input type="submit" value="보내기" class="btn btn-primary" id="send" onclick="submitContents()"/>
-					<input type="button" value="돌아가기" class="btn btn-default" />
-				</div>            
+					<input type="button" value="돌아가기" class="btn btn-default" onclick="history.back();" />
+				</div>
             </form>
         </div>
         <!-- /#page-wrapper -->
-
+	
     </div>
     <!-- /#wrapper -->
     <!-- jQuery -->

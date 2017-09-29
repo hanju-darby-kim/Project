@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- Navigation -->
        
             <div class="navbar-header">
@@ -23,42 +24,33 @@
                         <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
+                    	<c:if test="${upperlist.size() != 0}">
+	                    	<c:forEach items="${upperlist}" var="updto">
+		                        <li>
+		                            <a href="javascript:void(window.open('/Project/message/popupview.do?sseq=${updto.sseq}&rseq=${updto.rseq}', 'child', 'width=400, height=650, left=0, top=0'));">
+		                                <div style="margin-bottom: 5px;">
+				                            <c:if test="${updto.sentEmployeeNum == num}">
+				                            <span style="font-size: 0.9em; color: #8F8F8F;">내게쓴쪽지</span>
+				                            </c:if>
+				                            <c:if test="${updto.sentEmployeeNum != num}">
+		                                    <strong>${updto.addedsentEmployeeName}(${updto.sentEmployeeNum})</strong>
+				                            </c:if>
+				                            
+		                                    <span class="pull-right text-muted">
+		                                        <em>${updto.sentDate}</em>
+		                                    </span>
+		                                </div>
+		                                <div style="word-wrap: break-word; font-weight: bold; margin-bottom: 3px;">${updto.title}</div>
+		                                <div style="word-wrap: break-word; font-style: italic;">${updto.content}</div>
+		                            </a>
+		                        </li>
+	                        	<li class="divider"></li>
+	                        </c:forEach>
+                        </c:if>
+                        <c:if test="${upperlist.size() == 0}">
+                        	<li style="text-align: center; margin: 20px auto; color: #333">읽지 않은 쪽지가 없습니다.</li>
+                        </c:if>
+                        
                         <li>
                             <a class="active text-center" href="/Project/message/inbox.do">
                                 <strong>Read All Messages</strong>
