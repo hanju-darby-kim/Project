@@ -1,4 +1,4 @@
-package com.fineapple.department;
+package com.fineapple.department.outcome;
 
 import java.io.IOException;
 
@@ -11,13 +11,14 @@ import javax.servlet.http.HttpSession;
 
 import com.fineapple.DTO.OutcomeDTO;
 
-public class ReadOutcome extends HttpServlet {
+public class OutcomeRead extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		HttpSession session = req.getSession();
 		String departmentSeq = (String) session.getAttribute("departmentSeq");
 		String positionSeq = (String) session.getAttribute("positionSeq");
+		String userSeq = (String) session.getAttribute("seq");
 		String seq = req.getParameter("seq");
 		
 		OutcomeService service = new OutcomeService(session);
@@ -30,6 +31,7 @@ public class ReadOutcome extends HttpServlet {
 		
 		OutcomeDTO dto = service.readOutcome(seq);
 		req.setAttribute("dto", dto);
+		req.setAttribute("userseq", userSeq);
 		req.setAttribute("departmentSeq", departmentSeq);
 		req.setAttribute("positionSeq", positionSeq);
 		

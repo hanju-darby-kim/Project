@@ -4,7 +4,7 @@ package com.fineapple.DTO;
  * @author 전슬기
  *
  */
-public class ApprovalBoardCommentDTO {
+public class approvalBoardCommentDTO {
 
 	private String seq;
 	private String empSeq;

@@ -15,6 +15,7 @@
 
 <%@ include file="/company/inc/asset_css.jsp" %>
 <%@ include file="/company/inc/asset_js.jsp" %>
+<link href="/Project/company/dist/css/department.css" rel="stylesheet">
 
 </head>
 
@@ -42,8 +43,8 @@
 						</div>
 						<!-- /.panel-heading -->
 						<div class="panel-body">
-							<form action="/Project/company/pages/department/write_o_go.do" method="post">
-								<table id="dev_write" width="100%" class="table table-striped table-bordered table-hover">
+							<form class="form-submit" action="/Project/company/pages/department/write_o_go.do" method="post">
+								<table id="write" width="100%" class="table table-striped table-bordered table-hover table-write">
 									<tr>
 										<!-- 자동입력 -->
 										<th>작성자</th>
@@ -61,24 +62,30 @@
 									</tr>
 									<tr>
 										<th>설명</th>
-										<td><textarea name="content" id="content" rows="10" class="form-control" required></textarea></td>
+										<td><textarea name="content" id="content" rows="10" class="form-control" style="resize:none;" required></textarea></td>
 									</tr>
 									<tr>
 										<th>금액</th>
 										<td>
 											<div class="form-group input-group">
 												<span class="input-group-addon">금</span>
-												<input type="number" name="amount" id="amount" class="form-control" step="10000">
+												<input type="number" name="amount" id="amount" class="form-control" step="1" min="1" required>
 												<span class="input-group-addon">원 정</span>
 											</div>
 										</td>
 									</tr>
 								</table>
-								<div id="btns">
+								<div id="btns" class="col-sm-12">
 									<input type="button" value="돌아가기" class="btn btn-default" onclick="history.back();"/>
 									<input type="submit" value="청구하기" class="btn btn-warning" />
 								</div>
 							</form>
+							<script>
+								$('.form-submit').submit(function() {
+								    var c = confirm("정말로 수행하시겠습니까?");
+								    return c;
+								});
+							</script>
 						</div>
 						<!-- /.panel-body -->
 					</div>

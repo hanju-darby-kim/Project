@@ -1,4 +1,4 @@
-package com.fineapple.department;
+package com.fineapple.department.outcome;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class ReadConfirm extends HttpServlet {
+public class OutcomeReadConfirm extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		

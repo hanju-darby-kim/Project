@@ -1,4 +1,4 @@
-package com.fineapple.department;
+package com.fineapple.department.outcome;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,19 +12,11 @@ import javax.servlet.http.HttpSession;
 
 import com.fineapple.DTO.OutcomeCategoryDTO;
 
-public class WriteOutcome extends HttpServlet {
+public class OutcomeWrite extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		HttpSession session = req.getSession();
-		
-		OutcomeService service = new OutcomeService(req.getSession());
-		OutcomeCategoryDTO dto = new OutcomeCategoryDTO();
-
-		ArrayList<OutcomeCategoryDTO> list = service.getCategory();
-		req.setAttribute("list", list);
-		req.setAttribute("dto", dto);
-		
 		String departmentSeq = (String) session.getAttribute("departmentSeq");
 		
 		if (departmentSeq == null) {
@@ -33,6 +25,12 @@ public class WriteOutcome extends HttpServlet {
 			dispatcher.forward(req, resp);	
 		}
 		
+		OutcomeService service = new OutcomeService(req.getSession());
+		OutcomeCategoryDTO dto = new OutcomeCategoryDTO();
+
+		ArrayList<OutcomeCategoryDTO> list = service.getCategory();
+		req.setAttribute("list", list);
+				
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/department/outcome/write_o.jsp");
 		dispatcher.forward(req, resp);	
 	}

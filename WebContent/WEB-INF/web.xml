@@ -16,16 +16,148 @@
 <!-- Department -->
 	<servlet>
 		<servlet-name>department.temp_start</servlet-name>
-		<servlet-class>com.fineapple.department.TempStart</servlet-class>
+		<servlet-class>com.fineapple.department.temp.TempStart</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>department.temp_start</servlet-name>
 		<url-pattern>/company/pages/department/tempstart.do</url-pattern>
 	</servlet-mapping>
-	<!-- Department / Outcome -->
+	<servlet>
+		<servlet-name>department.project.frontpage</servlet-name>
+		<servlet-class>com.fineapple.department.project.FrontPage</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.project.frontpage</servlet-name>
+		<url-pattern>/company/pages/department/frontpage.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Project -->
+	<servlet>
+			<servlet-name>department.project.check</servlet-name>
+			<servlet-class>com.fineapple.department.project.ProjectCheck</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.project.check</servlet-name>
+		<url-pattern>/company/pages/department/project_c.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.project.write</servlet-name>
+			<servlet-class>com.fineapple.department.project.ProjectWrite</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.project.write</servlet-name>
+		<url-pattern>/company/pages/department/write_p.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.project.writego</servlet-name>
+			<servlet-class>com.fineapple.department.project.ProjectWriteGo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.project.writego</servlet-name>
+		<url-pattern>/company/pages/department/write_p_go.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.project.read</servlet-name>
+			<servlet-class>com.fineapple.department.project.ProjectRead</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.project.read</servlet-name>
+		<url-pattern>/company/pages/department/read_p.do</url-pattern>
+	</servlet-mapping>
+	<!-- Accounting -->
+	<servlet>
+			<servlet-name>department.accounting.check</servlet-name>
+			<servlet-class>com.fineapple.department.accounting.AccountingCheck</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.accounting.check</servlet-name>
+		<url-pattern>/company/pages/department/accounting_c.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.accounting.read</servlet-name>
+			<servlet-class>com.fineapple.department.accounting.AccountingRead</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.accounting.read</servlet-name>
+		<url-pattern>/company/pages/department/read_a.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.accounting.readgo</servlet-name>
+			<servlet-class>com.fineapple.department.accounting.AccountingReadGo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.accounting.readgo</servlet-name>
+		<url-pattern>/company/pages/department/read_a_go.do</url-pattern>
+	</servlet-mapping>
+	<!-- Income -->
+	<servlet>
+			<servlet-name>department.income.check</servlet-name>
+			<servlet-class>com.fineapple.department.income.IncomeCheck</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.income.check</servlet-name>
+		<url-pattern>/company/pages/department/income_c.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.income.write</servlet-name>
+			<servlet-class>com.fineapple.department.income.IncomeWrite</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.income.write</servlet-name>
+		<url-pattern>/company/pages/department/write_i.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.income.writego</servlet-name>
+			<servlet-class>com.fineapple.department.income.IncomeWriteGo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.income.writego</servlet-name>
+		<url-pattern>/company/pages/department/write_i_go.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.income.read</servlet-name>
+			<servlet-class>com.fineapple.department.income.IncomeRead</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.income.read</servlet-name>
+		<url-pattern>/company/pages/department/read_i.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.income.readconfirm</servlet-name>
+			<servlet-class>com.fineapple.department.income.IncomeReadConfirm</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.income.readconfirm</servlet-name>
+		<url-pattern>/company/pages/department/read_i_c.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.income.edit</servlet-name>
+			<servlet-class>com.fineapple.department.income.IncomeEdit</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.income.edit</servlet-name>
+		<url-pattern>/company/pages/department/edit_i.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.income.editgo</servlet-name>
+			<servlet-class>com.fineapple.department.income.IncomeEditGo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.income.editgo</servlet-name>
+		<url-pattern>/company/pages/department/edit_i_go.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.income.del</servlet-name>
+			<servlet-class>com.fineapple.department.income.IncomeDel</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.income.del</servlet-name>
+		<url-pattern>/company/pages/department/del_i.do</url-pattern>
+	</servlet-mapping>
+	<!-- Outcome -->
 	<servlet>
 			<servlet-name>department.outcome.check</servlet-name>
-			<servlet-class>com.fineapple.department.OutcomeCheck</servlet-class>
+			<servlet-class>com.fineapple.department.outcome.OutcomeCheck</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>department.outcome.check</servlet-name>
@@ -33,7 +165,7 @@
 	</servlet-mapping>
 	<servlet>
 			<servlet-name>department.outcome.write</servlet-name>
-			<servlet-class>com.fineapple.department.WriteOutcome</servlet-class>
+			<servlet-class>com.fineapple.department.outcome.OutcomeWrite</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>department.outcome.write</servlet-name>
@@ -41,7 +173,7 @@
 	</servlet-mapping>
 	<servlet>
 			<servlet-name>department.outcome.writego</servlet-name>
-			<servlet-class>com.fineapple.department.WriteOutcomeGo</servlet-class>
+			<servlet-class>com.fineapple.department.outcome.OutcomeWriteGo</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>department.outcome.writego</servlet-name>
@@ -49,7 +181,7 @@
 	</servlet-mapping>
 	<servlet>
 			<servlet-name>department.outcome.read</servlet-name>
-			<servlet-class>com.fineapple.department.ReadOutcome</servlet-class>
+			<servlet-class>com.fineapple.department.outcome.OutcomeRead</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>department.outcome.read</servlet-name>
@@ -57,11 +189,35 @@
 	</servlet-mapping>
 	<servlet>
 			<servlet-name>department.outcome.readconfirm</servlet-name>
-			<servlet-class>com.fineapple.department.ReadConfirm</servlet-class>
+			<servlet-class>com.fineapple.department.outcome.OutcomeReadConfirm</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>department.outcome.readconfirm</servlet-name>
 		<url-pattern>/company/pages/department/read_c.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.outcome.edit</servlet-name>
+			<servlet-class>com.fineapple.department.outcome.OutcomeEdit</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.outcome.edit</servlet-name>
+		<url-pattern>/company/pages/department/edit_o.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.outcome.editgo</servlet-name>
+			<servlet-class>com.fineapple.department.outcome.OutcomeEditGo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.outcome.editgo</servlet-name>
+		<url-pattern>/company/pages/department/edit_o_go.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.outcome.del</servlet-name>
+			<servlet-class>com.fineapple.department.outcome.OutcomeDel</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.outcome.del</servlet-name>
+		<url-pattern>/company/pages/department/del_o.do</url-pattern>
 	</servlet-mapping>
 	
 	

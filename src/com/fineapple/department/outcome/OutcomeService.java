@@ -1,9 +1,10 @@
-package com.fineapple.department;
+package com.fineapple.department.outcome;
 
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpSession;
 
+import com.fineapple.DTO.EmployeeDTO;
 import com.fineapple.DTO.OutcomeCategoryDTO;
 import com.fineapple.DTO.OutcomeDTO;
 import com.fineapple.DTO.OutcomeViewDTO;
@@ -51,20 +52,24 @@ public class OutcomeService {
 	public ArrayList<OutcomeViewDTO> getOutcome() {
 		
 		String departmentSeq = (String) session.getAttribute("departmentSeq");	//세션에서 값 가져오기
-		ArrayList<OutcomeViewDTO> list = dao.getOutcome(departmentSeq);
+		String positionSeq = (String) session.getAttribute("positionSeq");
+		String seq = (String) session.getAttribute("seq");
+		ArrayList<OutcomeViewDTO> list = dao.getOutcome(departmentSeq, positionSeq, seq);
 		
 		for (OutcomeViewDTO dto : list) {
-			String regDate = dto.getRegDate().substring(0, 16);	//일자 시분까지 잘라내기
+			String regDate = dto.getRegDate().substring(0, 10);	//일자 일단위로 잘라내기
 			dto.setRegDate(regDate);
 			
 			String status = dto.getStatus();	//현황 메시지로 변경
 			if (status == null) {	//부서장 대기
-				dto.setStatus("부서장 대기");
+				dto.setStatus("대기");
 			} else if (status.equals("1")) {	//부서장 반려
 				dto.setStatus("부서장 반려");
 			} else if (status.equals("2")) {	//부서장 승인
 				dto.setStatus("부서장 승인");
-			} else if (status.equals("3")) {	//최종 승인
+			} else if (status.equals("3")) {	//총무부 반려
+				dto.setStatus("총무부 반려");
+			} else if (status.equals("4")) {	//최종 승인
 				dto.setStatus("최종 승인");
 			}
 		}
@@ -77,8 +82,7 @@ public class OutcomeService {
 	 */
 	public OutcomeDTO readOutcome(String seq) {
 		
-		String departmentSeq = (String) session.getAttribute("departmentSeq");
-		OutcomeDTO dto = dao.readOutcome(seq, departmentSeq);
+		OutcomeDTO dto = dao.readOutcome(seq);
 		
 		String content = dto.getContent();	//스크립트 문자 및 개행문자 변경
 		content = content.replaceAll("<", "&lt;");
@@ -92,17 +96,19 @@ public class OutcomeService {
 		if (conDate == null) {
 			dto.setConDate("미승인");	//승인일이 없는 경우 메시지 출력
 		} else {
-			dto.setConDate(conDate);	//승인일이 있는 경우 승인일 출력
+			dto.setConDate(conDate.substring(0, 10));	//승인일이 있는 경우 승인일 출력
 		}
 		
 		String status = dto.getEtc();	//현황관련 메시지 입력
 		if (status == null) {	//부서장 대기
-			dto.setEtc("부서장 대기");
+			dto.setEtc("대기");
 		} else if (status.equals("1")) {	//부서장 반려
 			dto.setEtc("부서장 반려");
 		} else if (status.equals("2")) {	//부서장 승인
 			dto.setEtc("부서장 승인");
 		} else if (status.equals("3")) {	//총무부 반려
+			dto.setEtc("총무부 반려");
+		} else if (status.equals("4")) {	//최종 승인
 			dto.setEtc("최종 승인");
 		}
 		
@@ -119,5 +125,43 @@ public class OutcomeService {
 	 */
 	public int setOutcomeConfirm(String seq, String departmentSeq, String positionSeq, String confirm) {
 		return dao.setOutcomeConfirm(seq, departmentSeq, positionSeq, confirm);
+	}
+	
+	/**
+	 * 사용자의 부서직원 리스트를 가져오도록 하는 서비스 객체
+	 * @return 사용자의 부서직원 목록
+	 */
+	public ArrayList<EmployeeDTO> getDepartmentEmployee() {
+		
+		String departmentSeq = (String) session.getAttribute("departmentSeq");
+		ArrayList<EmployeeDTO> list = dao.getDepartmentEmployee(departmentSeq);
+		return list;
+	}
+	
+	/**
+	 * 비용청구서 수정을 위해 내용물을 가져오도록 하는 서비스 객체
+	 * @param seq	대상이 된 비용청구서 번호
+	 * @return 비용청구서
+	 */
+	public OutcomeDTO editOutcome(String seq) {
+		return dao.readOutcome(seq);
+	}
+	
+	/**
+	 * 비용청구서 수정을 수행하도록 하는 서비스 객체
+	 * @param dto 수정된 비용청구서
+	 * @return 처리 성공 여부
+	 */
+	public int editOutcome(OutcomeDTO dto) { 
+		return dao.editOutcome(dto);
+	}
+
+	/**
+	 * 비용청구서 삭제를 수행하도록 하는 서비스 객체
+	 * @param seq 대상이 된 비용청구서 번호
+	 * @return 처리 성공 여부
+	 */
+	public int delOutcome(String seq) {
+		return dao.delOutcome(seq);
 	}
 }

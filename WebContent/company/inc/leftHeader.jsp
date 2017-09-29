@@ -51,40 +51,9 @@
          <!-- 결재 게시판 끝 -->      
 
 
-
-         <li><a href="javascript:void(0)"><i class="fa fa-smile-o fa-fw"></i> 4. 부서별 게시판<span class="fa arrow"></span></a>
-            <ul class="nav nav-second-level">
-               <li><a href="javascript:void(0)">개발부 <span
-                     class="fa arrow"></span></a>
-                  <ul class="nav nav-third-level">
-                     <li><a href="/Project/company/pages/department/dev/project/project.jsp">프로젝트</a>
-                     </li>
-                     <li><a
-                        href="/Project/company/pages/department/dev/outcome/outcome.jsp">비용청구</a>
-                     </li>
-                  </ul></li>
-               <li><a href="javascript:void(0)">인사부 <span
-                     class="fa arrow"></span></a>
-                  <ul class="nav nav-third-level">
-                     <li><a href="javascript:void(0)">프로젝트</a></li>
-                     <li><a href="javascript:void(0)">비용청구</a></li>
-                  </ul></li>
-               <li><a href="javascript:void(0)">총무부 <span
-                     class="fa arrow"></span></a>
-                  <ul class="nav nav-third-level">
-                     <li><a href="javascript:void(0)">프로젝트</a></li>
-                     <li><a href="javascript:void(0)">비용청구</a></li>
-                     <li><a href="javascript:void(0)">수입처리</a></li>
-                     <li><a href="javascript:void(0)">지출처리</a></li>
-                  </ul></li>
-               <li><a href="javascript:void(0)">영업부 <span
-                     class="fa arrow"></span></a>
-                  <ul class="nav nav-third-level">
-                     <li><a href="javascript:void(0)">프로젝트</a></li>
-                     <li><a href="javascript:void(0)">비용청구</a></li>
-                     <li><a href="javascript:void(0)">판매수입</a></li>
-                  </ul></li>
-            </ul></li>
+				<!-- 부서별 게시판은 이거 하나 -->
+         <li><a href="/Project/company/pages/department/frontpage.do"><i class="fa fa-th-list fa-fw"></i>&nbsp;&nbsp;부서별 게시판<span class="fa arrow"></span></a>
+         </li>
             
             <!-----------------------현진 ----------------------->
          <li><a href="javascript:void(0)">

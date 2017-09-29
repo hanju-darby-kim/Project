@@ -8,7 +8,49 @@ public class OutcomeViewDTO {
 	private int amount;
 	private String departmentSeq;
 	private String category;
-	private String status;
+	private String status;	//etc
+	private String empSeq;
+	private String aSeq;	//계좌 유형
+	private String department;	//부서이름
+	private String respSeq;	//승인자 번호
+	private String respName;	//승인자 이름
+	private String conDate;	//승인일
+	public String getConDate() {
+		return conDate;
+	}
+	public void setConDate(String conDate) {
+		this.conDate = conDate;
+	}
+	public String getRespSeq() {
+		return respSeq;
+	}
+	public void setRespSeq(String respSeq) {
+		this.respSeq = respSeq;
+	}
+	public String getRespName() {
+		return respName;
+	}
+	public void setRespName(String respName) {
+		this.respName = respName;
+	}
+	public String getDepartment() {
+		return department;
+	}
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+	public String getaSeq() {
+		return aSeq;
+	}
+	public void setaSeq(String aSeq) {
+		this.aSeq = aSeq;
+	}
+	public String getEmpSeq() {
+		return empSeq;
+	}
+	public void setEmpSeq(String empSeq) {
+		this.empSeq = empSeq;
+	}
 	public String getStatus() {
 		return status;
 	}

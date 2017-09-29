@@ -12,6 +12,20 @@ public class OutcomeDTO {
 	private String etc;
 	private String aSeq;
 	private String respSeq;
+	private String empName;
+	private String department;
+	public String getDepartment() {
+		return department;
+	}
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+	public String getEmpName() {
+		return empName;
+	}
+	public void setEmpName(String empName) {
+		this.empName = empName;
+	}
 	public String getSeq() {
 		return seq;
 	}

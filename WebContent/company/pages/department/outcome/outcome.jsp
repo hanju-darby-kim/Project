@@ -11,14 +11,43 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>개발부 비용청구 현황</title>
+	<title>비용청구 현황</title>
 
-	<%@ include file="/company/inc/asset_css.jsp" %>
 	<%@ include file="/company/inc/asset_js.jsp" %>
+	<link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+	<script type="text/javascript" language="javascript" src="../../dist/js/jquery.dataTables.min.js"></script>
+	<%@ include file="/company/inc/asset_css.jsp" %>
 	<link href="/Project/company/dist/css/department.css" rel="stylesheet">
 
-</head>
+<script>
+$(document).ready(function() {
+    $('#searchTable').DataTable( {
+    		order: [0, 'desc'],
+        initComplete: function () {
+            this.api().columns().every( function () {
+                var column = this;
+                var select = $('<select><option value=""></option></select>')
+                    .appendTo( $(column.footer()).empty() )
+                    .on( 'change', function () {
+                        var val = $.fn.dataTable.util.escapeRegex(
+                            $(this).val()
+                        );
+ 
+                        column
+                            .search( val ? '^'+val+'$' : '', true, false )
+                            .draw();
+                    } );
+ 
+                column.data().unique().sort().each( function ( d, j ) {
+                    select.append( '<option value="'+d+'">'+d+'</option>' )
+                } );
+            } );
+        }
+    } );
+} );
+</script>
 
+</head>
 <body>
 
 	<div id="wrapper">
@@ -34,73 +63,65 @@
 					<h1 class="page-header"></h1>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="panel panel-warning">
-						<div class="panel-heading">
-							<i class="fa fa-bar-chart-o fa-fw"></i> 금월 비용청구 현황
-						</div>
-						<!-- /.panel-heading -->
-						<div class="panel-body">
-							<!-- 괜찮은 차트 혹은 테이블로 복붙 -->
-							<%@ include file="/company/pages/department/templates/ref_project_gantt.jsp" %>
-							<!-- <div id="morris-area-chart"></div> -->
-						</div>
-						<!-- /.panel-body -->
-					</div>
-				</div>
-			</div>
 			<!-- /.panel -->
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="panel panel-default">
+					<div class="panel panel-danger">
 						<div class="panel-heading">
-							<i class="fa fa-bar-chart-o fa-fw"></i> 개발부 비용청구 목록
+							<i class="glyphicon glyphicon-pencil  fa-fw"></i> 비용청구 목록
 						</div>
 						<div class="panel-body">
-							<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+							<table id="searchTable" width="100%" class="table table-striped table-bordered table-hover" id="table-outcome">
 								<thead>
-									<tr>
+									<tr class="table-list">
 										<th>번호</th>
-										<th>종류</th>
-										<th>금액</th>
 										<th>작성자</th>
-										<th>작성일</th>
+										<th>종류</th>
+										<th>금액(원)</th>
+										<th>제출일</th>
 										<th>현황</th>
-										<th>내용확인</th>
+										<th style="width:80px">내용확인</th>
 									</tr>
 								</thead>
+								<tfoot>
+									<tr class="table-list">
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+									</tr>
+								</tfoot>
 								<tbody>
 									<c:forEach items="${list}" var="dto">
-									<tr>
+									<tr class="table-list">
 										<td>${dto.seq}</td>
+										<td>${dto.name}</td>
 										<td>${dto.category}</td>
 										<td>${dto.amount}</td>
-										<td>${dto.name}</td>
 										<td>${dto.regDate}</td>
 										<td>${dto.status}</td>
-										<td><button type="button" class="btn btn-outline btn-info" onclick="location.href='read_o.do?seq=${dto.seq}';">내용확인</button></td>
+										<td><button type="button" id="btn-custom-small" class="btn btn-outline btn-default glyphicon glyphicon-ok" onclick="location.href='read_o.do?seq=${dto.seq}';" style="width:25px"></button></td>
 									</tr>
 									</c:forEach>
 								</tbody>
 							</table>
 							<!-- /.table-responsive -->
-							<form action="">
-								<div class="form-group input-group">
-									<input type="text" class="form-control">
-									<span class="input-group-btn">
-										<button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
-									</span>
+							<div class="row">
+								<div id="btns" class="col-sm-12">
+									<button type="button" class="btn btn-outline btn-default" onclick="location.href='outcome_c.do';">목록갱신</button>
+									<button type="button" class="btn btn-outline btn-primary" onclick="location.href='write_o.do';">비용청구</button>
 								</div>
-							</form>
-							<div id="btns">
-								<button type="button" class="btn btn-outline btn-default" onclick="location.href='outcome_c.do';">목록갱신</button>
-								<button type="button" class="btn btn-outline btn-primary" onclick="location.href='write_o.do';">비용청구</button>
 							</div>
+							<!-- 상, 페이지바 / 하, 검색 -->	
 						</div>
 						<!-- /.panel-body -->
 					</div>
 					<!-- /.panel -->
+					<div class="col-sm-12" style="text-align:left">
+					<input type="button" value="돌아가기" class="btn btn-default" onclick="history.back();"/>
+					</div>
 				</div>
 				<!-- /.col-lg-12 -->
 			</div>

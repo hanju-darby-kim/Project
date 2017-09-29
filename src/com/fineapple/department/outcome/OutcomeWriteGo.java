@@ -1,4 +1,4 @@
-package com.fineapple.department;
+package com.fineapple.department.outcome;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ import com.fineapple.DTO.OutcomeDTO;
  * @author 박의영
  *
  */
-public class WriteOutcomeGo extends HttpServlet {
+public class OutcomeWriteGo extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
@@ -42,7 +42,7 @@ public class WriteOutcomeGo extends HttpServlet {
 		int result = service.setOutcome(dto, positionSeq, departmentSeq);
 		
 		if (result == 0) {	//오류 시 오류메시지와 함께 오류페이지로 이동
-			req.setAttribute("msg", "비용청구 작성에 오류가 발생했습니다");
+			req.setAttribute("msg", "비용청구서 작성에 오류가 발생했습니다");
 			RequestDispatcher dispatcher = req.getRequestDispatcher("/company/pages/department/error.jsp");
 			dispatcher.forward(req, resp);	
 			

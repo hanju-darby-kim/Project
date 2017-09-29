@@ -1,12 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<%@ include file="/company/inc/asset_js.jsp" %>
+<title>오류 페이지</title>
 </head>
+
+<script>
+	$(document).ready(function() {
+		$.alert("${msg}");		
+    location.href=history.back();
+	}
+</script>
 <body>
-<!-- 스크립트로 alert만 띄우고 바로 index로 보내줌 -->
+<!-- 스크립트로 가져온 alert(confirm 창)을 띄우고 index로 돌아갈지 이전페이지로 돌아갈지 확인하고 보내줌 -->
 </body>
 </html>
